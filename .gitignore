@@ -1,29 +1,29 @@
-# src/DB
-# nbproject/
+src/DB
+nbproject/
 
-# # NetBeans Specific
-# /nbproject/private/
-# /nbproject/Makefile-*.mk
-# /nbproject/Package-*.bash
-# /build/
-# /nbbuild/
-# /dist/
-# /nbdist/
-# /nbactions.xml
-# /nb-configuration.xml
-# /.nb-gradle/
+# NetBeans Specific
+/nbproject/private/
+/nbproject/Makefile-*.mk
+/nbproject/Package-*.bash
+/build/
+/nbbuild/
+/dist/
+/nbdist/
+/nbactions.xml
+/nb-configuration.xml
+/.nb-gradle/
 
-# # Compiled Java Classes
-# *.class
+# Compiled Java Classes
+*.class
 
-# # Package Files
-# *.jar
-# *.war
-# *.ear
+# Package Files
+*.jar
+*.war
+*.ear
 
-# # Log files
-# *.log
+# Log files
+*.log
 
-# # OS Specific
-# .DS_Store
-# Thumbs.db
+# OS Specific
+.DS_Store
+Thumbs.db

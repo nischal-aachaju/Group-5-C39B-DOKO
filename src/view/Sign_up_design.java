@@ -36,23 +36,23 @@ public class Sign_up_design extends javax.swing.JPanel {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        email_txtfld = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
-        verify_textfld = new javax.swing.JTextField();
-        jCheckBox1 = new javax.swing.JCheckBox();
+        passwordField = new javax.swing.JTextField();
+        nameField = new javax.swing.JTextField();
+        emailField = new javax.swing.JTextField();
+        phoneNum = new javax.swing.JTextField();
+        addressField = new javax.swing.JTextField();
+        roleFileld = new javax.swing.JTextField();
+        termsAndCondition = new javax.swing.JCheckBox();
         App_name = new javax.swing.JLabel();
         sign_in_label = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        registerBtn = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
+        loginBtn = new javax.swing.JLabel();
+        verify = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jTextField7 = new javax.swing.JTextField();
+        trackingField = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
         jLabel13 = new javax.swing.JLabel();
@@ -60,14 +60,14 @@ public class Sign_up_design extends javax.swing.JPanel {
         setPreferredSize(new java.awt.Dimension(948, 571));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setPreferredSize(new java.awt.Dimension(1500, 850));
+        jPanel1.setPreferredSize(new java.awt.Dimension(1050, 600));
         jPanel1.setLayout(null);
 
         jLabel9.setFont(new java.awt.Font("Righteous", 0, 48)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(41, 51, 123));
         jLabel9.setText("DOKO");
         jPanel1.add(jLabel9);
-        jLabel9.setBounds(20, 10, 170, 40);
+        jLabel9.setBounds(20, 10, 150, 40);
 
         jPanel3.setBackground(new java.awt.Color(236, 236, 236));
         jPanel3.setLayout(null);
@@ -78,103 +78,106 @@ public class Sign_up_design extends javax.swing.JPanel {
 
         jLabel1.setText("Password");
         jPanel2.add(jLabel1);
-        jLabel1.setBounds(33, 313, 80, 16);
+        jLabel1.setBounds(40, 313, 80, 16);
 
         jLabel2.setText("Full Name");
         jPanel2.add(jLabel2);
-        jLabel2.setBounds(33, 113, 80, 16);
+        jLabel2.setBounds(40, 113, 80, 16);
 
         jLabel3.setText("E-mail");
         jPanel2.add(jLabel3);
-        jLabel3.setBounds(33, 153, 80, 16);
+        jLabel3.setBounds(40, 153, 80, 16);
 
         jLabel4.setText("Phone Number");
         jPanel2.add(jLabel4);
-        jLabel4.setBounds(33, 193, 80, 16);
+        jLabel4.setBounds(40, 193, 80, 16);
         jPanel2.add(jLabel5);
         jLabel5.setBounds(33, 230, 80, 0);
 
         jLabel6.setText("Role");
         jPanel2.add(jLabel6);
-        jLabel6.setBounds(33, 273, 80, 16);
+        jLabel6.setBounds(40, 273, 80, 16);
 
-        jTextField1.setText("Enter password from E-mail *");
-        jPanel2.add(jTextField1);
-        jTextField1.setBounds(162, 310, 204, 22);
+        passwordField.setText("Enter password from E-mail *");
+        jPanel2.add(passwordField);
+        passwordField.setBounds(162, 310, 204, 22);
 
-        jTextField2.setText("Full Name *");
-        jPanel2.add(jTextField2);
-        jTextField2.setBounds(162, 110, 204, 22);
+        nameField.setText("Full Name *");
+        jPanel2.add(nameField);
+        nameField.setBounds(162, 110, 204, 22);
 
-        email_txtfld.setText("E-mail *");
-        email_txtfld.addActionListener(this::email_txtfldActionPerformed);
-        jPanel2.add(email_txtfld);
-        email_txtfld.setBounds(162, 150, 146, 22);
+        emailField.setText("E-mail *");
+        emailField.addActionListener(this::emailFieldActionPerformed);
+        jPanel2.add(emailField);
+        emailField.setBounds(162, 150, 140, 22);
 
-        jTextField4.setText("Phone *");
-        jTextField4.addActionListener(this::jTextField4ActionPerformed);
-        jPanel2.add(jTextField4);
-        jTextField4.setBounds(162, 190, 204, 22);
+        phoneNum.setText("Phone *");
+        phoneNum.addActionListener(this::phoneNumActionPerformed);
+        jPanel2.add(phoneNum);
+        phoneNum.setBounds(162, 190, 204, 22);
 
-        jTextField5.setText("Address *");
-        jTextField5.addActionListener(this::jTextField5ActionPerformed);
-        jPanel2.add(jTextField5);
-        jTextField5.setBounds(162, 230, 204, 22);
+        addressField.setText("Address *");
+        addressField.addActionListener(this::addressFieldActionPerformed);
+        jPanel2.add(addressField);
+        addressField.setBounds(162, 230, 204, 22);
 
-        jTextField6.setText("Choose the Role * ");
-        jPanel2.add(jTextField6);
-        jTextField6.setBounds(162, 270, 204, 22);
+        roleFileld.setText("Choose the Role * ");
+        jPanel2.add(roleFileld);
+        roleFileld.setBounds(162, 270, 204, 22);
 
-        verify_textfld.setText("verify");
-        jPanel2.add(verify_textfld);
-        verify_textfld.setBounds(314, 150, 52, 22);
-
-        jCheckBox1.setText("Terms and Conditions");
-        jPanel2.add(jCheckBox1);
-        jCheckBox1.setBounds(100, 340, 140, 20);
+        termsAndCondition.setText("Terms and Conditions");
+        jPanel2.add(termsAndCondition);
+        termsAndCondition.setBounds(140, 350, 140, 20);
 
         App_name.setFont(new java.awt.Font("Righteous", 0, 36)); // NOI18N
         App_name.setForeground(new java.awt.Color(41, 51, 123));
         App_name.setText("DOKO");
         jPanel2.add(App_name);
-        App_name.setBounds(140, 20, 120, 25);
+        App_name.setBounds(150, 20, 120, 40);
 
         sign_in_label.setFont(new java.awt.Font("REM", 0, 18)); // NOI18N
-        sign_in_label.setText("SIGN-IN");
+        sign_in_label.setText("SIGN UP");
         jPanel2.add(sign_in_label);
-        sign_in_label.setBounds(160, 50, 80, 33);
+        sign_in_label.setBounds(170, 60, 80, 33);
 
         jLabel7.setText("Address");
         jPanel2.add(jLabel7);
-        jLabel7.setBounds(33, 233, 80, 16);
+        jLabel7.setBounds(40, 233, 80, 16);
 
-        jTextField3.setBackground(new java.awt.Color(41, 51, 123));
-        jTextField3.setFont(new java.awt.Font("REM", 0, 18)); // NOI18N
-        jTextField3.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField3.setText("Register");
-        jTextField3.addActionListener(this::jTextField3ActionPerformed);
-        jPanel2.add(jTextField3);
-        jTextField3.setBounds(150, 360, 124, 30);
+        registerBtn.setBackground(new java.awt.Color(41, 51, 123));
+        registerBtn.setFont(new java.awt.Font("REM", 0, 18)); // NOI18N
+        registerBtn.setForeground(new java.awt.Color(255, 255, 255));
+        registerBtn.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        registerBtn.setText("Register");
+        registerBtn.addActionListener(this::registerBtnActionPerformed);
+        jPanel2.add(registerBtn);
+        registerBtn.setBounds(150, 380, 124, 30);
 
         jLabel11.setFont(new java.awt.Font("REM", 0, 12)); // NOI18N
         jLabel11.setText("Already have an account?");
         jPanel2.add(jLabel11);
-        jLabel11.setBounds(150, 390, 140, 16);
+        jLabel11.setBounds(130, 420, 140, 16);
 
-        jLabel12.setFont(new java.awt.Font("REM", 1, 12)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(41, 51, 123));
-        jLabel12.setText("LOG-IN");
-        jPanel2.add(jLabel12);
-        jLabel12.setBounds(290, 390, 50, 16);
+        loginBtn.setFont(new java.awt.Font("REM", 1, 12)); // NOI18N
+        loginBtn.setForeground(new java.awt.Color(41, 51, 123));
+        loginBtn.setText("LOG-IN");
+        jPanel2.add(loginBtn);
+        loginBtn.setBounds(270, 420, 50, 16);
+
+        verify.setText("Verify");
+        verify.setMaximumSize(new java.awt.Dimension(62, 22));
+        verify.setPreferredSize(new java.awt.Dimension(64, 22));
+        verify.addActionListener(this::verifyActionPerformed);
+        jPanel2.add(verify);
+        verify.setBounds(310, 150, 60, 24);
 
         jPanel3.add(jPanel2);
-        jPanel2.setBounds(470, 0, 390, 430);
+        jPanel2.setBounds(530, 0, 420, 450);
 
         jLabel10.setFont(new java.awt.Font("Righteous", 0, 24)); // NOI18N
         jLabel10.setText("Enter Tracking ID");
         jPanel3.add(jLabel10);
-        jLabel10.setBounds(45, 79, 187, 32);
+        jLabel10.setBounds(50, 80, 187, 32);
 
         jLabel8.setFont(new java.awt.Font("REM", 0, 36)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(41, 51, 123));
@@ -182,31 +185,32 @@ public class Sign_up_design extends javax.swing.JPanel {
         jPanel3.add(jLabel8);
         jLabel8.setBounds(45, 27, 310, 47);
 
-        jTextField7.setText("eg:#250455 ");
-        jTextField7.addActionListener(this::jTextField7ActionPerformed);
-        jPanel3.add(jTextField7);
-        jTextField7.setBounds(57, 122, 180, 38);
+        trackingField.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        trackingField.setText("  eg:#250455 ");
+        trackingField.addActionListener(this::trackingFieldActionPerformed);
+        jPanel3.add(trackingField);
+        trackingField.setBounds(50, 120, 180, 38);
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
         jScrollPane1.setViewportView(jTextArea1);
 
         jPanel3.add(jScrollPane1);
-        jScrollPane1.setBounds(57, 213, 355, 159);
+        jScrollPane1.setBounds(50, 210, 440, 220);
 
-        jLabel13.setFont(new java.awt.Font("REM", 0, 14)); // NOI18N
-        jLabel13.setText("Details");
+        jLabel13.setFont(new java.awt.Font("REM", 1, 18)); // NOI18N
+        jLabel13.setText("Details:");
         jPanel3.add(jLabel13);
-        jLabel13.setBounds(60, 190, 50, 19);
+        jLabel13.setBounds(50, 180, 80, 24);
 
         jPanel1.add(jPanel3);
-        jPanel3.setBounds(50, 90, 860, 430);
+        jPanel3.setBounds(50, 80, 950, 450);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 948, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -214,35 +218,38 @@ public class Sign_up_design extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void email_txtfldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_email_txtfldActionPerformed
+    private void emailFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_email_txtfldActionPerformed
+    }//GEN-LAST:event_emailFieldActionPerformed
 
-    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
+    private void addressFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addressFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField5ActionPerformed
+    }//GEN-LAST:event_addressFieldActionPerformed
 
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+    private void phoneNumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_phoneNumActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField4ActionPerformed
+    }//GEN-LAST:event_phoneNumActionPerformed
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+    private void registerBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerBtnActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
+    }//GEN-LAST:event_registerBtnActionPerformed
 
-    private void jTextField7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField7ActionPerformed
+    private void trackingFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_trackingFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField7ActionPerformed
+    }//GEN-LAST:event_trackingFieldActionPerformed
+
+    private void verifyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_verifyActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_verifyActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel App_name;
-    private javax.swing.JTextField email_txtfld;
-    private javax.swing.JCheckBox jCheckBox1;
+    private javax.swing.JTextField addressField;
+    private javax.swing.JTextField emailField;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -257,14 +264,15 @@ public class Sign_up_design extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
+    private javax.swing.JLabel loginBtn;
+    private javax.swing.JTextField nameField;
+    private javax.swing.JTextField passwordField;
+    private javax.swing.JTextField phoneNum;
+    private javax.swing.JTextField registerBtn;
+    private javax.swing.JTextField roleFileld;
     private javax.swing.JLabel sign_in_label;
-    private javax.swing.JTextField verify_textfld;
+    private javax.swing.JCheckBox termsAndCondition;
+    private javax.swing.JTextField trackingField;
+    private javax.swing.JButton verify;
     // End of variables declaration//GEN-END:variables
 }

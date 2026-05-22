@@ -32,18 +32,24 @@ public class OTPBasedPasswordReset extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         ResetYourPasswordLabel = new javax.swing.JLabel();
         BestForSecuringLabel = new javax.swing.JLabel();
-        FullNameTextfield = new javax.swing.JTextField();
-        CurrentPasswordTextfield = new javax.swing.JTextField();
-        NewPasswordTextfield = new javax.swing.JTextField();
-        ConfirmNewPasswordTextfield = new javax.swing.JTextField();
-        ChangePasswordButton = new javax.swing.JButton();
         termsandconditioncheckbox = new javax.swing.JCheckBox();
+        Fullnametextfield = new javax.swing.JTextField();
+        currentpasswordtextfield = new javax.swing.JTextField();
+        newpasswordtextfield = new javax.swing.JTextField();
+        confirmnewpasswordtextfield = new javax.swing.JTextField();
+        fullnamelabel = new javax.swing.JLabel();
+        currentpasswordlabel = new javax.swing.JLabel();
+        newpasswordlabel = new javax.swing.JLabel();
+        confirmnewpasswordlabel = new javax.swing.JLabel();
+        changepasswordbutton = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(255, 255, 255));
         setSize(new java.awt.Dimension(1500, 850));
         getContentPane().setLayout(null);
 
-        DokoLabel.setFont(new java.awt.Font("Segoe UI", 0, 59)); // NOI18N
+        DokoLabel.setFont(new java.awt.Font("Righteous", 0, 59)); // NOI18N
         DokoLabel.setForeground(new java.awt.Color(41, 51, 123));
         DokoLabel.setText("DOKO");
         DokoLabel.setPreferredSize(new java.awt.Dimension(120, 54));
@@ -53,74 +59,80 @@ public class OTPBasedPasswordReset extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(236, 236, 236));
         jPanel2.setPreferredSize(new java.awt.Dimension(565, 678));
 
-        ResetYourPasswordLabel.setFont(new java.awt.Font("Segoe UI", 1, 30)); // NOI18N
+        ResetYourPasswordLabel.setFont(new java.awt.Font("Righteous", 1, 30)); // NOI18N
         ResetYourPasswordLabel.setForeground(new java.awt.Color(41, 51, 123));
         ResetYourPasswordLabel.setText("Reset password");
 
         BestForSecuringLabel.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         BestForSecuringLabel.setText("best for securing");
 
-        FullNameTextfield.setBackground(new java.awt.Color(217, 217, 217));
-        FullNameTextfield.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        FullNameTextfield.setForeground(new java.awt.Color(130, 130, 130));
-        FullNameTextfield.setText("full name");
-        FullNameTextfield.setPreferredSize(new java.awt.Dimension(444, 64));
-        FullNameTextfield.addActionListener(this::FullNameTextfieldActionPerformed);
-
-        CurrentPasswordTextfield.setBackground(new java.awt.Color(217, 217, 217));
-        CurrentPasswordTextfield.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        CurrentPasswordTextfield.setForeground(new java.awt.Color(130, 130, 130));
-        CurrentPasswordTextfield.setText("current password");
-        CurrentPasswordTextfield.setPreferredSize(new java.awt.Dimension(444, 64));
-        CurrentPasswordTextfield.addActionListener(this::CurrentPasswordTextfieldActionPerformed);
-
-        NewPasswordTextfield.setBackground(new java.awt.Color(217, 217, 217));
-        NewPasswordTextfield.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        NewPasswordTextfield.setForeground(new java.awt.Color(130, 130, 130));
-        NewPasswordTextfield.setText("new password");
-        NewPasswordTextfield.setPreferredSize(new java.awt.Dimension(444, 64));
-        NewPasswordTextfield.addActionListener(this::NewPasswordTextfieldActionPerformed);
-
-        ConfirmNewPasswordTextfield.setBackground(new java.awt.Color(217, 217, 217));
-        ConfirmNewPasswordTextfield.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        ConfirmNewPasswordTextfield.setForeground(new java.awt.Color(130, 130, 130));
-        ConfirmNewPasswordTextfield.setText("confirm new password");
-        ConfirmNewPasswordTextfield.setPreferredSize(new java.awt.Dimension(444, 64));
-
-        ChangePasswordButton.setBackground(new java.awt.Color(213, 173, 100));
-        ChangePasswordButton.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        ChangePasswordButton.setText("Change Password");
-        ChangePasswordButton.setPreferredSize(new java.awt.Dimension(295, 59));
-        ChangePasswordButton.addActionListener(this::ChangePasswordButtonActionPerformed);
-
         termsandconditioncheckbox.setText("terms and conditions ");
         termsandconditioncheckbox.addActionListener(this::termsandconditioncheckboxActionPerformed);
+
+        Fullnametextfield.setText("full name*\n");
+        Fullnametextfield.addActionListener(this::FullnametextfieldActionPerformed);
+
+        currentpasswordtextfield.setText("current password*");
+        currentpasswordtextfield.addActionListener(this::currentpasswordtextfieldActionPerformed);
+
+        newpasswordtextfield.setText("new password*");
+        newpasswordtextfield.addActionListener(this::newpasswordtextfieldActionPerformed);
+
+        confirmnewpasswordtextfield.setText("confirm new password*");
+
+        fullnamelabel.setText("Full name");
+
+        currentpasswordlabel.setText("Current password");
+
+        newpasswordlabel.setText("New password");
+
+        confirmnewpasswordlabel.setText("Confirm new password");
+
+        changepasswordbutton.setBackground(new java.awt.Color(213, 173, 100));
+        changepasswordbutton.setFont(new java.awt.Font("REM", 0, 18)); // NOI18N
+        changepasswordbutton.setText("Change Password");
+        changepasswordbutton.setPreferredSize(new java.awt.Dimension(82, 30));
+        changepasswordbutton.addActionListener(this::changepasswordbuttonActionPerformed);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(114, 114, 114)
-                .addComponent(ChangePasswordButton, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(35, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                            .addComponent(ResetYourPasswordLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 259, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(82, 82, 82))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                            .addComponent(BestForSecuringLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(142, 142, 142))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(jPanel2Layout.createSequentialGroup()
+                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(fullnamelabel, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(currentpasswordlabel)
+                                        .addComponent(newpasswordlabel))
+                                    .addGap(0, 0, Short.MAX_VALUE))
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                    .addGap(0, 3, Short.MAX_VALUE)
+                                    .addComponent(confirmnewpasswordlabel)))
+                            .addGap(26, 26, 26)
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(currentpasswordtextfield, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(Fullnametextfield, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(newpasswordtextfield, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(confirmnewpasswordtextfield, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGap(40, 40, 40))
+                        .addGroup(jPanel2Layout.createSequentialGroup()
+                            .addGap(3, 3, 3)
+                            .addComponent(termsandconditioncheckbox)
+                            .addContainerGap()))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(CurrentPasswordTextfield, javax.swing.GroupLayout.PREFERRED_SIZE, 387, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(FullNameTextfield, javax.swing.GroupLayout.PREFERRED_SIZE, 387, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(NewPasswordTextfield, javax.swing.GroupLayout.PREFERRED_SIZE, 385, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(ConfirmNewPasswordTextfield, javax.swing.GroupLayout.PREFERRED_SIZE, 385, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(termsandconditioncheckbox))
-                        .addGap(28, 28, 28))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(ResetYourPasswordLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 259, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(82, 82, 82))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(BestForSecuringLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(142, 142, 142))))
+                        .addComponent(changepasswordbutton, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(119, 119, 119))))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -129,46 +141,70 @@ public class OTPBasedPasswordReset extends javax.swing.JFrame {
                 .addComponent(ResetYourPasswordLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(BestForSecuringLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
-                .addComponent(FullNameTextfield, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
-                .addComponent(CurrentPasswordTextfield, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(NewPasswordTextfield, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(ConfirmNewPasswordTextfield, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Fullnametextfield, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(fullnamelabel))
+                .addGap(30, 30, 30)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(currentpasswordlabel)
+                    .addComponent(currentpasswordtextfield, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(37, 37, 37)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(newpasswordlabel)
+                    .addComponent(newpasswordtextfield, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(42, 42, 42)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(confirmnewpasswordlabel)
+                    .addComponent(confirmnewpasswordtextfield, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(24, 24, 24)
                 .addComponent(termsandconditioncheckbox)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(ChangePasswordButton, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(59, 59, 59))
+                .addGap(18, 18, 18)
+                .addComponent(changepasswordbutton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(65, 65, 65))
         );
 
         getContentPane().add(jPanel2);
         jPanel2.setBounds(300, 60, 450, 500);
 
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1050, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 600, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(jPanel1);
+        jPanel1.setBounds(0, 0, 1050, 600);
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void FullNameTextfieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FullNameTextfieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_FullNameTextfieldActionPerformed
-
-    private void CurrentPasswordTextfieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CurrentPasswordTextfieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_CurrentPasswordTextfieldActionPerformed
-
-    private void ChangePasswordButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChangePasswordButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ChangePasswordButtonActionPerformed
-
-    private void NewPasswordTextfieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NewPasswordTextfieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_NewPasswordTextfieldActionPerformed
 
     private void termsandconditioncheckboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_termsandconditioncheckboxActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_termsandconditioncheckboxActionPerformed
+
+    private void FullnametextfieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FullnametextfieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FullnametextfieldActionPerformed
+
+    private void currentpasswordtextfieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_currentpasswordtextfieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_currentpasswordtextfieldActionPerformed
+
+    private void newpasswordtextfieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newpasswordtextfieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_newpasswordtextfieldActionPerformed
+
+    private void changepasswordbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_changepasswordbuttonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_changepasswordbuttonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -197,14 +233,19 @@ public class OTPBasedPasswordReset extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel BestForSecuringLabel;
-    private javax.swing.JButton ChangePasswordButton;
-    private javax.swing.JTextField ConfirmNewPasswordTextfield;
-    private javax.swing.JTextField CurrentPasswordTextfield;
     private javax.swing.JLabel DokoLabel;
-    private javax.swing.JTextField FullNameTextfield;
-    private javax.swing.JTextField NewPasswordTextfield;
+    private javax.swing.JTextField Fullnametextfield;
     private javax.swing.JLabel ResetYourPasswordLabel;
+    private javax.swing.JButton changepasswordbutton;
+    private javax.swing.JLabel confirmnewpasswordlabel;
+    private javax.swing.JTextField confirmnewpasswordtextfield;
+    private javax.swing.JLabel currentpasswordlabel;
+    private javax.swing.JTextField currentpasswordtextfield;
+    private javax.swing.JLabel fullnamelabel;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JLabel newpasswordlabel;
+    private javax.swing.JTextField newpasswordtextfield;
     private javax.swing.JCheckBox termsandconditioncheckbox;
     // End of variables declaration//GEN-END:variables
 }

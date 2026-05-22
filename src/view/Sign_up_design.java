@@ -46,9 +46,9 @@ public class Sign_up_design extends javax.swing.JPanel {
         App_name = new javax.swing.JLabel();
         sign_in_label = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        registerBtn = new javax.swing.JTextField();
+        RegisterBtn = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
-        loginBtn = new javax.swing.JLabel();
+        LoginBtn = new javax.swing.JLabel();
         verify = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
@@ -144,25 +144,25 @@ public class Sign_up_design extends javax.swing.JPanel {
         jPanel2.add(jLabel7);
         jLabel7.setBounds(40, 233, 80, 16);
 
-        registerBtn.setBackground(new java.awt.Color(41, 51, 123));
-        registerBtn.setFont(new java.awt.Font("REM", 0, 18)); // NOI18N
-        registerBtn.setForeground(new java.awt.Color(255, 255, 255));
-        registerBtn.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        registerBtn.setText("Register");
-        registerBtn.addActionListener(this::registerBtnActionPerformed);
-        jPanel2.add(registerBtn);
-        registerBtn.setBounds(150, 380, 124, 30);
+        RegisterBtn.setBackground(new java.awt.Color(41, 51, 123));
+        RegisterBtn.setFont(new java.awt.Font("REM", 0, 18)); // NOI18N
+        RegisterBtn.setForeground(new java.awt.Color(255, 255, 255));
+        RegisterBtn.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        RegisterBtn.setText("Register");
+        RegisterBtn.addActionListener(this::RegisterBtnActionPerformed);
+        jPanel2.add(RegisterBtn);
+        RegisterBtn.setBounds(150, 380, 124, 30);
 
         jLabel11.setFont(new java.awt.Font("REM", 0, 12)); // NOI18N
         jLabel11.setText("Already have an account?");
         jPanel2.add(jLabel11);
         jLabel11.setBounds(130, 420, 140, 16);
 
-        loginBtn.setFont(new java.awt.Font("REM", 1, 12)); // NOI18N
-        loginBtn.setForeground(new java.awt.Color(41, 51, 123));
-        loginBtn.setText("LOG-IN");
-        jPanel2.add(loginBtn);
-        loginBtn.setBounds(270, 420, 50, 16);
+        LoginBtn.setFont(new java.awt.Font("REM", 1, 12)); // NOI18N
+        LoginBtn.setForeground(new java.awt.Color(41, 51, 123));
+        LoginBtn.setText("LOG-IN");
+        jPanel2.add(LoginBtn);
+        LoginBtn.setBounds(270, 420, 50, 16);
 
         verify.setText("Verify");
         verify.setMaximumSize(new java.awt.Dimension(62, 22));
@@ -230,9 +230,9 @@ public class Sign_up_design extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_phoneNumActionPerformed
 
-    private void registerBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerBtnActionPerformed
+    private void RegisterBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegisterBtnActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_registerBtnActionPerformed
+    }//GEN-LAST:event_RegisterBtnActionPerformed
 
     private void trackingFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_trackingFieldActionPerformed
         // TODO add your handling code here:
@@ -245,6 +245,8 @@ public class Sign_up_design extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel App_name;
+    private javax.swing.JLabel LoginBtn;
+    private javax.swing.JTextField RegisterBtn;
     private javax.swing.JTextField addressField;
     private javax.swing.JTextField emailField;
     private javax.swing.JLabel jLabel1;
@@ -264,11 +266,9 @@ public class Sign_up_design extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JLabel loginBtn;
     private javax.swing.JTextField nameField;
     private javax.swing.JTextField passwordField;
     private javax.swing.JTextField phoneNum;
-    private javax.swing.JTextField registerBtn;
     private javax.swing.JTextField roleFileld;
     private javax.swing.JLabel sign_in_label;
     private javax.swing.JCheckBox termsAndCondition;

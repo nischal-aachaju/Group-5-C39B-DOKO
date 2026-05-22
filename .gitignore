@@ -1,5 +1,5 @@
-src/DB
-nbproject/
+/src/DB
+
 
 # NetBeans Specific
 /nbproject/private/

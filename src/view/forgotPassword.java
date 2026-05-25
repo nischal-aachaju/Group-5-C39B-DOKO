@@ -47,172 +47,100 @@ public class forgotPassword extends javax.swing.JFrame {
         DOKO = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(null);
 
         jPanel1.setBackground(new java.awt.Color(236, 236, 236));
         jPanel1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(217, 217, 217), new java.awt.Color(217, 217, 217), new java.awt.Color(217, 217, 217), new java.awt.Color(217, 217, 217)));
         jPanel1.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel1.setLayout(null);
 
         Fullname.setText("Fullname");
+        jPanel1.add(Fullname);
+        Fullname.setBounds(30, 140, 49, 16);
 
         Email.setText("Email");
+        jPanel1.add(Email);
+        Email.setBounds(30, 180, 70, 16);
 
         otp.setText("OTP");
+        jPanel1.add(otp);
+        otp.setBounds(30, 220, 30, 16);
 
         NewPassword.setText("New password");
+        jPanel1.add(NewPassword);
+        NewPassword.setBounds(30, 270, 110, 16);
 
         ConfirmNewpassword.setText("Confirm new password");
+        jPanel1.add(ConfirmNewpassword);
+        ConfirmNewpassword.setBounds(40, 300, 122, 16);
 
         FullnameTextField.setBackground(new java.awt.Color(217, 217, 217));
         FullnameTextField.setText("Unish Gautam");
         FullnameTextField.addActionListener(this::FullnameTextFieldActionPerformed);
+        jPanel1.add(FullnameTextField);
+        FullnameTextField.setBounds(180, 130, 298, 22);
 
         EmailTextField.setBackground(new java.awt.Color(217, 217, 217));
         EmailTextField.setText("unishgautam07@gmail.com");
+        jPanel1.add(EmailTextField);
+        EmailTextField.setBounds(180, 180, 203, 22);
 
         OtpTextField.setBackground(new java.awt.Color(217, 217, 217));
         OtpTextField.setText("123456789");
         OtpTextField.addActionListener(this::OtpTextFieldActionPerformed);
+        jPanel1.add(OtpTextField);
+        OtpTextField.setBounds(180, 220, 298, 22);
 
         ConfirmNewPasswordField.setBackground(new java.awt.Color(217, 217, 217));
         ConfirmNewPasswordField.setText("jPasswordField1");
         ConfirmNewPasswordField.addActionListener(this::ConfirmNewPasswordFieldActionPerformed);
+        jPanel1.add(ConfirmNewPasswordField);
+        ConfirmNewPasswordField.setBounds(180, 300, 298, 22);
 
         NewPasswordField.setBackground(new java.awt.Color(217, 217, 217));
         NewPasswordField.setText("jPasswordField2");
         NewPasswordField.addActionListener(this::NewPasswordFieldActionPerformed);
+        jPanel1.add(NewPasswordField);
+        NewPasswordField.setBounds(180, 260, 298, 22);
 
         ForgetPassword.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
         ForgetPassword.setForeground(new java.awt.Color(41, 51, 123));
         ForgetPassword.setText("Forget password ");
+        jPanel1.add(ForgetPassword);
+        ForgetPassword.setBounds(170, 30, 201, 32);
 
         WhyYouForget.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
         WhyYouForget.setText("Why you forget?");
+        jPanel1.add(WhyYouForget);
+        WhyYouForget.setBounds(190, 70, 170, 24);
 
         OtpButton.setBackground(new java.awt.Color(217, 217, 217));
         OtpButton.setText("Send OTP");
         OtpButton.addActionListener(this::OtpButtonActionPerformed);
+        jPanel1.add(OtpButton);
+        OtpButton.setBounds(390, 180, 82, 22);
 
         ChangePassword.setBackground(new java.awt.Color(213, 173, 100));
         ChangePassword.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
         ChangePassword.setForeground(new java.awt.Color(255, 255, 255));
         ChangePassword.setText("Change Password");
+        ChangePassword.addActionListener(this::ChangePasswordActionPerformed);
+        jPanel1.add(ChangePassword);
+        ChangePassword.setBounds(170, 420, 165, 32);
 
         TermsCheckBox.setText("Terms & Condition");
+        jPanel1.add(TermsCheckBox);
+        TermsCheckBox.setBounds(170, 390, 125, 20);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(45, 45, 45)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(NewPassword)
-                            .addComponent(Fullname)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(otp, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(Email, javax.swing.GroupLayout.Alignment.LEADING)))
-                        .addGap(65, 65, 65))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(ConfirmNewpassword)
-                        .addGap(18, 18, 18)))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(OtpTextField)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(ChangePassword, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(133, 133, 133))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(FullnameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(EmailTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(OtpButton))
-                                    .addComponent(NewPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGap(17, 17, 17)
-                                        .addComponent(WhyYouForget))
-                                    .addComponent(TermsCheckBox))
-                                .addGap(0, 0, Short.MAX_VALUE)))
-                        .addContainerGap(63, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(ConfirmNewPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(ForgetPassword)
-                .addGap(175, 175, 175))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(39, 39, 39)
-                .addComponent(ForgetPassword)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(WhyYouForget)
-                .addGap(49, 49, 49)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(FullnameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Fullname))
-                .addGap(45, 45, 45)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(EmailTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(OtpButton, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Email))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(OtpTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(otp))
-                .addGap(44, 44, 44)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(NewPassword)
-                    .addComponent(NewPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(45, 45, 45)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ConfirmNewPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ConfirmNewpassword))
-                .addGap(57, 57, 57)
-                .addComponent(TermsCheckBox)
-                .addGap(44, 44, 44)
-                .addComponent(ChangePassword, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(92, 92, 92))
-        );
+        getContentPane().add(jPanel1);
+        jPanel1.setBounds(292, 26, 520, 470);
 
         DOKO.setBackground(new java.awt.Color(41, 51, 123));
         DOKO.setFont(new java.awt.Font("Helvetica Neue", 1, 36)); // NOI18N
         DOKO.setForeground(new java.awt.Color(41, 51, 123));
         DOKO.setText("DOKO");
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(DOKO, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(1394, Short.MAX_VALUE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(DOKO)
-                .addGap(0, 795, Short.MAX_VALUE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
+        getContentPane().add(DOKO);
+        DOKO.setBounds(6, 0, 150, 47);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -236,6 +164,10 @@ public class forgotPassword extends javax.swing.JFrame {
     private void OtpButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OtpButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_OtpButtonActionPerformed
+
+    private void ChangePasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChangePasswordActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ChangePasswordActionPerformed
 
     /**
      * @param args the command line arguments

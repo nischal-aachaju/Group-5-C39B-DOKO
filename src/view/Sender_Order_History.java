@@ -36,8 +36,6 @@ public class Sender_Order_History extends javax.swing.JFrame {
         workload = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         ManageOrders = new javax.swing.JButton();
-        PriceConfiguration = new javax.swing.JButton();
-        MyProfile = new javax.swing.JButton();
         jSeparator2 = new javax.swing.JSeparator();
         jButton12 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
@@ -47,13 +45,11 @@ public class Sender_Order_History extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         profile = new javax.swing.JLabel();
-        PendingShipment = new javax.swing.JButton();
-        jButton11 = new javax.swing.JButton();
-        deliveredShipment = new javax.swing.JButton();
-        ActiveShipment = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         OrderTable = new javax.swing.JTable();
-        RecentOrders = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(238, 233, 223));
@@ -73,33 +69,23 @@ public class Sender_Order_History extends javax.swing.JFrame {
         ManageUser.setBackground(new java.awt.Color(33, 38, 49));
         ManageUser.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
         ManageUser.setForeground(new java.awt.Color(255, 255, 255));
-        ManageUser.setText("Manage User");
+        ManageUser.setText("Create Orders");
         ManageUser.addActionListener(this::ManageUserActionPerformed);
 
         workload.setBackground(new java.awt.Color(33, 38, 49));
         workload.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
         workload.setForeground(new java.awt.Color(255, 255, 255));
-        workload.setText("Workload");
+        workload.setText("My Shipments");
 
-        jButton4.setBackground(new java.awt.Color(33, 38, 49));
+        jButton4.setBackground(new java.awt.Color(255, 154, 61));
         jButton4.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
         jButton4.setForeground(new java.awt.Color(255, 255, 255));
-        jButton4.setText("Branch & Network");
+        jButton4.setText("Order History");
 
         ManageOrders.setBackground(new java.awt.Color(33, 38, 49));
         ManageOrders.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
         ManageOrders.setForeground(new java.awt.Color(255, 255, 255));
-        ManageOrders.setText("Manage Order");
-
-        PriceConfiguration.setBackground(new java.awt.Color(33, 38, 49));
-        PriceConfiguration.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
-        PriceConfiguration.setForeground(new java.awt.Color(255, 255, 255));
-        PriceConfiguration.setText("Price Configuration");
-
-        MyProfile.setBackground(new java.awt.Color(33, 38, 49));
-        MyProfile.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
-        MyProfile.setForeground(new java.awt.Color(255, 255, 255));
-        MyProfile.setText("My Profile");
+        ManageOrders.setText("My Profile");
 
         jButton12.setBackground(new java.awt.Color(33, 38, 49));
         jButton12.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
@@ -120,7 +106,7 @@ public class Sender_Order_History extends javax.swing.JFrame {
         sidebarLayout.setHorizontalGroup(
             sidebarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(sidebarLayout.createSequentialGroup()
-                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 174, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(logo))
             .addComponent(jSeparator2)
@@ -132,8 +118,6 @@ public class Sender_Order_History extends javax.swing.JFrame {
                     .addComponent(workload, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(ManageOrders, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(PriceConfiguration, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE)
-                    .addComponent(MyProfile, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, sidebarLayout.createSequentialGroup()
                         .addComponent(jButton12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -157,13 +141,9 @@ public class Sender_Order_History extends javax.swing.JFrame {
                 .addComponent(workload, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(ManageOrders, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(PriceConfiguration, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(MyProfile, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 181, Short.MAX_VALUE)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(22, 22, 22)
                 .addGroup(sidebarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -183,55 +163,56 @@ public class Sender_Order_History extends javax.swing.JFrame {
 
         profile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/profile.png"))); // NOI18N
 
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel3.setText("Nischal Shrestha");
+
+        jLabel6.setText("Sender");
+
         javax.swing.GroupLayout TopbarLayout = new javax.swing.GroupLayout(Topbar);
         Topbar.setLayout(TopbarLayout);
         TopbarLayout.setHorizontalGroup(
             TopbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(TopbarLayout.createSequentialGroup()
-                .addContainerGap(768, Short.MAX_VALUE)
+                .addContainerGap(635, Short.MAX_VALUE)
+                .addComponent(profile)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(profile))
+                .addGroup(TopbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TopbarLayout.createSequentialGroup()
+                        .addComponent(jLabel5)
+                        .addGap(90, 90, 90))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TopbarLayout.createSequentialGroup()
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18))
+                    .addGroup(TopbarLayout.createSequentialGroup()
+                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())))
         );
         TopbarLayout.setVerticalGroup(
             TopbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(TopbarLayout.createSequentialGroup()
                 .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(TopbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(TopbarLayout.createSequentialGroup()
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel6))))
             .addGroup(TopbarLayout.createSequentialGroup()
                 .addComponent(profile, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
         MainPanel.add(Topbar);
-        Topbar.setBounds(186, 0, 864, 75);
-
-        PendingShipment.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
-        PendingShipment.setText("Pending Shipment");
-        MainPanel.add(PendingShipment);
-        PendingShipment.setBounds(831, 117, 173, 60);
-
-        jButton11.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
-        jButton11.setText("Active Employee");
-        MainPanel.add(jButton11);
-        jButton11.setBounds(519, 211, 231, 60);
-
-        deliveredShipment.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
-        deliveredShipment.setText("Delivered Shipment");
-        MainPanel.add(deliveredShipment);
-        deliveredShipment.setBounds(242, 211, 183, 60);
-
-        ActiveShipment.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
-        ActiveShipment.setText("Active Shipment");
-        MainPanel.add(ActiveShipment);
-        ActiveShipment.setBounds(242, 117, 183, 60);
+        Topbar.setBounds(180, 0, 864, 75);
 
         OrderTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"1001", "Nishchal", "Electronics", "Pending", "20 May", "Rs 500"},
+                {"1002", "Nirjal", "Laptop", "Delivered", "25 May", "Rs 400"},
+                {null, null, null, null, null, null},
                 {null, null, null, null, null, null},
                 {null, null, null, null, null, null},
                 {null, null, null, null, null, null},
@@ -254,12 +235,11 @@ public class Sender_Order_History extends javax.swing.JFrame {
         jScrollPane1.setViewportView(OrderTable);
 
         MainPanel.add(jScrollPane1);
-        jScrollPane1.setBounds(242, 313, 762, 300);
+        jScrollPane1.setBounds(230, 170, 760, 440);
 
-        RecentOrders.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
-        RecentOrders.setText("Recent Orders");
-        MainPanel.add(RecentOrders);
-        RecentOrders.setBounds(519, 117, 231, 60);
+        jButton1.setText("Filter");
+        MainPanel.add(jButton1);
+        jButton1.setBounds(920, 120, 75, 23);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -305,25 +285,21 @@ public class Sender_Order_History extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton ActiveShipment;
     private javax.swing.JButton Dashboard;
     private javax.swing.JPanel MainPanel;
     private javax.swing.JButton ManageOrders;
     private javax.swing.JButton ManageUser;
-    private javax.swing.JButton MyProfile;
     private javax.swing.JTable OrderTable;
-    private javax.swing.JButton PendingShipment;
-    private javax.swing.JButton PriceConfiguration;
-    private javax.swing.JButton RecentOrders;
     private javax.swing.JPanel Topbar;
-    private javax.swing.JButton deliveredShipment;
-    private javax.swing.JButton jButton11;
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;

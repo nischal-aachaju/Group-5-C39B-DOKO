@@ -8,14 +8,14 @@ package view;
  *
  * @author Acer
  */
-public class Sender_Order_History extends javax.swing.JFrame {
+public class Employee_Order_History extends javax.swing.JFrame {
     
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Sender_Order_History.class.getName());
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Employee_Order_History.class.getName());
 
     /**
      * Creates new form Admin_Dashboard
      */
-    public Sender_Order_History() {
+    public Employee_Order_History() {
         initComponents();
     }
 
@@ -32,7 +32,7 @@ public class Sender_Order_History extends javax.swing.JFrame {
         sidebar = new javax.swing.JPanel();
         jSeparator1 = new javax.swing.JSeparator();
         Dashboard = new javax.swing.JButton();
-        CreateOrder = new javax.swing.JButton();
+        manageOrders = new javax.swing.JButton();
         myShipments = new javax.swing.JButton();
         orderHistory = new javax.swing.JButton();
         MyProfile = new javax.swing.JButton();
@@ -66,11 +66,11 @@ public class Sender_Order_History extends javax.swing.JFrame {
         Dashboard.setText("Dashboard");
         Dashboard.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 1, true));
 
-        CreateOrder.setBackground(new java.awt.Color(33, 38, 49));
-        CreateOrder.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
-        CreateOrder.setForeground(new java.awt.Color(255, 255, 255));
-        CreateOrder.setText("Create Orders");
-        CreateOrder.addActionListener(this::CreateOrderActionPerformed);
+        manageOrders.setBackground(new java.awt.Color(33, 38, 49));
+        manageOrders.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
+        manageOrders.setForeground(new java.awt.Color(255, 255, 255));
+        manageOrders.setText("Manage Orders");
+        manageOrders.addActionListener(this::manageOrdersActionPerformed);
 
         myShipments.setBackground(new java.awt.Color(33, 38, 49));
         myShipments.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
@@ -114,7 +114,7 @@ public class Sender_Order_History extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(sidebarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Dashboard, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(CreateOrder, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(manageOrders, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(myShipments, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(orderHistory, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(MyProfile, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -136,9 +136,9 @@ public class Sender_Order_History extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Dashboard, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(CreateOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(8, 8, 8)
                 .addComponent(myShipments, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(8, 8, 8)
+                .addComponent(manageOrders, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(orderHistory, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -166,7 +166,7 @@ public class Sender_Order_History extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel3.setText("Nischal Shrestha");
 
-        jLabel6.setText("Sender");
+        jLabel6.setText("Employee");
 
         javax.swing.GroupLayout TopbarLayout = new javax.swing.GroupLayout(Topbar);
         Topbar.setLayout(TopbarLayout);
@@ -255,9 +255,9 @@ public class Sender_Order_History extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void CreateOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CreateOrderActionPerformed
+    private void manageOrdersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageOrdersActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_CreateOrderActionPerformed
+    }//GEN-LAST:event_manageOrdersActionPerformed
 
     /**
      * @param args the command line arguments
@@ -281,11 +281,10 @@ public class Sender_Order_History extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new Sender_Order_History().setVisible(true));
+        java.awt.EventQueue.invokeLater(() -> new Employee_Order_History().setVisible(true));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton CreateOrder;
     private javax.swing.JButton Dashboard;
     private javax.swing.JButton Logout;
     private javax.swing.JPanel MainPanel;
@@ -303,6 +302,7 @@ public class Sender_Order_History extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JLabel logo;
+    private javax.swing.JButton manageOrders;
     private javax.swing.JButton myShipments;
     private javax.swing.JButton orderHistory;
     private javax.swing.JLabel profile;

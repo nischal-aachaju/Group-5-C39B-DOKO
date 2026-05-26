@@ -129,7 +129,7 @@ public class AdminOrderEdit extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(33, 38, 49));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/dokologo.jpeg"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/dokologo.jpeg"))); // NOI18N
         jLabel1.setText("jLabel1");
         jLabel1.setPreferredSize(new java.awt.Dimension(99, 47));
 

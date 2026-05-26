@@ -2,18 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-<<<<<<< HEAD
-            <file>file:/C:/Users/sthan/OneDrive/Desktop/project/Group-5-C39B-DOKO/src/Model/userData.java</file>
-=======
-            <file>file:/D:/Group-5-C39B-DOKO/src/view/Sign_up_design.java</file>
-            <file>file:/D:/Group-5-C39B-DOKO/src/view/Admin_Dashboard.java</file>
-            <file>file:/D:/Group-5-C39B-DOKO/src/view/Employee_Dashboard.java</file>
-            <file>file:/D:/Group-5-C39B-DOKO/src/view/Manager_Dashboard.java</file>
-            <file>file:/D:/Group-5-C39B-DOKO/src/view/OTPBasedPasswordReset.java</file>
-            <file>file:/D:/Group-5-C39B-DOKO/src/view/Sender_Dashboard.java</file>
-            <file>file:/D:/Group-5-C39B-DOKO/src/view/forgotPassword.java</file>
->>>>>>> 069c4df95c883e7b623047e6c72edb3e8e92ecdd
-        </group>
+        <group/>
     </open-files>
 </project-private>

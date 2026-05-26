@@ -91,7 +91,7 @@ public class EmployeeOrderEdit extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(33, 38, 49));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/dokologo.jpeg"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/dokologo.jpeg"))); // NOI18N
         jLabel1.setText("jLabel1");
         jLabel1.setPreferredSize(new java.awt.Dimension(99, 47));
 
@@ -110,7 +110,7 @@ public class EmployeeOrderEdit extends javax.swing.JFrame {
         myprofilebutton.setForeground(new java.awt.Color(255, 255, 255));
         myprofilebutton.setText("My profile");
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/logout.png"))); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/logout_2.png"))); // NOI18N
         jLabel4.setText("jLabel4");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -174,7 +174,7 @@ public class EmployeeOrderEdit extends javax.swing.JFrame {
         Rolelabel.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
         Rolelabel.setText("Role");
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/pfp.jpg"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/pfp_2.jpg"))); // NOI18N
         jLabel2.setText("jLabel2");
 
         javax.swing.GroupLayout toppanelLayout = new javax.swing.GroupLayout(toppanel);

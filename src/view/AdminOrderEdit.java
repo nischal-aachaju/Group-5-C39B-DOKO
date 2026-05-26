@@ -36,31 +36,33 @@ public class AdminOrderEdit extends javax.swing.JFrame {
         priceconfigurationbutton = new javax.swing.JButton();
         myprofilebutton = new javax.swing.JButton();
         logoutbutton = new javax.swing.JButton();
-        Orderdetaillabel = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        jSeparator1 = new javax.swing.JSeparator();
+        jSeparator2 = new javax.swing.JSeparator();
+        jLabel1 = new javax.swing.JLabel();
+        logoutlabel = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        TrackingIdtextfield = new javax.swing.JTextField();
+        toppanel = new javax.swing.JPanel();
+        namelabel = new javax.swing.JLabel();
+        Rolelabel = new javax.swing.JLabel();
+        pfplabel = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        savebutton = new javax.swing.JButton();
+        editbutton = new javax.swing.JButton();
+        jTextField7 = new javax.swing.JTextField();
+        receiveraddresstextfield = new javax.swing.JTextField();
+        senderaddresstextfield = new javax.swing.JTextField();
+        receiveremailtextfield = new javax.swing.JTextField();
+        receivernametextfield = new javax.swing.JTextField();
+        trackingidtextfield = new javax.swing.JTextField();
         trackingIDlabel = new javax.swing.JLabel();
         receivernamelabel = new javax.swing.JLabel();
         receiveremaillabel = new javax.swing.JLabel();
         senderaddresslabel = new javax.swing.JLabel();
         receiveraddresslabel = new javax.swing.JLabel();
         totalcostlabel = new javax.swing.JLabel();
-        trackingidtextfield = new javax.swing.JTextField();
-        receivernametextfield = new javax.swing.JTextField();
-        receiveremailtextfield = new javax.swing.JTextField();
-        senderaddresstextfield = new javax.swing.JTextField();
-        receiveraddresstextfield = new javax.swing.JTextField();
-        jPanel3 = new javax.swing.JPanel();
-        jSeparator1 = new javax.swing.JSeparator();
-        jSeparator2 = new javax.swing.JSeparator();
-        jLabel1 = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
-        savebutton = new javax.swing.JButton();
-        editbutton = new javax.swing.JButton();
-        jTextField7 = new javax.swing.JTextField();
-        jPanel2 = new javax.swing.JPanel();
-        TrackingIdtextfield = new javax.swing.JTextField();
-        toppanel = new javax.swing.JPanel();
-        namelabel = new javax.swing.JLabel();
-        Rolelabel = new javax.swing.JLabel();
+        Orderdetaillabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
@@ -125,77 +127,14 @@ public class AdminOrderEdit extends javax.swing.JFrame {
         getContentPane().add(logoutbutton);
         logoutbutton.setBounds(14, 544, 100, 50);
 
-        Orderdetaillabel.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
-        Orderdetaillabel.setText("Order Details:");
-        getContentPane().add(Orderdetaillabel);
-        Orderdetaillabel.setBounds(240, 220, 117, 25);
-
-        trackingIDlabel.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
-        trackingIDlabel.setText("Tracking ID:");
-        getContentPane().add(trackingIDlabel);
-        trackingIDlabel.setBounds(238, 264, 102, 25);
-
-        receivernamelabel.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
-        receivernamelabel.setText("Receiver Name:");
-        getContentPane().add(receivernamelabel);
-        receivernamelabel.setBounds(238, 301, 122, 25);
-
-        receiveremaillabel.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
-        receiveremaillabel.setText("Receiver Email:");
-        getContentPane().add(receiveremaillabel);
-        receiveremaillabel.setBounds(238, 344, 122, 25);
-
-        senderaddresslabel.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
-        senderaddresslabel.setText("Sender Address:");
-        getContentPane().add(senderaddresslabel);
-        senderaddresslabel.setBounds(238, 387, 122, 25);
-
-        receiveraddresslabel.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
-        receiveraddresslabel.setText("Receiver Address:");
-        getContentPane().add(receiveraddresslabel);
-        receiveraddresslabel.setBounds(238, 430, 134, 25);
-
-        totalcostlabel.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
-        totalcostlabel.setText("Total cost:");
-        getContentPane().add(totalcostlabel);
-        totalcostlabel.setBounds(238, 467, 134, 25);
-
-        trackingidtextfield.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
-        trackingidtextfield.setText("#1111");
-        trackingidtextfield.setBorder(null);
-        getContentPane().add(trackingidtextfield);
-        trackingidtextfield.setBounds(390, 260, 280, 25);
-
-        receivernametextfield.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
-        receivernametextfield.setText("Ram");
-        receivernametextfield.setBorder(null);
-        getContentPane().add(receivernametextfield);
-        receivernametextfield.setBounds(390, 300, 280, 25);
-
-        receiveremailtextfield.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
-        receiveremailtextfield.setText("ram@gmail.com\n");
-        receiveremailtextfield.setBorder(null);
-        receiveremailtextfield.addActionListener(this::receiveremailtextfieldActionPerformed);
-        getContentPane().add(receiveremailtextfield);
-        receiveremailtextfield.setBounds(390, 340, 280, 25);
-
-        senderaddresstextfield.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
-        senderaddresstextfield.setText("Dillibazar pipalbot");
-        senderaddresstextfield.setBorder(null);
-        getContentPane().add(senderaddresstextfield);
-        senderaddresstextfield.setBounds(390, 380, 280, 30);
-
-        receiveraddresstextfield.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
-        receiveraddresstextfield.setText("Kapan");
-        receiveraddresstextfield.setBorder(null);
-        getContentPane().add(receiveraddresstextfield);
-        receiveraddresstextfield.setBounds(390, 420, 280, 25);
-
         jPanel3.setBackground(new java.awt.Color(33, 38, 49));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/dokologo.jpeg"))); // NOI18N
         jLabel1.setText("jLabel1");
         jLabel1.setPreferredSize(new java.awt.Dimension(99, 47));
+
+        logoutlabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/logout.png"))); // NOI18N
+        logoutlabel.setText("jLabel2");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -207,6 +146,10 @@ public class AdminOrderEdit extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(15, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(logoutlabel, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -217,60 +160,13 @@ public class AdminOrderEdit extends javax.swing.JFrame {
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 425, Short.MAX_VALUE)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(59, 59, 59))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(logoutlabel, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         getContentPane().add(jPanel3);
         jPanel3.setBounds(0, 0, 190, 600);
-
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(168, 168, 168)));
-
-        savebutton.setBackground(new java.awt.Color(244, 246, 248));
-        savebutton.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
-        savebutton.setText("Save");
-
-        editbutton.setBackground(new java.awt.Color(244, 246, 248));
-        editbutton.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
-        editbutton.setText("Edit");
-
-        jTextField7.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
-        jTextField7.setText("1200");
-        jTextField7.setBorder(null);
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(editbutton))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(168, 168, 168)
-                        .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 185, Short.MAX_VALUE)
-                        .addComponent(savebutton)))
-                .addGap(23, 23, 23))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addComponent(editbutton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 218, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(savebutton)
-                        .addGap(27, 27, 27))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(45, 45, 45))))
-        );
-
-        getContentPane().add(jPanel1);
-        jPanel1.setBounds(220, 200, 730, 340);
 
         jPanel2.setBackground(new java.awt.Color(238, 233, 223));
 
@@ -287,12 +183,17 @@ public class AdminOrderEdit extends javax.swing.JFrame {
         Rolelabel.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
         Rolelabel.setText("Role");
 
+        pfplabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/pfp.jpg"))); // NOI18N
+        pfplabel.setText("jLabel2");
+
         javax.swing.GroupLayout toppanelLayout = new javax.swing.GroupLayout(toppanel);
         toppanel.setLayout(toppanelLayout);
         toppanelLayout.setHorizontalGroup(
             toppanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, toppanelLayout.createSequentialGroup()
-                .addContainerGap(794, Short.MAX_VALUE)
+                .addContainerGap(739, Short.MAX_VALUE)
+                .addComponent(pfplabel, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addGroup(toppanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Rolelabel, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(namelabel, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -300,33 +201,183 @@ public class AdminOrderEdit extends javax.swing.JFrame {
         );
         toppanelLayout.setVerticalGroup(
             toppanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(toppanelLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, toppanelLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(namelabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Rolelabel)
+                .addGroup(toppanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(pfplabel, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(toppanelLayout.createSequentialGroup()
+                        .addComponent(namelabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Rolelabel)))
                 .addGap(12, 12, 12))
+        );
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(168, 168, 168)));
+
+        savebutton.setBackground(new java.awt.Color(244, 246, 248));
+        savebutton.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
+        savebutton.setText("Save");
+
+        editbutton.setBackground(new java.awt.Color(244, 246, 248));
+        editbutton.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
+        editbutton.setText("Edit");
+
+        jTextField7.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
+        jTextField7.setText("1200");
+        jTextField7.setBorder(null);
+
+        receiveraddresstextfield.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
+        receiveraddresstextfield.setText(" Kapan");
+        receiveraddresstextfield.setBorder(null);
+        receiveraddresstextfield.addActionListener(this::receiveraddresstextfieldActionPerformed);
+
+        senderaddresstextfield.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
+        senderaddresstextfield.setText("Dillibazar pipalbot");
+        senderaddresstextfield.setBorder(null);
+
+        receiveremailtextfield.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
+        receiveremailtextfield.setText("ram@gmail.com\n");
+        receiveremailtextfield.setBorder(null);
+        receiveremailtextfield.addActionListener(this::receiveremailtextfieldActionPerformed);
+
+        receivernametextfield.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
+        receivernametextfield.setText("Ram");
+        receivernametextfield.setBorder(null);
+
+        trackingidtextfield.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
+        trackingidtextfield.setText("#1111");
+        trackingidtextfield.setBorder(null);
+
+        trackingIDlabel.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
+        trackingIDlabel.setText("Tracking ID:");
+
+        receivernamelabel.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
+        receivernamelabel.setText("Receiver Name:");
+
+        receiveremaillabel.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
+        receiveremaillabel.setText("Receiver Email:");
+
+        senderaddresslabel.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
+        senderaddresslabel.setText("Sender Address:");
+
+        receiveraddresslabel.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
+        receiveraddresslabel.setText("Receiver Address:");
+
+        totalcostlabel.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
+        totalcostlabel.setText("Total cost:");
+
+        Orderdetaillabel.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
+        Orderdetaillabel.setText("Order Details:");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(editbutton))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                .addGap(31, 31, 31)
+                                .addComponent(Orderdetaillabel, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(28, 28, 28)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(trackingIDlabel, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(trackingidtextfield, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                            .addComponent(totalcostlabel, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                            .addComponent(senderaddresslabel)
+                                            .addGap(18, 18, 18)
+                                            .addComponent(senderaddresstextfield, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                            .addComponent(receiveremaillabel, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGap(18, 18, 18)
+                                            .addComponent(receiveremailtextfield, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                            .addComponent(receivernamelabel)
+                                            .addGap(18, 18, 18)
+                                            .addComponent(receivernametextfield, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                            .addComponent(receiveraddresslabel)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(receiveraddresstextfield, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 185, Short.MAX_VALUE)
+                        .addComponent(savebutton)))
+                .addGap(23, 23, 23))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(editbutton)
+                    .addComponent(Orderdetaillabel))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(trackingidtextfield, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(trackingIDlabel))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(receivernametextfield, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(receivernamelabel))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(receiveremailtextfield, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(receiveremaillabel))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(senderaddresstextfield, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(senderaddresslabel))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(receiveraddresstextfield, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(receiveraddresslabel))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(savebutton)
+                        .addGap(27, 27, 27))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(totalcostlabel))
+                        .addGap(45, 45, 45))))
         );
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(217, 217, 217)
-                .addComponent(TrackingIdtextfield, javax.swing.GroupLayout.PREFERRED_SIZE, 420, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(413, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
+                .addGap(0, 155, Short.MAX_VALUE)
                 .addComponent(toppanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(TrackingIdtextfield, javax.swing.GroupLayout.PREFERRED_SIZE, 420, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(54, 54, 54))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addComponent(toppanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(69, 69, 69)
+                .addGap(43, 43, 43)
                 .addComponent(TrackingIdtextfield, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(411, Short.MAX_VALUE))
+                .addGap(38, 38, 38)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(59, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel2);
@@ -350,6 +401,10 @@ public class AdminOrderEdit extends javax.swing.JFrame {
     private void receiveremailtextfieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_receiveremailtextfieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_receiveremailtextfieldActionPerformed
+
+    private void receiveraddresstextfieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_receiveraddresstextfieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_receiveraddresstextfieldActionPerformed
 
     /**
      * @param args the command line arguments
@@ -394,8 +449,10 @@ public class AdminOrderEdit extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JTextField jTextField7;
     private javax.swing.JButton logoutbutton;
+    private javax.swing.JLabel logoutlabel;
     private javax.swing.JButton myprofilebutton;
     private javax.swing.JLabel namelabel;
+    private javax.swing.JLabel pfplabel;
     private javax.swing.JButton priceconfigurationbutton;
     private javax.swing.JLabel receiveraddresslabel;
     private javax.swing.JTextField receiveraddresstextfield;

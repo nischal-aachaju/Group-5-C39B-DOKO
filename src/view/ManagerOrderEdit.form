@@ -213,8 +213,8 @@
               </Group>
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="32767" attributes="0"/>
-                  <Component id="logoutlabel" min="-2" pref="38" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                  <Component id="logoutlabel" min="-2" pref="48" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -242,7 +242,7 @@
         <Component class="javax.swing.JLabel" name="jLabel1">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/view/dokologo.jpeg"/>
+              <Image iconType="3" name="/image/dokologo.jpeg"/>
             </Property>
             <Property name="text" type="java.lang.String" value="jLabel1"/>
             <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
@@ -253,7 +253,7 @@
         <Component class="javax.swing.JLabel" name="logoutlabel">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/view/logout.png"/>
+              <Image iconType="3" name="/image/logout.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="jLabel2"/>
           </Properties>
@@ -296,8 +296,8 @@
                   <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                   <Component id="TrackingIdtextfield" min="-2" pref="46" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-                  <Component id="jPanel1" min="-2" pref="348" max="-2" attributes="0"/>
-                  <EmptySpace pref="69" max="32767" attributes="0"/>
+                  <Component id="jPanel1" min="-2" pref="334" max="-2" attributes="0"/>
+                  <EmptySpace pref="83" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -376,7 +376,7 @@
             <Component class="javax.swing.JLabel" name="pfplabel">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/view/pfp.jpg"/>
+                  <Image iconType="3" name="/image/pfp.jpg"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="jLabel2"/>
               </Properties>
@@ -442,7 +442,9 @@
                                       </Group>
                                   </Group>
                               </Group>
-                              <EmptySpace pref="185" max="32767" attributes="0"/>
+                              <EmptySpace pref="95" max="32767" attributes="0"/>
+                              <Component id="returnbutton" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="savebutton" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
@@ -505,11 +507,14 @@
                                   <Component id="totalcostlabel" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jTextField7" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="-2" pref="94" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="120" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
-                              <Component id="savebutton" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="75" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="returnbutton" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="savebutton" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="108" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -662,6 +667,17 @@
                   <Font name="Segoe UI" size="18" style="2"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Order Details:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="returnbutton">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="f8" green="f6" red="f4" type="rgb"/>
+                </Property>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI" size="18" style="2"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Return"/>
               </Properties>
             </Component>
           </SubComponents>

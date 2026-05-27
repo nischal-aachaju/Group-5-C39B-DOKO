@@ -63,6 +63,7 @@ public class ManagerOrderEdit extends javax.swing.JFrame {
         senderaddresslabel = new javax.swing.JLabel();
         receiveraddresslabel = new javax.swing.JLabel();
         Orderdetaillabel = new javax.swing.JLabel();
+        returnbutton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
@@ -129,11 +130,11 @@ public class ManagerOrderEdit extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(33, 38, 49));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/dokologo.jpeg"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/dokologo.jpeg"))); // NOI18N
         jLabel1.setText("jLabel1");
         jLabel1.setPreferredSize(new java.awt.Dimension(99, 47));
 
-        logoutlabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/logout.png"))); // NOI18N
+        logoutlabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/logout.png"))); // NOI18N
         logoutlabel.setText("jLabel2");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -148,8 +149,8 @@ public class ManagerOrderEdit extends javax.swing.JFrame {
                 .addContainerGap(15, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(logoutlabel, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27))
+                .addComponent(logoutlabel, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(17, 17, 17))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -183,7 +184,7 @@ public class ManagerOrderEdit extends javax.swing.JFrame {
         Rolelabel.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
         Rolelabel.setText("Role");
 
-        pfplabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/pfp.jpg"))); // NOI18N
+        pfplabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/pfp.jpg"))); // NOI18N
         pfplabel.setText("jLabel2");
 
         javax.swing.GroupLayout toppanelLayout = new javax.swing.GroupLayout(toppanel);
@@ -269,6 +270,10 @@ public class ManagerOrderEdit extends javax.swing.JFrame {
         Orderdetaillabel.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
         Orderdetaillabel.setText("Order Details:");
 
+        returnbutton.setBackground(new java.awt.Color(244, 246, 248));
+        returnbutton.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
+        returnbutton.setText("Return");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -305,7 +310,9 @@ public class ManagerOrderEdit extends javax.swing.JFrame {
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                                 .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                         .addGap(0, 4, Short.MAX_VALUE)))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 185, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 95, Short.MAX_VALUE)
+                        .addComponent(returnbutton)
+                        .addGap(18, 18, 18)
                         .addComponent(savebutton))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -352,10 +359,12 @@ public class ManagerOrderEdit extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(totalcostlabel)
                             .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(94, 94, 94))
+                        .addGap(120, 120, 120))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(savebutton)
-                        .addGap(75, 75, 75))))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(returnbutton)
+                            .addComponent(savebutton))
+                        .addGap(108, 108, 108))))
         );
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -379,8 +388,8 @@ public class ManagerOrderEdit extends javax.swing.JFrame {
                 .addGap(30, 30, 30)
                 .addComponent(TrackingIdtextfield, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(33, 33, 33)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 348, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(69, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(83, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel2);
@@ -459,6 +468,7 @@ public class ManagerOrderEdit extends javax.swing.JFrame {
     private javax.swing.JTextField receiveremailtextfield;
     private javax.swing.JLabel receivernamelabel;
     private javax.swing.JTextField receivernametextfield;
+    private javax.swing.JButton returnbutton;
     private javax.swing.JButton savebutton;
     private javax.swing.JLabel senderaddresslabel;
     private javax.swing.JTextField senderaddresstextfield;

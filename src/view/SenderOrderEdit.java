@@ -61,6 +61,7 @@ public class SenderOrderEdit extends javax.swing.JFrame {
         receiveraddresslabel = new javax.swing.JLabel();
         totalcostlabel = new javax.swing.JLabel();
         Orderdetaillabel = new javax.swing.JLabel();
+        returnbutton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
@@ -261,6 +262,10 @@ public class SenderOrderEdit extends javax.swing.JFrame {
         Orderdetaillabel.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
         Orderdetaillabel.setText("Order Details:");
 
+        returnbutton.setBackground(new java.awt.Color(244, 246, 248));
+        returnbutton.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
+        returnbutton.setText("Return");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -303,7 +308,9 @@ public class SenderOrderEdit extends javax.swing.JFrame {
                                             .addComponent(receiveraddresslabel)
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                             .addComponent(receiveraddresstextfield, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 185, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 95, Short.MAX_VALUE)
+                        .addComponent(returnbutton)
+                        .addGap(18, 18, 18)
                         .addComponent(savebutton)))
                 .addGap(23, 23, 23))
         );
@@ -337,7 +344,9 @@ public class SenderOrderEdit extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(savebutton)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(savebutton)
+                            .addComponent(returnbutton))
                         .addGap(27, 27, 27))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -445,6 +454,7 @@ public class SenderOrderEdit extends javax.swing.JFrame {
     private javax.swing.JTextField receiveremailtextfield;
     private javax.swing.JLabel receivernamelabel;
     private javax.swing.JTextField receivernametextfield;
+    private javax.swing.JButton returnbutton;
     private javax.swing.JButton savebutton;
     private javax.swing.JLabel senderaddresslabel;
     private javax.swing.JTextField senderaddresstextfield;

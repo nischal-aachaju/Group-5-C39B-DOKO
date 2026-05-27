@@ -264,7 +264,7 @@ public class SenderOrderEdit extends javax.swing.JFrame {
 
         returnbutton.setBackground(new java.awt.Color(244, 246, 248));
         returnbutton.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
-        returnbutton.setText("Return");
+        returnbutton.setText("Cancel Order");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);

@@ -4,6 +4,8 @@
  */
 package view;
 
+import java.awt.event.ActionListener;
+
 /**
  *
  * @author Kushal
@@ -26,9 +28,14 @@ public class Sign_up_design extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        trackingField = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
+        jLabel13 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -41,36 +48,59 @@ public class Sign_up_design extends javax.swing.JPanel {
         emailField = new javax.swing.JTextField();
         phoneNum = new javax.swing.JTextField();
         addressField = new javax.swing.JTextField();
-        roleFileld = new javax.swing.JTextField();
         termsAndCondition = new javax.swing.JCheckBox();
         App_name = new javax.swing.JLabel();
         sign_in_label = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        RegisterBtn = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
         LoginBtn = new javax.swing.JLabel();
         verify = new javax.swing.JButton();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        trackingField = new javax.swing.JTextField();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
-        jLabel13 = new javax.swing.JLabel();
+        Register = new javax.swing.JButton();
+        roleFileld = new javax.swing.JComboBox<>();
 
-        setPreferredSize(new java.awt.Dimension(948, 571));
-
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setPreferredSize(new java.awt.Dimension(1050, 600));
-        jPanel1.setLayout(null);
+        setBackground(new java.awt.Color(255, 255, 255));
+        setPreferredSize(new java.awt.Dimension(1050, 600));
+        setRequestFocusEnabled(false);
+        setVerifyInputWhenFocusTarget(false);
+        setLayout(null);
 
         jLabel9.setFont(new java.awt.Font("Righteous", 0, 48)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(41, 51, 123));
         jLabel9.setText("DOKO");
-        jPanel1.add(jLabel9);
+        add(jLabel9);
         jLabel9.setBounds(20, 10, 150, 40);
 
         jPanel3.setBackground(new java.awt.Color(236, 236, 236));
         jPanel3.setLayout(null);
+
+        jLabel10.setFont(new java.awt.Font("Righteous", 0, 24)); // NOI18N
+        jLabel10.setText("Enter Tracking ID");
+        jPanel3.add(jLabel10);
+        jLabel10.setBounds(50, 80, 187, 32);
+
+        jLabel8.setFont(new java.awt.Font("REM", 0, 36)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(41, 51, 123));
+        jLabel8.setText("Track Your Parcel");
+        jPanel3.add(jLabel8);
+        jLabel8.setBounds(60, 40, 310, 47);
+
+        trackingField.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        trackingField.setText("  eg:#250455 ");
+        trackingField.addActionListener(this::trackingFieldActionPerformed);
+        jPanel3.add(trackingField);
+        trackingField.setBounds(50, 120, 180, 38);
+
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jScrollPane1.setViewportView(jTextArea1);
+
+        jPanel3.add(jScrollPane1);
+        jScrollPane1.setBounds(50, 210, 440, 220);
+
+        jLabel13.setFont(new java.awt.Font("REM", 1, 18)); // NOI18N
+        jLabel13.setText("Details:");
+        jPanel3.add(jLabel13);
+        jLabel13.setBounds(50, 180, 80, 24);
 
         jPanel2.setBackground(new java.awt.Color(236, 236, 236));
         jPanel2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, new java.awt.Color(204, 204, 204), new java.awt.Color(153, 153, 153)));
@@ -100,30 +130,26 @@ public class Sign_up_design extends javax.swing.JPanel {
 
         passwordField.setText("Enter password from E-mail *");
         jPanel2.add(passwordField);
-        passwordField.setBounds(162, 310, 204, 22);
+        passwordField.setBounds(150, 310, 230, 22);
 
         nameField.setText("Full Name *");
         jPanel2.add(nameField);
-        nameField.setBounds(162, 110, 204, 22);
+        nameField.setBounds(150, 110, 230, 22);
 
         emailField.setText("E-mail *");
         emailField.addActionListener(this::emailFieldActionPerformed);
         jPanel2.add(emailField);
-        emailField.setBounds(162, 150, 140, 22);
+        emailField.setBounds(150, 150, 160, 22);
 
         phoneNum.setText("Phone *");
         phoneNum.addActionListener(this::phoneNumActionPerformed);
         jPanel2.add(phoneNum);
-        phoneNum.setBounds(162, 190, 204, 22);
+        phoneNum.setBounds(150, 190, 230, 22);
 
         addressField.setText("Address *");
         addressField.addActionListener(this::addressFieldActionPerformed);
         jPanel2.add(addressField);
-        addressField.setBounds(162, 230, 204, 22);
-
-        roleFileld.setText("Choose the Role * ");
-        jPanel2.add(roleFileld);
-        roleFileld.setBounds(162, 270, 204, 22);
+        addressField.setBounds(150, 230, 230, 22);
 
         termsAndCondition.setText("Terms and Conditions");
         jPanel2.add(termsAndCondition);
@@ -144,15 +170,6 @@ public class Sign_up_design extends javax.swing.JPanel {
         jPanel2.add(jLabel7);
         jLabel7.setBounds(40, 233, 80, 16);
 
-        RegisterBtn.setBackground(new java.awt.Color(41, 51, 123));
-        RegisterBtn.setFont(new java.awt.Font("REM", 0, 18)); // NOI18N
-        RegisterBtn.setForeground(new java.awt.Color(255, 255, 255));
-        RegisterBtn.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        RegisterBtn.setText("Register");
-        RegisterBtn.addActionListener(this::RegisterBtnActionPerformed);
-        jPanel2.add(RegisterBtn);
-        RegisterBtn.setBounds(150, 380, 124, 30);
-
         jLabel11.setFont(new java.awt.Font("REM", 0, 12)); // NOI18N
         jLabel11.setText("Already have an account?");
         jPanel2.add(jLabel11);
@@ -164,75 +181,31 @@ public class Sign_up_design extends javax.swing.JPanel {
         jPanel2.add(LoginBtn);
         LoginBtn.setBounds(270, 420, 50, 16);
 
+        verify.setBackground(new java.awt.Color(227, 227, 227));
         verify.setText("Verify");
         verify.setMaximumSize(new java.awt.Dimension(62, 22));
         verify.setPreferredSize(new java.awt.Dimension(64, 22));
         verify.addActionListener(this::verifyActionPerformed);
         jPanel2.add(verify);
-        verify.setBounds(310, 150, 60, 24);
+        verify.setBounds(310, 150, 70, 22);
+
+        Register.setBackground(new java.awt.Color(41, 51, 123));
+        Register.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Register.setForeground(new java.awt.Color(255, 255, 255));
+        Register.setText("Register");
+        jPanel2.add(Register);
+        Register.setBounds(170, 380, 140, 30);
+
+        roleFileld.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "User", "Manager", "Employee", "Admin" }));
+        jPanel2.add(roleFileld);
+        roleFileld.setBounds(150, 270, 230, 22);
 
         jPanel3.add(jPanel2);
         jPanel2.setBounds(530, 0, 420, 450);
 
-        jLabel10.setFont(new java.awt.Font("Righteous", 0, 24)); // NOI18N
-        jLabel10.setText("Enter Tracking ID");
-        jPanel3.add(jLabel10);
-        jLabel10.setBounds(50, 80, 187, 32);
-
-        jLabel8.setFont(new java.awt.Font("REM", 0, 36)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(41, 51, 123));
-        jLabel8.setText("Track Your Parcel");
-        jPanel3.add(jLabel8);
-        jLabel8.setBounds(45, 27, 310, 47);
-
-        trackingField.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        trackingField.setText("  eg:#250455 ");
-        trackingField.addActionListener(this::trackingFieldActionPerformed);
-        jPanel3.add(trackingField);
-        trackingField.setBounds(50, 120, 180, 38);
-
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
-
-        jPanel3.add(jScrollPane1);
-        jScrollPane1.setBounds(50, 210, 440, 220);
-
-        jLabel13.setFont(new java.awt.Font("REM", 1, 18)); // NOI18N
-        jLabel13.setText("Details:");
-        jPanel3.add(jLabel13);
-        jLabel13.setBounds(50, 180, 80, 24);
-
-        jPanel1.add(jPanel3);
-        jPanel3.setBounds(50, 80, 950, 450);
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 598, Short.MAX_VALUE)
-        );
+        add(jPanel3);
+        jPanel3.setBounds(50, 100, 950, 450);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void emailFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_emailFieldActionPerformed
-
-    private void addressFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addressFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_addressFieldActionPerformed
-
-    private void phoneNumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_phoneNumActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_phoneNumActionPerformed
-
-    private void RegisterBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegisterBtnActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_RegisterBtnActionPerformed
 
     private void trackingFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_trackingFieldActionPerformed
         // TODO add your handling code here:
@@ -242,11 +215,23 @@ public class Sign_up_design extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_verifyActionPerformed
 
+    private void addressFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addressFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_addressFieldActionPerformed
+
+    private void phoneNumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_phoneNumActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_phoneNumActionPerformed
+
+    private void emailFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_emailFieldActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel App_name;
     private javax.swing.JLabel LoginBtn;
-    private javax.swing.JTextField RegisterBtn;
+    private javax.swing.JButton Register;
     private javax.swing.JTextField addressField;
     private javax.swing.JTextField emailField;
     private javax.swing.JLabel jLabel1;
@@ -261,7 +246,6 @@ public class Sign_up_design extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
@@ -269,10 +253,42 @@ public class Sign_up_design extends javax.swing.JPanel {
     private javax.swing.JTextField nameField;
     private javax.swing.JTextField passwordField;
     private javax.swing.JTextField phoneNum;
-    private javax.swing.JTextField roleFileld;
+    private javax.swing.JComboBox<String> roleFileld;
     private javax.swing.JLabel sign_in_label;
     private javax.swing.JCheckBox termsAndCondition;
     private javax.swing.JTextField trackingField;
     private javax.swing.JButton verify;
     // End of variables declaration//GEN-END:variables
+    public void addAddUserListener(ActionListener listener) {
+        Register.addActionListener(listener);
+    }
+    
+    public void addVerifyListener(ActionListener listener) {
+        verify.addActionListener(listener); // Fix: Use addActionListener
+    }
+    public javax.swing.JCheckBox getTermsAndCondition() {
+        return termsAndCondition;
+    }
+//    public void addLoginListener(ActionListener listener) {
+//        login.addActionListener(listener);
+//    }
+    public javax.swing.JTextField getNameField() {
+        return nameField; 
+    }    
+    public javax.swing.JTextField getEmailField() {
+        return emailField; 
+    }
+    public javax.swing.JTextField getAddressField() {
+        return addressField;
+    }
+    public javax.swing.JTextField getPhoneNum() {
+        return phoneNum;
+    }
+    public javax.swing.JTextField getPasswordField() {
+        return passwordField;
+    }
+    public javax.swing.JComboBox<String> getRole() {
+        return roleFileld;
+    }
+    
 }

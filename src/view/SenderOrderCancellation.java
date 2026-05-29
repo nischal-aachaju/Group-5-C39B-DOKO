@@ -8,14 +8,14 @@ package view;
  *
  * @author Acer
  */
-public class OrderCancellation1 extends javax.swing.JFrame {
+public class SenderOrderCancellation extends javax.swing.JFrame {
     
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(OrderCancellation1.class.getName());
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(SenderOrderCancellation.class.getName());
 
     /**
      * Creates new form Employee_Dashboard
      */
-    public OrderCancellation1() {
+    public SenderOrderCancellation() {
         initComponents();
     }
 
@@ -60,9 +60,11 @@ public class OrderCancellation1 extends javax.swing.JFrame {
         jTextField6 = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
         jTextField7 = new javax.swing.JTextField();
+        jPanel2 = new javax.swing.JPanel();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Employee Dashboard");
@@ -180,7 +182,7 @@ public class OrderCancellation1 extends javax.swing.JFrame {
         jLabel10.setBounds(760, 50, 43, 16);
 
         MainPanel.add(Topbar);
-        Topbar.setBounds(186, 0, 864, 88);
+        Topbar.setBounds(186, 0, 0, 0);
 
         jPanel1.setLayout(null);
 
@@ -244,25 +246,46 @@ public class OrderCancellation1 extends javax.swing.JFrame {
         jPanel1.add(jButton1);
         jButton1.setBounds(620, 8, 99, 35);
 
-        jButton2.setBackground(new java.awt.Color(168, 168, 168));
-        jButton2.setText("Cancel Order");
-        jButton2.addActionListener(this::jButton2ActionPerformed);
-        jPanel1.add(jButton2);
-        jButton2.setBounds(494, 359, 99, 35);
-
         jButton3.setBackground(new java.awt.Color(168, 168, 168));
         jButton3.setText("Save");
         jButton3.addActionListener(this::jButton3ActionPerformed);
         jPanel1.add(jButton3);
-        jButton3.setBounds(620, 359, 99, 35);
+        jButton3.setBounds(620, 330, 99, 35);
+
+        jButton4.setBackground(new java.awt.Color(168, 168, 168));
+        jButton4.setText("Cancel Order");
+        jButton4.addActionListener(this::jButton4ActionPerformed);
+        jPanel1.add(jButton4);
+        jButton4.setBounds(510, 330, 99, 35);
 
         MainPanel.add(jPanel1);
         jPanel1.setBounds(240, 180, 740, 400);
 
+        jTextField7.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jTextField7.setText("# Enter Tracking ID");
         jTextField7.addActionListener(this::jTextField7ActionPerformed);
         MainPanel.add(jTextField7);
-        jTextField7.setBounds(240, 120, 430, 50);
+        jTextField7.setBounds(240, 120, 350, 50);
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 870, Short.MAX_VALUE)
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 70, Short.MAX_VALUE)
+        );
+
+        MainPanel.add(jPanel2);
+        jPanel2.setBounds(180, 0, 870, 70);
+
+        jButton2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jButton2.setText("Search");
+        jButton2.addActionListener(this::jButton2ActionPerformed);
+        MainPanel.add(jButton2);
+        jButton2.setBounds(610, 120, 110, 50);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -279,10 +302,6 @@ public class OrderCancellation1 extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
-
     private void jTextField7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField7ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField7ActionPerformed
@@ -298,6 +317,14 @@ public class OrderCancellation1 extends javax.swing.JFrame {
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -321,7 +348,7 @@ public class OrderCancellation1 extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new OrderCancellation1().setVisible(true));
+        java.awt.EventQueue.invokeLater(() -> new SenderOrderCancellation().setVisible(true));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -337,6 +364,7 @@ public class OrderCancellation1 extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
@@ -348,6 +376,7 @@ public class OrderCancellation1 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JTextField jTextField1;

@@ -72,7 +72,7 @@ public class forgotPassword extends javax.swing.JFrame {
 
         ConfirmNewpassword.setText("Confirm new password");
         jPanel1.add(ConfirmNewpassword);
-        ConfirmNewpassword.setBounds(40, 300, 122, 16);
+        ConfirmNewpassword.setBounds(30, 300, 122, 16);
 
         FullnameTextField.setBackground(new java.awt.Color(217, 217, 217));
         FullnameTextField.setText("Unish Gautam");

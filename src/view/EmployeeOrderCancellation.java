@@ -8,14 +8,14 @@ package view;
  *
  * @author Acer
  */
-public class Employee_Dashboard extends javax.swing.JFrame {
+public class EmployeeOrderCancellation extends javax.swing.JFrame {
     
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Employee_Dashboard.class.getName());
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(EmployeeOrderCancellation.class.getName());
 
     /**
      * Creates new form Employee_Dashboard
      */
-    public Employee_Dashboard() {
+    public EmployeeOrderCancellation() {
         initComponents();
     }
 
@@ -43,12 +43,29 @@ public class Employee_Dashboard extends javax.swing.JFrame {
         Topbar = new javax.swing.JPanel();
         profile = new javax.swing.JLabel();
         Profile = new javax.swing.JLabel();
-        TotalOrders = new javax.swing.JButton();
-        CancelOrders = new javax.swing.JButton();
-        DeliveredShipment = new javax.swing.JButton();
-        PendingShipment = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        Orders_Table = new javax.swing.JTable();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        jTextField2 = new javax.swing.JTextField();
+        jTextField3 = new javax.swing.JTextField();
+        jTextField4 = new javax.swing.JTextField();
+        jTextField5 = new javax.swing.JTextField();
+        jTextField6 = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jTextField7 = new javax.swing.JTextField();
+        jPanel2 = new javax.swing.JPanel();
+        jButton5 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Employee Dashboard");
@@ -68,7 +85,7 @@ public class Employee_Dashboard extends javax.swing.JFrame {
         dashboard.setForeground(new java.awt.Color(255, 255, 255));
         dashboard.setText("Dashboard");
 
-        MyShipments.setBackground(new java.awt.Color(33, 38, 49));
+        MyShipments.setBackground(new java.awt.Color(216, 140, 81));
         MyShipments.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
         MyShipments.setForeground(new java.awt.Color(255, 255, 255));
         MyShipments.setText("My Shipments");
@@ -82,6 +99,7 @@ public class Employee_Dashboard extends javax.swing.JFrame {
         OrdersHistory.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
         OrdersHistory.setForeground(new java.awt.Color(255, 255, 255));
         OrdersHistory.setText("Orders History");
+        OrdersHistory.addActionListener(this::OrdersHistoryActionPerformed);
 
         MyProfile.setBackground(new java.awt.Color(33, 38, 49));
         MyProfile.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
@@ -127,15 +145,15 @@ public class Employee_Dashboard extends javax.swing.JFrame {
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(7, 7, 7)
                 .addComponent(dashboard, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(12, 12, 12)
                 .addComponent(MyShipments, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(12, 12, 12)
                 .addComponent(ManageOrders, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(12, 12, 12)
                 .addComponent(OrdersHistory, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(12, 12, 12)
                 .addComponent(MyProfile, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 129, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 123, Short.MAX_VALUE)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(SidebarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -147,73 +165,126 @@ public class Employee_Dashboard extends javax.swing.JFrame {
         MainPanel.add(Sidebar);
         Sidebar.setBounds(0, 0, 180, 600);
 
+        Topbar.setLayout(null);
+
         profile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/profile.png"))); // NOI18N
+        Topbar.add(profile);
+        profile.setBounds(757, 0, 0, 82);
 
         Profile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/profile.png"))); // NOI18N
+        Topbar.add(Profile);
+        Profile.setBounds(670, 0, 84, 82);
 
-        javax.swing.GroupLayout TopbarLayout = new javax.swing.GroupLayout(Topbar);
-        Topbar.setLayout(TopbarLayout);
-        TopbarLayout.setHorizontalGroup(
-            TopbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TopbarLayout.createSequentialGroup()
-                .addGap(0, 757, Short.MAX_VALUE)
-                .addComponent(profile)
-                .addGap(23, 23, 23)
-                .addComponent(Profile))
-        );
-        TopbarLayout.setVerticalGroup(
-            TopbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(TopbarLayout.createSequentialGroup()
-                .addGroup(TopbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(profile, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Profile, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
-        );
+        jLabel9.setText("Username");
+        Topbar.add(jLabel9);
+        jLabel9.setBounds(760, 10, 90, 30);
+
+        jLabel10.setText("Role");
+        Topbar.add(jLabel10);
+        jLabel10.setBounds(760, 50, 43, 16);
 
         MainPanel.add(Topbar);
-        Topbar.setBounds(186, 0, 864, 88);
+        Topbar.setBounds(186, 0, 0, 0);
 
-        TotalOrders.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
-        TotalOrders.setText("Total Orders");
-        MainPanel.add(TotalOrders);
-        TotalOrders.setBounds(327, 133, 200, 65);
+        jPanel1.setLayout(null);
 
-        CancelOrders.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
-        CancelOrders.setText("Cancel Orders");
-        MainPanel.add(CancelOrders);
-        CancelOrders.setBounds(614, 133, 196, 65);
+        jLabel2.setText("Tracking ID");
+        jPanel1.add(jLabel2);
+        jLabel2.setBounds(68, 66, 79, 16);
 
-        DeliveredShipment.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
-        DeliveredShipment.setText("Delivered Shipment");
-        MainPanel.add(DeliveredShipment);
-        DeliveredShipment.setBounds(327, 227, 200, 65);
+        jLabel3.setText("Recever's Name");
+        jPanel1.add(jLabel3);
+        jLabel3.setBounds(68, 125, 90, 16);
 
-        PendingShipment.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
-        PendingShipment.setText("Pending Shipment");
-        MainPanel.add(PendingShipment);
-        PendingShipment.setBounds(614, 227, 196, 65);
+        jLabel4.setText("Receiver's Email");
+        jPanel1.add(jLabel4);
+        jLabel4.setBounds(68, 180, 90, 16);
 
-        Orders_Table.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Recent Orders", "", "", ""
-            }
-        ));
-        jScrollPane1.setViewportView(Orders_Table);
+        jLabel5.setText("Sender's Address");
+        jPanel1.add(jLabel5);
+        jLabel5.setBounds(68, 235, 100, 16);
 
-        MainPanel.add(jScrollPane1);
-        jScrollPane1.setBounds(295, 336, 700, 204);
+        jLabel6.setText("Receiver's Address");
+        jPanel1.add(jLabel6);
+        jLabel6.setBounds(68, 286, 100, 16);
+
+        jLabel7.setText("Total cost");
+        jPanel1.add(jLabel7);
+        jLabel7.setBounds(68, 341, 79, 16);
+
+        jTextField1.setText("#2345");
+        jTextField1.addActionListener(this::jTextField1ActionPerformed);
+        jPanel1.add(jTextField1);
+        jTextField1.setBounds(197, 59, 147, 31);
+
+        jTextField2.setText("Unish");
+        jPanel1.add(jTextField2);
+        jTextField2.setBounds(197, 118, 147, 31);
+
+        jTextField3.setText("unishg@gmail.com");
+        jPanel1.add(jTextField3);
+        jTextField3.setBounds(197, 173, 147, 30);
+
+        jTextField4.setText("kapan");
+        jPanel1.add(jTextField4);
+        jTextField4.setBounds(197, 228, 146, 30);
+
+        jTextField5.setText("maitidevi");
+        jPanel1.add(jTextField5);
+        jTextField5.setBounds(197, 279, 146, 30);
+
+        jTextField6.setText("1233");
+        jPanel1.add(jTextField6);
+        jTextField6.setBounds(197, 334, 146, 30);
+
+        jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel8.setText("Order Details");
+        jPanel1.add(jLabel8);
+        jLabel8.setBounds(16, 6, 120, 33);
+
+        jButton1.setBackground(new java.awt.Color(168, 168, 168));
+        jButton1.setText("Edit");
+        jButton1.addActionListener(this::jButton1ActionPerformed);
+        jPanel1.add(jButton1);
+        jButton1.setBounds(620, 8, 99, 35);
+
+        jButton3.setBackground(new java.awt.Color(168, 168, 168));
+        jButton3.setText("Save");
+        jButton3.addActionListener(this::jButton3ActionPerformed);
+        jPanel1.add(jButton3);
+        jButton3.setBounds(620, 330, 99, 40);
+
+        jButton4.setBackground(new java.awt.Color(168, 168, 168));
+        jButton4.setText("Cancel Order");
+        jButton4.addActionListener(this::jButton4ActionPerformed);
+        jPanel1.add(jButton4);
+        jButton4.setBounds(510, 330, 99, 40);
+
+        jButton2.setBackground(new java.awt.Color(168, 168, 168));
+        jButton2.setText("Return");
+        jButton2.addActionListener(this::jButton2ActionPerformed);
+        jPanel1.add(jButton2);
+        jButton2.setBounds(410, 330, 72, 40);
+
+        MainPanel.add(jPanel1);
+        jPanel1.setBounds(240, 180, 740, 400);
+
+        jTextField7.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jTextField7.setText("# Enter Tracking ID");
+        jTextField7.addActionListener(this::jTextField7ActionPerformed);
+        MainPanel.add(jTextField7);
+        jTextField7.setBounds(240, 120, 350, 50);
+
+        jPanel2.setLayout(null);
+        MainPanel.add(jPanel2);
+        jPanel2.setBounds(180, 0, 870, 70);
+
+        jButton5.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jButton5.setText("Search");
+        jButton5.setMaximumSize(new java.awt.Dimension(84, 32));
+        jButton5.setMinimumSize(new java.awt.Dimension(84, 32));
+        MainPanel.add(jButton5);
+        jButton5.setBounds(610, 120, 110, 50);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -229,6 +300,34 @@ public class Employee_Dashboard extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jTextField7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField7ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField7ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void OrdersHistoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OrdersHistoryActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_OrdersHistoryActionPerformed
 
     /**
      * @param args the command line arguments
@@ -252,28 +351,45 @@ public class Employee_Dashboard extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new Employee_Dashboard().setVisible(true));
+        java.awt.EventQueue.invokeLater(() -> new EmployeeOrderCancellation().setVisible(true));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton CancelOrders;
-    private javax.swing.JButton DeliveredShipment;
     private javax.swing.JPanel MainPanel;
     private javax.swing.JButton ManageOrders;
     private javax.swing.JButton MyProfile;
     private javax.swing.JButton MyShipments;
     private javax.swing.JButton OrdersHistory;
-    private javax.swing.JTable Orders_Table;
-    private javax.swing.JButton PendingShipment;
     private javax.swing.JLabel Profile;
     private javax.swing.JPanel Sidebar;
     private javax.swing.JPanel Topbar;
-    private javax.swing.JButton TotalOrders;
     private javax.swing.JButton dashboard;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField jTextField6;
+    private javax.swing.JTextField jTextField7;
     private javax.swing.JLabel logo;
     private javax.swing.JButton logout;
     private javax.swing.JLabel profile;

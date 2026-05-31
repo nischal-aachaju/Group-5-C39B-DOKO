@@ -12,7 +12,12 @@ public class userData {
     private int user_id; 
     private String username;
     private String email;
+    private String phone;
+    private String address;
     private String password;
+    private String role;
+    
+
     
     // user ID getter
     public int getUserID(){
@@ -41,6 +46,27 @@ public class userData {
     public void setEmail(String email){
         this.email=email;
     }
+    
+    // phone getter
+    public String getPhone(){
+    return phone;
+    }
+    
+    // phone setter
+    public void setPhone( String phone){
+    this.phone=phone;
+    }
+    
+    // address getter
+    public String getAddress(){
+    return address;
+    }
+    
+    // address setter
+    public void setAddress( String address){
+    this.address=address;
+    }
+    
     // user password getter
     public String getPassword(){
         return password;   
@@ -51,11 +77,21 @@ public class userData {
         this.password=password;
     }
     
-    public userData(String username, String email, String password) {
+    // user role getter
+    public String getRole(){
+        return role;   
+    }
+     // user Role setter
+    public void setRole(String role){
+        this.role=role;
+    }
+    public userData(String username, String email,String phone,String address, String password,String role) {
             this.username=username;
             this.email=email;
+            this.phone=phone;
+            this.address=address;
             this.password=password;
-            
+            this.role=role;
             
             
             

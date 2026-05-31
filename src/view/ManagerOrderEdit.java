@@ -8,14 +8,14 @@ package view;
  *
  * @author User
  */
-public class EmployeeOrderEdit extends javax.swing.JFrame {
+public class ManagerOrderEdit extends javax.swing.JFrame {
     
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(EmployeeOrderEdit.class.getName());
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(ManagerOrderEdit.class.getName());
 
     /**
      * Creates new form AdminOrderEdit
      */
-    public EmployeeOrderEdit() {
+    public ManagerOrderEdit() {
         initComponents();
     }
 
@@ -30,25 +30,28 @@ public class EmployeeOrderEdit extends javax.swing.JFrame {
 
         Dashboardbutton = new javax.swing.JButton();
         Manageuserbutton = new javax.swing.JButton();
+        Workloadbutton = new javax.swing.JButton();
+        activeorderslabel = new javax.swing.JButton();
+        ManageOrderbutton = new javax.swing.JButton();
+        assignorderslabel = new javax.swing.JButton();
+        myprofilebutton = new javax.swing.JButton();
         logoutbutton = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
         jLabel1 = new javax.swing.JLabel();
-        ManageOrderbutton = new javax.swing.JButton();
-        priceconfigurationbutton = new javax.swing.JButton();
-        myprofilebutton = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
+        logoutlabel = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         TrackingIdtextfield = new javax.swing.JTextField();
         toppanel = new javax.swing.JPanel();
         namelabel = new javax.swing.JLabel();
         Rolelabel = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        pfplabel = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         savebutton = new javax.swing.JButton();
         editbutton = new javax.swing.JButton();
         jTextField7 = new javax.swing.JTextField();
+        totalcostlabel = new javax.swing.JLabel();
         receiveraddresstextfield = new javax.swing.JTextField();
         senderaddresstextfield = new javax.swing.JTextField();
         receiveremailtextfield = new javax.swing.JTextField();
@@ -59,9 +62,9 @@ public class EmployeeOrderEdit extends javax.swing.JFrame {
         receiveremaillabel = new javax.swing.JLabel();
         senderaddresslabel = new javax.swing.JLabel();
         receiveraddresslabel = new javax.swing.JLabel();
-        totalcostlabel = new javax.swing.JLabel();
         Orderdetaillabel = new javax.swing.JLabel();
-        searchButton = new javax.swing.JButton();
+        returnbutton = new javax.swing.JButton();
+        searchbutton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
@@ -76,11 +79,47 @@ public class EmployeeOrderEdit extends javax.swing.JFrame {
         Manageuserbutton.setBackground(new java.awt.Color(33, 38, 49));
         Manageuserbutton.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
         Manageuserbutton.setForeground(new java.awt.Color(255, 255, 255));
-        Manageuserbutton.setText("My Shipments");
+        Manageuserbutton.setText("Manage User");
         Manageuserbutton.setPreferredSize(new java.awt.Dimension(99, 27));
         Manageuserbutton.addActionListener(this::ManageuserbuttonActionPerformed);
         getContentPane().add(Manageuserbutton);
         Manageuserbutton.setBounds(14, 157, 158, 50);
+
+        Workloadbutton.setBackground(new java.awt.Color(33, 38, 49));
+        Workloadbutton.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
+        Workloadbutton.setForeground(new java.awt.Color(255, 255, 255));
+        Workloadbutton.setText("Workload");
+        getContentPane().add(Workloadbutton);
+        Workloadbutton.setBounds(14, 219, 158, 50);
+
+        activeorderslabel.setBackground(new java.awt.Color(33, 38, 49));
+        activeorderslabel.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
+        activeorderslabel.setForeground(new java.awt.Color(255, 255, 255));
+        activeorderslabel.setText("Active Orders");
+        activeorderslabel.addActionListener(this::activeorderslabelActionPerformed);
+        getContentPane().add(activeorderslabel);
+        activeorderslabel.setBounds(14, 281, 158, 50);
+
+        ManageOrderbutton.setBackground(new java.awt.Color(216, 140, 81));
+        ManageOrderbutton.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
+        ManageOrderbutton.setForeground(new java.awt.Color(255, 255, 255));
+        ManageOrderbutton.setText("Manage Order");
+        getContentPane().add(ManageOrderbutton);
+        ManageOrderbutton.setBounds(14, 343, 158, 50);
+
+        assignorderslabel.setBackground(new java.awt.Color(33, 38, 49));
+        assignorderslabel.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
+        assignorderslabel.setForeground(new java.awt.Color(255, 255, 255));
+        assignorderslabel.setText("Assign Orders");
+        getContentPane().add(assignorderslabel);
+        assignorderslabel.setBounds(14, 405, 158, 50);
+
+        myprofilebutton.setBackground(new java.awt.Color(33, 38, 49));
+        myprofilebutton.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
+        myprofilebutton.setForeground(new java.awt.Color(255, 255, 255));
+        myprofilebutton.setText("My profile");
+        getContentPane().add(myprofilebutton);
+        myprofilebutton.setBounds(14, 467, 158, 50);
 
         logoutbutton.setBackground(new java.awt.Color(33, 38, 49));
         logoutbutton.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
@@ -96,23 +135,8 @@ public class EmployeeOrderEdit extends javax.swing.JFrame {
         jLabel1.setText("jLabel1");
         jLabel1.setPreferredSize(new java.awt.Dimension(99, 47));
 
-        ManageOrderbutton.setBackground(new java.awt.Color(216, 140, 81));
-        ManageOrderbutton.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
-        ManageOrderbutton.setForeground(new java.awt.Color(255, 255, 255));
-        ManageOrderbutton.setText("Manage Order");
-
-        priceconfigurationbutton.setBackground(new java.awt.Color(33, 38, 49));
-        priceconfigurationbutton.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
-        priceconfigurationbutton.setForeground(new java.awt.Color(255, 255, 255));
-        priceconfigurationbutton.setText("Orders History");
-
-        myprofilebutton.setBackground(new java.awt.Color(33, 38, 49));
-        myprofilebutton.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
-        myprofilebutton.setForeground(new java.awt.Color(255, 255, 255));
-        myprofilebutton.setText("My profile");
-
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/logout_2.png"))); // NOI18N
-        jLabel4.setText("jLabel4");
+        logoutlabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/logout.png"))); // NOI18N
+        logoutlabel.setText("jLabel2");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -121,21 +145,13 @@ public class EmployeeOrderEdit extends javax.swing.JFrame {
             .addComponent(jSeparator1)
             .addComponent(jSeparator2)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(14, 14, 14)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(priceconfigurationbutton, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(ManageOrderbutton, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(myprofilebutton, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(15, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(logoutlabel, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(17, 17, 17))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -144,16 +160,10 @@ public class EmployeeOrderEdit extends javax.swing.JFrame {
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(118, 118, 118)
-                .addComponent(ManageOrderbutton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
-                .addComponent(priceconfigurationbutton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(myprofilebutton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 112, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 425, Short.MAX_VALUE)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(logoutlabel, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -175,17 +185,17 @@ public class EmployeeOrderEdit extends javax.swing.JFrame {
         Rolelabel.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
         Rolelabel.setText("Role");
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/pfp_2.jpg"))); // NOI18N
-        jLabel2.setText("jLabel2");
+        pfplabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/pfp.jpg"))); // NOI18N
+        pfplabel.setText("jLabel2");
 
         javax.swing.GroupLayout toppanelLayout = new javax.swing.GroupLayout(toppanel);
         toppanel.setLayout(toppanelLayout);
         toppanelLayout.setHorizontalGroup(
             toppanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, toppanelLayout.createSequentialGroup()
-                .addContainerGap(731, Short.MAX_VALUE)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
+                .addContainerGap(720, Short.MAX_VALUE)
+                .addComponent(pfplabel, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addGroup(toppanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Rolelabel, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(namelabel, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -196,7 +206,7 @@ public class EmployeeOrderEdit extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, toppanelLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(toppanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(pfplabel, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(toppanelLayout.createSequentialGroup()
                         .addComponent(namelabel)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -219,10 +229,12 @@ public class EmployeeOrderEdit extends javax.swing.JFrame {
         jTextField7.setText("1200");
         jTextField7.setBorder(null);
 
+        totalcostlabel.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
+        totalcostlabel.setText("Total cost:");
+
         receiveraddresstextfield.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
-        receiveraddresstextfield.setText(" Kapan");
+        receiveraddresstextfield.setText("Kapan");
         receiveraddresstextfield.setBorder(null);
-        receiveraddresstextfield.addActionListener(this::receiveraddresstextfieldActionPerformed);
 
         senderaddresstextfield.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
         senderaddresstextfield.setText("Dillibazar pipalbot");
@@ -256,11 +268,12 @@ public class EmployeeOrderEdit extends javax.swing.JFrame {
         receiveraddresslabel.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
         receiveraddresslabel.setText("Receiver Address:");
 
-        totalcostlabel.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
-        totalcostlabel.setText("Total cost:");
-
         Orderdetaillabel.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
         Orderdetaillabel.setText("Order Details:");
+
+        returnbutton.setBackground(new java.awt.Color(244, 246, 248));
+        returnbutton.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
+        returnbutton.setText("Return");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -269,57 +282,60 @@ public class EmployeeOrderEdit extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(editbutton))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                .addGap(31, 31, 31)
-                                .addComponent(Orderdetaillabel, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(28, 28, 28)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGap(22, 22, 22)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(senderaddresstextfield, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(receiveremailtextfield, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(receivernametextfield, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(receiveraddresslabel)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(receiveraddresstextfield, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                .addGap(24, 24, 24)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(trackingIDlabel, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(trackingidtextfield, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addGroup(jPanel1Layout.createSequentialGroup()
-                                            .addComponent(totalcostlabel, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGroup(jPanel1Layout.createSequentialGroup()
-                                            .addComponent(senderaddresslabel)
-                                            .addGap(18, 18, 18)
-                                            .addComponent(senderaddresstextfield, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(receiveremaillabel, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGap(18, 18, 18)
-                                            .addComponent(receiveremailtextfield, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGroup(jPanel1Layout.createSequentialGroup()
                                             .addComponent(receivernamelabel)
-                                            .addGap(18, 18, 18)
-                                            .addComponent(receivernametextfield, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGroup(jPanel1Layout.createSequentialGroup()
-                                            .addComponent(receiveraddresslabel)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(receiveraddresstextfield, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 185, Short.MAX_VALUE)
-                        .addComponent(savebutton)))
+                                            .addComponent(Orderdetaillabel, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(senderaddresslabel)
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addComponent(totalcostlabel, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addGap(0, 4, Short.MAX_VALUE)))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 95, Short.MAX_VALUE)
+                        .addComponent(returnbutton)
+                        .addGap(18, 18, 18)
+                        .addComponent(savebutton))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(editbutton)))
                 .addGap(23, 23, 23))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(editbutton)
-                    .addComponent(Orderdetaillabel))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(editbutton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(Orderdetaillabel)
+                        .addGap(18, 18, 18)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(trackingidtextfield, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(trackingIDlabel))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(receivernametextfield, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(receivernamelabel))
@@ -332,52 +348,57 @@ public class EmployeeOrderEdit extends javax.swing.JFrame {
                     .addComponent(senderaddresstextfield, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(senderaddresslabel))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(receiveraddresstextfield, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(receiveraddresslabel))
-                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(receiveraddresstextfield, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(8, 8, 8))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(savebutton)
-                        .addGap(27, 27, 27))
+                        .addComponent(receiveraddresslabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(totalcostlabel)
+                            .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(120, 120, 120))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(totalcostlabel))
-                        .addGap(45, 45, 45))))
+                            .addComponent(returnbutton)
+                            .addComponent(savebutton))
+                        .addGap(108, 108, 108))))
         );
 
-        searchButton.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
-        searchButton.setText("Search");
+        searchbutton.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
+        searchbutton.setText("Search");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addGap(0, 155, Short.MAX_VALUE)
+                .addGap(0, 174, Short.MAX_VALUE)
                 .addComponent(toppanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(TrackingIdtextfield, javax.swing.GroupLayout.PREFERRED_SIZE, 420, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(searchButton, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(searchbutton, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(54, 54, 54))
+                .addGap(58, 58, 58))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addComponent(toppanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(43, 43, 43)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(TrackingIdtextfield, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(searchButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(38, 38, 38)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(59, Short.MAX_VALUE))
+                .addGap(30, 30, 30)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(TrackingIdtextfield, javax.swing.GroupLayout.DEFAULT_SIZE, 46, Short.MAX_VALUE)
+                    .addComponent(searchbutton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(33, 33, 33)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(83, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel2);
@@ -385,6 +406,10 @@ public class EmployeeOrderEdit extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void activeorderslabelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_activeorderslabelActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_activeorderslabelActionPerformed
 
     private void ManageuserbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ManageuserbuttonActionPerformed
         // TODO add your handling code here:
@@ -397,10 +422,6 @@ public class EmployeeOrderEdit extends javax.swing.JFrame {
     private void receiveremailtextfieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_receiveremailtextfieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_receiveremailtextfieldActionPerformed
-
-    private void receiveraddresstextfieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_receiveraddresstextfieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_receiveraddresstextfieldActionPerformed
 
     /**
      * @param args the command line arguments
@@ -424,7 +445,7 @@ public class EmployeeOrderEdit extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new EmployeeOrderEdit().setVisible(true));
+        java.awt.EventQueue.invokeLater(() -> new ManagerOrderEdit().setVisible(true));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -434,10 +455,11 @@ public class EmployeeOrderEdit extends javax.swing.JFrame {
     private javax.swing.JLabel Orderdetaillabel;
     private javax.swing.JLabel Rolelabel;
     private javax.swing.JTextField TrackingIdtextfield;
+    private javax.swing.JButton Workloadbutton;
+    private javax.swing.JButton activeorderslabel;
+    private javax.swing.JButton assignorderslabel;
     private javax.swing.JButton editbutton;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -445,17 +467,19 @@ public class EmployeeOrderEdit extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JTextField jTextField7;
     private javax.swing.JButton logoutbutton;
+    private javax.swing.JLabel logoutlabel;
     private javax.swing.JButton myprofilebutton;
     private javax.swing.JLabel namelabel;
-    private javax.swing.JButton priceconfigurationbutton;
+    private javax.swing.JLabel pfplabel;
     private javax.swing.JLabel receiveraddresslabel;
     private javax.swing.JTextField receiveraddresstextfield;
     private javax.swing.JLabel receiveremaillabel;
     private javax.swing.JTextField receiveremailtextfield;
     private javax.swing.JLabel receivernamelabel;
     private javax.swing.JTextField receivernametextfield;
+    private javax.swing.JButton returnbutton;
     private javax.swing.JButton savebutton;
-    private javax.swing.JButton searchButton;
+    private javax.swing.JButton searchbutton;
     private javax.swing.JLabel senderaddresslabel;
     private javax.swing.JTextField senderaddresstextfield;
     private javax.swing.JPanel toppanel;

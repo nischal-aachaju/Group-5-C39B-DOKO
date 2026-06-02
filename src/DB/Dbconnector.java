@@ -19,7 +19,7 @@ public class Dbconnector implements database {
         try{
             String username="root";
             String password="root";
-            String database="hello";
+            String database="doko";
             
             Connection connection;
             connection=DriverManager.getConnection(
@@ -31,11 +31,12 @@ public class Dbconnector implements database {
             else{
                 System.out.println("Connected");
             }
-            
+            return connection;
         }catch(Exception e){
             System.out.println(e);
+            return null;
         }
-        return null;
+        
     }
 
     @Override

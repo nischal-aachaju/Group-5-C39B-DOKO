@@ -72,7 +72,7 @@ public class forgotPassword extends javax.swing.JFrame {
 
         ConfirmNewpassword.setText("Confirm new password");
         jPanel1.add(ConfirmNewpassword);
-        ConfirmNewpassword.setBounds(40, 300, 122, 16);
+        ConfirmNewpassword.setBounds(30, 300, 122, 16);
 
         FullnameTextField.setBackground(new java.awt.Color(217, 217, 217));
         FullnameTextField.setText("Unish Gautam");
@@ -133,7 +133,7 @@ public class forgotPassword extends javax.swing.JFrame {
         TermsCheckBox.setBounds(170, 390, 125, 20);
 
         getContentPane().add(jPanel1);
-        jPanel1.setBounds(292, 26, 520, 470);
+        jPanel1.setBounds(280, 80, 520, 470);
 
         DOKO.setBackground(new java.awt.Color(41, 51, 123));
         DOKO.setFont(new java.awt.Font("Helvetica Neue", 1, 36)); // NOI18N

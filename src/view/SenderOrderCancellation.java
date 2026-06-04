@@ -32,8 +32,8 @@ public class SenderOrderCancellation extends javax.swing.JFrame {
         Sidebar = new javax.swing.JPanel();
         logo = new javax.swing.JLabel();
         dashboard = new javax.swing.JButton();
+        CreateOrder = new javax.swing.JButton();
         MyShipments = new javax.swing.JButton();
-        ManageOrders = new javax.swing.JButton();
         OrdersHistory = new javax.swing.JButton();
         MyProfile = new javax.swing.JButton();
         logout = new javax.swing.JButton();
@@ -46,25 +46,25 @@ public class SenderOrderCancellation extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        TrackingId = new javax.swing.JLabel();
+        receivername = new javax.swing.JLabel();
+        receiverEmail = new javax.swing.JLabel();
+        senderaddress = new javax.swing.JLabel();
+        receiversaddress = new javax.swing.JLabel();
+        totalcost = new javax.swing.JLabel();
         jTextField2 = new javax.swing.JTextField();
         jTextField3 = new javax.swing.JTextField();
         jTextField4 = new javax.swing.JTextField();
         jTextField5 = new javax.swing.JTextField();
         jTextField6 = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jTextField7 = new javax.swing.JTextField();
+        edit = new javax.swing.JButton();
+        Save = new javax.swing.JButton();
+        cancelOrder = new javax.swing.JButton();
+        trackid = new javax.swing.JTextField();
+        trackingID = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
-        jButton2 = new javax.swing.JButton();
+        search = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Employee Dashboard");
@@ -84,15 +84,15 @@ public class SenderOrderCancellation extends javax.swing.JFrame {
         dashboard.setForeground(new java.awt.Color(255, 255, 255));
         dashboard.setText("Dashboard");
 
-        MyShipments.setBackground(new java.awt.Color(33, 38, 49));
+        CreateOrder.setBackground(new java.awt.Color(33, 38, 49));
+        CreateOrder.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
+        CreateOrder.setForeground(new java.awt.Color(255, 255, 255));
+        CreateOrder.setText("Create Order");
+
+        MyShipments.setBackground(new java.awt.Color(216, 140, 81));
         MyShipments.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
         MyShipments.setForeground(new java.awt.Color(255, 255, 255));
-        MyShipments.setText("Create Order");
-
-        ManageOrders.setBackground(new java.awt.Color(216, 140, 81));
-        ManageOrders.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
-        ManageOrders.setForeground(new java.awt.Color(255, 255, 255));
-        ManageOrders.setText("My Shipments");
+        MyShipments.setText("My Shipments");
 
         OrdersHistory.setBackground(new java.awt.Color(33, 38, 49));
         OrdersHistory.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
@@ -124,8 +124,8 @@ public class SenderOrderCancellation extends javax.swing.JFrame {
                         .addGroup(SidebarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(MyProfile, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(OrdersHistory, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(ManageOrders, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE)
-                            .addComponent(MyShipments, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(MyShipments, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE)
+                            .addComponent(CreateOrder, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(dashboard, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addContainerGap())
                     .addGroup(SidebarLayout.createSequentialGroup()
@@ -144,9 +144,9 @@ public class SenderOrderCancellation extends javax.swing.JFrame {
                 .addGap(7, 7, 7)
                 .addComponent(dashboard, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(MyShipments, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(CreateOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(ManageOrders, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(MyShipments, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(OrdersHistory, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -186,38 +186,33 @@ public class SenderOrderCancellation extends javax.swing.JFrame {
 
         jPanel1.setLayout(null);
 
-        jLabel2.setText("Tracking ID");
-        jPanel1.add(jLabel2);
-        jLabel2.setBounds(68, 66, 79, 16);
+        TrackingId.setText("Tracking ID");
+        jPanel1.add(TrackingId);
+        TrackingId.setBounds(68, 66, 79, 16);
 
-        jLabel3.setText("Recever's Name");
-        jPanel1.add(jLabel3);
-        jLabel3.setBounds(68, 125, 90, 16);
+        receivername.setText("Recever's Name");
+        jPanel1.add(receivername);
+        receivername.setBounds(68, 125, 90, 16);
 
-        jLabel4.setText("Receiver's Email");
-        jPanel1.add(jLabel4);
-        jLabel4.setBounds(68, 180, 90, 16);
+        receiverEmail.setText("Receiver's Email");
+        jPanel1.add(receiverEmail);
+        receiverEmail.setBounds(68, 180, 90, 16);
 
-        jLabel5.setText("Sender's Address");
-        jPanel1.add(jLabel5);
-        jLabel5.setBounds(68, 235, 100, 16);
+        senderaddress.setText("Sender's Address");
+        jPanel1.add(senderaddress);
+        senderaddress.setBounds(68, 235, 100, 16);
 
-        jLabel6.setText("Receiver's Address");
-        jPanel1.add(jLabel6);
-        jLabel6.setBounds(68, 286, 100, 16);
+        receiversaddress.setText("Receiver's Address");
+        jPanel1.add(receiversaddress);
+        receiversaddress.setBounds(68, 286, 100, 16);
 
-        jLabel7.setText("Total cost");
-        jPanel1.add(jLabel7);
-        jLabel7.setBounds(68, 341, 79, 16);
-
-        jTextField1.setText("#2345");
-        jTextField1.addActionListener(this::jTextField1ActionPerformed);
-        jPanel1.add(jTextField1);
-        jTextField1.setBounds(197, 59, 147, 31);
+        totalcost.setText("Total cost");
+        jPanel1.add(totalcost);
+        totalcost.setBounds(68, 341, 79, 16);
 
         jTextField2.setText("Unish");
         jPanel1.add(jTextField2);
-        jTextField2.setBounds(197, 118, 147, 31);
+        jTextField2.setBounds(200, 120, 140, 31);
 
         jTextField3.setText("unishg@gmail.com");
         jPanel1.add(jTextField3);
@@ -240,32 +235,36 @@ public class SenderOrderCancellation extends javax.swing.JFrame {
         jPanel1.add(jLabel8);
         jLabel8.setBounds(16, 6, 120, 33);
 
-        jButton1.setBackground(new java.awt.Color(168, 168, 168));
-        jButton1.setText("Edit");
-        jButton1.addActionListener(this::jButton1ActionPerformed);
-        jPanel1.add(jButton1);
-        jButton1.setBounds(620, 8, 99, 35);
+        edit.setBackground(new java.awt.Color(168, 168, 168));
+        edit.setText("Edit");
+        edit.addActionListener(this::editActionPerformed);
+        jPanel1.add(edit);
+        edit.setBounds(620, 8, 99, 35);
 
-        jButton3.setBackground(new java.awt.Color(168, 168, 168));
-        jButton3.setText("Save");
-        jButton3.addActionListener(this::jButton3ActionPerformed);
-        jPanel1.add(jButton3);
-        jButton3.setBounds(620, 330, 99, 35);
+        Save.setBackground(new java.awt.Color(168, 168, 168));
+        Save.setText("Save");
+        Save.addActionListener(this::SaveActionPerformed);
+        jPanel1.add(Save);
+        Save.setBounds(620, 330, 99, 35);
 
-        jButton4.setBackground(new java.awt.Color(168, 168, 168));
-        jButton4.setText("Cancel Order");
-        jButton4.addActionListener(this::jButton4ActionPerformed);
-        jPanel1.add(jButton4);
-        jButton4.setBounds(510, 330, 99, 35);
+        cancelOrder.setBackground(new java.awt.Color(168, 168, 168));
+        cancelOrder.setText("Cancel Order");
+        cancelOrder.addActionListener(this::cancelOrderActionPerformed);
+        jPanel1.add(cancelOrder);
+        cancelOrder.setBounds(510, 330, 99, 35);
+
+        trackid.setText("#250455");
+        jPanel1.add(trackid);
+        trackid.setBounds(200, 60, 140, 30);
 
         MainPanel.add(jPanel1);
         jPanel1.setBounds(240, 180, 740, 400);
 
-        jTextField7.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jTextField7.setText("# Enter Tracking ID");
-        jTextField7.addActionListener(this::jTextField7ActionPerformed);
-        MainPanel.add(jTextField7);
-        jTextField7.setBounds(240, 120, 350, 50);
+        trackingID.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        trackingID.setText("# Enter Tracking ID");
+        trackingID.addActionListener(this::trackingIDActionPerformed);
+        MainPanel.add(trackingID);
+        trackingID.setBounds(240, 120, 350, 50);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -281,11 +280,11 @@ public class SenderOrderCancellation extends javax.swing.JFrame {
         MainPanel.add(jPanel2);
         jPanel2.setBounds(180, 0, 870, 70);
 
-        jButton2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jButton2.setText("Search");
-        jButton2.addActionListener(this::jButton2ActionPerformed);
-        MainPanel.add(jButton2);
-        jButton2.setBounds(610, 120, 110, 50);
+        search.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        search.setText("Search");
+        search.addActionListener(this::searchActionPerformed);
+        MainPanel.add(search);
+        search.setBounds(610, 120, 110, 50);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -302,29 +301,25 @@ public class SenderOrderCancellation extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField7ActionPerformed
+    private void trackingIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_trackingIDActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField7ActionPerformed
+    }//GEN-LAST:event_trackingIDActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void editActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_editActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void SaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_SaveActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void cancelOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelOrderActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_cancelOrderActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_searchActionPerformed
 
     /**
      * @param args the command line arguments
@@ -352,42 +347,42 @@ public class SenderOrderCancellation extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton CreateOrder;
     private javax.swing.JPanel MainPanel;
-    private javax.swing.JButton ManageOrders;
     private javax.swing.JButton MyProfile;
     private javax.swing.JButton MyShipments;
     private javax.swing.JButton OrdersHistory;
     private javax.swing.JLabel Profile;
+    private javax.swing.JButton Save;
     private javax.swing.JPanel Sidebar;
     private javax.swing.JPanel Topbar;
+    private javax.swing.JLabel TrackingId;
+    private javax.swing.JButton cancelOrder;
     private javax.swing.JButton dashboard;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JButton edit;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
     private javax.swing.JLabel logo;
     private javax.swing.JButton logout;
     private javax.swing.JLabel profile;
+    private javax.swing.JLabel receiverEmail;
+    private javax.swing.JLabel receivername;
+    private javax.swing.JLabel receiversaddress;
+    private javax.swing.JButton search;
+    private javax.swing.JLabel senderaddress;
+    private javax.swing.JLabel totalcost;
+    private javax.swing.JTextField trackid;
+    private javax.swing.JTextField trackingID;
     // End of variables declaration//GEN-END:variables
 }

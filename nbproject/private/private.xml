@@ -3,15 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/Group-5-C39B-DOKO/src/view/Sign_up_design.java</file>
+            <file>file:/D:/Group-5-C39B-DOKO/src/DAO/userDAO.java</file>
+            <file>file:/D:/Group-5-C39B-DOKO/src/DAO/orderFilterdao.java</file>
+            <file>file:/D:/Group-5-C39B-DOKO/src/controllor/OrderController.java</file>
             <file>file:/D:/Group-5-C39B-DOKO/src/view/Admin_Dashboard.java</file>
-            <file>file:/D:/Group-5-C39B-DOKO/src/view/Employee_Dashboard.java</file>
-            <file>file:/D:/Group-5-C39B-DOKO/src/view/Manager_Dashboard.java</file>
-            <file>file:/D:/Group-5-C39B-DOKO/src/view/OTPBasedPasswordReset.java</file>
-            <file>file:/D:/Group-5-C39B-DOKO/src/view/Sender_Dashboard.java</file>
-            <file>file:/D:/Group-5-C39B-DOKO/src/view/forgotPassword.java</file>
-            <file>file:/D:/Group-5-C39B-DOKO/src/view/login.java</file>
-            <file>file:/D:/Group-5-C39B-DOKO/src/view/priceConfiguration.java</file>
+            <file>file:/D:/Group-5-C39B-DOKO/src/Model/Order.java</file>
+            <file>file:/D:/Group-5-C39B-DOKO/src/DB/Dbconnector.java</file>
+            <file>file:/D:/Group-5-C39B-DOKO/src/controllor/PublicParcelTracking.java</file>
+            <file>file:/D:/Group-5-C39B-DOKO/src/DB/database.java</file>
         </group>
     </open-files>
 </project-private>

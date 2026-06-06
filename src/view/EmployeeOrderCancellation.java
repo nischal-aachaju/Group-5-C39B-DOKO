@@ -249,7 +249,7 @@ public class EmployeeOrderCancellation extends javax.swing.JFrame {
         jButton1.setBounds(620, 8, 99, 35);
 
         jButton3.setBackground(new java.awt.Color(168, 168, 168));
-        jButton3.setText("Save");
+        jButton3.setText("Delivered");
         jButton3.addActionListener(this::jButton3ActionPerformed);
         jPanel1.add(jButton3);
         jButton3.setBounds(620, 330, 99, 40);
@@ -258,7 +258,7 @@ public class EmployeeOrderCancellation extends javax.swing.JFrame {
         jButton4.setText("Cancel Order");
         jButton4.addActionListener(this::jButton4ActionPerformed);
         jPanel1.add(jButton4);
-        jButton4.setBounds(510, 330, 99, 40);
+        jButton4.setBounds(500, 330, 99, 40);
 
         jButton2.setBackground(new java.awt.Color(168, 168, 168));
         jButton2.setText("Return");

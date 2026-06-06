@@ -43,6 +43,8 @@ public class priceConfiguration extends javax.swing.JFrame {
         logout = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         profile = new javax.swing.JLabel();
+        Name = new javax.swing.JLabel();
+        Role = new javax.swing.JLabel();
         Priceconfiguration = new javax.swing.JLabel();
         pricePerkg = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
@@ -54,6 +56,7 @@ public class priceConfiguration extends javax.swing.JFrame {
         getContentPane().setLayout(null);
 
         MainPanel.setBackground(new java.awt.Color(238, 233, 223));
+        MainPanel.setLayout(null);
 
         sidebar.setBackground(new java.awt.Color(33, 38, 49));
 
@@ -156,85 +159,71 @@ public class priceConfiguration extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        MainPanel.add(sidebar);
+        sidebar.setBounds(0, 0, 194, 602);
+
         profile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/profile.png"))); // NOI18N
+
+        Name.setText("Name");
+
+        Role.setText("Role");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(768, Short.MAX_VALUE)
+                .addContainerGap(713, Short.MAX_VALUE)
                 .addComponent(profile)
-                .addGap(44, 44, 44))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Name, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Role, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(56, 56, 56))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(profile, javax.swing.GroupLayout.PREFERRED_SIZE, 76, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addComponent(Name)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Role)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        MainPanel.add(jPanel1);
+        jPanel1.setBounds(200, 0, 896, 76);
 
         Priceconfiguration.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
         Priceconfiguration.setText("Price Configuration");
+        MainPanel.add(Priceconfiguration);
+        Priceconfiguration.setBounds(251, 110, 178, 58);
 
         pricePerkg.addActionListener(this::pricePerkgActionPerformed);
+        MainPanel.add(pricePerkg);
+        pricePerkg.setBounds(251, 212, 199, 40);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
         jLabel1.setText("Price per KG");
+        MainPanel.add(jLabel1);
+        jLabel1.setBounds(251, 186, 123, 20);
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
         jLabel2.setText("Price per Meter");
+        MainPanel.add(jLabel2);
+        jLabel2.setBounds(251, 270, 110, 20);
 
         PriceperMeter.addActionListener(this::PriceperMeterActionPerformed);
+        MainPanel.add(PriceperMeter);
+        PriceperMeter.setBounds(251, 302, 199, 40);
 
         Save.setBackground(new java.awt.Color(216, 140, 81));
         Save.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
         Save.setForeground(new java.awt.Color(255, 255, 255));
         Save.setText("Save");
-
-        javax.swing.GroupLayout MainPanelLayout = new javax.swing.GroupLayout(MainPanel);
-        MainPanel.setLayout(MainPanelLayout);
-        MainPanelLayout.setHorizontalGroup(
-            MainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(MainPanelLayout.createSequentialGroup()
-                .addComponent(sidebar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(MainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MainPanelLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(Save, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(96, 96, 96))
-                    .addGroup(MainPanelLayout.createSequentialGroup()
-                        .addGroup(MainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(MainPanelLayout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(MainPanelLayout.createSequentialGroup()
-                                .addGap(57, 57, 57)
-                                .addGroup(MainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(Priceconfiguration, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel2)
-                                    .addComponent(pricePerkg, javax.swing.GroupLayout.DEFAULT_SIZE, 199, Short.MAX_VALUE)
-                                    .addComponent(PriceperMeter))))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-        );
-        MainPanelLayout.setVerticalGroup(
-            MainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(sidebar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(MainPanelLayout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(34, 34, 34)
-                .addComponent(Priceconfiguration, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(pricePerkg, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(PriceperMeter, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(Save, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(63, 63, 63))
-        );
+        MainPanel.add(Save);
+        Save.setBounds(905, 501, 101, 38);
 
         getContentPane().add(MainPanel);
         MainPanel.setBounds(0, 0, 1050, 600);
@@ -301,8 +290,10 @@ public class priceConfiguration extends javax.swing.JFrame {
     private javax.swing.JButton ManageOrder;
     private javax.swing.JButton ManageUser;
     private javax.swing.JButton Myprofile;
+    private javax.swing.JLabel Name;
     private javax.swing.JLabel Priceconfiguration;
     private javax.swing.JTextField PriceperMeter;
+    private javax.swing.JLabel Role;
     private javax.swing.JButton Save;
     private javax.swing.JButton Workload;
     private javax.swing.JButton branch;

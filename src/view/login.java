@@ -41,7 +41,7 @@ public class login extends javax.swing.JFrame {
         whatsup = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         dont_have_act_label = new javax.swing.JLabel();
-        register_label = new javax.swing.JLabel();
+        registerBtn = new javax.swing.JButton();
         tracking_id_label = new javax.swing.JLabel();
         tracking_id_textfield = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -52,21 +52,18 @@ public class login extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setBorder(javax.swing.BorderFactory.createCompoundBorder(null, javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1)));
         jPanel1.setLayout(null);
 
         jPanel3.setBackground(new java.awt.Color(236, 236, 236));
-        jPanel3.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, null, new java.awt.Color(153, 153, 153)));
         jPanel3.setLayout(null);
 
         track_parcel_label.setFont(new java.awt.Font("REM", 0, 48)); // NOI18N
         track_parcel_label.setForeground(new java.awt.Color(41, 51, 123));
         track_parcel_label.setText("Track Your Parcel ");
         jPanel3.add(track_parcel_label);
-        track_parcel_label.setBounds(58, 0, 420, 60);
+        track_parcel_label.setBounds(58, 0, 420, 62);
 
         jPanel2.setBackground(new java.awt.Color(236, 236, 236));
-        jPanel2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, null, new java.awt.Color(153, 153, 153)));
         jPanel2.setLayout(null);
 
         username_txtfld.addActionListener(this::username_txtfldActionPerformed);
@@ -99,12 +96,12 @@ public class login extends javax.swing.JFrame {
         change_pass_label.setForeground(new java.awt.Color(41, 51, 123));
         change_pass_label.setText("forget password");
         jPanel2.add(change_pass_label);
-        change_pass_label.setBounds(180, 190, 90, 13);
+        change_pass_label.setBounds(180, 190, 90, 14);
 
         whatsup.setFont(new java.awt.Font("REM", 0, 18)); // NOI18N
         whatsup.setText("What's Up?");
         jPanel2.add(whatsup);
-        whatsup.setBounds(120, 20, 110, 23);
+        whatsup.setBounds(120, 20, 110, 24);
 
         jLabel3.setFont(new java.awt.Font("Righteous", 0, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(41, 51, 123));
@@ -115,13 +112,11 @@ public class login extends javax.swing.JFrame {
         dont_have_act_label.setFont(new java.awt.Font("Righteous", 0, 12)); // NOI18N
         dont_have_act_label.setText("Don't have an account ?");
         jPanel2.add(dont_have_act_label);
-        dont_have_act_label.setBounds(130, 250, 140, 16);
+        dont_have_act_label.setBounds(60, 250, 140, 16);
 
-        register_label.setFont(new java.awt.Font("REM", 0, 12)); // NOI18N
-        register_label.setForeground(new java.awt.Color(255, 5, 0));
-        register_label.setText("Register Here");
-        jPanel2.add(register_label);
-        register_label.setBounds(190, 270, 79, 16);
+        registerBtn.setText("Register here");
+        jPanel2.add(registerBtn);
+        registerBtn.setBounds(190, 250, 120, 20);
 
         jPanel3.add(jPanel2);
         jPanel2.setBounds(550, 0, 332, 370);
@@ -129,7 +124,7 @@ public class login extends javax.swing.JFrame {
         tracking_id_label.setFont(new java.awt.Font("REM", 0, 32)); // NOI18N
         tracking_id_label.setText("Enter tracking ID");
         jPanel3.add(tracking_id_label);
-        tracking_id_label.setBounds(58, 66, 258, 41);
+        tracking_id_label.setBounds(58, 66, 234, 42);
 
         tracking_id_textfield.setText("eg_250455");
         tracking_id_textfield.addActionListener(this::tracking_id_textfieldActionPerformed);
@@ -146,7 +141,7 @@ public class login extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("REM", 0, 14)); // NOI18N
         jLabel1.setText("Details");
         jPanel3.add(jLabel1);
-        jLabel1.setBounds(60, 170, 50, 18);
+        jLabel1.setBounds(60, 170, 50, 19);
 
         jPanel1.add(jPanel3);
         jPanel3.setBounds(80, 130, 880, 370);
@@ -155,7 +150,7 @@ public class login extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(41, 51, 123));
         jLabel2.setText("DOKO");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(10, 10, 140, 70);
+        jLabel2.setBounds(10, 10, 170, 70);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -228,7 +223,7 @@ public class login extends javax.swing.JFrame {
     private javax.swing.JButton loginbtn;
     private javax.swing.JLabel password_label;
     private javax.swing.JTextField password_txtfld;
-    private javax.swing.JLabel register_label;
+    private javax.swing.JButton registerBtn;
     private javax.swing.JLabel track_parcel_label;
     private javax.swing.JLabel tracking_id_label;
     private javax.swing.JTextField tracking_id_textfield;
@@ -236,4 +231,20 @@ public class login extends javax.swing.JFrame {
     private javax.swing.JTextField username_txtfld;
     private javax.swing.JLabel whatsup;
     // End of variables declaration//GEN-END:variables
+    public String getUsername() {
+        return username_txtfld.getText();
+    }
+
+    public String getPassword() {
+        return password_txtfld.getText(); 
+    }
+
+    public void addLoginListener(java.awt.event.ActionListener listener) {
+        loginbtn.addActionListener(listener);
+    }
+    public void addRegisterListener(java.awt.event.ActionListener listener) {
+        // Make sure the variable name matches your NetBeans designer!
+        registerBtn.addActionListener(listener); 
+    }
 }
+

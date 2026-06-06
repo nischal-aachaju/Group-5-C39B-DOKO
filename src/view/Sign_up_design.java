@@ -53,10 +53,10 @@ public class Sign_up_design extends javax.swing.JPanel {
         sign_in_label = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        LoginBtn = new javax.swing.JLabel();
         verify = new javax.swing.JButton();
         Register = new javax.swing.JButton();
         roleFileld = new javax.swing.JComboBox<>();
+        login = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(1050, 600));
@@ -175,12 +175,6 @@ public class Sign_up_design extends javax.swing.JPanel {
         jPanel2.add(jLabel11);
         jLabel11.setBounds(130, 420, 140, 16);
 
-        LoginBtn.setFont(new java.awt.Font("REM", 1, 12)); // NOI18N
-        LoginBtn.setForeground(new java.awt.Color(41, 51, 123));
-        LoginBtn.setText("LOG-IN");
-        jPanel2.add(LoginBtn);
-        LoginBtn.setBounds(270, 420, 50, 16);
-
         verify.setBackground(new java.awt.Color(227, 227, 227));
         verify.setText("Verify");
         verify.setMaximumSize(new java.awt.Dimension(62, 22));
@@ -199,6 +193,11 @@ public class Sign_up_design extends javax.swing.JPanel {
         roleFileld.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "User", "Manager", "Employee", "Admin" }));
         jPanel2.add(roleFileld);
         roleFileld.setBounds(150, 270, 230, 22);
+
+        login.setText("Login");
+        login.addActionListener(this::loginActionPerformed);
+        jPanel2.add(login);
+        login.setBounds(270, 417, 75, 23);
 
         jPanel3.add(jPanel2);
         jPanel2.setBounds(530, 0, 420, 450);
@@ -227,10 +226,13 @@ public class Sign_up_design extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_emailFieldActionPerformed
 
+    private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_loginActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel App_name;
-    private javax.swing.JLabel LoginBtn;
     private javax.swing.JButton Register;
     private javax.swing.JTextField addressField;
     private javax.swing.JTextField emailField;
@@ -250,6 +252,7 @@ public class Sign_up_design extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JButton login;
     private javax.swing.JTextField nameField;
     private javax.swing.JTextField passwordField;
     private javax.swing.JTextField phoneNum;
@@ -269,9 +272,9 @@ public class Sign_up_design extends javax.swing.JPanel {
     public javax.swing.JCheckBox getTermsAndCondition() {
         return termsAndCondition;
     }
-//    public void addLoginListener(ActionListener listener) {
-//        login.addActionListener(listener);
-//    }
+    public void addLoginListener(ActionListener listener) {
+        login.addActionListener(listener);
+    }
     public javax.swing.JTextField getNameField() {
         return nameField; 
     }    

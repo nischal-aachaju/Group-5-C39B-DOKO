@@ -5,7 +5,7 @@
 package DAO;
 
 //import DB.Dbconnector;
-import Db.Dbconnector;
+import DB.Dbconnector;
 import java.sql.Connection;
 import Model.userData;
 import java.sql.PreparedStatement;
@@ -54,4 +54,38 @@ public class userDAO {
         return false;
     }
     
+public userData loginUser(String username, String password) {
+        Connection conn = db.openConnection();
+        String sql = "SELECT * FROM users WHERE username = ? AND userPassword = ?";
+        
+        try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setString(1, username);
+            pstmt.setString(2, password);
+            
+            ResultSet result = pstmt.executeQuery();
+            
+            // If a match is found, create a userData object with their info
+            if (result.next()) {
+                userData user = new userData(
+                    result.getString("username"),
+                    result.getString("email"),
+                    result.getString("phone"),
+                    result.getString("address"),
+                    result.getString("userPassword"),
+                    result.getString("role")
+                );
+                // Set the ID from the database
+                user.setUserID(result.getInt("user_id")); 
+                
+                return user; // Return the fully populated user object
+            }
+            
+        } catch (SQLException ex) {
+            System.out.println("Error during login: " + ex.getMessage());
+        } finally {
+            db.closeConnection(conn);
+        }
+        
+        return null; // Return null if login fails (wrong username or password)
+    }
 }

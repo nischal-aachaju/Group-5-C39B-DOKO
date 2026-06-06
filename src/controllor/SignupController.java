@@ -3,7 +3,7 @@ package controllor;
 import DAO.userDAO;
 import Model.userData;
 import java.awt.Window;
-import view.Sign_up_design;
+import view.sign_up;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
@@ -11,15 +11,18 @@ import javax.swing.SwingUtilities;
 
 public class SignupController {
     private final userDAO userDao = new userDAO();
-    private final Sign_up_design userView;
+    private final sign_up userView;
     
     // 1. ADD THIS MEMORY VARIABLE
     private String storedPassword = ""; 
 
-    public SignupController(Sign_up_design userView) {
+public SignupController(sign_up userView) {
         this.userView = userView;
         userView.addAddUserListener(new AddUserListener());
         userView.addVerifyListener(new VerifyListener());
+        
+        // ADD THIS LINE: Connect the login button
+        userView.addLoginListener(new SwitchToLoginListener());
     }
 
     public void open() {
@@ -122,4 +125,19 @@ public class SignupController {
             }
         }
     }
+ // --- Add this inside SignupController.java ---
+    class SwitchToLoginListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            // 1. Close the current Sign-up window
+            close(); 
+            // 2. Initialize and open the Login window
+            view.login loginView = new view.login();
+            controllor.LoginController loginController = new controllor.LoginController(loginView);
+            
+            loginController.open();
+        }
+    }
+ 
+
 }

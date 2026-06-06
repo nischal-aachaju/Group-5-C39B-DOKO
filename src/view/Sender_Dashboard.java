@@ -38,19 +38,25 @@ public class Sender_Dashboard extends javax.swing.JFrame {
         OrdersHistory = new javax.swing.JButton();
         MyProfile = new javax.swing.JButton();
         jSeparator2 = new javax.swing.JSeparator();
-        jButton10 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        logout = new javax.swing.JButton();
         topbar = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
+        username = new javax.swing.JLabel();
+        user_role = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        Profile = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         RecentOrders = new javax.swing.JTable();
-        TotalOrders = new javax.swing.JButton();
-        CancelOrders = new javax.swing.JButton();
-        DeliveredShipment = new javax.swing.JButton();
-        PendingShipment = new javax.swing.JButton();
+        Total_orders = new javax.swing.JPanel();
+        total_orders_text = new javax.swing.JLabel();
+        total_orders_value = new javax.swing.JLabel();
+        Cancel_Orders = new javax.swing.JPanel();
+        Cancel_orders_text = new javax.swing.JLabel();
+        Cancel_orders_value = new javax.swing.JLabel();
+        Pending_shipments = new javax.swing.JPanel();
+        Pending_shipments_text = new javax.swing.JLabel();
+        Pending_shipments_value = new javax.swing.JLabel();
+        Delivered_shipments = new javax.swing.JPanel();
+        Deliverd_shipments_text = new javax.swing.JLabel();
+        Deliverd_shipments_value = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(204, 204, 204));
@@ -63,7 +69,7 @@ public class Sender_Dashboard extends javax.swing.JFrame {
 
         logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/logo.png"))); // NOI18N
 
-        Dashboard.setBackground(new java.awt.Color(33, 38, 49));
+        Dashboard.setBackground(new java.awt.Color(216, 140, 81));
         Dashboard.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
         Dashboard.setForeground(new java.awt.Color(255, 255, 255));
         Dashboard.setText("Dashboard");
@@ -89,13 +95,12 @@ public class Sender_Dashboard extends javax.swing.JFrame {
         MyProfile.setForeground(new java.awt.Color(255, 255, 255));
         MyProfile.setText("My Profile");
 
-        jButton10.setBackground(new java.awt.Color(33, 38, 49));
-        jButton10.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
-        jButton10.setForeground(new java.awt.Color(255, 102, 102));
-        jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/logout.png"))); // NOI18N
-        jButton10.setText("Logout");
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/logout.png"))); // NOI18N
+        logout.setBackground(new java.awt.Color(33, 38, 49));
+        logout.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
+        logout.setForeground(new java.awt.Color(255, 102, 102));
+        logout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/logout.png"))); // NOI18N
+        logout.setText("Logout");
+        logout.addActionListener(this::logoutActionPerformed);
 
         javax.swing.GroupLayout sidebarLayout = new javax.swing.GroupLayout(sidebar);
         sidebar.setLayout(sidebarLayout);
@@ -104,7 +109,7 @@ public class Sender_Dashboard extends javax.swing.JFrame {
             .addComponent(jSeparator2, javax.swing.GroupLayout.Alignment.TRAILING)
             .addGroup(sidebarLayout.createSequentialGroup()
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 3, Short.MAX_VALUE))
             .addGroup(sidebarLayout.createSequentialGroup()
                 .addGroup(sidebarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(sidebarLayout.createSequentialGroup()
@@ -112,9 +117,7 @@ public class Sender_Dashboard extends javax.swing.JFrame {
                         .addGroup(sidebarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(Dashboard, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(sidebarLayout.createSequentialGroup()
-                                .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel1)
+                                .addComponent(logout, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 0, Short.MAX_VALUE))
                             .addComponent(MyShipments, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(ManageOrders, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -142,60 +145,30 @@ public class Sender_Dashboard extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 134, Short.MAX_VALUE)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(sidebarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(logout, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
         MainPanel.add(sidebar);
         sidebar.setBounds(0, 0, 182, 600);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/profile.png"))); // NOI18N
+        topbar.setLayout(null);
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
-        jLabel3.setText("Name");
+        username.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        username.setText("Name");
+        topbar.add(username);
+        username.setBounds(800, 10, 70, 22);
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
-        jLabel4.setText("Role");
+        user_role.setText("Role");
+        topbar.add(user_role);
+        user_role.setBounds(800, 40, 37, 16);
 
-        Profile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/profile.png"))); // NOI18N
-
-        javax.swing.GroupLayout topbarLayout = new javax.swing.GroupLayout(topbar);
-        topbar.setLayout(topbarLayout);
-        topbarLayout.setHorizontalGroup(
-            topbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, topbarLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Profile)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(topbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
-        );
-        topbarLayout.setVerticalGroup(
-            topbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, topbarLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel3)
-                .addGap(18, 18, 18)
-                .addGroup(topbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(topbarLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(topbarLayout.createSequentialGroup()
-                        .addComponent(jLabel4)
-                        .addGap(0, 0, Short.MAX_VALUE))))
-            .addGroup(topbarLayout.createSequentialGroup()
-                .addComponent(Profile, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/pfp.jpg"))); // NOI18N
+        topbar.add(jLabel3);
+        jLabel3.setBounds(730, 10, 60, 60);
 
         MainPanel.add(topbar);
-        topbar.setBounds(171, 0, 879, 74);
+        topbar.setBounds(180, 0, 870, 70);
 
         RecentOrders.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -225,36 +198,105 @@ public class Sender_Dashboard extends javax.swing.JFrame {
         MainPanel.add(jScrollPane1);
         jScrollPane1.setBounds(263, 300, 710, 250);
 
-        TotalOrders.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
-        TotalOrders.setText("Total Orders");
-        MainPanel.add(TotalOrders);
-        TotalOrders.setBounds(360, 110, 200, 65);
+        Total_orders.setLayout(null);
 
-        CancelOrders.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
-        CancelOrders.setText("Cancel orders");
-        CancelOrders.addActionListener(this::CancelOrdersActionPerformed);
-        MainPanel.add(CancelOrders);
-        CancelOrders.setBounds(700, 110, 200, 65);
+        total_orders_text.setBackground(new java.awt.Color(238, 238, 238));
+        total_orders_text.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        total_orders_text.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        total_orders_text.setText("Total Orders");
+        total_orders_text.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        Total_orders.add(total_orders_text);
+        total_orders_text.setBounds(0, 0, 140, 60);
 
-        DeliveredShipment.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
-        DeliveredShipment.setText("Delivered Shipment");
-        MainPanel.add(DeliveredShipment);
-        DeliveredShipment.setBounds(360, 200, 200, 65);
+        total_orders_value.setBackground(new java.awt.Color(238, 238, 238));
+        total_orders_value.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        total_orders_value.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        total_orders_value.setText("0");
+        total_orders_value.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        Total_orders.add(total_orders_value);
+        total_orders_value.setBounds(140, 0, 50, 60);
 
-        PendingShipment.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
-        PendingShipment.setText("Pending Shipment");
-        MainPanel.add(PendingShipment);
-        PendingShipment.setBounds(700, 200, 200, 65);
+        MainPanel.add(Total_orders);
+        Total_orders.setBounds(250, 120, 190, 60);
+
+        Cancel_Orders.setLayout(null);
+
+        Cancel_orders_text.setBackground(new java.awt.Color(238, 238, 238));
+        Cancel_orders_text.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Cancel_orders_text.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Cancel_orders_text.setText("Cancel Orders");
+        Cancel_orders_text.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        Cancel_Orders.add(Cancel_orders_text);
+        Cancel_orders_text.setBounds(0, 0, 140, 60);
+
+        Cancel_orders_value.setBackground(new java.awt.Color(238, 238, 238));
+        Cancel_orders_value.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Cancel_orders_value.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Cancel_orders_value.setText("0");
+        Cancel_orders_value.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        Cancel_Orders.add(Cancel_orders_value);
+        Cancel_orders_value.setBounds(140, 0, 50, 60);
+
+        MainPanel.add(Cancel_Orders);
+        Cancel_Orders.setBounds(550, 120, 190, 60);
+
+        Pending_shipments.setLayout(null);
+
+        Pending_shipments_text.setBackground(new java.awt.Color(238, 238, 238));
+        Pending_shipments_text.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Pending_shipments_text.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Pending_shipments_text.setText("Pending_shipments");
+        Pending_shipments_text.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        Pending_shipments.add(Pending_shipments_text);
+        Pending_shipments_text.setBounds(0, 0, 140, 60);
+
+        Pending_shipments_value.setBackground(new java.awt.Color(238, 238, 238));
+        Pending_shipments_value.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Pending_shipments_value.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Pending_shipments_value.setText("0");
+        Pending_shipments_value.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        Pending_shipments.add(Pending_shipments_value);
+        Pending_shipments_value.setBounds(140, 0, 50, 60);
+
+        MainPanel.add(Pending_shipments);
+        Pending_shipments.setBounds(250, 210, 190, 60);
+
+        Delivered_shipments.setLayout(null);
+
+        Deliverd_shipments_text.setBackground(new java.awt.Color(238, 238, 238));
+        Deliverd_shipments_text.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Deliverd_shipments_text.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Deliverd_shipments_text.setText("Cancel Orders");
+        Deliverd_shipments_text.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        Delivered_shipments.add(Deliverd_shipments_text);
+        Deliverd_shipments_text.setBounds(0, 0, 140, 60);
+
+        Deliverd_shipments_value.setBackground(new java.awt.Color(238, 238, 238));
+        Deliverd_shipments_value.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Deliverd_shipments_value.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Deliverd_shipments_value.setText("0");
+        Deliverd_shipments_value.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        Delivered_shipments.add(Deliverd_shipments_value);
+        Deliverd_shipments_value.setBounds(140, 0, 50, 60);
+
+        MainPanel.add(Delivered_shipments);
+        Delivered_shipments.setBounds(550, 210, 190, 60);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(MainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(MainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 1038, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(MainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(MainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 588, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
@@ -264,9 +306,9 @@ public class Sender_Dashboard extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_DashboardActionPerformed
 
-    private void CancelOrdersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelOrdersActionPerformed
+    private void logoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_CancelOrdersActionPerformed
+    }//GEN-LAST:event_logoutActionPerformed
 
     /**
      * @param args the command line arguments
@@ -294,28 +336,45 @@ public class Sender_Dashboard extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton CancelOrders;
+    private javax.swing.JPanel Cancel_Orders;
+    private javax.swing.JLabel Cancel_orders_text;
+    private javax.swing.JLabel Cancel_orders_value;
     private javax.swing.JButton Dashboard;
-    private javax.swing.JButton DeliveredShipment;
+    private javax.swing.JLabel Deliverd_shipments_text;
+    private javax.swing.JLabel Deliverd_shipments_value;
+    private javax.swing.JPanel Delivered_shipments;
     private javax.swing.JPanel MainPanel;
     private javax.swing.JButton ManageOrders;
     private javax.swing.JButton MyProfile;
     private javax.swing.JButton MyShipments;
     private javax.swing.JButton OrdersHistory;
-    private javax.swing.JButton PendingShipment;
-    private javax.swing.JLabel Profile;
+    private javax.swing.JPanel Pending_shipments;
+    private javax.swing.JLabel Pending_shipments_text;
+    private javax.swing.JLabel Pending_shipments_value;
     private javax.swing.JTable RecentOrders;
-    private javax.swing.JButton TotalOrders;
-    private javax.swing.JButton jButton10;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JPanel Total_orders;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JLabel logo;
+    private javax.swing.JButton logout;
     private javax.swing.JPanel sidebar;
     private javax.swing.JPanel topbar;
+    private javax.swing.JLabel total_orders_text;
+    private javax.swing.JLabel total_orders_value;
+    private javax.swing.JLabel user_role;
+    private javax.swing.JLabel username;
     // End of variables declaration//GEN-END:variables
+public void setUsernameLabel(String name) {
+        username.setText(name); // Replace 'username' with your actual JLabel variable
+    }
+
+    public void setRoleLabel(String role) {
+        user_role.setText(role); // Replace 'user_role' with your actual JLabel variable
+    }
+
+    public void addLogoutListener(java.awt.event.ActionListener listener) {
+        logout.addActionListener(listener); // Replace 'logoutBtn' with your actual JButton variable
+    }
 }

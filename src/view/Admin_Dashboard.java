@@ -66,7 +66,7 @@ public class Admin_Dashboard extends javax.swing.JFrame {
 
         sidebar.setBackground(new java.awt.Color(33, 38, 49));
 
-        Dashboard.setBackground(new java.awt.Color(33, 38, 49));
+        Dashboard.setBackground(new java.awt.Color(216, 140, 81));
         Dashboard.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
         Dashboard.setForeground(new java.awt.Color(255, 255, 255));
         Dashboard.setText("Dashboard");
@@ -227,7 +227,7 @@ public class Admin_Dashboard extends javax.swing.JFrame {
         );
 
         MainPanel.add(Topbar);
-        Topbar.setBounds(186, 0, 864, 75);
+        Topbar.setBounds(186, 0, 780, 75);
 
         PendingShipment.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
         PendingShipment.setText("Pending Shipment");

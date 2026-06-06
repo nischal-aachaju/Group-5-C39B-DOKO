@@ -1,6 +1,6 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package view;
 
@@ -8,14 +8,16 @@ import java.awt.event.ActionListener;
 
 /**
  *
- * @author Kushal
+ * @author nischal
  */
-public class Sign_up_design extends javax.swing.JPanel {
+public class sign_up extends javax.swing.JFrame {
+    
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(sign_up.class.getName());
 
     /**
-     * Creates new form Sign_up_design
+     * Creates new form sign_up
      */
-    public Sign_up_design() {
+    public sign_up() {
         initComponents();
     }
 
@@ -58,17 +60,11 @@ public class Sign_up_design extends javax.swing.JPanel {
         roleFileld = new javax.swing.JComboBox<>();
         login = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(255, 255, 255));
-        setPreferredSize(new java.awt.Dimension(1050, 600));
-        setRequestFocusEnabled(false);
-        setVerifyInputWhenFocusTarget(false);
-        setLayout(null);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel9.setFont(new java.awt.Font("Righteous", 0, 48)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(41, 51, 123));
         jLabel9.setText("DOKO");
-        add(jLabel9);
-        jLabel9.setBounds(20, 10, 150, 40);
 
         jPanel3.setBackground(new java.awt.Color(236, 236, 236));
         jPanel3.setLayout(null);
@@ -202,34 +198,80 @@ public class Sign_up_design extends javax.swing.JPanel {
         jPanel3.add(jPanel2);
         jPanel2.setBounds(530, 0, 420, 450);
 
-        add(jPanel3);
-        jPanel3.setBounds(50, 100, 950, 450);
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(58, Short.MAX_VALUE)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 950, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(42, 42, 42))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28))
+        );
+
+        pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void trackingFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_trackingFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_trackingFieldActionPerformed
 
-    private void verifyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_verifyActionPerformed
+    private void emailFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_verifyActionPerformed
-
-    private void addressFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addressFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_addressFieldActionPerformed
+    }//GEN-LAST:event_emailFieldActionPerformed
 
     private void phoneNumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_phoneNumActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_phoneNumActionPerformed
 
-    private void emailFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailFieldActionPerformed
+    private void addressFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addressFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_emailFieldActionPerformed
+    }//GEN-LAST:event_addressFieldActionPerformed
+
+    private void verifyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_verifyActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_verifyActionPerformed
 
     private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_loginActionPerformed
 
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ReflectiveOperationException | javax.swing.UnsupportedLookAndFeelException ex) {
+            logger.log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(() -> new sign_up().setVisible(true));
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel App_name;
@@ -262,36 +304,57 @@ public class Sign_up_design extends javax.swing.JPanel {
     private javax.swing.JTextField trackingField;
     private javax.swing.JButton verify;
     // End of variables declaration//GEN-END:variables
+  
     public void addAddUserListener(ActionListener listener) {
+
         Register.addActionListener(listener);
+
     }
-    
+
     public void addVerifyListener(ActionListener listener) {
+
         verify.addActionListener(listener); // Fix: Use addActionListener
+
     }
     public javax.swing.JCheckBox getTermsAndCondition() {
+
         return termsAndCondition;
     }
     public void addLoginListener(ActionListener listener) {
+
         login.addActionListener(listener);
     }
+
     public javax.swing.JTextField getNameField() {
+
         return nameField; 
     }    
     public javax.swing.JTextField getEmailField() {
+
         return emailField; 
+
     }
+
     public javax.swing.JTextField getAddressField() {
+
         return addressField;
     }
+
     public javax.swing.JTextField getPhoneNum() {
+
         return phoneNum;
     }
+
     public javax.swing.JTextField getPasswordField() {
+
         return passwordField;
+
     }
+
     public javax.swing.JComboBox<String> getRole() {
+
         return roleFileld;
+
     }
-    
 }
+

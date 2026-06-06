@@ -47,6 +47,7 @@ public class login extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         details_txt_area = new javax.swing.JTextArea();
         jLabel1 = new javax.swing.JLabel();
+        orderSearch = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -114,9 +115,9 @@ public class login extends javax.swing.JFrame {
         jPanel2.add(dont_have_act_label);
         dont_have_act_label.setBounds(60, 250, 140, 16);
 
-        registerBtn.setText("Register here");
+        registerBtn.setText("Register");
         jPanel2.add(registerBtn);
-        registerBtn.setBounds(190, 250, 120, 20);
+        registerBtn.setBounds(190, 250, 80, 20);
 
         jPanel3.add(jPanel2);
         jPanel2.setBounds(550, 0, 332, 370);
@@ -142,6 +143,10 @@ public class login extends javax.swing.JFrame {
         jLabel1.setText("Details");
         jPanel3.add(jLabel1);
         jLabel1.setBounds(60, 170, 50, 19);
+
+        orderSearch.setText("Search");
+        jPanel3.add(orderSearch);
+        orderSearch.setBounds(320, 116, 72, 30);
 
         jPanel1.add(jPanel3);
         jPanel3.setBounds(80, 130, 880, 370);
@@ -221,6 +226,7 @@ public class login extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton loginbtn;
+    private javax.swing.JButton orderSearch;
     private javax.swing.JLabel password_label;
     private javax.swing.JTextField password_txtfld;
     private javax.swing.JButton registerBtn;

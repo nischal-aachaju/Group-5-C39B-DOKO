@@ -65,7 +65,7 @@ public class Employee_Dashboard extends javax.swing.JFrame {
 
         logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/logo.png"))); // NOI18N
 
-        dashboard.setBackground(new java.awt.Color(33, 38, 49));
+        dashboard.setBackground(new java.awt.Color(216, 140, 81));
         dashboard.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
         dashboard.setForeground(new java.awt.Color(255, 255, 255));
         dashboard.setText("Dashboard");
@@ -193,7 +193,7 @@ public class Employee_Dashboard extends javax.swing.JFrame {
         );
 
         MainPanel.add(Topbar);
-        Topbar.setBounds(186, 0, 864, 80);
+        Topbar.setBounds(186, 0, 780, 80);
 
         TotalOrders.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
         TotalOrders.setText("Total Orders");

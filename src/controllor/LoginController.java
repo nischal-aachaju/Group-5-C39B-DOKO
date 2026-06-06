@@ -13,6 +13,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
+import view.Sender_Dashboard;
 
 public class LoginController {
     
@@ -80,8 +81,18 @@ public class LoginController {
                         
                     case "manager":
                         System.out.println("Routing to Manager Dashboard...");
-//                         new ManagerController(new ManagerView(), loggedInUser).open();
+
+                        // Create the View
+                        view.Manager_Dashboard managerView = new view.Manager_Dashboard();
+                        
+                        // Pass the view AND the loggedInUser object to the new controller
+                        controllor.ManagerController managerController = new controllor.ManagerController(managerView, loggedInUser);
+
+                        // Open the dashboard!
+                        managerController.open();
                         break;
+
+
                         
                     case "employee":
                         System.out.println("Routing to Employee Dashboard...");
@@ -90,8 +101,17 @@ public class LoginController {
                       
                         
                     case "user":
+
                         System.out.println("Routing to User Dashboard...");
-                        // new UserController(new UserView(), loggedInUser).open();
+                        
+                        // 1. Create the View
+                        view.Sender_Dashboard userView = new view.Sender_Dashboard();
+                        
+                        // 2. Pass the view AND the loggedInUser object to the new controller
+                        controllor.UserController userController = new controllor.UserController(userView, loggedInUser);
+                        
+                        // 3. Open the dashboard!
+                        userController.open();
                         break;
                         
                     default:
@@ -116,7 +136,7 @@ public class LoginController {
             close(); 
             
             // 2. Initialize and open the Sign-Up window
-            view.Sign_up_design signupView = new view.Sign_up_design();
+            view.sign_up signupView = new view.sign_up();
             controllor.SignupController signupController = new controllor.SignupController(signupView);
             
             signupController.open();

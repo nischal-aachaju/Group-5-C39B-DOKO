@@ -1,28 +1,24 @@
 package group.pkg5.doko;
 
-import controllor.LoginController; // Capital L here
-import view.login;
-import javax.swing.SwingUtilities;
+import controllor.SignupController; // Import the SignupController
+import view.sign_up    ;     // Import the Signup View
+
 
 /**
- * Main application runner
+ * Main application runner starting with the Register page
  * @author nischal
  */
 public class Group5DOKO {
 
     public static void main(String[] args) {
-        
-        SwingUtilities.invokeLater(() -> {
+           
+            // 1. Create the Sign-Up/Register View first
+            sign_up signupView = new sign_up();
             
-            // 1. Create the Login View
-            login loginView = new login();
+            // 2. Initialize the Signup Controller and pass the view to it
+            SignupController controller = new SignupController(signupView);
             
-            // 2. Initialize the Login Controller and pass the view to it
-            LoginController controller = new LoginController(loginView); // Capital L here
-            
-            // 3. Open the login window!
-            controller.open();
-            
-        });
+            // 3. Open the registration window!
+            controller.open();       
     }
 }

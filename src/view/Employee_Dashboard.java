@@ -43,6 +43,8 @@ public class Employee_Dashboard extends javax.swing.JFrame {
         Topbar = new javax.swing.JPanel();
         profile = new javax.swing.JLabel();
         Profile = new javax.swing.JLabel();
+        name = new javax.swing.JLabel();
+        role = new javax.swing.JLabel();
         TotalOrders = new javax.swing.JButton();
         CancelOrders = new javax.swing.JButton();
         DeliveredShipment = new javax.swing.JButton();
@@ -151,27 +153,47 @@ public class Employee_Dashboard extends javax.swing.JFrame {
 
         Profile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/profile.png"))); // NOI18N
 
+        name.setText("Name");
+
+        role.setText("Role");
+
         javax.swing.GroupLayout TopbarLayout = new javax.swing.GroupLayout(Topbar);
         Topbar.setLayout(TopbarLayout);
         TopbarLayout.setHorizontalGroup(
             TopbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TopbarLayout.createSequentialGroup()
-                .addGap(0, 757, Short.MAX_VALUE)
+                .addGap(0, 724, Short.MAX_VALUE)
                 .addComponent(profile)
-                .addGap(23, 23, 23)
-                .addComponent(Profile))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Profile)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(TopbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(TopbarLayout.createSequentialGroup()
+                        .addComponent(name, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(7, 7, 7))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TopbarLayout.createSequentialGroup()
+                        .addComponent(role, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())))
         );
         TopbarLayout.setVerticalGroup(
             TopbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(TopbarLayout.createSequentialGroup()
                 .addGroup(TopbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(profile, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Profile, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(TopbarLayout.createSequentialGroup()
+                        .addComponent(Profile, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
+            .addGroup(TopbarLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(name)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(role)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         MainPanel.add(Topbar);
-        Topbar.setBounds(186, 0, 864, 88);
+        Topbar.setBounds(186, 0, 864, 80);
 
         TotalOrders.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
         TotalOrders.setText("Total Orders");
@@ -181,7 +203,7 @@ public class Employee_Dashboard extends javax.swing.JFrame {
         CancelOrders.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
         CancelOrders.setText("Cancel Orders");
         MainPanel.add(CancelOrders);
-        CancelOrders.setBounds(614, 133, 196, 65);
+        CancelOrders.setBounds(640, 130, 196, 65);
 
         DeliveredShipment.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
         DeliveredShipment.setText("Delivered Shipment");
@@ -191,7 +213,7 @@ public class Employee_Dashboard extends javax.swing.JFrame {
         PendingShipment.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
         PendingShipment.setText("Pending Shipment");
         MainPanel.add(PendingShipment);
-        PendingShipment.setBounds(614, 227, 196, 65);
+        PendingShipment.setBounds(640, 230, 196, 65);
 
         Orders_Table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -213,7 +235,7 @@ public class Employee_Dashboard extends javax.swing.JFrame {
         jScrollPane1.setViewportView(Orders_Table);
 
         MainPanel.add(jScrollPane1);
-        jScrollPane1.setBounds(295, 336, 700, 204);
+        jScrollPane1.setBounds(275, 336, 680, 204);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -276,6 +298,8 @@ public class Employee_Dashboard extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JLabel logo;
     private javax.swing.JButton logout;
+    private javax.swing.JLabel name;
     private javax.swing.JLabel profile;
+    private javax.swing.JLabel role;
     // End of variables declaration//GEN-END:variables
 }

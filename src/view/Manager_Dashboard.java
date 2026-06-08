@@ -81,19 +81,19 @@ public class Manager_Dashboard extends javax.swing.JFrame {
 
         profile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/pfp.jpg"))); // NOI18N
         topbar.add(profile);
-        profile.setBounds(720, 10, 60, 60);
+        profile.setBounds(700, 5, 60, 60);
 
         username.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         username.setText("Name");
         topbar.add(username);
-        username.setBounds(790, 10, 50, 20);
+        username.setBounds(770, 20, 100, 20);
 
         user_role.setText("Role");
         topbar.add(user_role);
-        user_role.setBounds(790, 40, 80, 16);
+        user_role.setBounds(770, 40, 80, 16);
 
         MainPanel.add(topbar);
-        topbar.setBounds(180, 0, 870, 80);
+        topbar.setBounds(180, 0, 870, 70);
 
         sidebar.setBackground(new java.awt.Color(33, 38, 49));
 
@@ -170,7 +170,7 @@ public class Manager_Dashboard extends javax.swing.JFrame {
             .addGroup(sidebarLayout.createSequentialGroup()
                 .addGap(13, 13, 13)
                 .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Dashboard, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)

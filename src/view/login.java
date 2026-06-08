@@ -117,7 +117,7 @@ public class login extends javax.swing.JFrame {
 
         registerBtn.setText("Register");
         jPanel2.add(registerBtn);
-        registerBtn.setBounds(190, 250, 80, 20);
+        registerBtn.setBounds(190, 250, 100, 20);
 
         jPanel3.add(jPanel2);
         jPanel2.setBounds(550, 0, 332, 370);
@@ -146,7 +146,7 @@ public class login extends javax.swing.JFrame {
 
         orderSearch.setText("Search");
         jPanel3.add(orderSearch);
-        orderSearch.setBounds(320, 116, 72, 30);
+        orderSearch.setBounds(320, 116, 80, 30);
 
         jPanel1.add(jPanel3);
         jPanel3.setBounds(80, 130, 880, 370);

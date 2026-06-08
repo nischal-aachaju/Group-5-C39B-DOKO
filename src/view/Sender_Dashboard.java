@@ -157,18 +157,18 @@ public class Sender_Dashboard extends javax.swing.JFrame {
         username.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         username.setText("Name");
         topbar.add(username);
-        username.setBounds(800, 10, 70, 22);
+        username.setBounds(770, 20, 100, 22);
 
         user_role.setText("Role");
         topbar.add(user_role);
-        user_role.setBounds(800, 40, 37, 16);
+        user_role.setBounds(770, 40, 37, 16);
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/pfp.jpg"))); // NOI18N
         topbar.add(jLabel3);
-        jLabel3.setBounds(730, 10, 60, 60);
+        jLabel3.setBounds(700, 5, 60, 60);
 
         MainPanel.add(topbar);
-        topbar.setBounds(180, 0, 870, 70);
+        topbar.setBounds(180, 0, 860, 70);
 
         RecentOrders.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {

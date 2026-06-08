@@ -73,10 +73,17 @@ public class LoginController {
                 String role = loggedInUser.getRole().toLowerCase();
                 
                 switch (role) {
-                    case "admin":
+                case "admin":
                         System.out.println("Routing to Admin Dashboard...");
-
-                        // new AdminController(new AdminView(), loggedInUser).open();
+                        
+                        // 1. Create the View
+                        view.Admin_Dashboard adminView = new view.Admin_Dashboard();
+                        
+                        // 2. Pass the view AND the loggedInUser object to the new controller
+                        controllor.AdminController adminController = new controllor.AdminController(adminView, loggedInUser);
+                        
+                        // 3. Open the dashboard!
+                        adminController.open();
                         break;
                         
                     case "manager":
@@ -96,7 +103,15 @@ public class LoginController {
                         
                     case "employee":
                         System.out.println("Routing to Employee Dashboard...");
-                        // new EmployeeController(new EmployeeView(), loggedInUser).open();
+                        
+                        // 1. Create the View
+                        view.Employee_Dashboard employeeView = new view.Employee_Dashboard();
+                        
+                        // 2. Pass the view AND the loggedInUser object to the new controller
+                        controllor.EmployeeController employeeController = new controllor.EmployeeController(employeeView, loggedInUser);
+                        
+                        // 3. Open the dashboard!
+                        employeeController.open();
                         break;
                       
                         

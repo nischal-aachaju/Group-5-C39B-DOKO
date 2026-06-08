@@ -59,6 +59,7 @@ public class sign_up extends javax.swing.JFrame {
         Register = new javax.swing.JButton();
         roleFileld = new javax.swing.JComboBox<>();
         login = new javax.swing.JButton();
+        orderSearch = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -198,6 +199,10 @@ public class sign_up extends javax.swing.JFrame {
         jPanel3.add(jPanel2);
         jPanel2.setBounds(530, 0, 420, 450);
 
+        orderSearch.setText("Search");
+        jPanel3.add(orderSearch);
+        orderSearch.setBounds(235, 125, 80, 30);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -296,6 +301,7 @@ public class sign_up extends javax.swing.JFrame {
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JButton login;
     private javax.swing.JTextField nameField;
+    private javax.swing.JButton orderSearch;
     private javax.swing.JTextField passwordField;
     private javax.swing.JTextField phoneNum;
     private javax.swing.JComboBox<String> roleFileld;

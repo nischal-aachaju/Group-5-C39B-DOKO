@@ -1,13 +1,7 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package controllor;
 
 import Model.userData;
-// Make sure this matches the actual name of your UI file!
 import view.Sender_Dashboard; 
-
 import java.awt.Window;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -22,12 +16,13 @@ public class UserController {
         this.userView = userView;
         this.currentUser = currentUser;
         
-        // 1. Instantly set the Name and Role labels on the screen
+        // 1. Set the Name and Role labels on the dashboard
         this.userView.setUsernameLabel(currentUser.getUsername());
         this.userView.setRoleLabel(currentUser.getRole());
         
-        // 2. Connect the logout button
+        // 2. Connect the buttons
         this.userView.addLogoutListener(new LogoutListener());
+        this.userView.addMyProfileListener(new OpenProfileListener());
     }
 
     public void open() {
@@ -43,18 +38,27 @@ public class UserController {
         }
     }
 
-    // --- Action Listener for Logout Button ---
+    // --- Action Listeners ---
+    
     class LogoutListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            
-            // 1. Close the user dashboard
             close(); 
-            
-            // 2. Re-open the Login window safely
             view.login loginView = new view.login();
             controllor.LoginController loginController = new controllor.LoginController(loginView);
             loginController.open();
+        }
+    }
+    
+    class OpenProfileListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            close(); // Close the dashboard
+            
+            // Route to the Profile Screen
+            view.Sender_profile profileView = new view.Sender_profile();
+            controllor.ProfileController profileController = new controllor.ProfileController(profileView, currentUser);
+            profileController.open();
         }
     }
 }

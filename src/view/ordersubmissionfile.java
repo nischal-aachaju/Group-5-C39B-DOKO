@@ -29,46 +29,24 @@ public class ordersubmissionfile extends javax.swing.JFrame {
     private void initComponents() {
 
         MainPanel = new javax.swing.JPanel();
-        sidebar = new javax.swing.JPanel();
-        jSeparator1 = new javax.swing.JSeparator();
-        Dashboard = new javax.swing.JButton();
-        ManageUser = new javax.swing.JButton();
-        workload = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        ManageOrders = new javax.swing.JButton();
-        PriceConfiguration = new javax.swing.JButton();
-        MyProfile = new javax.swing.JButton();
-        jSeparator2 = new javax.swing.JSeparator();
-        jButton12 = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
-        logo2 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel20 = new javax.swing.JLabel();
-        Topbar = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        profile = new javax.swing.JLabel();
-        profile1 = new javax.swing.JLabel();
-        jLabel21 = new javax.swing.JLabel();
-        jLabel22 = new javax.swing.JLabel();
-        ActiveShipment = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
-        PendingShipment1 = new javax.swing.JButton();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        PendingShipment2 = new javax.swing.JButton();
-        PendingShipment3 = new javax.swing.JButton();
-        PendingShipment4 = new javax.swing.JButton();
-        PendingShipment5 = new javax.swing.JButton();
-        PendingShipment6 = new javax.swing.JButton();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        PendingShipment7 = new javax.swing.JButton();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        PendingShipment8 = new javax.swing.JButton();
+        trackingID = new javax.swing.JButton();
+        reciver_location = new javax.swing.JLabel();
+        street_field = new javax.swing.JButton();
+        reciver_name = new javax.swing.JLabel();
+        reciver_email = new javax.swing.JLabel();
+        reciver_name_field = new javax.swing.JButton();
+        reciver_email_field = new javax.swing.JButton();
+        reciver_contact_number_field = new javax.swing.JButton();
+        reciver_location_field = new javax.swing.JButton();
+        weight_field = new javax.swing.JButton();
+        bill = new javax.swing.JLabel();
+        description = new javax.swing.JLabel();
+        cod_field = new javax.swing.JButton();
+        street = new javax.swing.JLabel();
+        reciver_contact_number = new javax.swing.JLabel();
+        weight = new javax.swing.JLabel();
+        cod = new javax.swing.JLabel();
+        description_field = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
@@ -76,6 +54,27 @@ public class ordersubmissionfile extends javax.swing.JFrame {
         jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
+        C_name = new javax.swing.JLabel();
+        orderCost = new javax.swing.JLabel();
+        delivery_cost = new javax.swing.JLabel();
+        revicer_location = new javax.swing.JLabel();
+        contactNo = new javax.swing.JLabel();
+        COD_total_COST = new javax.swing.JLabel();
+        sidebar = new javax.swing.JPanel();
+        logo = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
+        MyShipments = new javax.swing.JButton();
+        create_orders = new javax.swing.JButton();
+        OrdersHistory = new javax.swing.JButton();
+        MyProfile = new javax.swing.JButton();
+        jSeparator2 = new javax.swing.JSeparator();
+        logout = new javax.swing.JButton();
+        Dashboard = new javax.swing.JButton();
+        topbar = new javax.swing.JPanel();
+        username = new javax.swing.JLabel();
+        user_role = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -83,315 +82,242 @@ public class ordersubmissionfile extends javax.swing.JFrame {
         MainPanel.setPreferredSize(new java.awt.Dimension(1050, 600));
         MainPanel.setLayout(null);
 
+        trackingID.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
+        trackingID.setText("TrackingID:#65646084");
+        MainPanel.add(trackingID);
+        trackingID.setBounds(200, 90, 230, 32);
+
+        reciver_location.setText("Receiver location*");
+        MainPanel.add(reciver_location);
+        reciver_location.setBounds(215, 420, 160, 16);
+
+        street_field.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
+        street_field.addActionListener(this::street_fieldActionPerformed);
+        MainPanel.add(street_field);
+        street_field.setBounds(210, 610, 390, 30);
+
+        reciver_name.setText("Receiver Name*");
+        MainPanel.add(reciver_name);
+        reciver_name.setBounds(215, 150, 100, 16);
+
+        reciver_email.setText("Receiver email*");
+        MainPanel.add(reciver_email);
+        reciver_email.setBounds(215, 240, 100, 16);
+
+        reciver_name_field.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
+        reciver_name_field.addActionListener(this::reciver_name_fieldActionPerformed);
+        MainPanel.add(reciver_name_field);
+        reciver_name_field.setBounds(210, 170, 390, 30);
+
+        reciver_email_field.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
+        reciver_email_field.addActionListener(this::reciver_email_fieldActionPerformed);
+        MainPanel.add(reciver_email_field);
+        reciver_email_field.setBounds(210, 260, 390, 30);
+
+        reciver_contact_number_field.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
+        reciver_contact_number_field.addActionListener(this::reciver_contact_number_fieldActionPerformed);
+        MainPanel.add(reciver_contact_number_field);
+        reciver_contact_number_field.setBounds(210, 350, 390, 30);
+
+        reciver_location_field.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
+        reciver_location_field.addActionListener(this::reciver_location_fieldActionPerformed);
+        MainPanel.add(reciver_location_field);
+        reciver_location_field.setBounds(210, 440, 390, 30);
+
+        weight_field.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
+        weight_field.addActionListener(this::weight_fieldActionPerformed);
+        MainPanel.add(weight_field);
+        weight_field.setBounds(210, 530, 390, 30);
+
+        bill.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        bill.setText("Bill :");
+        MainPanel.add(bill);
+        bill.setBounds(650, 470, 50, 16);
+
+        description.setText("Description*");
+        MainPanel.add(description);
+        description.setBounds(645, 240, 100, 16);
+
+        cod_field.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
+        cod_field.addActionListener(this::cod_fieldActionPerformed);
+        MainPanel.add(cod_field);
+        cod_field.setBounds(640, 170, 390, 30);
+
+        street.setText("Street*");
+        MainPanel.add(street);
+        street.setBounds(215, 590, 50, 16);
+
+        reciver_contact_number.setText("Receiver contact number*");
+        MainPanel.add(reciver_contact_number);
+        reciver_contact_number.setBounds(215, 330, 160, 16);
+
+        weight.setText("Weight*");
+        MainPanel.add(weight);
+        weight.setBounds(215, 510, 50, 16);
+
+        cod.setText("COD*");
+        MainPanel.add(cod);
+        cod.setBounds(645, 150, 50, 16);
+
+        description_field.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
+        description_field.setText(" ");
+        description_field.addActionListener(this::description_fieldActionPerformed);
+        MainPanel.add(description_field);
+        description_field.setBounds(640, 260, 390, 120);
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setLayout(null);
+
+        jLabel14.setText("Customer Name :");
+        jPanel1.add(jLabel14);
+        jLabel14.setBounds(10, 20, 100, 17);
+
+        jLabel15.setText("Location :");
+        jPanel1.add(jLabel15);
+        jLabel15.setBounds(10, 40, 60, 16);
+
+        jLabel16.setText("Contact :");
+        jPanel1.add(jLabel16);
+        jLabel16.setBounds(10, 60, 60, 16);
+
+        jLabel17.setText("Order cost:");
+        jPanel1.add(jLabel17);
+        jLabel17.setBounds(10, 80, 60, 16);
+
+        jLabel18.setText("Delivery cost:");
+        jPanel1.add(jLabel18);
+        jLabel18.setBounds(10, 100, 70, 17);
+
+        jLabel19.setText("COD:");
+        jPanel1.add(jLabel19);
+        jLabel19.setBounds(270, 120, 30, 17);
+
+        C_name.setText("Name");
+        jPanel1.add(C_name);
+        C_name.setBounds(110, 20, 32, 16);
+
+        orderCost.setText("1200");
+        jPanel1.add(orderCost);
+        orderCost.setBounds(70, 80, 40, 16);
+        jPanel1.add(delivery_cost);
+        delivery_cost.setBounds(80, 100, 37, 0);
+        jPanel1.add(revicer_location);
+        revicer_location.setBounds(70, 40, 37, 0);
+        jPanel1.add(contactNo);
+        contactNo.setBounds(60, 60, 0, 0);
+        jPanel1.add(COD_total_COST);
+        COD_total_COST.setBounds(300, 120, 0, 0);
+
+        MainPanel.add(jPanel1);
+        jPanel1.setBounds(640, 500, 360, 140);
+
         sidebar.setBackground(new java.awt.Color(33, 38, 49));
 
-        Dashboard.setBackground(new java.awt.Color(33, 38, 49));
-        Dashboard.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
-        Dashboard.setForeground(new java.awt.Color(255, 255, 255));
-        Dashboard.setText("Dashboard");
-        Dashboard.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 1, true));
+        logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/logo.png"))); // NOI18N
 
-        ManageUser.setBackground(new java.awt.Color(33, 38, 49));
-        ManageUser.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
-        ManageUser.setForeground(new java.awt.Color(255, 255, 255));
-        ManageUser.setText("Manage User");
-        ManageUser.addActionListener(this::ManageUserActionPerformed);
+        MyShipments.setBackground(new java.awt.Color(33, 38, 49));
+        MyShipments.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
+        MyShipments.setForeground(new java.awt.Color(255, 255, 255));
+        MyShipments.setText("My Shipments");
 
-        workload.setBackground(new java.awt.Color(33, 38, 49));
-        workload.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
-        workload.setForeground(new java.awt.Color(255, 255, 255));
-        workload.setText("Workload");
+        create_orders.setBackground(new java.awt.Color(216, 140, 81));
+        create_orders.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
+        create_orders.setForeground(new java.awt.Color(255, 255, 255));
+        create_orders.setText("Create Order");
 
-        jButton4.setBackground(new java.awt.Color(33, 38, 49));
-        jButton4.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(255, 255, 255));
-        jButton4.setText("Branch & Network");
-
-        ManageOrders.setBackground(new java.awt.Color(33, 38, 49));
-        ManageOrders.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
-        ManageOrders.setForeground(new java.awt.Color(255, 255, 255));
-        ManageOrders.setText("Manage Order");
-
-        PriceConfiguration.setBackground(new java.awt.Color(33, 38, 49));
-        PriceConfiguration.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
-        PriceConfiguration.setForeground(new java.awt.Color(255, 255, 255));
-        PriceConfiguration.setText("Price Configuration");
+        OrdersHistory.setBackground(new java.awt.Color(33, 38, 49));
+        OrdersHistory.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
+        OrdersHistory.setForeground(new java.awt.Color(255, 255, 255));
+        OrdersHistory.setText("Orders History");
 
         MyProfile.setBackground(new java.awt.Color(33, 38, 49));
         MyProfile.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
         MyProfile.setForeground(new java.awt.Color(255, 255, 255));
         MyProfile.setText("My Profile");
 
-        jButton12.setBackground(new java.awt.Color(33, 38, 49));
-        jButton12.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
-        jButton12.setForeground(new java.awt.Color(255, 51, 51));
-        jButton12.setText("Logout");
+        logout.setBackground(new java.awt.Color(33, 38, 49));
+        logout.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
+        logout.setForeground(new java.awt.Color(255, 102, 102));
+        logout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/logout.png"))); // NOI18N
+        logout.setText("Logout");
+        logout.addActionListener(this::logoutActionPerformed);
 
-        logo2.setBackground(new java.awt.Color(204, 204, 204));
-        logo2.setOpaque(true);
-
-        jLabel20.setIcon(new javax.swing.ImageIcon("/Users/parbatshrestha/Downloads/logo.png")); // NOI18N
-        jLabel20.setText("jLabel20");
+        Dashboard.setBackground(new java.awt.Color(33, 38, 49));
+        Dashboard.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
+        Dashboard.setForeground(new java.awt.Color(255, 255, 255));
+        Dashboard.setText("Dashboard");
 
         javax.swing.GroupLayout sidebarLayout = new javax.swing.GroupLayout(sidebar);
         sidebar.setLayout(sidebarLayout);
         sidebarLayout.setHorizontalGroup(
             sidebarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jSeparator2, javax.swing.GroupLayout.Alignment.TRAILING)
             .addGroup(sidebarLayout.createSequentialGroup()
-                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(logo2))
-            .addComponent(jSeparator2)
-            .addGroup(sidebarLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(sidebarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Dashboard, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(ManageUser, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(workload, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(ManageOrders, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(PriceConfiguration, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE)
-                    .addComponent(MyProfile, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, sidebarLayout.createSequentialGroup()
-                        .addComponent(jButton12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel4)))
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 3, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, sidebarLayout.createSequentialGroup()
+                .addGroup(sidebarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(logo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(sidebarLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(sidebarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(Dashboard, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, sidebarLayout.createSequentialGroup()
+                                .addComponent(logout, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addComponent(create_orders, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(OrdersHistory, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(MyProfile, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(MyShipments, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap())
-            .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING)
         );
         sidebarLayout.setVerticalGroup(
             sidebarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(sidebarLayout.createSequentialGroup()
-                .addGroup(sidebarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(logo2, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(sidebarLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Dashboard, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Dashboard, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(12, 12, 12)
+                .addComponent(create_orders, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(ManageUser, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(8, 8, 8)
-                .addComponent(workload, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(MyShipments, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(ManageOrders, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(PriceConfiguration, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(MyProfile, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
-                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(22, 22, 22)
-                .addGroup(sidebarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton12, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(OrdersHistory, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(12, 12, 12)
+                .addComponent(MyProfile, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 214, Short.MAX_VALUE)
+                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(logout, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
         MainPanel.add(sidebar);
-        sidebar.setBounds(0, 0, 180, 680);
+        sidebar.setBounds(0, 0, 182, 680);
 
-        Topbar.setBackground(new java.awt.Color(255, 255, 255));
-        Topbar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        topbar.setLayout(null);
 
-        jLabel21.setBackground(new java.awt.Color(204, 204, 204));
+        username.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        username.setText("Name");
+        topbar.add(username);
+        username.setBounds(770, 20, 100, 22);
 
-        jLabel22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/profile.png"))); // NOI18N
+        user_role.setText("Role");
+        topbar.add(user_role);
+        user_role.setBounds(770, 40, 37, 16);
 
-        javax.swing.GroupLayout TopbarLayout = new javax.swing.GroupLayout(Topbar);
-        Topbar.setLayout(TopbarLayout);
-        TopbarLayout.setHorizontalGroup(
-            TopbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(TopbarLayout.createSequentialGroup()
-                .addContainerGap(729, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
-                .addComponent(jLabel21)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(profile)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel22))
-            .addGroup(TopbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(TopbarLayout.createSequentialGroup()
-                    .addGap(398, 398, 398)
-                    .addComponent(profile1)
-                    .addContainerGap(472, Short.MAX_VALUE)))
-        );
-        TopbarLayout.setVerticalGroup(
-            TopbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(TopbarLayout.createSequentialGroup()
-                .addGroup(TopbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(TopbarLayout.createSequentialGroup()
-                        .addComponent(jLabel22)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(profile, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(TopbarLayout.createSequentialGroup()
-                        .addGroup(TopbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TopbarLayout.createSequentialGroup()
-                                .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(TopbarLayout.createSequentialGroup()
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel21)))
-                        .addGap(44, 44, 44)))
-                .addGap(0, 0, 0))
-            .addGroup(TopbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(TopbarLayout.createSequentialGroup()
-                    .addGap(1, 1, 1)
-                    .addComponent(profile1, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-        );
+        jLabel23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/pfp.jpg"))); // NOI18N
+        topbar.add(jLabel23);
+        jLabel23.setBounds(700, 5, 60, 60);
 
-        MainPanel.add(Topbar);
-        Topbar.setBounds(180, 0, 870, 80);
+        MainPanel.add(topbar);
+        topbar.setBounds(180, 0, 880, 70);
 
-        ActiveShipment.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
-        ActiveShipment.setText("TrackingID:#65646084");
-        MainPanel.add(ActiveShipment);
-        ActiveShipment.setBounds(200, 90, 230, 28);
-
-        jLabel3.setText("Receiver location*");
-        MainPanel.add(jLabel3);
-        jLabel3.setBounds(210, 410, 160, 17);
-
-        PendingShipment1.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
-        PendingShipment1.addActionListener(this::PendingShipment1ActionPerformed);
-        MainPanel.add(PendingShipment1);
-        PendingShipment1.setBounds(210, 610, 390, 30);
-
-        jLabel6.setText("Receiver Name*");
-        MainPanel.add(jLabel6);
-        jLabel6.setBounds(210, 140, 100, 17);
-
-        jLabel7.setText("Receiver email*");
-        MainPanel.add(jLabel7);
-        jLabel7.setBounds(210, 230, 100, 17);
-
-        PendingShipment2.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
-        PendingShipment2.addActionListener(this::PendingShipment2ActionPerformed);
-        MainPanel.add(PendingShipment2);
-        PendingShipment2.setBounds(210, 170, 390, 30);
-
-        PendingShipment3.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
-        PendingShipment3.addActionListener(this::PendingShipment3ActionPerformed);
-        MainPanel.add(PendingShipment3);
-        PendingShipment3.setBounds(210, 260, 390, 30);
-
-        PendingShipment4.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
-        PendingShipment4.addActionListener(this::PendingShipment4ActionPerformed);
-        MainPanel.add(PendingShipment4);
-        PendingShipment4.setBounds(210, 350, 390, 30);
-
-        PendingShipment5.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
-        PendingShipment5.addActionListener(this::PendingShipment5ActionPerformed);
-        MainPanel.add(PendingShipment5);
-        PendingShipment5.setBounds(210, 440, 390, 30);
-
-        PendingShipment6.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
-        PendingShipment6.addActionListener(this::PendingShipment6ActionPerformed);
-        MainPanel.add(PendingShipment6);
-        PendingShipment6.setBounds(210, 530, 390, 30);
-
-        jLabel8.setText("Bill");
-        MainPanel.add(jLabel8);
-        jLabel8.setBounds(640, 410, 50, 17);
-
-        jLabel9.setText("Description*");
-        MainPanel.add(jLabel9);
-        jLabel9.setBounds(640, 230, 100, 17);
-
-        PendingShipment7.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
-        PendingShipment7.addActionListener(this::PendingShipment7ActionPerformed);
-        MainPanel.add(PendingShipment7);
-        PendingShipment7.setBounds(640, 170, 390, 30);
-
-        jLabel10.setText("Street*");
-        MainPanel.add(jLabel10);
-        jLabel10.setBounds(210, 580, 50, 17);
-
-        jLabel11.setText("Receiver contact number*");
-        MainPanel.add(jLabel11);
-        jLabel11.setBounds(210, 310, 160, 17);
-
-        jLabel12.setText("Weight*");
-        MainPanel.add(jLabel12);
-        jLabel12.setBounds(210, 500, 50, 17);
-
-        jLabel13.setText("COD*");
-        MainPanel.add(jLabel13);
-        jLabel13.setBounds(640, 140, 50, 17);
-
-        PendingShipment8.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
-        PendingShipment8.setText(" ");
-        PendingShipment8.addActionListener(this::PendingShipment8ActionPerformed);
-        MainPanel.add(PendingShipment8);
-        PendingShipment8.setBounds(640, 260, 390, 120);
-
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-
-        jLabel14.setText("Customer Name");
-
-        jLabel15.setText("Location");
-
-        jLabel16.setText("Contact");
-
-        jLabel17.setText("Order cost:1200");
-
-        jLabel18.setText("Delivery cost:100");
-
-        jLabel19.setText("COD:1300");
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel14)
-                            .addComponent(jLabel16)
-                            .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(108, 108, 108)
-                        .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel15)))
-                .addContainerGap(132, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(15, 15, 15)
-                .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel15)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel16)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
-                .addComponent(jLabel17)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(1, 1, 1)
-                .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-
-        MainPanel.add(jPanel1);
-        jPanel1.setBounds(640, 450, 360, 190);
+        jButton1.setText("Submit");
+        MainPanel.add(jButton1);
+        jButton1.setBounds(640, 410, 160, 30);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -407,41 +333,41 @@ public class ordersubmissionfile extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void ManageUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ManageUserActionPerformed
+    private void street_fieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_street_fieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_ManageUserActionPerformed
+    }//GEN-LAST:event_street_fieldActionPerformed
 
-    private void PendingShipment1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PendingShipment1ActionPerformed
+    private void reciver_name_fieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reciver_name_fieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_PendingShipment1ActionPerformed
+    }//GEN-LAST:event_reciver_name_fieldActionPerformed
 
-    private void PendingShipment2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PendingShipment2ActionPerformed
+    private void reciver_email_fieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reciver_email_fieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_PendingShipment2ActionPerformed
+    }//GEN-LAST:event_reciver_email_fieldActionPerformed
 
-    private void PendingShipment3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PendingShipment3ActionPerformed
+    private void reciver_contact_number_fieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reciver_contact_number_fieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_PendingShipment3ActionPerformed
+    }//GEN-LAST:event_reciver_contact_number_fieldActionPerformed
 
-    private void PendingShipment4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PendingShipment4ActionPerformed
+    private void reciver_location_fieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reciver_location_fieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_PendingShipment4ActionPerformed
+    }//GEN-LAST:event_reciver_location_fieldActionPerformed
 
-    private void PendingShipment5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PendingShipment5ActionPerformed
+    private void weight_fieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_weight_fieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_PendingShipment5ActionPerformed
+    }//GEN-LAST:event_weight_fieldActionPerformed
 
-    private void PendingShipment6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PendingShipment6ActionPerformed
+    private void cod_fieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cod_fieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_PendingShipment6ActionPerformed
+    }//GEN-LAST:event_cod_fieldActionPerformed
 
-    private void PendingShipment7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PendingShipment7ActionPerformed
+    private void description_fieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_description_fieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_PendingShipment7ActionPerformed
+    }//GEN-LAST:event_description_fieldActionPerformed
 
-    private void PendingShipment8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PendingShipment8ActionPerformed
+    private void logoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_PendingShipment8ActionPerformed
+    }//GEN-LAST:event_logoutActionPerformed
 
     /**
      * @param args the command line arguments
@@ -469,53 +395,52 @@ public class ordersubmissionfile extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton ActiveShipment;
+    private javax.swing.JLabel COD_total_COST;
+    private javax.swing.JLabel C_name;
     private javax.swing.JButton Dashboard;
     private javax.swing.JPanel MainPanel;
-    private javax.swing.JButton ManageOrders;
-    private javax.swing.JButton ManageUser;
     private javax.swing.JButton MyProfile;
-    private javax.swing.JButton PendingShipment1;
-    private javax.swing.JButton PendingShipment2;
-    private javax.swing.JButton PendingShipment3;
-    private javax.swing.JButton PendingShipment4;
-    private javax.swing.JButton PendingShipment5;
-    private javax.swing.JButton PendingShipment6;
-    private javax.swing.JButton PendingShipment7;
-    private javax.swing.JButton PendingShipment8;
-    private javax.swing.JButton PriceConfiguration;
-    private javax.swing.JPanel Topbar;
-    private javax.swing.JButton jButton12;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
+    private javax.swing.JButton MyShipments;
+    private javax.swing.JButton OrdersHistory;
+    private javax.swing.JLabel bill;
+    private javax.swing.JLabel cod;
+    private javax.swing.JButton cod_field;
+    private javax.swing.JLabel contactNo;
+    private javax.swing.JButton create_orders;
+    private javax.swing.JLabel delivery_cost;
+    private javax.swing.JLabel description;
+    private javax.swing.JButton description_field;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel jLabel23;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JLabel logo2;
-    private javax.swing.JLabel profile;
-    private javax.swing.JLabel profile1;
+    private javax.swing.JLabel logo;
+    private javax.swing.JButton logout;
+    private javax.swing.JLabel orderCost;
+    private javax.swing.JLabel reciver_contact_number;
+    private javax.swing.JButton reciver_contact_number_field;
+    private javax.swing.JLabel reciver_email;
+    private javax.swing.JButton reciver_email_field;
+    private javax.swing.JLabel reciver_location;
+    private javax.swing.JButton reciver_location_field;
+    private javax.swing.JLabel reciver_name;
+    private javax.swing.JButton reciver_name_field;
+    private javax.swing.JLabel revicer_location;
     private javax.swing.JPanel sidebar;
-    private javax.swing.JButton workload;
+    private javax.swing.JLabel street;
+    private javax.swing.JButton street_field;
+    private javax.swing.JPanel topbar;
+    private javax.swing.JButton trackingID;
+    private javax.swing.JLabel user_role;
+    private javax.swing.JLabel username;
+    private javax.swing.JLabel weight;
+    private javax.swing.JButton weight_field;
     // End of variables declaration//GEN-END:variables
 }

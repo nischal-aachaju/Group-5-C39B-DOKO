@@ -1,7 +1,9 @@
 package group.pkg5.doko;
 
-import controllor.SignupController; // Import the SignupController
-import view.sign_up    ;     // Import the Signup View
+//import controllor.SignupController; 
+//import view.sign_up ; 
+import controllor.LoginController;
+ import  view.login;
 
 
 /**
@@ -12,13 +14,20 @@ public class Group5DOKO {
 
     public static void main(String[] args) {
            
-            // 1. Create the Sign-Up/Register View first
-            sign_up signupView = new sign_up();
+//            sign_up signupView = new sign_up();
+//            
+
+//            SignupController controller = new SignupController(signupView);
+//            
+//             controller.open();   
+
+
+            login loginView = new login();
             
             // 2. Initialize the Signup Controller and pass the view to it
-            SignupController controller = new SignupController(signupView);
+            LoginController controller = new LoginController(loginView);
             
             // 3. Open the registration window!
-            controller.open();       
+            controller.open(); 
     }
 }

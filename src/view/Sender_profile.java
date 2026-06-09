@@ -38,13 +38,11 @@ public class Sender_profile extends javax.swing.JFrame {
         OrdersHistory = new javax.swing.JButton();
         MyProfile = new javax.swing.JButton();
         jSeparator2 = new javax.swing.JSeparator();
-        jButton10 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        logout = new javax.swing.JButton();
         topbar = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
+        username = new javax.swing.JLabel();
+        user_role = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        Profile = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         editButton = new javax.swing.JButton();
         saveButton = new javax.swing.JButton();
@@ -55,15 +53,18 @@ public class Sender_profile extends javax.swing.JFrame {
         emailLabel = new javax.swing.JLabel();
         phonenumberLabel = new javax.swing.JLabel();
         addressLabel = new javax.swing.JLabel();
-        ManagerTextField = new javax.swing.JTextField();
+        sender_id = new javax.swing.JTextField();
         NameTextField = new javax.swing.JTextField();
         EmailTextField = new javax.swing.JTextField();
         phonenumberTextField = new javax.swing.JTextField();
         AddressTextField = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(1050, 600));
+        setResizable(false);
 
         MainPanel.setBackground(new java.awt.Color(238, 233, 223));
+        MainPanel.setPreferredSize(new java.awt.Dimension(1050, 600));
 
         sidebar.setBackground(new java.awt.Color(33, 38, 49));
 
@@ -95,11 +96,12 @@ public class Sender_profile extends javax.swing.JFrame {
         MyProfile.setForeground(new java.awt.Color(255, 255, 255));
         MyProfile.setText("My Profile");
 
-        jButton10.setBackground(new java.awt.Color(33, 38, 49));
-        jButton10.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
-        jButton10.setForeground(new java.awt.Color(255, 102, 102));
-        jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/logout.png"))); // NOI18N
-        jButton10.setText("Logout");
+        logout.setBackground(new java.awt.Color(33, 38, 49));
+        logout.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
+        logout.setForeground(new java.awt.Color(255, 102, 102));
+        logout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/logout.png"))); // NOI18N
+        logout.setText("Logout");
+        logout.addActionListener(this::logoutActionPerformed);
 
         javax.swing.GroupLayout sidebarLayout = new javax.swing.GroupLayout(sidebar);
         sidebar.setLayout(sidebarLayout);
@@ -108,7 +110,7 @@ public class Sender_profile extends javax.swing.JFrame {
             .addComponent(jSeparator2, javax.swing.GroupLayout.Alignment.TRAILING)
             .addGroup(sidebarLayout.createSequentialGroup()
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 3, Short.MAX_VALUE))
             .addGroup(sidebarLayout.createSequentialGroup()
                 .addGroup(sidebarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(sidebarLayout.createSequentialGroup()
@@ -116,9 +118,7 @@ public class Sender_profile extends javax.swing.JFrame {
                         .addGroup(sidebarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(Dashboard, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(sidebarLayout.createSequentialGroup()
-                                .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel1)
+                                .addComponent(logout, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 0, Short.MAX_VALUE))
                             .addComponent(MyShipments, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(ManageOrders, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -146,52 +146,24 @@ public class Sender_profile extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 134, Short.MAX_VALUE)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(sidebarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(logout, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
-        jLabel3.setText("Name");
+        topbar.setLayout(null);
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
-        jLabel4.setText("Role");
+        username.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        username.setText("Name");
+        topbar.add(username);
+        username.setBounds(710, 20, 100, 22);
 
-        Profile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/profile.png"))); // NOI18N
+        user_role.setText("Role");
+        topbar.add(user_role);
+        user_role.setBounds(710, 40, 37, 16);
 
-        javax.swing.GroupLayout topbarLayout = new javax.swing.GroupLayout(topbar);
-        topbar.setLayout(topbarLayout);
-        topbarLayout.setHorizontalGroup(
-            topbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, topbarLayout.createSequentialGroup()
-                .addContainerGap(740, Short.MAX_VALUE)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Profile)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(topbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
-        );
-        topbarLayout.setVerticalGroup(
-            topbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, topbarLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel3)
-                .addGap(18, 18, 18)
-                .addGroup(topbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(topbarLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(topbarLayout.createSequentialGroup()
-                        .addComponent(jLabel4)
-                        .addGap(0, 0, Short.MAX_VALUE))))
-            .addGroup(topbarLayout.createSequentialGroup()
-                .addComponent(Profile, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/pfp.jpg"))); // NOI18N
+        topbar.add(jLabel3);
+        jLabel3.setBounds(640, 10, 60, 60);
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -207,6 +179,7 @@ public class Sender_profile extends javax.swing.JFrame {
         resetpasswordButton.setForeground(new java.awt.Color(255, 255, 255));
         resetpasswordButton.setText("Reset Password");
 
+        ManagerLabel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         ManagerLabel.setText("   My Details");
 
         SenderId.setText("Sender ID                     :");
@@ -219,56 +192,39 @@ public class Sender_profile extends javax.swing.JFrame {
 
         addressLabel.setText("Address                       :");
 
-        ManagerTextField.setText("#1111");
-
-        NameTextField.setText("Unish Gautam");
-
-        EmailTextField.setText("unishgautam07@gmail.com");
-
-        phonenumberTextField.setText("9800000000");
-
-        AddressTextField.setText("Dillibazar,kathmandu");
-
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(resetpasswordButton)
                         .addGap(48, 48, 48)
                         .addComponent(saveButton))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
-                        .addGap(160, 160, 160)
-                        .addComponent(ManagerLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(editButton)))
+                    .addComponent(editButton))
                 .addGap(116, 116, 116))
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(120, 120, 120)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(2, 2, 2)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addComponent(emailLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(nameLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addComponent(SenderId))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(ManagerTextField)
-                            .addComponent(NameTextField)
-                            .addComponent(EmailTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(addressLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(phonenumberLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 148, Short.MAX_VALUE))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(phonenumberTextField)
-                            .addComponent(AddressTextField))))
+                            .addComponent(SenderId)
+                            .addComponent(ManagerLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(phonenumberLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 148, Short.MAX_VALUE)
+                    .addComponent(addressLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(sender_id)
+                    .addComponent(NameTextField)
+                    .addComponent(EmailTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
+                    .addComponent(phonenumberTextField)
+                    .addComponent(AddressTextField))
                 .addContainerGap(321, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
@@ -281,7 +237,7 @@ public class Sender_profile extends javax.swing.JFrame {
                 .addGap(39, 39, 39)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(SenderId)
-                    .addComponent(ManagerTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(sender_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(nameLabel)
@@ -310,13 +266,13 @@ public class Sender_profile extends javax.swing.JFrame {
         MainPanelLayout.setHorizontalGroup(
             MainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(MainPanelLayout.createSequentialGroup()
-                .addGap(171, 171, 171)
-                .addComponent(topbar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(MainPanelLayout.createSequentialGroup()
                 .addComponent(sidebar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MainPanelLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(topbar, javax.swing.GroupLayout.PREFERRED_SIZE, 812, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         MainPanelLayout.setVerticalGroup(
             MainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -345,6 +301,10 @@ public class Sender_profile extends javax.swing.JFrame {
     private void DashboardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DashboardActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_DashboardActionPerformed
+
+    private void logoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_logoutActionPerformed
 
     /**
      * @param args the command line arguments
@@ -378,31 +338,81 @@ public class Sender_profile extends javax.swing.JFrame {
     private javax.swing.JPanel MainPanel;
     private javax.swing.JButton ManageOrders;
     private javax.swing.JLabel ManagerLabel;
-    private javax.swing.JTextField ManagerTextField;
     private javax.swing.JButton MyProfile;
     private javax.swing.JButton MyShipments;
     private javax.swing.JTextField NameTextField;
     private javax.swing.JButton OrdersHistory;
-    private javax.swing.JLabel Profile;
     private javax.swing.JLabel SenderId;
     private javax.swing.JLabel addressLabel;
     private javax.swing.JButton editButton;
     private javax.swing.JLabel emailLabel;
-    private javax.swing.JButton jButton10;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JLabel logo;
+    private javax.swing.JButton logout;
     private javax.swing.JLabel nameLabel;
     private javax.swing.JLabel phonenumberLabel;
     private javax.swing.JTextField phonenumberTextField;
     private javax.swing.JButton resetpasswordButton;
     private javax.swing.JButton saveButton;
+    private javax.swing.JTextField sender_id;
     private javax.swing.JPanel sidebar;
     private javax.swing.JPanel topbar;
+    private javax.swing.JLabel user_role;
+    private javax.swing.JLabel username;
     // End of variables declaration//GEN-END:variables
+// --- ADD THESE AT THE BOTTOM OF YOUR VIEW FILE ---
+
+    // 1. Populate the text fields
+    public void setProfileData(String id, String name, String email, String phone, String address) {
+        // Note: Based on your variable list, assuming ManagerTextField is used for the ID field
+        sender_id.setText(id); 
+        NameTextField.setText(name);
+        EmailTextField.setText(email);
+        phonenumberTextField.setText(phone);
+        AddressTextField.setText(address);
+    }
+
+    // 2. Lock or Unlock the fields
+    public void setProfileEditable(boolean isEditable) {
+        // Only these two respond to the Edit button
+        phonenumberTextField.setEditable(isEditable);
+        AddressTextField.setEditable(isEditable);
+        
+        // These are permanently locked for security
+        NameTextField.setEditable(false);
+        EmailTextField.setEditable(false);
+        sender_id.setEditable(false); 
+    }
+
+    // 3. Get the new text when the user clicks Save
+    public String getUpdatedName() { return NameTextField.getText(); }
+    public String getUpdatedEmail() { return EmailTextField.getText(); }
+    public String getUpdatedPhone() { return phonenumberTextField.getText(); }
+    public String getUpdatedAddress() { return AddressTextField.getText(); }
+
+    // 4. Attach Listeners to your buttons
+    public void addEditProfileListener(java.awt.event.ActionListener listener) {
+        editButton.addActionListener(listener);
+    }
+    public void addSaveProfileListener(java.awt.event.ActionListener listener) {
+        saveButton.addActionListener(listener);
+    }
+    public void addDashboardListener(java.awt.event.ActionListener listener) {
+       
+        Dashboard.addActionListener(listener); 
+    }
+    public void setUsernameLabel(String name) {
+        username.setText(name); 
+    }
+
+    public void setRoleLabel(String role) {
+        user_role.setText(role); 
+    }
+    public void addLogoutListener(java.awt.event.ActionListener listener) {
+        // Assuming your button variable is named 'logout' 
+        logout.addActionListener(listener); 
+    }
 }

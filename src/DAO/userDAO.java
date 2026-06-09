@@ -88,4 +88,27 @@ public userData loginUser(String username, String password) {
         
         return null; // Return null if login fails (wrong username or password)
     }
+
+// Add this method inside your userDAO class
+  // Notice we removed name and email from the parameters!
+    public boolean updateProfile(int userId, String phone, String address) {
+        
+        // IMPORTANT: Change 'user_id' below to perfectly match your actual database column name!
+        String sql = "UPDATE users SET phone = ?, address = ? WHERE user_id = ?"; 
+        
+        try (java.sql.Connection conn = db.openConnection();
+             java.sql.PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            
+            pstmt.setString(1, phone);
+            pstmt.setString(2, address);
+            pstmt.setInt(3, userId); // This matches the WHERE clause
+            
+            int rowsAffected = pstmt.executeUpdate();
+            return rowsAffected > 0; 
+            
+        } catch (java.sql.SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
 }

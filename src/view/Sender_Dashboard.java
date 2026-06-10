@@ -354,4 +354,7 @@ public void setUsernameLabel(String name) {
     public void addMyProfileListener(java.awt.event.ActionListener listener) {
         MyProfile.addActionListener(listener); 
     }
+    public void addCreateOrderListener(java.awt.event.ActionListener listener) {
+        create_orders.addActionListener(listener); 
+    }
 }

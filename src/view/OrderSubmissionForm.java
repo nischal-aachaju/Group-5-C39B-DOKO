@@ -54,7 +54,6 @@ public class OrderSubmissionForm extends javax.swing.JFrame {
         reciver_weight_field = new javax.swing.JTextField();
         reciver_street_field = new javax.swing.JTextField();
         submit = new javax.swing.JButton();
-        trackingID = new javax.swing.JLabel();
         RandomtrackingID = new javax.swing.JLabel();
         topBar = new javax.swing.JPanel();
         username = new javax.swing.JLabel();
@@ -120,27 +119,27 @@ public class OrderSubmissionForm extends javax.swing.JFrame {
 
         bill_customer_name.setText("Customer Name:");
         bill.add(bill_customer_name);
-        bill_customer_name.setBounds(6, 15, 270, 17);
+        bill_customer_name.setBounds(6, 15, 340, 17);
 
         bill_customer_location.setText("Location:");
         bill.add(bill_customer_location);
-        bill_customer_location.setBounds(6, 38, 170, 16);
+        bill_customer_location.setBounds(6, 38, 340, 16);
 
         bill_customer_contact.setText("Contact:");
         bill.add(bill_customer_contact);
-        bill_customer_contact.setBounds(6, 60, 170, 16);
+        bill_customer_contact.setBounds(6, 60, 340, 16);
 
         bill_order_cost.setText("Order cost:");
         bill.add(bill_order_cost);
-        bill_order_cost.setBounds(6, 82, 170, 16);
+        bill_order_cost.setBounds(6, 82, 350, 16);
 
         bill_delivery_cost.setText("Delivery cost:");
         bill.add(bill_delivery_cost);
-        bill_delivery_cost.setBounds(6, 104, 190, 17);
+        bill_delivery_cost.setBounds(6, 104, 340, 17);
 
         COD_totalCost_sum_delivery_cost.setText("COD:");
         bill.add(COD_totalCost_sum_delivery_cost);
-        COD_totalCost_sum_delivery_cost.setBounds(210, 130, 110, 16);
+        COD_totalCost_sum_delivery_cost.setBounds(210, 130, 140, 16);
 
         MainPanel.add(bill);
         bill.setBounds(640, 390, 360, 160);
@@ -168,14 +167,9 @@ public class OrderSubmissionForm extends javax.swing.JFrame {
         MainPanel.add(submit);
         submit.setBounds(640, 340, 190, 23);
 
-        trackingID.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        trackingID.setText("Tracking ID :");
-        MainPanel.add(trackingID);
-        trackingID.setBounds(220, 90, 120, 30);
-
         RandomtrackingID.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         MainPanel.add(RandomtrackingID);
-        RandomtrackingID.setBounds(333, 93, 100, 0);
+        RandomtrackingID.setBounds(210, 90, 370, 30);
 
         username.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         username.setText("Name");
@@ -397,7 +391,6 @@ public class OrderSubmissionForm extends javax.swing.JFrame {
     private javax.swing.JPanel topBar;
     private javax.swing.JLabel total_Cost;
     private javax.swing.JTextField total_Cost_field;
-    private javax.swing.JLabel trackingID;
     private javax.swing.JLabel user_role;
     private javax.swing.JLabel username;
     // End of variables declaration//GEN-END:variables
@@ -419,17 +412,23 @@ public class OrderSubmissionForm extends javax.swing.JFrame {
     }
 
     // --- BILL GENERATION ---
-    public void updateBillSection(Model.Order order) {
-        customer_name.setText(order.getReceiverName());
-        customer_location.setText(order.getReceiverLocation()); 
-        customer_contact.setText(order.getReceiverContact());
+
+public void updateBillSection(Model.Order order) {
+        // Map Customer details
+        bill_customer_name.setText("Customer Name :"+order.getReceiverName());
+        bill_customer_location.setText("Customer Location :"+order.getReceiverLocation()); 
+        bill_customer_contact.setText("Customer Contact :"+order.getReceiverContact());
         
-        delivery_cost.setText(String.valueOf(order.getDeliveryCost()));
-        total_order_cost.setText(String.valueOf(order.getFinalBillAmount()));
+        // Map costs exactly the same way, without extra text prefixes
+        bill_order_cost.setText("Order Cost :"+String.valueOf(order.getDeclaredCost()));   
+
+        bill_delivery_cost.setText("Delivery Cost Cost :"+String.valueOf(order.getDeliveryCost()));  
+        COD_totalCost_sum_delivery_cost.setText("COD :"+String.valueOf(order.getFinalBillAmount()));   
         
+        // Ensure the bill section also matches the new Tracking ID format
         RandomtrackingID.setText("TrackingID: #" + order.getTrackingId());
     }
-
+    
     // --- LISTENER ---
     public void addSubmitListener(java.awt.event.ActionListener listener) {
         submit.addActionListener(listener); 
@@ -445,10 +444,8 @@ public class OrderSubmissionForm extends javax.swing.JFrame {
         reciver_weight_field.setText("");
         total_Cost_field.setText("");
         description_field.setText("");
+        RandomtrackingID.setText("");
     }
-    // =========================================================================
-    // ADD THESE METHODS TO THE BOTTOM OF YOUR OrderSubmissionForm.java FILE
-    // =========================================================================
 
     // 1. Methods to update the top-bar user details
     public void setUsernameLabel(String name) {
@@ -470,7 +467,9 @@ public class OrderSubmissionForm extends javax.swing.JFrame {
         logout.addActionListener(listener); 
     }
    
-    public void setInitialTrackingId(String trackingId) {
-        RandomtrackingID.setText("#" + trackingId);
+public void setInitialTrackingId(String trackingId) {
+        // Adds the full "TrackingID: #" prefix exactly as requested
+        RandomtrackingID.setText("TrackingID: #" + trackingId);
     }
+
 }

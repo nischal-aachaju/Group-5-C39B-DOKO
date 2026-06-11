@@ -14,7 +14,7 @@ public class Order {
     private String receiverLocation;
     private String street;
     private double weight;
-    private double declaredCost; // The value typed into 'total_Cost_field'
+    private double declaredCost; 
     private String description;
     
     private final double deliveryCost = 200.0; // FIXED DEFAULT COST
@@ -45,7 +45,9 @@ public Order(String trackingId, String name, String email, String contact, Strin
     public String getReceiverLocation() { return receiverLocation; }
     public String getStreet() { return street; }
     public double getWeight() { return weight; }
+    public double getDeclaredCost() { return declaredCost; }
     public String getDescription() { return description; }
     public double getDeliveryCost() { return deliveryCost; }
     public double getFinalBillAmount() { return finalBillAmount; }
+    
 }

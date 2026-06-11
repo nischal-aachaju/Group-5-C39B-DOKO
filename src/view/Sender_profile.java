@@ -34,7 +34,7 @@ public class Sender_profile extends javax.swing.JFrame {
         jSeparator1 = new javax.swing.JSeparator();
         Dashboard = new javax.swing.JButton();
         MyShipments = new javax.swing.JButton();
-        ManageOrders = new javax.swing.JButton();
+        create_orders = new javax.swing.JButton();
         OrdersHistory = new javax.swing.JButton();
         MyProfile = new javax.swing.JButton();
         jSeparator2 = new javax.swing.JSeparator();
@@ -80,10 +80,10 @@ public class Sender_profile extends javax.swing.JFrame {
         MyShipments.setForeground(new java.awt.Color(255, 255, 255));
         MyShipments.setText("My Shipments");
 
-        ManageOrders.setBackground(new java.awt.Color(33, 38, 49));
-        ManageOrders.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
-        ManageOrders.setForeground(new java.awt.Color(255, 255, 255));
-        ManageOrders.setText("Create Orders");
+        create_orders.setBackground(new java.awt.Color(33, 38, 49));
+        create_orders.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
+        create_orders.setForeground(new java.awt.Color(255, 255, 255));
+        create_orders.setText("Create Orders");
 
         OrdersHistory.setBackground(new java.awt.Color(33, 38, 49));
         OrdersHistory.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
@@ -123,7 +123,7 @@ public class Sender_profile extends javax.swing.JFrame {
                             .addComponent(MyShipments, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(OrdersHistory, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(MyProfile, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(ManageOrders, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(create_orders, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap())
         );
         sidebarLayout.setVerticalGroup(
@@ -135,7 +135,7 @@ public class Sender_profile extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Dashboard, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(12, 12, 12)
-                .addComponent(ManageOrders, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(create_orders, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(MyShipments, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -335,7 +335,6 @@ public class Sender_profile extends javax.swing.JFrame {
     private javax.swing.JButton Dashboard;
     private javax.swing.JTextField EmailTextField;
     private javax.swing.JPanel MainPanel;
-    private javax.swing.JButton ManageOrders;
     private javax.swing.JLabel ManagerLabel;
     private javax.swing.JButton MyProfile;
     private javax.swing.JButton MyShipments;
@@ -343,6 +342,7 @@ public class Sender_profile extends javax.swing.JFrame {
     private javax.swing.JButton OrdersHistory;
     private javax.swing.JLabel SenderId;
     private javax.swing.JLabel addressLabel;
+    private javax.swing.JButton create_orders;
     private javax.swing.JButton editButton;
     private javax.swing.JLabel emailLabel;
     private javax.swing.JLabel jLabel3;
@@ -413,5 +413,8 @@ public class Sender_profile extends javax.swing.JFrame {
     public void addLogoutListener(java.awt.event.ActionListener listener) {
         // Assuming your button variable is named 'logout' 
         logout.addActionListener(listener); 
+    }
+    public void addCreateOrderListener(java.awt.event.ActionListener listener) {
+        create_orders.addActionListener(listener); 
     }
 }

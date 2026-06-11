@@ -79,11 +79,11 @@ public class OrderSubmissionForm extends javax.swing.JFrame {
 
         reciver_location.setText("Receiver location*");
         MainPanel.add(reciver_location);
-        reciver_location.setBounds(210, 380, 160, 16);
+        reciver_location.setBounds(210, 390, 160, 16);
 
         reciver_name.setText("Receiver Name*");
         MainPanel.add(reciver_name);
-        reciver_name.setBounds(210, 140, 100, 16);
+        reciver_name.setBounds(210, 150, 100, 16);
 
         reciver_email.setText("Receiver email*");
         MainPanel.add(reciver_email);
@@ -96,7 +96,7 @@ public class OrderSubmissionForm extends javax.swing.JFrame {
 
         description.setText("Description*");
         MainPanel.add(description);
-        description.setBounds(640, 210, 100, 16);
+        description.setBounds(640, 220, 100, 16);
 
         reciver_street.setText("Street*");
         MainPanel.add(reciver_street);
@@ -108,11 +108,11 @@ public class OrderSubmissionForm extends javax.swing.JFrame {
 
         reciver_weight.setText("Weight*");
         MainPanel.add(reciver_weight);
-        reciver_weight.setBounds(210, 460, 50, 16);
+        reciver_weight.setBounds(210, 470, 50, 16);
 
         total_Cost.setText("Total Cost *");
         MainPanel.add(total_Cost);
-        total_Cost.setBounds(640, 140, 70, 16);
+        total_Cost.setBounds(640, 150, 70, 16);
 
         bill.setBackground(new java.awt.Color(255, 255, 255));
         bill.setLayout(null);
@@ -146,21 +146,21 @@ public class OrderSubmissionForm extends javax.swing.JFrame {
 
         reciver_name_field.addActionListener(this::reciver_name_fieldActionPerformed);
         MainPanel.add(reciver_name_field);
-        reciver_name_field.setBounds(210, 170, 350, 22);
+        reciver_name_field.setBounds(210, 170, 350, 30);
         MainPanel.add(total_Cost_field);
-        total_Cost_field.setBounds(640, 170, 360, 22);
+        total_Cost_field.setBounds(640, 170, 360, 30);
         MainPanel.add(description_field);
         description_field.setBounds(640, 240, 360, 90);
         MainPanel.add(reciver_email_field);
-        reciver_email_field.setBounds(210, 250, 350, 22);
+        reciver_email_field.setBounds(210, 250, 350, 30);
         MainPanel.add(reciver_contact_number_field);
-        reciver_contact_number_field.setBounds(210, 330, 350, 22);
+        reciver_contact_number_field.setBounds(210, 330, 350, 30);
         MainPanel.add(reciver_location_field);
-        reciver_location_field.setBounds(210, 410, 350, 22);
+        reciver_location_field.setBounds(210, 410, 350, 30);
         MainPanel.add(reciver_weight_field);
-        reciver_weight_field.setBounds(210, 490, 350, 22);
+        reciver_weight_field.setBounds(210, 490, 350, 30);
         MainPanel.add(reciver_street_field);
-        reciver_street_field.setBounds(210, 570, 350, 22);
+        reciver_street_field.setBounds(210, 560, 350, 30);
 
         submit.setText("Submit");
         submit.addActionListener(this::submitActionPerformed);
@@ -279,11 +279,11 @@ public class OrderSubmissionForm extends javax.swing.JFrame {
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 702, Short.MAX_VALUE)
+            .addGap(0, 612, Short.MAX_VALUE)
             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                     .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(sidebar, javax.swing.GroupLayout.PREFERRED_SIZE, 690, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(sidebar, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
@@ -466,7 +466,9 @@ public void updateBillSection(Model.Order order) {
     public void addLogoutListener(java.awt.event.ActionListener listener) {
         logout.addActionListener(listener); 
     }
-   
+    public void addMyProfileListener(java.awt.event.ActionListener listener) {
+        MyProfile.addActionListener(listener); 
+    }
 public void setInitialTrackingId(String trackingId) {
         // Adds the full "TrackingID: #" prefix exactly as requested
         RandomtrackingID.setText("TrackingID: #" + trackingId);

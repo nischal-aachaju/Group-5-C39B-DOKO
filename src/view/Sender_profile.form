@@ -102,7 +102,7 @@
                                   <Component id="MyShipments" alignment="0" max="32767" attributes="0"/>
                                   <Component id="OrdersHistory" alignment="0" max="32767" attributes="0"/>
                                   <Component id="MyProfile" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="ManageOrders" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="create_orders" alignment="0" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -119,7 +119,7 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="Dashboard" min="-2" pref="55" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-                      <Component id="ManageOrders" min="-2" pref="55" max="-2" attributes="0"/>
+                      <Component id="create_orders" min="-2" pref="55" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="MyShipments" min="-2" pref="55" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -176,7 +176,7 @@
                 <Property name="text" type="java.lang.String" value="My Shipments"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="ManageOrders">
+            <Component class="javax.swing.JButton" name="create_orders">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="31" green="26" red="21" type="rgb"/>

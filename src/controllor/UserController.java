@@ -15,11 +15,14 @@ import javax.swing.JFrame;
 
 public class UserController {
     
-    private final Sender_Dashboard userView;
+    private Sender_Dashboard userView;         
     private OrderSubmissionForm orderSubmission; 
-    private final userData currentUser;
+    private final userData currentUser;        
     private String currentTrackingId;
-
+    
+    // =========================================================================
+    // CONSTRUCTOR 1: Handles the Main Dashboard
+    // =========================================================================
     public UserController(Sender_Dashboard userView, userData currentUser) {
         this.userView = userView;
         this.currentUser = currentUser;
@@ -34,16 +37,57 @@ public class UserController {
         this.userView.addCreateOrderListener(new OpenCreateOrderListener());
     }
 
+    // =========================================================================
+    // CONSTRUCTOR 2: Handles direct navigation to the Order Form
+    // =========================================================================
+    public UserController(OrderSubmissionForm orderView, userData currentUser) {
+        this.orderSubmission = orderView;
+        this.currentUser = currentUser;
+        
+        // Sync top bar labels
+        this.orderSubmission.setUsernameLabel(currentUser.getUsername());
+        this.orderSubmission.setRoleLabel(currentUser.getRole());
+        
+        // Generate Tracking ID immediately on load
+        DAO.OrderDAO orderDao = new DAO.OrderDAO();
+        boolean isUnique = false;
+        java.util.Random rand = new java.util.Random();
+        do {
+            int randomNum = 100000 + rand.nextInt(900000); 
+            currentTrackingId = String.valueOf(randomNum);
+            isUnique = !orderDao.isTrackingIdExists(currentTrackingId);
+        } while (!isUnique);
+        
+        this.orderSubmission.setInitialTrackingId(currentTrackingId);
+        
+        // Wire up the Order Form listeners
+        this.orderSubmission.addSubmitListener(new SubmitOrderListener());
+        this.orderSubmission.addDashboardListener(new BackToDashboardFromOrder());
+        this.orderSubmission.addLogoutListener(new LogoutFromOrderListener());
+        this.orderSubmission.addMyProfileListener(new NavigateToProfileFromOrder());
+    }
+
+    // =========================================================================
+    // WINDOW MANAGEMENT LOGIC
+    // =========================================================================
+
     public void open() {
-        this.userView.setVisible(true);
+        // Smart open: checks which view was handed to the controller and opens it
+        if (this.userView != null) {
+            this.userView.setVisible(true);
+        } else if (this.orderSubmission != null) {
+            this.orderSubmission.setVisible(true);
+        }
     }
 
     public void close() {
-        Window window = SwingUtilities.getWindowAncestor(this.userView);
-        if (window != null) {
-            window.dispose();
-        } else {
-            this.userView.setVisible(false);
+        if (this.userView != null) {
+            Window window = SwingUtilities.getWindowAncestor(this.userView);
+            if (window != null) {
+                window.dispose();
+            } else {
+                this.userView.setVisible(false);
+            }
         }
     }
     
@@ -55,9 +99,9 @@ public class UserController {
     }
 
     // =========================================================================
-    // ACTION LISTENERS (Dashboard Navigation)
+    // DASHBOARD NAVIGATION LISTENERS
     // =========================================================================
-    
+
     class LogoutListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -78,7 +122,7 @@ public class UserController {
         }
     }
 
-class OpenCreateOrderListener implements ActionListener {
+    class OpenCreateOrderListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
             close(); // Closes the current dashboard window safely
@@ -108,12 +152,17 @@ class OpenCreateOrderListener implements ActionListener {
             orderSubmission.addSubmitListener(new SubmitOrderListener());
             orderSubmission.addDashboardListener(new BackToDashboardFromOrder());
             orderSubmission.addLogoutListener(new LogoutFromOrderListener());
+            orderSubmission.addMyProfileListener(new NavigateToProfileFromOrder());
             
             orderSubmission.setVisible(true);
         }
     }
 
-   class SubmitOrderListener implements java.awt.event.ActionListener {
+    // =========================================================================
+    // ORDER SUBMISSION FORM LISTENERS
+    // =========================================================================
+
+    class SubmitOrderListener implements java.awt.event.ActionListener {
         @Override
         public void actionPerformed(java.awt.event.ActionEvent e) {
             
@@ -171,18 +220,36 @@ class OpenCreateOrderListener implements ActionListener {
     class BackToDashboardFromOrder implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            closeSubWindow(orderSubmission); // Close order form frame
-            open();                         // Re-open original main dashboard frame
+            closeSubWindow(orderSubmission); 
+            
+            // Recreate the dashboard safely when going back
+            view.Sender_Dashboard newDashboard = new view.Sender_Dashboard();
+            controllor.UserController dashboardController = new controllor.UserController(newDashboard, currentUser);
+            dashboardController.open(); 
         }
     }
 
     class LogoutFromOrderListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            closeSubWindow(orderSubmission);
+            closeSubWindow(orderSubmission); // Close order form frame safely
             
             view.login loginView = new view.login();
             new controllor.LoginController(loginView).open();
+        }
+    }
+
+    class NavigateToProfileFromOrder implements java.awt.event.ActionListener {
+        @Override
+        public void actionPerformed(java.awt.event.ActionEvent e) {
+            closeSubWindow(orderSubmission); // 1. Completely destroys the active Order screen
+            
+            // 2. Create the Profile View
+            view.Sender_profile profileView = new view.Sender_profile();
+            
+            // 3. Start up the Profile Controller and hand it the view + user data
+            controllor.ProfileController profileController = new controllor.ProfileController(profileView, currentUser);
+            profileController.open();
         }
     }
 }

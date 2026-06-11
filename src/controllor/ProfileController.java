@@ -20,7 +20,7 @@ public class ProfileController {
         initProfileSection();
         // Connect the Dashboard button
         this.userProfile.addDashboardListener(new OpenDashboardListener());
-            
+        this.userProfile.addCreateOrderListener(new NavigateToOrderFromProfile());    
     }
 
     public void open() {
@@ -126,6 +126,20 @@ public void initProfileSection() {
             view.login loginView = new view.login();
             controllor.LoginController loginController = new controllor.LoginController(loginView);
             loginController.open();
+        }
+    }
+    class NavigateToOrderFromProfile implements java.awt.event.ActionListener {
+        @Override
+        public void actionPerformed(java.awt.event.ActionEvent e) {
+            close(); // 1. Close the Profile screen
+            
+            // 2. Open the Order Submission Form window
+            view.OrderSubmissionForm orderView = new view.OrderSubmissionForm();
+            
+            // 3. Hand control back to the UserController, passing the user data
+            // (Make sure UserController has a constructor that accepts OrderSubmissionForm!)
+            controllor.UserController userController = new controllor.UserController(orderView, currentUser);
+            userController.open(); 
         }
     }
 }

@@ -314,10 +314,10 @@ public class Manager_profileEdit extends javax.swing.JFrame {
                     .addGroup(MainPanelLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(topbar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(MainPanelLayout.createSequentialGroup()
-                        .addGap(31, 31, 31)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MainPanelLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                        .addGap(30, 30, 30))))
         );
         MainPanelLayout.setVerticalGroup(
             MainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

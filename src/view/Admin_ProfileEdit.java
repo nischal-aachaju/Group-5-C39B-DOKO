@@ -238,7 +238,7 @@ public class Admin_ProfileEdit extends javax.swing.JPanel {
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(resetpasswordButton)
-                        .addGap(48, 48, 48)
+                        .addGap(39, 39, 39)
                         .addComponent(saveButton))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
                         .addGap(160, 160, 160)

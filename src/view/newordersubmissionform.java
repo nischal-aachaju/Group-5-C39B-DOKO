@@ -211,14 +211,14 @@ public class newordersubmissionform extends javax.swing.JFrame {
         jLabel21.setBackground(new java.awt.Color(204, 204, 204));
 
         jLabel22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/profile.png"))); // NOI18N
-        jLabel22.setText("Name Role");
+        jLabel22.setText("Employee Role");
 
         javax.swing.GroupLayout TopbarLayout = new javax.swing.GroupLayout(Topbar);
         Topbar.setLayout(TopbarLayout);
         TopbarLayout.setHorizontalGroup(
             TopbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(TopbarLayout.createSequentialGroup()
-                .addContainerGap(551, Short.MAX_VALUE)
+                .addContainerGap(527, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addGap(149, 149, 149)
                 .addComponent(jLabel21)

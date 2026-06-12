@@ -209,7 +209,7 @@ public class Admin_ProfileEdit extends javax.swing.JPanel {
 
         jLabel3.setText("   My Details");
 
-        employeId.setText("Employe ID                   :");
+        employeId.setText("Employee ID                 :");
 
         nameLabel.setText("Name                           :");
 

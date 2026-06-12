@@ -50,12 +50,12 @@ public class Manager_profileEdit extends javax.swing.JFrame {
         saveButton = new javax.swing.JButton();
         resetpasswordButton = new javax.swing.JButton();
         ManagerLabel = new javax.swing.JLabel();
-        ManagerId = new javax.swing.JLabel();
+        EmployeId = new javax.swing.JLabel();
         nameLabel = new javax.swing.JLabel();
         emailLabel = new javax.swing.JLabel();
         phonenumberLabel = new javax.swing.JLabel();
         addressLabel = new javax.swing.JLabel();
-        ManagerTextField = new javax.swing.JTextField();
+        EmployeeIDTextField = new javax.swing.JTextField();
         NameTextField = new javax.swing.JTextField();
         EmailTextField = new javax.swing.JTextField();
         phonenumberTextField = new javax.swing.JTextField();
@@ -204,7 +204,7 @@ public class Manager_profileEdit extends javax.swing.JFrame {
 
         ManagerLabel.setText("   My Details");
 
-        ManagerId.setText("Manager ID                   :");
+        EmployeId.setText("Manager ID                   :");
 
         nameLabel.setText("Name                           :");
 
@@ -214,7 +214,7 @@ public class Manager_profileEdit extends javax.swing.JFrame {
 
         addressLabel.setText("Address                       :");
 
-        ManagerTextField.setText("#1111");
+        EmployeeIDTextField.setText("#1111");
 
         NameTextField.setText("Unish Gautam");
 
@@ -248,9 +248,9 @@ public class Manager_profileEdit extends javax.swing.JFrame {
                         .addGap(2, 2, 2)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(ManagerId)
+                                .addComponent(EmployeId)
                                 .addGap(18, 18, 18)
-                                .addComponent(ManagerTextField))
+                                .addComponent(EmployeeIDTextField))
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                     .addComponent(emailLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -278,8 +278,8 @@ public class Manager_profileEdit extends javax.swing.JFrame {
                     .addComponent(ManagerLabel))
                 .addGap(39, 39, 39)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ManagerId)
-                    .addComponent(ManagerTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(EmployeId)
+                    .addComponent(EmployeeIDTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(nameLabel)
@@ -375,11 +375,11 @@ public class Manager_profileEdit extends javax.swing.JFrame {
     private javax.swing.JButton AssignOrder;
     private javax.swing.JButton Dashboard;
     private javax.swing.JTextField EmailTextField;
+    private javax.swing.JLabel EmployeId;
+    private javax.swing.JTextField EmployeeIDTextField;
     private javax.swing.JPanel MainPanel;
     private javax.swing.JButton ManageUser;
-    private javax.swing.JLabel ManagerId;
     private javax.swing.JLabel ManagerLabel;
-    private javax.swing.JTextField ManagerTextField;
     private javax.swing.JButton MyProfile;
     private javax.swing.JTextField NameTextField;
     private javax.swing.JButton WorkLoad;

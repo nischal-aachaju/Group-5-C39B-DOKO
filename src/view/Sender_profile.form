@@ -49,9 +49,9 @@
               </Group>
               <Group type="102" attributes="0">
                   <Component id="sidebar" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
+                  <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -344,14 +344,12 @@
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                                      <Component id="emailLabel" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="nameLabel" alignment="0" max="32767" attributes="0"/>
-                                  </Group>
-                                  <Component id="SenderId" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                  <Component id="emailLabel" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="nameLabel" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="SenderId" max="32767" attributes="0"/>
                               </Group>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="ManagerTextField" max="32767" attributes="0"/>
                                   <Component id="NameTextField" alignment="0" max="32767" attributes="0"/>
@@ -458,7 +456,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="SenderId">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Sender ID                     :"/>
+                <Property name="text" type="java.lang.String" value="Employee ID                 :"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="nameLabel">

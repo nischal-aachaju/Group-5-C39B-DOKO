@@ -253,10 +253,11 @@ public class OrderSubmissionForm extends javax.swing.JFrame {
         MyProfile.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
         MyProfile.setForeground(new java.awt.Color(255, 255, 255));
         MyProfile.setText("My Profile");
+        MyProfile.addActionListener(this::MyProfileActionPerformed);
         sidebar.add(MyProfile);
         MyProfile.setBounds(6, 351, 170, 55);
         sidebar.add(jSeparator2);
-        jSeparator2.setBounds(2, 530, 180, 3);
+        jSeparator2.setBounds(2, 523, 180, 10);
 
         logout.setBackground(new java.awt.Color(33, 38, 49));
         logout.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
@@ -265,7 +266,7 @@ public class OrderSubmissionForm extends javax.swing.JFrame {
         logout.setText("Logout");
         logout.addActionListener(this::logoutActionPerformed);
         sidebar.add(logout);
-        logout.setBounds(10, 540, 158, 45);
+        logout.setBounds(10, 530, 158, 45);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -279,16 +280,15 @@ public class OrderSubmissionForm extends javax.swing.JFrame {
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 612, Short.MAX_VALUE)
+            .addGap(0, 600, Short.MAX_VALUE)
             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(sidebar, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGap(0, 16, Short.MAX_VALUE)
+                    .addComponent(sidebar, javax.swing.GroupLayout.PREFERRED_SIZE, 584, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
         MainPanel.add(jPanel2);
-        jPanel2.setBounds(0, 0, 180, 580);
+        jPanel2.setBounds(0, 0, 180, 600);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -301,9 +301,7 @@ public class OrderSubmissionForm extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(MainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 6, Short.MAX_VALUE))
+            .addComponent(MainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -324,6 +322,10 @@ public class OrderSubmissionForm extends javax.swing.JFrame {
     private void logoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_logoutActionPerformed
+
+    private void MyProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MyProfileActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_MyProfileActionPerformed
 
     /**
      * @param args the command line arguments
@@ -473,5 +475,7 @@ public void setInitialTrackingId(String trackingId) {
         // Adds the full "TrackingID: #" prefix exactly as requested
         RandomtrackingID.setText("TrackingID: #" + trackingId);
     }
-
+public void addMyShipmentsListener(java.awt.event.ActionListener listener) {
+        MyShipments.addActionListener(listener); 
+    }
 }

@@ -417,4 +417,7 @@ public class Sender_profile extends javax.swing.JFrame {
     public void addCreateOrderListener(java.awt.event.ActionListener listener) {
         create_orders.addActionListener(listener); 
     }
+    public void addMyShipmentsListener(java.awt.event.ActionListener listener) {
+        MyShipments.addActionListener(listener); 
+    }
 }

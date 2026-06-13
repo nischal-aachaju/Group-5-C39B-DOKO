@@ -357,4 +357,15 @@ public void setUsernameLabel(String name) {
     public void addCreateOrderListener(java.awt.event.ActionListener listener) {
         create_orders.addActionListener(listener); 
     }
+    // Add to the bottom of Sender_Dashboard.java
+    public void addMyShipmentsListener(java.awt.event.ActionListener listener) {
+        // NOTE: Ensure 'MyShipments' is the exact variable name of your button!
+        MyShipments.addActionListener(listener); 
+    }
+    public void addBackToShipmentsListener(java.awt.event.ActionListener listenForBackButton) {
+        
+        // CHANGE 'btnBack' to whatever variable name you gave your actual button!
+        MyShipments.addActionListener(listenForBackButton); 
+        
+    }
 }

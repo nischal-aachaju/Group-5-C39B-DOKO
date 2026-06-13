@@ -20,7 +20,8 @@ public class ProfileController {
         initProfileSection();
         // Connect the Dashboard button
         this.userProfile.addDashboardListener(new OpenDashboardListener());
-        this.userProfile.addCreateOrderListener(new NavigateToOrderFromProfile());    
+        this.userProfile.addCreateOrderListener(new NavigateToOrderFromProfile());   
+        this.userProfile.addMyShipmentsListener(new NavigateToShipmentsFromProfile());
     }
 
     public void open() {
@@ -140,6 +141,15 @@ public void initProfileSection() {
             // (Make sure UserController has a constructor that accepts OrderSubmissionForm!)
             controllor.UserController userController = new controllor.UserController(orderView, currentUser);
             userController.open(); 
+        }
+    }
+    class NavigateToShipmentsFromProfile implements java.awt.event.ActionListener {
+        @Override
+        public void actionPerformed(java.awt.event.ActionEvent e) {
+            close(); // Closes the Profile window completely
+            
+            view.SenderOrderCancellation shipmentsView = new view.SenderOrderCancellation();
+            new controllor.Sender_shipment_controller(shipmentsView, currentUser).open();
         }
     }
 }

@@ -46,26 +46,29 @@ public class EmployeeOrderCancellation extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
-        jLabel8 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jTextField7 = new javax.swing.JTextField();
+        TrackingId = new javax.swing.JLabel();
+        ReceiverName = new javax.swing.JLabel();
+        ReceiverEmail = new javax.swing.JLabel();
+        SenderAddress = new javax.swing.JLabel();
+        ReceiverAddress = new javax.swing.JLabel();
+        totalCost = new javax.swing.JLabel();
+        OtherDetails = new javax.swing.JLabel();
+        editButton = new javax.swing.JButton();
+        deliveredButton = new javax.swing.JButton();
+        CancelOrderButton = new javax.swing.JButton();
+        returnButton = new javax.swing.JButton();
+        retrievedTrackingID = new javax.swing.JLabel();
+        retrievedReceiverName = new javax.swing.JLabel();
+        retrievedReceiverEmail = new javax.swing.JLabel();
+        retrievedSenderAddress = new javax.swing.JLabel();
+        retrievedReceiverAddress = new javax.swing.JLabel();
+        CostRetrieved = new javax.swing.JLabel();
+        trackingIDsearchtxtfld = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
-        jButton5 = new javax.swing.JButton();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        searchbtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Employee Dashboard");
@@ -77,90 +80,63 @@ public class EmployeeOrderCancellation extends javax.swing.JFrame {
         MainPanel.setLayout(null);
 
         Sidebar.setBackground(new java.awt.Color(33, 38, 49));
+        Sidebar.setLayout(null);
 
         logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/logo.png"))); // NOI18N
+        Sidebar.add(logo);
+        logo.setBounds(0, 0, 180, 68);
 
         dashboard.setBackground(new java.awt.Color(33, 38, 49));
         dashboard.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
         dashboard.setForeground(new java.awt.Color(255, 255, 255));
         dashboard.setText("Dashboard");
+        Sidebar.add(dashboard);
+        dashboard.setBounds(6, 86, 168, 55);
 
         MyShipments.setBackground(new java.awt.Color(216, 140, 81));
         MyShipments.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
         MyShipments.setForeground(new java.awt.Color(255, 255, 255));
         MyShipments.setText("My Shipments");
+        Sidebar.add(MyShipments);
+        MyShipments.setBounds(6, 153, 168, 55);
 
         ManageOrders.setBackground(new java.awt.Color(33, 38, 49));
         ManageOrders.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
         ManageOrders.setForeground(new java.awt.Color(255, 255, 255));
         ManageOrders.setText("Manage Orders");
+        Sidebar.add(ManageOrders);
+        ManageOrders.setBounds(6, 220, 168, 55);
 
         OrdersHistory.setBackground(new java.awt.Color(33, 38, 49));
         OrdersHistory.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
         OrdersHistory.setForeground(new java.awt.Color(255, 255, 255));
         OrdersHistory.setText("Orders History");
         OrdersHistory.addActionListener(this::OrdersHistoryActionPerformed);
+        Sidebar.add(OrdersHistory);
+        OrdersHistory.setBounds(6, 287, 168, 55);
 
         MyProfile.setBackground(new java.awt.Color(33, 38, 49));
         MyProfile.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
         MyProfile.setForeground(new java.awt.Color(255, 255, 255));
         MyProfile.setText("My Profile");
+        Sidebar.add(MyProfile);
+        MyProfile.setBounds(6, 354, 168, 55);
 
         logout.setBackground(new java.awt.Color(33, 38, 49));
         logout.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
         logout.setForeground(new java.awt.Color(255, 0, 51));
         logout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/logout.png"))); // NOI18N
         logout.setText("Logout");
+        Sidebar.add(logout);
+        logout.setBounds(6, 541, 168, 53);
+        Sidebar.add(jSeparator1);
+        jSeparator1.setBounds(0, 532, 180, 3);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/logout.png"))); // NOI18N
-
-        javax.swing.GroupLayout SidebarLayout = new javax.swing.GroupLayout(Sidebar);
-        Sidebar.setLayout(SidebarLayout);
-        SidebarLayout.setHorizontalGroup(
-            SidebarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(logo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(SidebarLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(SidebarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(SidebarLayout.createSequentialGroup()
-                        .addGroup(SidebarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(MyProfile, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(OrdersHistory, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(ManageOrders, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE)
-                            .addComponent(MyShipments, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(dashboard, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addContainerGap())
-                    .addGroup(SidebarLayout.createSequentialGroup()
-                        .addComponent(logout, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel1))))
-            .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING)
-            .addComponent(jSeparator2)
-        );
-        SidebarLayout.setVerticalGroup(
-            SidebarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(SidebarLayout.createSequentialGroup()
-                .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(1, 1, 1)
-                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(7, 7, 7)
-                .addComponent(dashboard, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
-                .addComponent(MyShipments, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
-                .addComponent(ManageOrders, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
-                .addComponent(OrdersHistory, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
-                .addComponent(MyProfile, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 123, Short.MAX_VALUE)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(SidebarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(logout, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 53, Short.MAX_VALUE))
-                .addContainerGap())
-        );
+        Sidebar.add(jLabel1);
+        jLabel1.setBounds(180, 541, 0, 53);
+        Sidebar.add(jSeparator2);
+        jSeparator2.setBounds(0, 69, 180, 10);
 
         MainPanel.add(Sidebar);
         Sidebar.setBounds(0, 0, 180, 600);
@@ -173,7 +149,7 @@ public class EmployeeOrderCancellation extends javax.swing.JFrame {
 
         Profile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/profile.png"))); // NOI18N
         Topbar.add(Profile);
-        Profile.setBounds(670, 0, 84, 82);
+        Profile.setBounds(670, 0, 0, 0);
 
         jLabel9.setText("Username");
         Topbar.add(jLabel9);
@@ -181,110 +157,124 @@ public class EmployeeOrderCancellation extends javax.swing.JFrame {
 
         jLabel10.setText("Role");
         Topbar.add(jLabel10);
-        jLabel10.setBounds(760, 50, 43, 16);
+        jLabel10.setBounds(760, 50, 43, 19);
 
         MainPanel.add(Topbar);
         Topbar.setBounds(186, 0, 0, 0);
 
         jPanel1.setLayout(null);
 
-        jLabel2.setText("Tracking ID");
-        jPanel1.add(jLabel2);
-        jLabel2.setBounds(68, 66, 79, 16);
+        TrackingId.setText("Tracking ID");
+        jPanel1.add(TrackingId);
+        TrackingId.setBounds(68, 66, 140, 19);
 
-        jLabel3.setText("Recever's Name");
-        jPanel1.add(jLabel3);
-        jLabel3.setBounds(68, 125, 90, 16);
+        ReceiverName.setText("Recever's Name");
+        jPanel1.add(ReceiverName);
+        ReceiverName.setBounds(68, 125, 130, 19);
 
-        jLabel4.setText("Receiver's Email");
-        jPanel1.add(jLabel4);
-        jLabel4.setBounds(68, 180, 90, 16);
+        ReceiverEmail.setText("Receiver's Email");
+        jPanel1.add(ReceiverEmail);
+        ReceiverEmail.setBounds(68, 180, 150, 19);
 
-        jLabel5.setText("Sender's Address");
-        jPanel1.add(jLabel5);
-        jLabel5.setBounds(68, 235, 100, 16);
+        SenderAddress.setText("Sender's Address");
+        jPanel1.add(SenderAddress);
+        SenderAddress.setBounds(68, 235, 150, 19);
 
-        jLabel6.setText("Receiver's Address");
-        jPanel1.add(jLabel6);
-        jLabel6.setBounds(68, 286, 100, 16);
+        ReceiverAddress.setText("Receiver's Address");
+        jPanel1.add(ReceiverAddress);
+        ReceiverAddress.setBounds(68, 286, 170, 19);
 
-        jLabel7.setText("Total cost");
-        jPanel1.add(jLabel7);
-        jLabel7.setBounds(68, 341, 79, 16);
+        totalCost.setText("Total cost");
+        jPanel1.add(totalCost);
+        totalCost.setBounds(68, 341, 79, 19);
 
-        jTextField1.setText("#2345");
-        jTextField1.addActionListener(this::jTextField1ActionPerformed);
-        jPanel1.add(jTextField1);
-        jTextField1.setBounds(197, 59, 147, 31);
+        OtherDetails.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        OtherDetails.setText("Order Details");
+        jPanel1.add(OtherDetails);
+        OtherDetails.setBounds(16, 6, 120, 33);
 
-        jTextField2.setText("Unish");
-        jPanel1.add(jTextField2);
-        jTextField2.setBounds(197, 118, 147, 31);
+        editButton.setBackground(new java.awt.Color(168, 168, 168));
+        editButton.setText("Edit");
+        editButton.addActionListener(this::editButtonActionPerformed);
+        jPanel1.add(editButton);
+        editButton.setBounds(620, 8, 99, 35);
 
-        jTextField3.setText("unishg@gmail.com");
-        jPanel1.add(jTextField3);
-        jTextField3.setBounds(197, 173, 147, 30);
+        deliveredButton.setBackground(new java.awt.Color(168, 168, 168));
+        deliveredButton.setText("Delivered");
+        deliveredButton.addActionListener(this::deliveredButtonActionPerformed);
+        jPanel1.add(deliveredButton);
+        deliveredButton.setBounds(620, 330, 99, 40);
 
-        jTextField4.setText("kapan");
-        jPanel1.add(jTextField4);
-        jTextField4.setBounds(197, 228, 146, 30);
+        CancelOrderButton.setBackground(new java.awt.Color(168, 168, 168));
+        CancelOrderButton.setFont(new java.awt.Font("Adwaita Sans", 0, 12)); // NOI18N
+        CancelOrderButton.setText("Cancel Order");
+        CancelOrderButton.addActionListener(this::CancelOrderButtonActionPerformed);
+        jPanel1.add(CancelOrderButton);
+        CancelOrderButton.setBounds(500, 330, 110, 40);
 
-        jTextField5.setText("maitidevi");
-        jPanel1.add(jTextField5);
-        jTextField5.setBounds(197, 279, 146, 30);
+        returnButton.setBackground(new java.awt.Color(168, 168, 168));
+        returnButton.setText("Return");
+        returnButton.addActionListener(this::returnButtonActionPerformed);
+        jPanel1.add(returnButton);
+        returnButton.setBounds(410, 330, 75, 40);
 
-        jTextField6.setText("1233");
-        jPanel1.add(jTextField6);
-        jTextField6.setBounds(197, 334, 146, 30);
+        retrievedTrackingID.setBackground(new java.awt.Color(204, 204, 204));
+        retrievedTrackingID.setText("#250455");
+        jPanel1.add(retrievedTrackingID);
+        retrievedTrackingID.setBounds(250, 60, 160, 19);
 
-        jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel8.setText("Order Details");
-        jPanel1.add(jLabel8);
-        jLabel8.setBounds(16, 6, 120, 33);
+        retrievedReceiverName.setText("Unish Gautam");
+        jPanel1.add(retrievedReceiverName);
+        retrievedReceiverName.setBounds(250, 120, 160, 19);
 
-        jButton1.setBackground(new java.awt.Color(168, 168, 168));
-        jButton1.setText("Edit");
-        jButton1.addActionListener(this::jButton1ActionPerformed);
-        jPanel1.add(jButton1);
-        jButton1.setBounds(620, 8, 99, 35);
+        retrievedReceiverEmail.setText("xyz@gmail.com");
+        jPanel1.add(retrievedReceiverEmail);
+        retrievedReceiverEmail.setBounds(250, 180, 180, 19);
 
-        jButton3.setBackground(new java.awt.Color(168, 168, 168));
-        jButton3.setText("Delivered");
-        jButton3.addActionListener(this::jButton3ActionPerformed);
-        jPanel1.add(jButton3);
-        jButton3.setBounds(620, 330, 99, 40);
+        retrievedSenderAddress.setText("Kapan");
+        jPanel1.add(retrievedSenderAddress);
+        retrievedSenderAddress.setBounds(250, 240, 200, 19);
 
-        jButton4.setBackground(new java.awt.Color(168, 168, 168));
-        jButton4.setText("Cancel Order");
-        jButton4.addActionListener(this::jButton4ActionPerformed);
-        jPanel1.add(jButton4);
-        jButton4.setBounds(500, 330, 99, 40);
+        retrievedReceiverAddress.setText("Maitidevi");
+        jPanel1.add(retrievedReceiverAddress);
+        retrievedReceiverAddress.setBounds(250, 290, 200, 19);
 
-        jButton2.setBackground(new java.awt.Color(168, 168, 168));
-        jButton2.setText("Return");
-        jButton2.addActionListener(this::jButton2ActionPerformed);
-        jPanel1.add(jButton2);
-        jButton2.setBounds(410, 330, 72, 40);
+        CostRetrieved.setText("1200");
+        jPanel1.add(CostRetrieved);
+        CostRetrieved.setBounds(250, 340, 150, 19);
 
         MainPanel.add(jPanel1);
         jPanel1.setBounds(240, 180, 740, 400);
 
-        jTextField7.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jTextField7.setText("# Enter Tracking ID");
-        jTextField7.addActionListener(this::jTextField7ActionPerformed);
-        MainPanel.add(jTextField7);
-        jTextField7.setBounds(240, 120, 350, 50);
+        trackingIDsearchtxtfld.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        trackingIDsearchtxtfld.setText("# Enter Tracking ID");
+        trackingIDsearchtxtfld.addActionListener(this::trackingIDsearchtxtfldActionPerformed);
+        MainPanel.add(trackingIDsearchtxtfld);
+        trackingIDsearchtxtfld.setBounds(240, 120, 350, 50);
 
         jPanel2.setLayout(null);
+
+        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/pfp.jpg"))); // NOI18N
+        jPanel2.add(jLabel17);
+        jLabel17.setBounds(690, 0, 60, 70);
+
+        jLabel15.setText("username");
+        jPanel2.add(jLabel15);
+        jLabel15.setBounds(760, 10, 110, 19);
+
+        jLabel18.setText("role");
+        jPanel2.add(jLabel18);
+        jLabel18.setBounds(760, 40, 100, 19);
+
         MainPanel.add(jPanel2);
         jPanel2.setBounds(180, 0, 870, 70);
 
-        jButton5.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jButton5.setText("Search");
-        jButton5.setMaximumSize(new java.awt.Dimension(84, 32));
-        jButton5.setMinimumSize(new java.awt.Dimension(84, 32));
-        MainPanel.add(jButton5);
-        jButton5.setBounds(610, 120, 110, 50);
+        searchbtn.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        searchbtn.setText("Search");
+        searchbtn.setMaximumSize(new java.awt.Dimension(84, 32));
+        searchbtn.setMinimumSize(new java.awt.Dimension(84, 32));
+        MainPanel.add(searchbtn);
+        searchbtn.setBounds(610, 120, 110, 50);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -301,29 +291,25 @@ public class EmployeeOrderCancellation extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField7ActionPerformed
+    private void trackingIDsearchtxtfldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_trackingIDsearchtxtfldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField7ActionPerformed
+    }//GEN-LAST:event_trackingIDsearchtxtfldActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void editButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_editButtonActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void deliveredButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deliveredButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_deliveredButtonActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void CancelOrderButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelOrderButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_CancelOrderButtonActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void returnButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_returnButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_returnButtonActionPerformed
 
     private void OrdersHistoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OrdersHistoryActionPerformed
         // TODO add your handling code here:
@@ -355,43 +341,46 @@ public class EmployeeOrderCancellation extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton CancelOrderButton;
+    private javax.swing.JLabel CostRetrieved;
     private javax.swing.JPanel MainPanel;
     private javax.swing.JButton ManageOrders;
     private javax.swing.JButton MyProfile;
     private javax.swing.JButton MyShipments;
     private javax.swing.JButton OrdersHistory;
+    private javax.swing.JLabel OtherDetails;
     private javax.swing.JLabel Profile;
+    private javax.swing.JLabel ReceiverAddress;
+    private javax.swing.JLabel ReceiverEmail;
+    private javax.swing.JLabel ReceiverName;
+    private javax.swing.JLabel SenderAddress;
     private javax.swing.JPanel Sidebar;
     private javax.swing.JPanel Topbar;
+    private javax.swing.JLabel TrackingId;
     private javax.swing.JButton dashboard;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
+    private javax.swing.JButton deliveredButton;
+    private javax.swing.JButton editButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
     private javax.swing.JLabel logo;
     private javax.swing.JButton logout;
     private javax.swing.JLabel profile;
+    private javax.swing.JLabel retrievedReceiverAddress;
+    private javax.swing.JLabel retrievedReceiverEmail;
+    private javax.swing.JLabel retrievedReceiverName;
+    private javax.swing.JLabel retrievedSenderAddress;
+    private javax.swing.JLabel retrievedTrackingID;
+    private javax.swing.JButton returnButton;
+    private javax.swing.JButton searchbtn;
+    private javax.swing.JLabel totalCost;
+    private javax.swing.JTextField trackingIDsearchtxtfld;
     // End of variables declaration//GEN-END:variables
 }

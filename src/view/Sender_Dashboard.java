@@ -368,4 +368,9 @@ public void setUsernameLabel(String name) {
         MyShipments.addActionListener(listenForBackButton); 
         
     }
+    // Add to the bottom of Sender_Dashboard.java
+    public void addOrdersHistoryListener(java.awt.event.ActionListener listener) {
+        // Ensure 'OrdersHistory' perfectly matches the variable name of your button!
+        OrdersHistory.addActionListener(listener); 
+    }
 }

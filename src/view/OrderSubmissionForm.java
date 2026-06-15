@@ -478,4 +478,7 @@ public void setInitialTrackingId(String trackingId) {
 public void addMyShipmentsListener(java.awt.event.ActionListener listener) {
         MyShipments.addActionListener(listener); 
     }
+public void addOrdersHistoryListener(java.awt.event.ActionListener listener) {
+        OrdersHistory.addActionListener(listener); 
+    }
 }

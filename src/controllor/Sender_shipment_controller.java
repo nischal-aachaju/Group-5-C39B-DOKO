@@ -25,7 +25,8 @@ public class Sender_shipment_controller {
         this.shipmentView.addLogoutListener(new LogoutListener());
         this.shipmentView.addCreateOrderListener(new CreateOrderListener());
         this.shipmentView.addMyProfileListener(new NavigateToProfileFromShipments());
-        // You will add your Search, Edit, and Cancel button listeners here later!
+        
+        this.shipmentView.addOrdersHistoryListener(new NavigateToHistoryFromShipments());
     
         this.shipmentView.addSearchListener(new SearchOrderListener());
 
@@ -217,6 +218,15 @@ class SearchOrderListener implements ActionListener {
             } else {
                 javax.swing.JOptionPane.showMessageDialog(shipmentView, "Order not found! Please check the Tracking ID.");
             }
+        }
+    }
+class NavigateToHistoryFromShipments implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            close(); // Destroy the Shipments window
+            
+            view.Sender_Order_History historyView = new view.Sender_Order_History();
+            new controllor.HistoryController(historyView, currentUser).open();
         }
     }
 }

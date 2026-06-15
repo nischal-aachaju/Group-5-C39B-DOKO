@@ -22,6 +22,8 @@ public class ProfileController {
         this.userProfile.addDashboardListener(new OpenDashboardListener());
         this.userProfile.addCreateOrderListener(new NavigateToOrderFromProfile());   
         this.userProfile.addMyShipmentsListener(new NavigateToShipmentsFromProfile());
+
+        this.userProfile.addOrdersHistoryListener(new NavigateToHistoryFromProfile());
     }
 
     public void open() {
@@ -150,6 +152,15 @@ public void initProfileSection() {
             
             view.SenderOrderCancellation shipmentsView = new view.SenderOrderCancellation();
             new controllor.Sender_shipment_controller(shipmentsView, currentUser).open();
+        }
+    }
+    class NavigateToHistoryFromProfile implements java.awt.event.ActionListener {
+        @Override
+        public void actionPerformed(java.awt.event.ActionEvent e) {
+            close(); // Destroy the Profile window
+            
+            view.Sender_Order_History historyView = new view.Sender_Order_History();
+            new controllor.HistoryController(historyView, currentUser).open();
         }
     }
 }

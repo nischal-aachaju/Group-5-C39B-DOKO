@@ -406,4 +406,7 @@ public void addCreateOrderListener(java.awt.event.ActionListener listenForCreate
         total_cost_field.setText("");
         trackingID.setText("# Enter Tracking ID"); // Reset main search box
     }
+    public void addOrdersHistoryListener(java.awt.event.ActionListener listener) {
+        OrdersHistory.addActionListener(listener); 
+    }
 }

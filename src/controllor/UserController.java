@@ -32,6 +32,7 @@ public class UserController {
         this.userView.addMyProfileListener(new OpenProfileListener());
         this.userView.addCreateOrderListener(new OpenCreateOrderListener());
         this.userView.addMyShipmentsListener(new OpenMyShipmentsListener());
+        this.userView.addOrdersHistoryListener(new OpenOrdersHistoryListener());
     }
 
     // =========================================================================
@@ -59,8 +60,8 @@ public class UserController {
         this.orderSubmission.addDashboardListener(new BackToDashboardFromOrder());
         this.orderSubmission.addLogoutListener(new LogoutFromOrderListener());
         this.orderSubmission.addMyProfileListener(new NavigateToProfileFromOrder());
-        
-        // BUG FIX: Attached the My Shipments navigation to the Order form!
+        this.orderSubmission.addOrdersHistoryListener(new NavigateToHistoryFromOrder());
+
         this.orderSubmission.addMyShipmentsListener(new NavigateToShipmentsFromOrder()); 
     }
 
@@ -208,6 +209,28 @@ public class UserController {
             closeSubWindow(orderSubmission); 
             view.SenderOrderCancellation shipmentsView = new view.SenderOrderCancellation();
             new controllor.Sender_shipment_controller(shipmentsView, currentUser).open();
+        }
+    }
+    // Paste this with your other DASHBOARD NAVIGATION LISTENERS
+    class OpenOrdersHistoryListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            close(); // 1. Close the Dashboard
+            
+
+            view.Sender_Order_History historyView = new view.Sender_Order_History();
+            
+            // 3. Open it using the new Controller
+            new controllor.HistoryController(historyView, currentUser).open();
+        }
+    }
+    class NavigateToHistoryFromOrder implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            closeSubWindow(orderSubmission); // Destroy the Order window
+            
+            view.Sender_Order_History historyView = new view.Sender_Order_History();
+            new controllor.HistoryController(historyView, currentUser).open();
         }
     }
 }

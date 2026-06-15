@@ -28,6 +28,10 @@ public class Sender_shipment_controller {
         // You will add your Search, Edit, and Cancel button listeners here later!
     
         this.shipmentView.addSearchListener(new SearchOrderListener());
+
+        
+        // --- ADD THIS NEW LINE ---
+        this.shipmentView.addCancelOrderListener(new CancelOrderListener());
     
     }
 
@@ -91,39 +95,126 @@ public void close() {
             new controllor.ProfileController(profileView, currentUser).open();
         }
     }
+//class SearchOrderListener implements ActionListener {
+//        @Override
+//        public void actionPerformed(ActionEvent e) {
+//            
+//            String rawSearchInput = shipmentView.getSearchTrackingId();
+//            
+//            // SUPER CLEANER: Strips out EVERYTHING except the numbers!
+//            // If they type "# Enter Tracking ID 253893 ", it perfectly extracts "253893"
+//            String cleanTrackingId = rawSearchInput.replaceAll("[^0-9]", "");
+//
+//            if (cleanTrackingId.isEmpty()) {
+//                javax.swing.JOptionPane.showMessageDialog(shipmentView, "Please enter a valid numeric Tracking ID.");
+//                return;
+//            }
+//            
+//            if (cleanTrackingId.length() !=6){
+//            javax.swing.JOptionPane.showMessageDialog(shipmentView, "Please enter a valid numeric Tracking ID of 6 digit");
+//                return;
+//            }
+//
+//            // --- CONSOLE DEBUGGING ---
+//            System.out.println("=== SEARCH INITIATED ===");
+//            System.out.println("Searching Tracking ID: [" + cleanTrackingId + "]");
+//            System.out.println("Logged-in Sender ID: [" + currentUser.getUserID() + "]");
+//
+//            DAO.OrderDAO orderDao = new DAO.OrderDAO();
+//            Model.Order foundOrder = orderDao.getOrderByTrackingIdAndSender(cleanTrackingId, currentUser.getUserID()); 
+//
+//            if (foundOrder != null) {
+//                System.out.println("Match Found! Populating UI...");
+//                shipmentView.populateOrderDetails(foundOrder, currentUser);
+//            } else {
+//                System.out.println("No Match Found in Database.");
+//                javax.swing.JOptionPane.showMessageDialog(shipmentView, "Order not found! Please check the Tracking ID.");
+//            }
+//        }
+//    }
+class CancelOrderListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            
+            // 1. Check if there is actually an order loaded on the screen
+            String loadedTrackingId = shipmentView.getLoadedTrackingId();
+            
+            if (loadedTrackingId == null || loadedTrackingId.trim().isEmpty()) {
+                javax.swing.JOptionPane.showMessageDialog(shipmentView, 
+                        "Please search for an order to cancel first.", 
+                        "No Order Selected", 
+                        javax.swing.JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+
+            // 2. The Yes/No Double-Check Popup
+            int confirm = javax.swing.JOptionPane.showConfirmDialog(
+                    shipmentView, 
+                    "Are you absolutely sure you want to cancel Order #" + loadedTrackingId + "?", 
+                    "Confirm Cancellation", 
+                    javax.swing.JOptionPane.YES_NO_OPTION,
+                    javax.swing.JOptionPane.WARNING_MESSAGE
+            );
+
+            // 3. Process the Cancellation if they clicked "Yes"
+            if (confirm == javax.swing.JOptionPane.YES_OPTION) {
+                
+                DAO.OrderDAO orderDao = new DAO.OrderDAO();
+                boolean success = orderDao.cancelOrder(loadedTrackingId, currentUser.getUserID());
+                
+                if (success) {
+                    javax.swing.JOptionPane.showMessageDialog(shipmentView, 
+                            "Success! Order #" + loadedTrackingId + " has been cancelled.", 
+                            "Order Cancelled", 
+                            javax.swing.JOptionPane.INFORMATION_MESSAGE);
+                            
+                    // Clear the screen so they know it's gone
+                    shipmentView.clearOrderDetails(); 
+                    
+                } else {
+                    javax.swing.JOptionPane.showMessageDialog(shipmentView, 
+                            "Failed to cancel the order. It may have already been shipped.", 
+                            "Error", 
+                            javax.swing.JOptionPane.ERROR_MESSAGE);
+                }
+            }
+        }
+    }
+
 class SearchOrderListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
             
             String rawSearchInput = shipmentView.getSearchTrackingId();
-            
-            // SUPER CLEANER: Strips out EVERYTHING except the numbers!
-            // If they type "# Enter Tracking ID 253893 ", it perfectly extracts "253893"
             String cleanTrackingId = rawSearchInput.replaceAll("[^0-9]", "");
 
             if (cleanTrackingId.isEmpty()) {
                 javax.swing.JOptionPane.showMessageDialog(shipmentView, "Please enter a valid numeric Tracking ID.");
                 return;
             }
-            
-            if (cleanTrackingId.length() !=6){
-            javax.swing.JOptionPane.showMessageDialog(shipmentView, "Please enter a valid numeric Tracking ID of 6 digit");
-                return;
-            }
-
-            // --- CONSOLE DEBUGGING ---
-            System.out.println("=== SEARCH INITIATED ===");
-            System.out.println("Searching Tracking ID: [" + cleanTrackingId + "]");
-            System.out.println("Logged-in Sender ID: [" + currentUser.getUserID() + "]");
 
             DAO.OrderDAO orderDao = new DAO.OrderDAO();
             Model.Order foundOrder = orderDao.getOrderByTrackingIdAndSender(cleanTrackingId, currentUser.getUserID()); 
 
             if (foundOrder != null) {
-                System.out.println("Match Found! Populating UI...");
-                shipmentView.populateOrderDetails(foundOrder, currentUser);
+                
+                // --- NEW LOGIC: Check if the order is cancelled! ---
+                if ("cancelled".equalsIgnoreCase(foundOrder.getStatus())) {
+                    
+                    javax.swing.JOptionPane.showMessageDialog(shipmentView, 
+                            "Order #" + cleanTrackingId + " has been cancelled.", 
+                            "Order Cancelled", 
+                            javax.swing.JOptionPane.WARNING_MESSAGE);
+                            
+                    // Clear the screen so they don't see old data
+                    shipmentView.clearOrderDetails(); 
+                    
+                } else {
+                    // If it is NOT cancelled (e.g., "pending"), load the data normally!
+                    shipmentView.populateOrderDetails(foundOrder, currentUser);
+                }
+                
             } else {
-                System.out.println("No Match Found in Database.");
                 javax.swing.JOptionPane.showMessageDialog(shipmentView, "Order not found! Please check the Tracking ID.");
             }
         }

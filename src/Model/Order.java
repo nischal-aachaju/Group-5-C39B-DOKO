@@ -16,7 +16,10 @@ public class Order {
     private double weight;
     private double declaredCost; 
     private String description;
-    
+    private String status;
+
+    public void setStatus(String status) { this.status = status; }
+    public String getStatus() { return status; }
     private final double deliveryCost = 200.0; // FIXED DEFAULT COST
     private double finalBillAmount; 
 

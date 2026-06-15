@@ -53,8 +53,6 @@ public class SenderOrderCancellation extends javax.swing.JFrame {
         receiver_address_field = new javax.swing.JTextField();
         total_cost_field = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
-        editBtn = new javax.swing.JButton();
-        save_btn = new javax.swing.JButton();
         cancel_order_btn = new javax.swing.JButton();
         trackingID = new javax.swing.JTextField();
         top_bar_panel = new javax.swing.JPanel();
@@ -200,23 +198,11 @@ public class SenderOrderCancellation extends javax.swing.JFrame {
         order_details_panel.add(jLabel8);
         jLabel8.setBounds(16, 6, 140, 33);
 
-        editBtn.setBackground(new java.awt.Color(168, 168, 168));
-        editBtn.setText("Edit");
-        editBtn.addActionListener(this::editBtnActionPerformed);
-        order_details_panel.add(editBtn);
-        editBtn.setBounds(620, 8, 99, 35);
-
-        save_btn.setBackground(new java.awt.Color(168, 168, 168));
-        save_btn.setText("Save");
-        save_btn.addActionListener(this::save_btnActionPerformed);
-        order_details_panel.add(save_btn);
-        save_btn.setBounds(620, 330, 99, 35);
-
         cancel_order_btn.setBackground(new java.awt.Color(168, 168, 168));
         cancel_order_btn.setText("Cancel Order");
         cancel_order_btn.addActionListener(this::cancel_order_btnActionPerformed);
         order_details_panel.add(cancel_order_btn);
-        cancel_order_btn.setBounds(479, 330, 130, 35);
+        cancel_order_btn.setBounds(590, 330, 130, 35);
 
         MainPanel.add(order_details_panel);
         order_details_panel.setBounds(240, 180, 740, 400);
@@ -270,14 +256,6 @@ public class SenderOrderCancellation extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_trackingIDActionPerformed
 
-    private void editBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editBtnActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_editBtnActionPerformed
-
-    private void save_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_save_btnActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_save_btnActionPerformed
-
     private void trackingID_fieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_trackingID_fieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_trackingID_fieldActionPerformed
@@ -323,7 +301,6 @@ public class SenderOrderCancellation extends javax.swing.JFrame {
     private javax.swing.JButton cancel_order_btn;
     private javax.swing.JButton createOrder;
     private javax.swing.JButton dashboard;
-    private javax.swing.JButton editBtn;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
@@ -338,7 +315,6 @@ public class SenderOrderCancellation extends javax.swing.JFrame {
     private javax.swing.JLabel receiver_email_label;
     private javax.swing.JTextField recever_name_field;
     private javax.swing.JLabel recever_name_label;
-    private javax.swing.JButton save_btn;
     private javax.swing.JButton searchBtn;
     private javax.swing.JTextField sender_address_field;
     private javax.swing.JLabel sender_address_label;
@@ -404,5 +380,30 @@ public void addCreateOrderListener(java.awt.event.ActionListener listenForCreate
         
         // Grabs the original item cost (or use getFinalBillAmount() if you want the total with delivery)
         total_cost_field.setText(String.valueOf(order.getDeclaredCost()));
+    }
+    
+    // =========================================================================
+    // CANCEL ORDER METHODS
+    // =========================================================================
+
+    // 1. Listen for the Cancel button click
+    public void addCancelOrderListener(java.awt.event.ActionListener listener) {
+        cancel_order_btn.addActionListener(listener); 
+    }
+
+    // 2. Get the Tracking ID currently loaded in the details form
+    public String getLoadedTrackingId() {
+        return trackingID_field.getText();
+    }
+
+    // 3. Clear the form after a successful cancellation
+    public void clearOrderDetails() {
+        trackingID_field.setText("");
+        recever_name_field.setText("");
+        receiver_email_field.setText("");
+        sender_address_field.setText("");
+        receiver_address_field.setText("");
+        total_cost_field.setText("");
+        trackingID.setText("# Enter Tracking ID"); // Reset main search box
     }
 }

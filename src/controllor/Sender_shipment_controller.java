@@ -26,6 +26,9 @@ public class Sender_shipment_controller {
         this.shipmentView.addCreateOrderListener(new CreateOrderListener());
         this.shipmentView.addMyProfileListener(new NavigateToProfileFromShipments());
         // You will add your Search, Edit, and Cancel button listeners here later!
+    
+        this.shipmentView.addSearchListener(new SearchOrderListener());
+    
     }
 
     public void open() {
@@ -86,6 +89,43 @@ public void close() {
             
             view.Sender_profile profileView = new view.Sender_profile();
             new controllor.ProfileController(profileView, currentUser).open();
+        }
+    }
+class SearchOrderListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            
+            String rawSearchInput = shipmentView.getSearchTrackingId();
+            
+            // SUPER CLEANER: Strips out EVERYTHING except the numbers!
+            // If they type "# Enter Tracking ID 253893 ", it perfectly extracts "253893"
+            String cleanTrackingId = rawSearchInput.replaceAll("[^0-9]", "");
+
+            if (cleanTrackingId.isEmpty()) {
+                javax.swing.JOptionPane.showMessageDialog(shipmentView, "Please enter a valid numeric Tracking ID.");
+                return;
+            }
+            
+            if (cleanTrackingId.length() !=6){
+            javax.swing.JOptionPane.showMessageDialog(shipmentView, "Please enter a valid numeric Tracking ID of 6 digit");
+                return;
+            }
+
+            // --- CONSOLE DEBUGGING ---
+            System.out.println("=== SEARCH INITIATED ===");
+            System.out.println("Searching Tracking ID: [" + cleanTrackingId + "]");
+            System.out.println("Logged-in Sender ID: [" + currentUser.getUserID() + "]");
+
+            DAO.OrderDAO orderDao = new DAO.OrderDAO();
+            Model.Order foundOrder = orderDao.getOrderByTrackingIdAndSender(cleanTrackingId, currentUser.getUserID()); 
+
+            if (foundOrder != null) {
+                System.out.println("Match Found! Populating UI...");
+                shipmentView.populateOrderDetails(foundOrder, currentUser);
+            } else {
+                System.out.println("No Match Found in Database.");
+                javax.swing.JOptionPane.showMessageDialog(shipmentView, "Order not found! Please check the Tracking ID.");
+            }
         }
     }
 }

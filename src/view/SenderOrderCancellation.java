@@ -376,5 +376,33 @@ public void addCreateOrderListener(java.awt.event.ActionListener listenForCreate
     public void addMyProfileListener(java.awt.event.ActionListener listener) {
         MyProfile.addActionListener(listener); 
     }
+// =========================================================================
+    // SEARCH & POPULATE METHODS
+    // =========================================================================
 
+    // 1. Get the Tracking ID the user typed into the big search box
+    public String getSearchTrackingId() {
+        return trackingID.getText(); 
+    }
+
+    // 2. Listen for the Search button click
+    public void addSearchListener(java.awt.event.ActionListener listener) {
+        searchBtn.addActionListener(listener); 
+    }
+
+    // 3. Populate all the details fields when an order is found
+    public void populateOrderDetails(Model.Order order, Model.userData currentUser) {
+        trackingID_field.setText(order.getTrackingId());
+        recever_name_field.setText(order.getReceiverName());
+        receiver_email_field.setText(order.getReceiverEmail());
+        
+        // Maps the receiver's location and street
+        receiver_address_field.setText(order.getReceiverLocation() + ", " + order.getStreet());
+        
+        // Assumes the sender's address comes from the logged-in user's profile
+        sender_address_field.setText(currentUser.getAddress()); 
+        
+        // Grabs the original item cost (or use getFinalBillAmount() if you want the total with delivery)
+        total_cost_field.setText(String.valueOf(order.getDeclaredCost()));
+    }
 }

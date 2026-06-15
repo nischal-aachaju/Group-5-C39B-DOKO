@@ -159,31 +159,42 @@ public class Sender_Order_History extends javax.swing.JFrame {
         MainPanel.add(Topbar);
         Topbar.setBounds(180, 0, 870, 75);
 
+        OrderTable.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         OrderTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"1001", "Nishchal", "Electronics", "Pending", "20 May", "Rs 500"},
-                {"1002", "Nirjal", "Laptop", "Delivered", "25 May", "Rs 400"},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
             },
             new String [] {
-                "Tracking ID", "Customer", "Shipment", "Status", "Date", "Price"
+                "Tracking ID", "Customer", "Contact", "Shipment", "Status", "Delivery Cost", "Price"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane1.setViewportView(OrderTable);
+        if (OrderTable.getColumnModel().getColumnCount() > 0) {
+            OrderTable.getColumnModel().getColumn(0).setResizable(false);
+            OrderTable.getColumnModel().getColumn(1).setResizable(false);
+            OrderTable.getColumnModel().getColumn(2).setResizable(false);
+            OrderTable.getColumnModel().getColumn(3).setResizable(false);
+            OrderTable.getColumnModel().getColumn(4).setResizable(false);
+            OrderTable.getColumnModel().getColumn(5).setResizable(false);
+            OrderTable.getColumnModel().getColumn(6).setResizable(false);
+        }
 
         MainPanel.add(jScrollPane1);
         jScrollPane1.setBounds(230, 170, 760, 440);
@@ -283,5 +294,35 @@ public class Sender_Order_History extends javax.swing.JFrame {
         // Ensure 'MyProfile' matches your button variable name!
         MyProfile.addActionListener(listener); 
     }
+    // =========================================================================
+    // TABLE POPULATION LOGIC
+    // =========================================================================
 
+    public void populateHistoryTable(java.util.List<Model.Order> orderList) {
+        
+        // 1. Get the table model
+        javax.swing.table.DefaultTableModel model = (javax.swing.table.DefaultTableModel) OrderTable.getModel();
+        
+        // 2. Clear all existing empty rows
+        model.setRowCount(0);
+        
+        // 3. Loop through the list and add each order as a new row
+        for (Model.Order order : orderList) {
+            Object[] row = {
+                order.getTrackingId(),
+                order.getReceiverName(),
+                order.getReceiverContact(),
+                order.getReceiverLocation(), 
+                order.getStatus(),
+                order.getDeliveryCost(),
+                order.getFinalBillAmount()   
+            };
+            
+            model.addRow(row);
+        }
+    }
+public void addFilterListener(java.awt.event.ActionListener listener) {
+        // Make sure 'filter' matches the exact variable name of your button!
+        filter.addActionListener(listener); 
+    }
 }

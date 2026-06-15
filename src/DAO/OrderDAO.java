@@ -150,4 +150,85 @@ public class OrderDAO {
             return false;
         }
     }
+    // Inside DAO.OrderDAO
+    public java.util.List<Model.Order> getAllOrdersBySender(int senderId) {
+        
+        java.util.List<Model.Order> orderList = new java.util.ArrayList<>();
+        
+        // Pull all orders for this user, ordering by ID so the newest ones are at the bottom/top
+        String sql = "SELECT * FROM orders WHERE sender_id = ? ORDER BY order_id DESC";
+        
+        try (java.sql.Connection conn = db.openConnection();
+             java.sql.PreparedStatement pstmt = conn.prepareStatement(sql)) {
+             
+            pstmt.setInt(1, senderId);
+            
+            try (java.sql.ResultSet rs = pstmt.executeQuery()) {
+                while (rs.next()) {
+                    
+                    // Extract data exactly as it matches your Order constructor
+                    Model.Order order = new Model.Order(
+                        rs.getString("tracking_id"),
+                        rs.getString("receiver_name"),
+                        rs.getString("receiver_email"),
+                        rs.getString("receiver_contact"),
+                        rs.getString("receiver_location"),
+                        rs.getString("street"),
+                        rs.getDouble("weight"),
+                        rs.getDouble("total_cost"), 
+                        rs.getString("description")
+                    );
+                    
+                    // Attach the status manually
+                    order.setStatus(rs.getString("status"));
+                    
+                    // Add it to the list
+                    orderList.add(order);
+                }
+            }
+        } catch (java.sql.SQLException e) {
+            e.printStackTrace();
+        }
+        
+        return orderList;
+    }
+    // Inside DAO.OrderDAO
+    public java.util.List<Model.Order> getOrdersByStatus(int senderId, String status) {
+        
+        java.util.List<Model.Order> orderList = new java.util.ArrayList<>();
+        
+        // This query strictly filters by both Sender AND Status
+        String sql = "SELECT * FROM orders WHERE sender_id = ? AND status = ? ORDER BY order_id DESC";
+        
+        try (java.sql.Connection conn = db.openConnection();
+             java.sql.PreparedStatement pstmt = conn.prepareStatement(sql)) {
+             
+            pstmt.setInt(1, senderId);
+            pstmt.setString(2, status); // Inject the requested status
+            
+            try (java.sql.ResultSet rs = pstmt.executeQuery()) {
+                while (rs.next()) {
+                    
+                    Model.Order order = new Model.Order(
+                        rs.getString("tracking_id"),
+                        rs.getString("receiver_name"),
+                        rs.getString("receiver_email"),
+                        rs.getString("receiver_contact"),
+                        rs.getString("receiver_location"),
+                        rs.getString("street"),
+                        rs.getDouble("weight"),
+                        rs.getDouble("total_cost"), 
+                        rs.getString("description")
+                    );
+                    
+                    order.setStatus(rs.getString("status"));
+                    orderList.add(order);
+                }
+            }
+        } catch (java.sql.SQLException e) {
+            e.printStackTrace();
+        }
+        
+        return orderList;
+    }
 }

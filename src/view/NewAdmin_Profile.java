@@ -178,7 +178,7 @@ public class NewAdmin_Profile extends javax.swing.JFrame {
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/pfp.jpg"))); // NOI18N
         Topbar.add(jLabel4);
-        jLabel4.setBounds(700, 6, 60, 55);
+        jLabel4.setBounds(700, 10, 60, 55);
 
         MainPanel.add(Topbar);
         Topbar.setBounds(182, 0, 870, 70);

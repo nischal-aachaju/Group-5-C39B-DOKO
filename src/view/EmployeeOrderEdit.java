@@ -34,7 +34,7 @@ public class EmployeeOrderEdit extends javax.swing.JFrame {
         jSeparator2 = new javax.swing.JSeparator();
         jLabel1 = new javax.swing.JLabel();
         ManageOrderbutton = new javax.swing.JButton();
-        priceconfigurationbutton = new javax.swing.JButton();
+        order_history = new javax.swing.JButton();
         myprofilebutton = new javax.swing.JButton();
         Dashboardbutton = new javax.swing.JButton();
         Manageuserbutton = new javax.swing.JButton();
@@ -110,12 +110,12 @@ public class EmployeeOrderEdit extends javax.swing.JFrame {
         jPanel3.add(ManageOrderbutton);
         ManageOrderbutton.setBounds(10, 230, 158, 50);
 
-        priceconfigurationbutton.setBackground(new java.awt.Color(33, 38, 49));
-        priceconfigurationbutton.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
-        priceconfigurationbutton.setForeground(new java.awt.Color(255, 255, 255));
-        priceconfigurationbutton.setText("Orders History");
-        jPanel3.add(priceconfigurationbutton);
-        priceconfigurationbutton.setBounds(10, 290, 158, 50);
+        order_history.setBackground(new java.awt.Color(33, 38, 49));
+        order_history.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
+        order_history.setForeground(new java.awt.Color(255, 255, 255));
+        order_history.setText("Orders History");
+        jPanel3.add(order_history);
+        order_history.setBounds(10, 290, 158, 50);
 
         myprofilebutton.setBackground(new java.awt.Color(33, 38, 49));
         myprofilebutton.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
@@ -492,7 +492,7 @@ public class EmployeeOrderEdit extends javax.swing.JFrame {
     private javax.swing.JButton logoutbutton;
     private javax.swing.JButton myprofilebutton;
     private javax.swing.JLabel name;
-    private javax.swing.JButton priceconfigurationbutton;
+    private javax.swing.JButton order_history;
     private javax.swing.JLabel receiveraddresslabel;
     private javax.swing.JLabel receiveraddresslabel1;
     private javax.swing.JTextField receiveraddresstextfield;

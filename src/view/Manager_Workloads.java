@@ -161,6 +161,7 @@ public class Manager_Workloads extends javax.swing.JFrame {
         logo.setBounds(6, 0, 188, 64);
 
         jPanel2.setBackground(new java.awt.Color(238, 233, 223));
+        jPanel2.setLayout(null);
 
         Total_orders.setLayout(null);
 
@@ -180,6 +181,9 @@ public class Manager_Workloads extends javax.swing.JFrame {
         Total_orders.add(total_orders_value);
         total_orders_value.setBounds(140, 0, 50, 60);
 
+        jPanel2.add(Total_orders);
+        Total_orders.setBounds(123, 193, 190, 60);
+
         Cancel_Orders.setLayout(null);
 
         Cancel_orders_text.setBackground(new java.awt.Color(238, 238, 238));
@@ -197,6 +201,9 @@ public class Manager_Workloads extends javax.swing.JFrame {
         Cancel_orders_value.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         Cancel_Orders.add(Cancel_orders_value);
         Cancel_orders_value.setBounds(140, 0, 50, 60);
+
+        jPanel2.add(Cancel_Orders);
+        Cancel_Orders.setBounds(403, 193, 190, 60);
 
         Pending_shipments.setLayout(null);
 
@@ -216,6 +223,9 @@ public class Manager_Workloads extends javax.swing.JFrame {
         Pending_shipments.add(Pending_shipments_value);
         Pending_shipments_value.setBounds(140, 0, 50, 60);
 
+        jPanel2.add(Pending_shipments);
+        Pending_shipments.setBounds(123, 283, 190, 60);
+
         Delivered_shipments.setLayout(null);
 
         Deliverd_shipments_text.setBackground(new java.awt.Color(238, 238, 238));
@@ -233,6 +243,9 @@ public class Manager_Workloads extends javax.swing.JFrame {
         Deliverd_shipments_value.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         Delivered_shipments.add(Deliverd_shipments_value);
         Deliverd_shipments_value.setBounds(140, 0, 50, 60);
+
+        jPanel2.add(Delivered_shipments);
+        Delivered_shipments.setBounds(403, 283, 190, 60);
 
         In_transit.setLayout(null);
 
@@ -252,6 +265,9 @@ public class Manager_Workloads extends javax.swing.JFrame {
         In_transit.add(In_transit_value);
         In_transit_value.setBounds(140, 0, 50, 60);
 
+        jPanel2.add(In_transit);
+        In_transit.setBounds(673, 193, 190, 60);
+
         Return_orders.setLayout(null);
 
         return_text.setBackground(new java.awt.Color(238, 238, 238));
@@ -270,58 +286,20 @@ public class Manager_Workloads extends javax.swing.JFrame {
         Return_orders.add(return_value);
         return_value.setBounds(140, 0, 50, 60);
 
+        jPanel2.add(Return_orders);
+        Return_orders.setBounds(673, 283, 190, 60);
+
         trackingID.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         trackingID.setText("# Enter Tracking ID");
         trackingID.addActionListener(this::trackingIDActionPerformed);
+        jPanel2.add(trackingID);
+        trackingID.setBounds(123, 103, 350, 31);
 
         searchBtn.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         searchBtn.setText("Search");
         searchBtn.addActionListener(this::searchBtnActionPerformed);
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(123, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(trackingID, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(10, 10, 10)
-                        .addComponent(searchBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(Total_orders, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(90, 90, 90)
-                        .addComponent(Cancel_Orders, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(80, 80, 80)
-                        .addComponent(In_transit, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(Pending_shipments, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(90, 90, 90)
-                        .addComponent(Delivered_shipments, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(80, 80, 80)
-                        .addComponent(Return_orders, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(57, 57, 57))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(103, 103, 103)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(trackingID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(searchBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(59, 59, 59)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Total_orders, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Cancel_Orders, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(In_transit, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(30, 30, 30)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Pending_shipments, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Delivered_shipments, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Return_orders, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(207, Short.MAX_VALUE))
-        );
+        jPanel2.add(searchBtn);
+        searchBtn.setBounds(483, 103, 100, 30);
 
         jPanel1.add(jPanel2);
         jPanel2.setBounds(200, 70, 920, 550);

@@ -29,6 +29,7 @@ public class OTPBasedPasswordReset extends javax.swing.JFrame {
     private void initComponents() {
 
         DokoLabel = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         ResetYourPasswordLabel = new javax.swing.JLabel();
         BestForSecuringLabel = new javax.swing.JLabel();
@@ -42,11 +43,12 @@ public class OTPBasedPasswordReset extends javax.swing.JFrame {
         newpasswordlabel = new javax.swing.JLabel();
         confirmnewpasswordlabel = new javax.swing.JLabel();
         changepasswordbutton = new javax.swing.JButton();
-        jPanel1 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
-        setSize(new java.awt.Dimension(1500, 850));
+        setPreferredSize(new java.awt.Dimension(1050, 600));
+        setResizable(false);
+        setSize(new java.awt.Dimension(1050, 600));
         getContentPane().setLayout(null);
 
         DokoLabel.setFont(new java.awt.Font("Righteous", 0, 59)); // NOI18N
@@ -55,6 +57,10 @@ public class OTPBasedPasswordReset extends javax.swing.JFrame {
         DokoLabel.setPreferredSize(new java.awt.Dimension(120, 54));
         getContentPane().add(DokoLabel);
         DokoLabel.setBounds(10, 0, 210, 70);
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setMaximumSize(new java.awt.Dimension(1050, 600));
+        jPanel1.setName(""); // NOI18N
 
         jPanel2.setBackground(new java.awt.Color(236, 236, 236));
         jPanel2.setPreferredSize(new java.awt.Dimension(565, 678));
@@ -163,20 +169,21 @@ public class OTPBasedPasswordReset extends javax.swing.JFrame {
                 .addGap(65, 65, 65))
         );
 
-        getContentPane().add(jPanel2);
-        jPanel2.setBounds(300, 60, 450, 500);
-
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1050, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(301, Short.MAX_VALUE)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(299, 299, 299))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 600, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(48, 48, 48)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(52, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel1);
@@ -247,4 +254,34 @@ public class OTPBasedPasswordReset extends javax.swing.JFrame {
     private javax.swing.JTextField newpasswordtextfield;
     private javax.swing.JCheckBox termsandconditioncheckbox;
     // End of variables declaration//GEN-END:variables
+// =========================================================================
+    // EXPOSE UI DATA AND BUTTONS TO THE CONTROLLER
+    // =========================================================================
+
+    public String getCurrentPassword() {
+        return currentpasswordtextfield.getText();
+    }
+
+    public String getNewPassword() {
+        return newpasswordtextfield.getText();
+    }
+
+    public String getConfirmNewPassword() {
+        return confirmnewpasswordtextfield.getText();
+    }
+
+    public boolean isTermsAccepted() {
+        return termsandconditioncheckbox.isSelected();
+    }
+
+    public void setFullName(String name) {
+        Fullnametextfield.setText(name);
+        Fullnametextfield.setEditable(false); // Lock it so they can't change it here
+    }
+
+    public void addChangePasswordListener(java.awt.event.ActionListener listener) {
+        // Ensure 'changepasswordbutton' matches your variable name!
+        changepasswordbutton.addActionListener(listener); 
+    }
+
 }

@@ -27,6 +27,7 @@ public class EmployeeController {
         
         // 2. Connect the logout button
         this.employeeView.addLogoutListener(new LogoutListener());
+        this.employeeView.addMyProfileListener(new OpenEmployeeProfileListener());
     }
 
     public void open() {
@@ -54,6 +55,22 @@ public class EmployeeController {
             view.login loginView = new view.login();
             controllor.LoginController loginController = new controllor.LoginController(loginView);
             loginController.open();
+        }
+    }
+    class OpenEmployeeProfileListener implements java.awt.event.ActionListener {
+        @Override
+        public void actionPerformed(java.awt.event.ActionEvent e) {
+            // 1. Close the Employee Dashboard
+            close(); 
+            
+            // 2. Create the Employee Profile View
+            view.Employee_profile profileView = new view.Employee_profile();
+            
+            // 3. Pass it to your dedicated Employee Profile Controller
+            controllor.Employee_ProfileController profileController = new controllor.Employee_ProfileController(profileView, currentUser);
+            
+            // 4. Open it
+            profileController.open();
         }
     }
 }

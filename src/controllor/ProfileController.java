@@ -62,6 +62,7 @@ public void initProfileSection() {
         this.userProfile.addEditProfileListener(new EditProfileListener());
         this.userProfile.addSaveProfileListener(new SaveProfileListener());
         this.userProfile.addLogoutListener(new LogoutListener());
+        this.userProfile.addResetPasswordListener(new OpenResetPasswordListener());
     }
 
     class EditProfileListener implements ActionListener {
@@ -161,6 +162,21 @@ public void initProfileSection() {
             
             view.Sender_Order_History historyView = new view.Sender_Order_History();
             new controllor.HistoryController(historyView, currentUser).open();
+        }
+    }
+
+    class OpenResetPasswordListener implements java.awt.event.ActionListener {
+        @Override
+        public void actionPerformed(java.awt.event.ActionEvent e) {
+            
+            // 1. Create the Reset Password View
+            view.OTPBasedPasswordReset resetView = new view.OTPBasedPasswordReset();
+            
+            // 2. Pass it to the shared ResetPasswordController along with the currentUser
+            controllor.ResetPasswordController resetController = new controllor.ResetPasswordController(resetView, currentUser);
+            
+            // 3. Open the window on top of the profile!
+            resetController.open();
         }
     }
 }

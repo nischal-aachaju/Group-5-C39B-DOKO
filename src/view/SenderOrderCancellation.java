@@ -67,6 +67,8 @@ public class SenderOrderCancellation extends javax.swing.JFrame {
         setResizable(false);
 
         MainPanel.setBackground(new java.awt.Color(238, 233, 223));
+        MainPanel.setMaximumSize(new java.awt.Dimension(1050, 600));
+        MainPanel.setMinimumSize(new java.awt.Dimension(1050, 600));
         MainPanel.setPreferredSize(new java.awt.Dimension(1050, 600));
         MainPanel.setLayout(null);
 

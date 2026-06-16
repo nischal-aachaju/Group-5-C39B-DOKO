@@ -423,4 +423,8 @@ public class Sender_profile extends javax.swing.JFrame {
     public void addOrdersHistoryListener(java.awt.event.ActionListener listener) { 
         OrdersHistory.addActionListener(listener); 
     }
+    public void addResetPasswordListener(java.awt.event.ActionListener listener) {
+        // Ensure 'resetpasswordButton' perfectly matches your button's variable name in the Design tab!
+        resetpasswordButton.addActionListener(listener); 
+    }
 }

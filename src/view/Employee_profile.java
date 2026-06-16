@@ -341,4 +341,74 @@ public class Employee_profile extends javax.swing.JFrame {
     private javax.swing.JButton saveButton;
     private javax.swing.JTextField sender_id;
     // End of variables declaration//GEN-END:variables
+// =========================================================================
+    // TOP BAR LABELS
+    // =========================================================================
+    public void setUsernameLabel(String username) {
+        name.setText(username); 
+    }
+
+    public void setRoleLabel(String userRole) {
+        role.setText(userRole); 
+    }
+
+    // =========================================================================
+    // NAVIGATION LISTENERS
+    // =========================================================================
+    public void addLogoutListener(java.awt.event.ActionListener listener) {
+        logout.addActionListener(listener); 
+    }
+    
+    public void addDashboardListener(java.awt.event.ActionListener listener) {
+        dashboard.addActionListener(listener); // FIXED: Now properly listens to the dashboard button!
+    }
+
+    // =========================================================================
+    // PROFILE DATA AND EDITING LOGIC
+    // =========================================================================
+    
+    // 1. Locks or unlocks the text fields
+    public void setProfileEditable(boolean isEditable) {
+        // Only allow editing for phone and address
+        phonenumberTextField.setEditable(isEditable);
+        AddressTextField.setEditable(isEditable);
+        
+        // Never let them edit their core identity here
+        NameTextField.setEditable(false);
+        EmailTextField.setEditable(false);
+        sender_id.setEditable(false);
+        
+        // Turn the save button on only when they are actively editing
+        saveButton.setEnabled(isEditable);
+    }
+
+    // 2. Injects the database data into the text fields
+    public void setProfileData(String id, String userName, String email, String phone, String address) {
+        sender_id.setText(id);
+        NameTextField.setText(userName);
+        EmailTextField.setText(email);
+        phonenumberTextField.setText(phone);
+        AddressTextField.setText(address);
+    }
+
+    // 3. Grabs the newly typed data for the Controller to save
+    public String getUpdatedPhone() {
+        return phonenumberTextField.getText();
+    }
+
+    public String getUpdatedAddress() {
+        return AddressTextField.getText();
+    }
+
+    // 4. Action listeners for the Edit and Save buttons
+    public void addEditProfileListener(java.awt.event.ActionListener listener) {
+        editButton.addActionListener(listener);
+    }
+
+    public void addSaveProfileListener(java.awt.event.ActionListener listener) {
+        saveButton.addActionListener(listener);
+    }
+    public void addResetPasswordListener(java.awt.event.ActionListener listener) {
+        resetpasswordButton.addActionListener(listener); 
+    }
 }

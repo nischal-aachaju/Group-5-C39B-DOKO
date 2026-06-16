@@ -111,6 +111,28 @@ public userData loginUser(String username, String password) {
             return false;
         }
     }
-   
+   // Inside DAO.userDAO
+    public boolean changeUserPassword(int userId, String currentPassword, String newPassword) {
+        
+        // This query updates the password ONLY if the old password matches the database
+        String sql = "UPDATE users SET userPassword = ? WHERE user_id = ? AND userPassword = ?";
+        
+        try (java.sql.Connection conn = db.openConnection();
+             java.sql.PreparedStatement pstmt = conn.prepareStatement(sql)) {
+             
+            pstmt.setString(1, newPassword);
+            pstmt.setInt(2, userId);
+            pstmt.setString(3, currentPassword);
+            
+            // executeUpdate returns the number of rows affected. 
+            // If it returns 1, the password was successfully changed!
+            int rowsAffected = pstmt.executeUpdate();
+            return rowsAffected > 0;
+            
+        } catch (java.sql.SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
 }
     

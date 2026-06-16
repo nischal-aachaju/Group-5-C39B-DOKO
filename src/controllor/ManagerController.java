@@ -29,6 +29,7 @@ public class ManagerController {
         
         // 2. Connect the logout button
         this.managerView.addLogoutListener(new LogoutListener());
+        this.managerView.addMyProfileListener(new OpenManagerProfileListener());
     }
 
     public void open() {
@@ -56,6 +57,27 @@ public class ManagerController {
             view.login loginView = new view.login();
             controllor.LoginController loginController = new controllor.LoginController(loginView);
             loginController.open();
+        }
+    }
+    // =========================================================================
+    // NAVIGATION LISTENERS
+    // =========================================================================
+
+    class OpenManagerProfileListener implements java.awt.event.ActionListener {
+        @Override
+        public void actionPerformed(java.awt.event.ActionEvent e) {
+            
+            // 1. Close the current Manager Dashboard
+            close(); 
+            
+            // 2. Create the exact Manager Profile View
+            view.Manager_profileEdit profileView = new view.Manager_profileEdit();
+            
+            // 3. Pass it entirely to your dedicated Manager Profile Controller
+            controllor.Manager_ProfileController profileController = new controllor.Manager_ProfileController(profileView, currentUser);
+            
+            // 4. Open the profile page!
+            profileController.open();
         }
     }
 }

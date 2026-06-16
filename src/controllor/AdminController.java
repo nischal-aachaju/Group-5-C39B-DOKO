@@ -29,6 +29,7 @@ public class AdminController {
         // 2. Connect the logout button
 
          this.adminView.addLogoutListener(new LogoutListener());
+       
     }
 
     public void open() {

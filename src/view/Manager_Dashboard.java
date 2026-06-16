@@ -424,6 +424,9 @@ public class Manager_Dashboard extends javax.swing.JFrame {
     public void addLogoutListener(java.awt.event.ActionListener listener) {
         logout.addActionListener(listener);
     }
-
+public void addMyProfileListener(java.awt.event.ActionListener listener) {
+       
+        MyProfile.addActionListener(listener); 
+    }
 
 }

@@ -437,5 +437,7 @@ public void addMyProfileListener(java.awt.event.ActionListener listener) {
         // make sure to add the '1' here so it perfectly matches!
         ManageUser.addActionListener(listener); 
     }
-
+public void addManageOrdersListener(java.awt.event.ActionListener listener) {
+    manage_order.addActionListener(listener); 
+}
 }

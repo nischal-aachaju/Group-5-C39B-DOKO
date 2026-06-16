@@ -13,6 +13,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.SwingUtilities;
 
+
+
 public class ManagerController {
     
     private final Manager_Dashboard managerView;
@@ -27,10 +29,11 @@ public class ManagerController {
         this.managerView.setUsernameLabel(currentUser.getUsername());
         this.managerView.setRoleLabel(currentUser.getRole());
         
-        // 2. Connect the logout button
+        // 2. Connect the navigation buttons
         this.managerView.addLogoutListener(new LogoutListener());
         this.managerView.addMyProfileListener(new OpenManagerProfileListener());
         this.managerView.addManageUserListener(new OpenManageUserListener());
+        this.managerView.addManageOrdersListener(new OpenManageOrdersListener());
     }
 
     public void open() {
@@ -50,7 +53,6 @@ public class ManagerController {
     class LogoutListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            
             // 1. Close the manager dashboard
             close(); 
             
@@ -60,6 +62,7 @@ public class ManagerController {
             loginController.open();
         }
     }
+    
     // =========================================================================
     // NAVIGATION LISTENERS
     // =========================================================================
@@ -67,7 +70,6 @@ public class ManagerController {
     class OpenManagerProfileListener implements java.awt.event.ActionListener {
         @Override
         public void actionPerformed(java.awt.event.ActionEvent e) {
-            
             // 1. Close the current Manager Dashboard
             close(); 
             
@@ -81,14 +83,10 @@ public class ManagerController {
             profileController.open();
         }
     }
-    // =========================================================================
-    // NAVIGATION LISTENERS
-    // =========================================================================
 
     class OpenManageUserListener implements java.awt.event.ActionListener {
         @Override
         public void actionPerformed(java.awt.event.ActionEvent e) {
-            
             // 1. Close the current Manager Dashboard
             close(); 
             
@@ -100,6 +98,23 @@ public class ManagerController {
             
             // 4. Open the User Management page!
             manageUserController.open();
+        }
+    }
+
+    class OpenManageOrdersListener implements java.awt.event.ActionListener {
+        @Override
+        public void actionPerformed(java.awt.event.ActionEvent e) {
+            // 1. Close the current Manager Dashboard
+            close(); 
+            
+            // 2. Create the Manager Order Edit View
+            view.ManagerOrderEdit managerOrderEditView = new view.ManagerOrderEdit();
+            
+            // 3. Fixed spelling from "controller" to "controllor" to perfectly match your package structure
+            controllor.ManagerOrderEditController managerOrderEditController = new controllor.ManagerOrderEditController(managerOrderEditView, currentUser);
+            
+            // 4. Open the Manager Order Edit page!
+            managerOrderEditController.open();
         }
     }
 }

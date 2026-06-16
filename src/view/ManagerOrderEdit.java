@@ -66,6 +66,7 @@ public class ManagerOrderEdit extends javax.swing.JFrame {
         logout = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(1050, 600));
         getContentPane().setLayout(null);
 
         jPanel2.setBackground(new java.awt.Color(238, 233, 223));
@@ -357,7 +358,7 @@ public class ManagerOrderEdit extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Dashboard, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(12, 12, 12)
-                .addComponent(ManageUser, javax.swing.GroupLayout.DEFAULT_SIZE, 58, Short.MAX_VALUE)
+                .addComponent(ManageUser, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(WorkLoad, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -376,7 +377,7 @@ public class ManagerOrderEdit extends javax.swing.JFrame {
         );
 
         jPanel2.add(sidebar);
-        sidebar.setBounds(0, 0, 180, 600);
+        sidebar.setBounds(0, 0, 180, 590);
 
         getContentPane().add(jPanel2);
         jPanel2.setBounds(0, 0, 1050, 600);
@@ -455,4 +456,33 @@ public class ManagerOrderEdit extends javax.swing.JFrame {
     private javax.swing.JLabel trackingIDlabel;
     private javax.swing.JTextField trackingidtextfield;
     // End of variables declaration//GEN-END:variables
+// Example additions inside ManagerOrderEdit.java
+public javax.swing.JButton getSearchbutton() { return searchbutton; }
+public javax.swing.JButton getEditbutton() { return editbutton; }
+public javax.swing.JButton getSavebutton() { return savebutton; }
+public javax.swing.JButton getReturnbutton() { return returnbutton; }
+public javax.swing.JTextField getTrackingIdtextfield() { return TrackingIdtextfield; }
+public javax.swing.JTextField getReceivernametextfield() { return receivernametextfield; }
+public javax.swing.JTextField getReceiveraddresstextfield() { return receiveraddresstextfield; }
+public javax.swing.JTextField getReceiveremailtextfield() { return receiveremailtextfield; }
+public javax.swing.JTextField getSenderaddresstextfield() { return senderaddresstextfield; }
+
+// Sidebar getters
+public javax.swing.JButton getDashboard() { return Dashboard; }
+public javax.swing.JButton getManageOrders() { return ManageOrders; }
+public javax.swing.JButton getActiveOrders() { return ActiveOrders; }
+public javax.swing.JButton getAssignOrder() { return AssignOrder; }
+public javax.swing.JButton getManageUser() { return ManageUser; }
+public javax.swing.JButton getWorkLoad() { return WorkLoad; }
+public javax.swing.JButton getMyProfile() { return MyProfile; }
+public javax.swing.JButton getLogout() { return logout; }
+
+public void addLogoutListener(java.awt.event.ActionListener listener) {
+        logout.addActionListener(listener);
+    }
+
+
+
+
+
 }

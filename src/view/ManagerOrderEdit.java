@@ -28,19 +28,6 @@ public class ManagerOrderEdit extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        Dashboardbutton = new javax.swing.JButton();
-        Manageuserbutton = new javax.swing.JButton();
-        Workloadbutton = new javax.swing.JButton();
-        activeorderslabel = new javax.swing.JButton();
-        ManageOrderbutton = new javax.swing.JButton();
-        assignorderslabel = new javax.swing.JButton();
-        myprofilebutton = new javax.swing.JButton();
-        logoutbutton = new javax.swing.JButton();
-        jPanel3 = new javax.swing.JPanel();
-        jSeparator1 = new javax.swing.JSeparator();
-        jSeparator2 = new javax.swing.JSeparator();
-        jLabel1 = new javax.swing.JLabel();
-        logoutlabel = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         TrackingIdtextfield = new javax.swing.JTextField();
         toppanel = new javax.swing.JPanel();
@@ -65,117 +52,31 @@ public class ManagerOrderEdit extends javax.swing.JFrame {
         Orderdetaillabel = new javax.swing.JLabel();
         returnbutton = new javax.swing.JButton();
         searchbutton = new javax.swing.JButton();
+        sidebar = new javax.swing.JPanel();
+        logo = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
+        Dashboard = new javax.swing.JButton();
+        ManageUser = new javax.swing.JButton();
+        WorkLoad = new javax.swing.JButton();
+        ActiveOrders = new javax.swing.JButton();
+        ManageOrders = new javax.swing.JButton();
+        AssignOrder = new javax.swing.JButton();
+        MyProfile = new javax.swing.JButton();
+        jSeparator2 = new javax.swing.JSeparator();
+        logout = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
 
-        Dashboardbutton.setBackground(new java.awt.Color(33, 38, 49));
-        Dashboardbutton.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
-        Dashboardbutton.setForeground(new java.awt.Color(255, 255, 255));
-        Dashboardbutton.setText("Dashboard");
-        getContentPane().add(Dashboardbutton);
-        Dashboardbutton.setBounds(14, 83, 158, 50);
-
-        Manageuserbutton.setBackground(new java.awt.Color(33, 38, 49));
-        Manageuserbutton.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
-        Manageuserbutton.setForeground(new java.awt.Color(255, 255, 255));
-        Manageuserbutton.setText("Manage User");
-        Manageuserbutton.setPreferredSize(new java.awt.Dimension(99, 27));
-        Manageuserbutton.addActionListener(this::ManageuserbuttonActionPerformed);
-        getContentPane().add(Manageuserbutton);
-        Manageuserbutton.setBounds(14, 157, 158, 50);
-
-        Workloadbutton.setBackground(new java.awt.Color(33, 38, 49));
-        Workloadbutton.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
-        Workloadbutton.setForeground(new java.awt.Color(255, 255, 255));
-        Workloadbutton.setText("Workload");
-        getContentPane().add(Workloadbutton);
-        Workloadbutton.setBounds(14, 219, 158, 50);
-
-        activeorderslabel.setBackground(new java.awt.Color(33, 38, 49));
-        activeorderslabel.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
-        activeorderslabel.setForeground(new java.awt.Color(255, 255, 255));
-        activeorderslabel.setText("Active Orders");
-        activeorderslabel.addActionListener(this::activeorderslabelActionPerformed);
-        getContentPane().add(activeorderslabel);
-        activeorderslabel.setBounds(14, 281, 158, 50);
-
-        ManageOrderbutton.setBackground(new java.awt.Color(216, 140, 81));
-        ManageOrderbutton.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
-        ManageOrderbutton.setForeground(new java.awt.Color(255, 255, 255));
-        ManageOrderbutton.setText("Manage Order");
-        getContentPane().add(ManageOrderbutton);
-        ManageOrderbutton.setBounds(14, 343, 158, 50);
-
-        assignorderslabel.setBackground(new java.awt.Color(33, 38, 49));
-        assignorderslabel.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
-        assignorderslabel.setForeground(new java.awt.Color(255, 255, 255));
-        assignorderslabel.setText("Assign Orders");
-        getContentPane().add(assignorderslabel);
-        assignorderslabel.setBounds(14, 405, 158, 50);
-
-        myprofilebutton.setBackground(new java.awt.Color(33, 38, 49));
-        myprofilebutton.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
-        myprofilebutton.setForeground(new java.awt.Color(255, 255, 255));
-        myprofilebutton.setText("My profile");
-        getContentPane().add(myprofilebutton);
-        myprofilebutton.setBounds(14, 467, 158, 50);
-
-        logoutbutton.setBackground(new java.awt.Color(33, 38, 49));
-        logoutbutton.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
-        logoutbutton.setForeground(new java.awt.Color(239, 68, 68));
-        logoutbutton.setText("Logout");
-        logoutbutton.setPreferredSize(new java.awt.Dimension(148, 50));
-        getContentPane().add(logoutbutton);
-        logoutbutton.setBounds(14, 544, 100, 50);
-
-        jPanel3.setBackground(new java.awt.Color(33, 38, 49));
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/dokologo.jpeg"))); // NOI18N
-        jLabel1.setText("jLabel1");
-        jLabel1.setPreferredSize(new java.awt.Dimension(99, 47));
-
-        logoutlabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/logout.png"))); // NOI18N
-        logoutlabel.setText("jLabel2");
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jSeparator1)
-            .addComponent(jSeparator2)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(15, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(logoutlabel, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(17, 17, 17))
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 425, Short.MAX_VALUE)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(logoutlabel, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-
-        getContentPane().add(jPanel3);
-        jPanel3.setBounds(0, 0, 190, 600);
-
         jPanel2.setBackground(new java.awt.Color(238, 233, 223));
+        jPanel2.setLayout(null);
 
         TrackingIdtextfield.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
         TrackingIdtextfield.setText("#Enter Tracking ID");
         TrackingIdtextfield.setPreferredSize(new java.awt.Dimension(626, 65));
         TrackingIdtextfield.addActionListener(this::TrackingIdtextfieldActionPerformed);
+        jPanel2.add(TrackingIdtextfield);
+        TrackingIdtextfield.setBounds(246, 104, 420, 46);
 
         toppanel.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -193,7 +94,7 @@ public class ManagerOrderEdit extends javax.swing.JFrame {
         toppanelLayout.setHorizontalGroup(
             toppanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, toppanelLayout.createSequentialGroup()
-                .addContainerGap(720, Short.MAX_VALUE)
+                .addContainerGap(714, Short.MAX_VALUE)
                 .addComponent(pfplabel, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(toppanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -213,6 +114,9 @@ public class ManagerOrderEdit extends javax.swing.JFrame {
                         .addComponent(Rolelabel)))
                 .addGap(12, 12, 12))
         );
+
+        jPanel2.add(toppanel);
+        toppanel.setBounds(180, 0, 870, 74);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(168, 168, 168)));
@@ -311,7 +215,7 @@ public class ManagerOrderEdit extends javax.swing.JFrame {
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                                 .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                         .addGap(0, 4, Short.MAX_VALUE)))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 95, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(returnbutton)
                         .addGap(18, 18, 18)
                         .addComponent(savebutton))
@@ -335,7 +239,7 @@ public class ManagerOrderEdit extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(trackingidtextfield, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(trackingIDlabel))
-                .addGap(18, 18, 18)
+                .addGap(30, 30, 30)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(receivernametextfield, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(receivernamelabel))
@@ -368,52 +272,117 @@ public class ManagerOrderEdit extends javax.swing.JFrame {
                         .addGap(108, 108, 108))))
         );
 
+        jPanel2.add(jPanel1);
+        jPanel1.setBounds(250, 190, 740, 334);
+
         searchbutton.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
         searchbutton.setText("Search");
+        jPanel2.add(searchbutton);
+        searchbutton.setBounds(672, 104, 99, 46);
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addGap(0, 174, Short.MAX_VALUE)
-                .addComponent(toppanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(TrackingIdtextfield, javax.swing.GroupLayout.PREFERRED_SIZE, 420, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(searchbutton, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(58, 58, 58))
+        sidebar.setBackground(new java.awt.Color(33, 38, 49));
+
+        logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/logo.png"))); // NOI18N
+
+        Dashboard.setBackground(new java.awt.Color(33, 38, 49));
+        Dashboard.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
+        Dashboard.setForeground(new java.awt.Color(255, 255, 255));
+        Dashboard.setText("Dashboard");
+
+        ManageUser.setBackground(new java.awt.Color(33, 38, 49));
+        ManageUser.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
+        ManageUser.setForeground(new java.awt.Color(255, 255, 255));
+        ManageUser.setText("Manage User");
+
+        WorkLoad.setBackground(new java.awt.Color(33, 38, 49));
+        WorkLoad.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
+        WorkLoad.setForeground(new java.awt.Color(255, 255, 255));
+        WorkLoad.setText("Workload");
+
+        ActiveOrders.setBackground(new java.awt.Color(33, 38, 49));
+        ActiveOrders.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
+        ActiveOrders.setForeground(new java.awt.Color(255, 255, 255));
+        ActiveOrders.setText("Active Orders");
+
+        ManageOrders.setBackground(new java.awt.Color(216, 140, 81));
+        ManageOrders.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
+        ManageOrders.setForeground(new java.awt.Color(255, 255, 255));
+        ManageOrders.setText("Manage Order");
+
+        AssignOrder.setBackground(new java.awt.Color(33, 38, 49));
+        AssignOrder.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
+        AssignOrder.setForeground(new java.awt.Color(255, 255, 255));
+        AssignOrder.setText("Assign Orders");
+
+        MyProfile.setBackground(new java.awt.Color(33, 38, 49));
+        MyProfile.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
+        MyProfile.setForeground(new java.awt.Color(255, 255, 255));
+        MyProfile.setText("My Profile");
+
+        logout.setBackground(new java.awt.Color(33, 38, 49));
+        logout.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
+        logout.setForeground(new java.awt.Color(255, 51, 51));
+        logout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/logout.png"))); // NOI18N
+        logout.setText("Logout");
+
+        javax.swing.GroupLayout sidebarLayout = new javax.swing.GroupLayout(sidebar);
+        sidebar.setLayout(sidebarLayout);
+        sidebarLayout.setHorizontalGroup(
+            sidebarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jSeparator2)
+            .addComponent(jSeparator1)
+            .addGroup(sidebarLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(sidebarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Dashboard, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(sidebarLayout.createSequentialGroup()
+                        .addComponent(logout, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(6, 6, 6))
+                    .addComponent(logo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE)
+                    .addComponent(ManageUser, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(WorkLoad, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(ActiveOrders, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(ManageOrders, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(AssignOrder, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(MyProfile, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(toppanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(TrackingIdtextfield, javax.swing.GroupLayout.DEFAULT_SIZE, 46, Short.MAX_VALUE)
-                    .addComponent(searchbutton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(33, 33, 33)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(83, Short.MAX_VALUE))
+        sidebarLayout.setVerticalGroup(
+            sidebarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(sidebarLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(19, 19, 19)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Dashboard, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(12, 12, 12)
+                .addComponent(ManageUser, javax.swing.GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(WorkLoad, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(ActiveOrders, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(ManageOrders, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(AssignOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(MyProfile, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(47, 47, 47)
+                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(logout, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
+
+        jPanel2.add(sidebar);
+        sidebar.setBounds(0, 0, 180, 600);
 
         getContentPane().add(jPanel2);
         jPanel2.setBounds(0, 0, 1050, 600);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void activeorderslabelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_activeorderslabelActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_activeorderslabelActionPerformed
-
-    private void ManageuserbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ManageuserbuttonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ManageuserbuttonActionPerformed
 
     private void TrackingIdtextfieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TrackingIdtextfieldActionPerformed
         // TODO add your handling code here:
@@ -449,26 +418,24 @@ public class ManagerOrderEdit extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Dashboardbutton;
-    private javax.swing.JButton ManageOrderbutton;
-    private javax.swing.JButton Manageuserbutton;
+    private javax.swing.JButton ActiveOrders;
+    private javax.swing.JButton AssignOrder;
+    private javax.swing.JButton Dashboard;
+    private javax.swing.JButton ManageOrders;
+    private javax.swing.JButton ManageUser;
+    private javax.swing.JButton MyProfile;
     private javax.swing.JLabel Orderdetaillabel;
     private javax.swing.JLabel Rolelabel;
     private javax.swing.JTextField TrackingIdtextfield;
-    private javax.swing.JButton Workloadbutton;
-    private javax.swing.JButton activeorderslabel;
-    private javax.swing.JButton assignorderslabel;
+    private javax.swing.JButton WorkLoad;
     private javax.swing.JButton editbutton;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JTextField jTextField7;
-    private javax.swing.JButton logoutbutton;
-    private javax.swing.JLabel logoutlabel;
-    private javax.swing.JButton myprofilebutton;
+    private javax.swing.JLabel logo;
+    private javax.swing.JButton logout;
     private javax.swing.JLabel namelabel;
     private javax.swing.JLabel pfplabel;
     private javax.swing.JLabel receiveraddresslabel;
@@ -482,6 +449,7 @@ public class ManagerOrderEdit extends javax.swing.JFrame {
     private javax.swing.JButton searchbutton;
     private javax.swing.JLabel senderaddresslabel;
     private javax.swing.JTextField senderaddresstextfield;
+    private javax.swing.JPanel sidebar;
     private javax.swing.JPanel toppanel;
     private javax.swing.JLabel totalcostlabel;
     private javax.swing.JLabel trackingIDlabel;

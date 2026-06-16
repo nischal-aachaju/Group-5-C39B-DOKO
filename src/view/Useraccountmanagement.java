@@ -176,6 +176,7 @@ public class Useraccountmanagement extends javax.swing.JFrame {
         sidebar1.setBounds(0, 0, 180, 644);
 
         edit_of_email_and_number_panel.setBackground(new java.awt.Color(255, 255, 255));
+        edit_of_email_and_number_panel.setPreferredSize(new java.awt.Dimension(200, 200));
         edit_of_email_and_number_panel.setLayout(null);
 
         employee_ID.setText("Employee ID");
@@ -226,7 +227,7 @@ public class Useraccountmanagement extends javax.swing.JFrame {
         savebtn.setBounds(599, 266, 72, 31);
 
         MainPanel1.add(edit_of_email_and_number_panel);
-        edit_of_email_and_number_panel.setBounds(250, 180, 694, 342);
+        edit_of_email_and_number_panel.setBounds(250, 240, 700, 330);
 
         entered_user_id.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         entered_user_id.setText("# Enter User ID");

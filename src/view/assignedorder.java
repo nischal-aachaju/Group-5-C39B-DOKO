@@ -29,179 +29,45 @@ public class assignedorder extends javax.swing.JFrame {
     private void initComponents() {
 
         MainPanel = new javax.swing.JPanel();
-        topbar = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        profile = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
-        sidebar = new javax.swing.JPanel();
-        jSeparator1 = new javax.swing.JSeparator();
-        Dashboard = new javax.swing.JButton();
-        ManageUser = new javax.swing.JButton();
-        WorkLoad = new javax.swing.JButton();
-        ActiveOrders = new javax.swing.JButton();
-        jButton10 = new javax.swing.JButton();
-        AssignOrder = new javax.swing.JButton();
-        MyProfile = new javax.swing.JButton();
-        jSeparator2 = new javax.swing.JSeparator();
-        logout = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        Entered_emp_id = new javax.swing.JLabel();
+        Entered_emp_id_search_btn = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        top_bar_panel = new javax.swing.JPanel();
+        username = new javax.swing.JLabel();
+        user_role = new javax.swing.JLabel();
+        profile = new javax.swing.JLabel();
+        sidebar1 = new javax.swing.JPanel();
+        jSeparator3 = new javax.swing.JSeparator();
+        ManageUser = new javax.swing.JButton();
+        WorkLoad = new javax.swing.JButton();
+        ActiveOrders = new javax.swing.JButton();
+        ManageOrder = new javax.swing.JButton();
+        AssignOrder = new javax.swing.JButton();
+        MyProfile = new javax.swing.JButton();
+        jSeparator4 = new javax.swing.JSeparator();
+        logout = new javax.swing.JButton();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        dashboard = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         MainPanel.setBackground(new java.awt.Color(238, 233, 223));
         MainPanel.setPreferredSize(new java.awt.Dimension(1050, 600));
-
-        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/profile.png"))); // NOI18N
-        jLabel14.setText("jLabel14");
-
-        jLabel15.setText("Name role");
-
-        javax.swing.GroupLayout topbarLayout = new javax.swing.GroupLayout(topbar);
-        topbar.setLayout(topbarLayout);
-        topbarLayout.setHorizontalGroup(
-            topbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, topbarLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(profile))
-        );
-        topbarLayout.setVerticalGroup(
-            topbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(topbarLayout.createSequentialGroup()
-                .addComponent(profile, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, topbarLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(15, 15, 15))
-            .addGroup(topbarLayout.createSequentialGroup()
-                .addGroup(topbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel14)
-                    .addGroup(topbarLayout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addComponent(jLabel15)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        sidebar.setBackground(new java.awt.Color(33, 38, 49));
-
-        Dashboard.setBackground(new java.awt.Color(33, 38, 49));
-        Dashboard.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
-        Dashboard.setForeground(new java.awt.Color(255, 255, 255));
-        Dashboard.setText("Dashboard");
-
-        ManageUser.setBackground(new java.awt.Color(33, 38, 49));
-        ManageUser.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
-        ManageUser.setForeground(new java.awt.Color(255, 255, 255));
-        ManageUser.setText("Manage User");
-
-        WorkLoad.setBackground(new java.awt.Color(33, 38, 49));
-        WorkLoad.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
-        WorkLoad.setForeground(new java.awt.Color(255, 255, 255));
-        WorkLoad.setText("Workload");
-
-        ActiveOrders.setBackground(new java.awt.Color(33, 38, 49));
-        ActiveOrders.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
-        ActiveOrders.setForeground(new java.awt.Color(255, 255, 255));
-        ActiveOrders.setText("Active Orders");
-
-        jButton10.setBackground(new java.awt.Color(33, 38, 49));
-        jButton10.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
-        jButton10.setForeground(new java.awt.Color(255, 255, 255));
-        jButton10.setText("Manage Order");
-
-        AssignOrder.setBackground(new java.awt.Color(33, 38, 49));
-        AssignOrder.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
-        AssignOrder.setForeground(new java.awt.Color(255, 255, 255));
-        AssignOrder.setText("Assign Orders");
-
-        MyProfile.setBackground(new java.awt.Color(33, 38, 49));
-        MyProfile.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
-        MyProfile.setForeground(new java.awt.Color(255, 255, 255));
-        MyProfile.setText("My Profile");
-
-        logout.setBackground(new java.awt.Color(33, 38, 49));
-        logout.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
-        logout.setForeground(new java.awt.Color(255, 51, 51));
-        logout.setText("Logout");
-
-        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/logo.png"))); // NOI18N
-
-        javax.swing.GroupLayout sidebarLayout = new javax.swing.GroupLayout(sidebar);
-        sidebar.setLayout(sidebarLayout);
-        sidebarLayout.setHorizontalGroup(
-            sidebarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jSeparator2)
-            .addComponent(jSeparator1)
-            .addGroup(sidebarLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(sidebarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Dashboard, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(sidebarLayout.createSequentialGroup()
-                        .addComponent(logout, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel3))
-                    .addComponent(ManageUser, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(WorkLoad, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(ActiveOrders, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(AssignOrder, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(MyProfile, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
-        );
-        sidebarLayout.setVerticalGroup(
-            sidebarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(sidebarLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Dashboard, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(ManageUser, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(WorkLoad, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(ActiveOrders, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(AssignOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(MyProfile, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 156, Short.MAX_VALUE)
-                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(sidebarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(logout, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
-        );
+        MainPanel.setLayout(null);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel1.setText("# Enter employee ID");
+        Entered_emp_id.setText("# Enter employee ID");
 
-        jButton1.setText("Search");
-        jButton1.addActionListener(this::jButton1ActionPerformed);
+        Entered_emp_id_search_btn.setText("Search");
+        Entered_emp_id_search_btn.addActionListener(this::Entered_emp_id_search_btnActionPerformed);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -209,9 +75,9 @@ public class assignedorder extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(21, 21, 21)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Entered_emp_id, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 161, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addComponent(Entered_emp_id_search_btn)
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -219,10 +85,13 @@ public class assignedorder extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jButton1))
+                    .addComponent(Entered_emp_id)
+                    .addComponent(Entered_emp_id_search_btn))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        MainPanel.add(jPanel1);
+        jPanel1.setBounds(220, 110, 386, 35);
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -266,7 +135,13 @@ public class assignedorder extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
+        MainPanel.add(jPanel2);
+        jPanel2.setBounds(181, 731, 262, 0);
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel4.setText("Employee name :Ram");
+        MainPanel.add(jLabel4);
+        jLabel4.setBounds(220, 180, 241, 17);
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -296,41 +171,129 @@ public class assignedorder extends javax.swing.JFrame {
         jTable1.setShowVerticalLines(true);
         jScrollPane1.setViewportView(jTable1);
 
-        javax.swing.GroupLayout MainPanelLayout = new javax.swing.GroupLayout(MainPanel);
-        MainPanel.setLayout(MainPanelLayout);
-        MainPanelLayout.setHorizontalGroup(
-            MainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(MainPanelLayout.createSequentialGroup()
-                .addComponent(sidebar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(MainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(MainPanelLayout.createSequentialGroup()
-                        .addGap(42, 42, 42)
-                        .addGroup(MainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 797, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(37, Short.MAX_VALUE))
-                    .addComponent(topbar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-        );
-        MainPanelLayout.setVerticalGroup(
-            MainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(MainPanelLayout.createSequentialGroup()
-                .addGroup(MainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(MainPanelLayout.createSequentialGroup()
-                        .addComponent(topbar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(42, 42, 42)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        MainPanel.add(jScrollPane1);
+        jScrollPane1.setBounds(200, 210, 797, 402);
+
+        top_bar_panel.setLayout(null);
+
+        username.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        username.setText("Name");
+        top_bar_panel.add(username);
+        username.setBounds(770, 20, 100, 22);
+
+        user_role.setText("Role");
+        top_bar_panel.add(user_role);
+        user_role.setBounds(770, 40, 100, 16);
+
+        profile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/pfp.jpg"))); // NOI18N
+        top_bar_panel.add(profile);
+        profile.setBounds(700, 5, 60, 60);
+
+        MainPanel.add(top_bar_panel);
+        top_bar_panel.setBounds(180, 0, 870, 70);
+
+        sidebar1.setBackground(new java.awt.Color(33, 38, 49));
+
+        ManageUser.setBackground(new java.awt.Color(33, 38, 49));
+        ManageUser.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
+        ManageUser.setForeground(new java.awt.Color(255, 255, 255));
+        ManageUser.setText("Manage User");
+
+        WorkLoad.setBackground(new java.awt.Color(33, 38, 49));
+        WorkLoad.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
+        WorkLoad.setForeground(new java.awt.Color(255, 255, 255));
+        WorkLoad.setText("Workload");
+
+        ActiveOrders.setBackground(new java.awt.Color(33, 38, 49));
+        ActiveOrders.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
+        ActiveOrders.setForeground(new java.awt.Color(255, 255, 255));
+        ActiveOrders.setText("Active Orders");
+
+        ManageOrder.setBackground(new java.awt.Color(33, 38, 49));
+        ManageOrder.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
+        ManageOrder.setForeground(new java.awt.Color(255, 255, 255));
+        ManageOrder.setText("Manage Order");
+
+        AssignOrder.setBackground(new java.awt.Color(216, 140, 81));
+        AssignOrder.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
+        AssignOrder.setForeground(new java.awt.Color(255, 255, 255));
+        AssignOrder.setText("Assign Orders");
+
+        MyProfile.setBackground(new java.awt.Color(33, 38, 49));
+        MyProfile.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
+        MyProfile.setForeground(new java.awt.Color(255, 255, 255));
+        MyProfile.setText("My Profile");
+
+        logout.setBackground(new java.awt.Color(33, 38, 49));
+        logout.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
+        logout.setForeground(new java.awt.Color(255, 51, 51));
+        logout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/logout.png"))); // NOI18N
+        logout.setText("Logout");
+
+        jLabel20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/logo.png"))); // NOI18N
+
+        dashboard.setBackground(new java.awt.Color(33, 38, 49));
+        dashboard.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
+        dashboard.setForeground(new java.awt.Color(255, 255, 255));
+        dashboard.setText("Dashboard");
+
+        javax.swing.GroupLayout sidebar1Layout = new javax.swing.GroupLayout(sidebar1);
+        sidebar1.setLayout(sidebar1Layout);
+        sidebar1Layout.setHorizontalGroup(
+            sidebar1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jSeparator4)
+            .addComponent(jSeparator3)
+            .addGroup(sidebar1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(sidebar1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel20, javax.swing.GroupLayout.DEFAULT_SIZE, 174, Short.MAX_VALUE)
+                    .addGroup(sidebar1Layout.createSequentialGroup()
+                        .addComponent(logout, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(98, 98, 98)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(sidebar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jLabel19))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, sidebar1Layout.createSequentialGroup()
+                        .addGroup(sidebar1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(dashboard, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(MyProfile, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(AssignOrder, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(ManageOrder, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(ActiveOrders, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(WorkLoad, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(ManageUser, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addContainerGap())))
         );
+        sidebar1Layout.setVerticalGroup(
+            sidebar1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(sidebar1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(dashboard, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(ManageUser, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(WorkLoad, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(ActiveOrders, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(ManageOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(AssignOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(MyProfile, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(86, 86, 86)
+                .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(sidebar1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(logout, javax.swing.GroupLayout.DEFAULT_SIZE, 53, Short.MAX_VALUE)
+                    .addComponent(jLabel19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+
+        MainPanel.add(sidebar1);
+        sidebar1.setBounds(0, 0, 180, 644);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -346,9 +309,9 @@ public class assignedorder extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void Entered_emp_id_search_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Entered_emp_id_search_btnActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_Entered_emp_id_search_btnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -378,31 +341,30 @@ public class assignedorder extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ActiveOrders;
     private javax.swing.JButton AssignOrder;
-    private javax.swing.JButton Dashboard;
+    private javax.swing.JLabel Entered_emp_id;
+    private javax.swing.JButton Entered_emp_id_search_btn;
     private javax.swing.JPanel MainPanel;
+    private javax.swing.JButton ManageOrder;
     private javax.swing.JButton ManageUser;
     private javax.swing.JButton MyProfile;
     private javax.swing.JButton WorkLoad;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton10;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JButton dashboard;
+    private javax.swing.JLabel jLabel19;
+    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JSeparator jSeparator4;
     private javax.swing.JTable jTable1;
     private javax.swing.JButton logout;
     private javax.swing.JLabel profile;
-    private javax.swing.JPanel sidebar;
-    private javax.swing.JPanel topbar;
+    private javax.swing.JPanel sidebar1;
+    private javax.swing.JPanel top_bar_panel;
+    private javax.swing.JLabel user_role;
+    private javax.swing.JLabel username;
     // End of variables declaration//GEN-END:variables
 }

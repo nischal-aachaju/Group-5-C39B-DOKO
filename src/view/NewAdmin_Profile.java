@@ -69,7 +69,7 @@ public class NewAdmin_Profile extends javax.swing.JFrame {
 
         sidebar.setBackground(new java.awt.Color(33, 38, 49));
 
-        Dashboard.setBackground(new java.awt.Color(216, 140, 81));
+        Dashboard.setBackground(new java.awt.Color(33, 38, 49));
         Dashboard.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
         Dashboard.setForeground(new java.awt.Color(255, 255, 255));
         Dashboard.setText("Dashboard");
@@ -101,7 +101,7 @@ public class NewAdmin_Profile extends javax.swing.JFrame {
         PriceConfiguration.setForeground(new java.awt.Color(255, 255, 255));
         PriceConfiguration.setText("Price Configuration");
 
-        MyProfile.setBackground(new java.awt.Color(33, 38, 49));
+        MyProfile.setBackground(new java.awt.Color(216, 140, 81));
         MyProfile.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
         MyProfile.setForeground(new java.awt.Color(255, 255, 255));
         MyProfile.setText("My Profile");
@@ -243,7 +243,7 @@ public class NewAdmin_Profile extends javax.swing.JFrame {
                     .addComponent(EmailTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
                     .addComponent(phonenumberTextField)
                     .addComponent(AddressTextField))
-                .addContainerGap(342, Short.MAX_VALUE))
+                .addContainerGap(345, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

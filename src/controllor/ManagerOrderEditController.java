@@ -33,6 +33,7 @@ public class ManagerOrderEditController {
         this.view = view;
         this.currentUser = currentUser;
         this.view.addLogoutListener(new LogoutListener());
+        this.view.addDashboardListener(new DashboardListener());
     }
 
     public void open() {
@@ -135,5 +136,14 @@ public class ManagerOrderEditController {
             loginController.open();
         }
     }
-}
+    class DashboardListener implements ActionListener {
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        close();
 
+        view.Manager_Dashboard dashboardView = new view.Manager_Dashboard();
+        controllor.ManagerController dashboardController = new controllor.ManagerController(dashboardView,currentUser);
+        dashboardController.open();
+    }
+}
+}

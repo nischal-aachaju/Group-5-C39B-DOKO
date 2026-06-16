@@ -481,8 +481,10 @@ public void addLogoutListener(java.awt.event.ActionListener listener) {
         logout.addActionListener(listener);
     }
 
+public void addDashboardListener(java.awt.event.ActionListener listener) {
+        Dashboard.addActionListener(listener);
 
 
 
-
+}
 }

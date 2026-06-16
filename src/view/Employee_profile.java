@@ -40,24 +40,25 @@ public class Employee_profile extends javax.swing.JFrame {
         jSeparator1 = new javax.swing.JSeparator();
         jLabel1 = new javax.swing.JLabel();
         jSeparator2 = new javax.swing.JSeparator();
-        Topbar = new javax.swing.JPanel();
-        profile = new javax.swing.JLabel();
-        Profile = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
-        editButton = new javax.swing.JButton();
-        saveButton = new javax.swing.JButton();
-        resetpasswordButton = new javax.swing.JButton();
-        ManagerLabel = new javax.swing.JLabel();
-        EmployeeId = new javax.swing.JLabel();
-        nameLabel = new javax.swing.JLabel();
-        emailLabel = new javax.swing.JLabel();
         phonenumberLabel = new javax.swing.JLabel();
         addressLabel = new javax.swing.JLabel();
-        ManagerTextField = new javax.swing.JTextField();
+        sender_id = new javax.swing.JTextField();
         NameTextField = new javax.swing.JTextField();
+        editButton = new javax.swing.JButton();
         EmailTextField = new javax.swing.JTextField();
+        saveButton = new javax.swing.JButton();
         phonenumberTextField = new javax.swing.JTextField();
+        resetpasswordButton = new javax.swing.JButton();
         AddressTextField = new javax.swing.JTextField();
+        ManagerLabel = new javax.swing.JLabel();
+        EmployeeID = new javax.swing.JLabel();
+        nameLabel = new javax.swing.JLabel();
+        emailLabel = new javax.swing.JLabel();
+        Topbar = new javax.swing.JPanel();
+        name = new javax.swing.JLabel();
+        role = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -151,31 +152,11 @@ public class Employee_profile extends javax.swing.JFrame {
         MainPanel.add(Sidebar);
         Sidebar.setBounds(0, 0, 180, 600);
 
-        Profile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/profile.png"))); // NOI18N
-
-        javax.swing.GroupLayout TopbarLayout = new javax.swing.GroupLayout(Topbar);
-        Topbar.setLayout(TopbarLayout);
-        TopbarLayout.setHorizontalGroup(
-            TopbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TopbarLayout.createSequentialGroup()
-                .addGap(0, 757, Short.MAX_VALUE)
-                .addComponent(profile)
-                .addGap(23, 23, 23)
-                .addComponent(Profile))
-        );
-        TopbarLayout.setVerticalGroup(
-            TopbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(TopbarLayout.createSequentialGroup()
-                .addGroup(TopbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(profile, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Profile, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
-        );
-
-        MainPanel.add(Topbar);
-        Topbar.setBounds(186, 0, 864, 88);
-
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+
+        phonenumberLabel.setText("Phone Number              :");
+
+        addressLabel.setText("Address                       :");
 
         editButton.setBackground(new java.awt.Color(216, 140, 81));
         editButton.setForeground(new java.awt.Color(255, 255, 255));
@@ -189,72 +170,49 @@ public class Employee_profile extends javax.swing.JFrame {
         resetpasswordButton.setForeground(new java.awt.Color(255, 255, 255));
         resetpasswordButton.setText("Reset Password");
 
+        ManagerLabel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         ManagerLabel.setText("   My Details");
 
-        EmployeeId.setText("Employee ID                 :");
+        EmployeeID.setText("Employee ID                     :");
 
         nameLabel.setText("Name                           :");
 
         emailLabel.setText("Email                           :");
-
-        phonenumberLabel.setText("Phone Number              :");
-
-        addressLabel.setText("Address                       :");
-
-        ManagerTextField.setText("#1111");
-
-        NameTextField.setText("Unish Gautam");
-
-        EmailTextField.setText("unishgautam07@gmail.com");
-
-        phonenumberTextField.setText("9800000000");
-
-        AddressTextField.setText("Dillibazar,kathmandu");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(resetpasswordButton)
                         .addGap(48, 48, 48)
                         .addComponent(saveButton))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
-                        .addGap(160, 160, 160)
-                        .addComponent(ManagerLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(editButton)))
+                    .addComponent(editButton))
                 .addGap(116, 116, 116))
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(120, 120, 120)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(2, 2, 2)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(EmployeeId)
-                                .addGap(18, 18, 18)
-                                .addComponent(ManagerTextField))
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(emailLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(nameLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGap(18, 18, 18)
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(NameTextField)
-                                    .addComponent(EmailTextField)))))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(addressLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(phonenumberLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 148, Short.MAX_VALUE))
-                        .addGap(18, 18, 18)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(phonenumberTextField)
-                            .addComponent(AddressTextField))))
-                .addContainerGap(351, Short.MAX_VALUE))
+                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(emailLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(nameLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(EmployeeID)
+                            .addComponent(ManagerLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(phonenumberLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 161, Short.MAX_VALUE)
+                    .addComponent(addressLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(sender_id)
+                    .addComponent(NameTextField)
+                    .addComponent(EmailTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
+                    .addComponent(phonenumberTextField)
+                    .addComponent(AddressTextField))
+                .addContainerGap(333, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -265,8 +223,8 @@ public class Employee_profile extends javax.swing.JFrame {
                     .addComponent(ManagerLabel))
                 .addGap(39, 39, 39)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(EmployeeId)
-                    .addComponent(ManagerTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(EmployeeID)
+                    .addComponent(sender_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(nameLabel)
@@ -283,7 +241,7 @@ public class Employee_profile extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(addressLabel)
                     .addComponent(AddressTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(saveButton)
                     .addComponent(resetpasswordButton))
@@ -292,6 +250,24 @@ public class Employee_profile extends javax.swing.JFrame {
 
         MainPanel.add(jPanel3);
         jPanel3.setBounds(210, 110, 810, 460);
+
+        Topbar.setLayout(null);
+
+        name.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        name.setText("Name");
+        Topbar.add(name);
+        name.setBounds(770, 20, 100, 22);
+
+        role.setText("Role");
+        Topbar.add(role);
+        role.setBounds(770, 40, 90, 16);
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/pfp.jpg"))); // NOI18N
+        Topbar.add(jLabel2);
+        jLabel2.setBounds(700, 6, 60, 60);
+
+        MainPanel.add(Topbar);
+        Topbar.setBounds(180, 0, 870, 70);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -335,16 +311,14 @@ public class Employee_profile extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField AddressTextField;
     private javax.swing.JTextField EmailTextField;
-    private javax.swing.JLabel EmployeeId;
+    private javax.swing.JLabel EmployeeID;
     private javax.swing.JPanel MainPanel;
     private javax.swing.JButton ManageOrders;
     private javax.swing.JLabel ManagerLabel;
-    private javax.swing.JTextField ManagerTextField;
     private javax.swing.JButton MyProfile;
     private javax.swing.JButton MyShipments;
     private javax.swing.JTextField NameTextField;
     private javax.swing.JButton OrdersHistory;
-    private javax.swing.JLabel Profile;
     private javax.swing.JPanel Sidebar;
     private javax.swing.JPanel Topbar;
     private javax.swing.JLabel addressLabel;
@@ -352,16 +326,19 @@ public class Employee_profile extends javax.swing.JFrame {
     private javax.swing.JButton editButton;
     private javax.swing.JLabel emailLabel;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JLabel logo;
     private javax.swing.JButton logout;
+    private javax.swing.JLabel name;
     private javax.swing.JLabel nameLabel;
     private javax.swing.JLabel phonenumberLabel;
     private javax.swing.JTextField phonenumberTextField;
-    private javax.swing.JLabel profile;
     private javax.swing.JButton resetpasswordButton;
+    private javax.swing.JLabel role;
     private javax.swing.JButton saveButton;
+    private javax.swing.JTextField sender_id;
     // End of variables declaration//GEN-END:variables
 }

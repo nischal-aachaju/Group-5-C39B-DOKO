@@ -43,8 +43,6 @@ public class Employee_Dashboard extends javax.swing.JFrame {
         name = new javax.swing.JLabel();
         role = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        Orders_Table = new javax.swing.JTable();
         Total_orders = new javax.swing.JPanel();
         total_orders_text = new javax.swing.JLabel();
         total_orders_value = new javax.swing.JLabel();
@@ -57,6 +55,9 @@ public class Employee_Dashboard extends javax.swing.JFrame {
         Pending_Shipment = new javax.swing.JPanel();
         Pending_Shipment_text = new javax.swing.JLabel();
         Pending_Shipment_value = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        recent_5_orders = new javax.swing.JTable();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Employee Dashboard");
@@ -155,40 +156,18 @@ public class Employee_Dashboard extends javax.swing.JFrame {
         name.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         name.setText("Name");
         Topbar.add(name);
-        name.setBounds(770, 20, 100, 22);
+        name.setBounds(760, 20, 100, 22);
 
         role.setText("Role");
         Topbar.add(role);
-        role.setBounds(770, 40, 90, 16);
+        role.setBounds(760, 40, 110, 16);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/pfp.jpg"))); // NOI18N
         Topbar.add(jLabel2);
-        jLabel2.setBounds(700, 6, 60, 60);
+        jLabel2.setBounds(690, 5, 60, 60);
 
         MainPanel.add(Topbar);
         Topbar.setBounds(180, 0, 870, 70);
-
-        Orders_Table.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Recent Orders", "", "", ""
-            }
-        ));
-        jScrollPane1.setViewportView(Orders_Table);
-
-        MainPanel.add(jScrollPane1);
-        jScrollPane1.setBounds(275, 336, 680, 204);
 
         Total_orders.setLayout(null);
 
@@ -274,6 +253,42 @@ public class Employee_Dashboard extends javax.swing.JFrame {
         MainPanel.add(Pending_Shipment);
         Pending_Shipment.setBounds(600, 210, 190, 60);
 
+        recent_5_orders.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        recent_5_orders.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "Tracking ID", "Customer", "Contact", "Destination", "Status"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(recent_5_orders);
+
+        MainPanel.add(jScrollPane1);
+        jScrollPane1.setBounds(240, 430, 760, 110);
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel1.setText("Recent Orders :");
+        MainPanel.add(jLabel1);
+        jLabel1.setBounds(240, 390, 150, 30);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -326,7 +341,6 @@ public class Employee_Dashboard extends javax.swing.JFrame {
     private javax.swing.JButton MyProfile;
     private javax.swing.JButton MyShipments;
     private javax.swing.JButton OrdersHistory;
-    private javax.swing.JTable Orders_Table;
     private javax.swing.JPanel Pending_Shipment;
     private javax.swing.JLabel Pending_Shipment_text;
     private javax.swing.JLabel Pending_Shipment_value;
@@ -334,6 +348,7 @@ public class Employee_Dashboard extends javax.swing.JFrame {
     private javax.swing.JPanel Topbar;
     private javax.swing.JPanel Total_orders;
     private javax.swing.JButton dashboard;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
@@ -341,11 +356,12 @@ public class Employee_Dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel logo;
     private javax.swing.JButton logout;
     private javax.swing.JLabel name;
+    private javax.swing.JTable recent_5_orders;
     private javax.swing.JLabel role;
     private javax.swing.JLabel total_orders_text;
     private javax.swing.JLabel total_orders_value;
     // End of variables declaration//GEN-END:variables
-public void setUsernameLabel(String username) {
+    public void setUsernameLabel(String username) {
         name.setText(username); 
     }
 

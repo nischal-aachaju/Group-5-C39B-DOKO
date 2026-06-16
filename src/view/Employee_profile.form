@@ -218,48 +218,6 @@
             </Component>
           </SubComponents>
         </Container>
-        <Container class="javax.swing.JPanel" name="Topbar">
-          <Constraints>
-            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="186" y="0" width="-1" height="-1"/>
-            </Constraint>
-          </Constraints>
-
-          <Layout>
-            <DimensionLayout dim="0">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace min="0" pref="757" max="32767" attributes="0"/>
-                      <Component id="profile" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
-                      <Component id="Profile" min="-2" max="-2" attributes="0"/>
-                  </Group>
-              </Group>
-            </DimensionLayout>
-            <DimensionLayout dim="1">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="profile" alignment="0" max="32767" attributes="0"/>
-                          <Component id="Profile" alignment="0" max="32767" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                  </Group>
-              </Group>
-            </DimensionLayout>
-          </Layout>
-          <SubComponents>
-            <Component class="javax.swing.JLabel" name="profile">
-            </Component>
-            <Component class="javax.swing.JLabel" name="Profile">
-              <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/image/profile.png"/>
-                </Property>
-              </Properties>
-            </Component>
-          </SubComponents>
-        </Container>
         <Container class="javax.swing.JPanel" name="jPanel3">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -276,59 +234,43 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace max="32767" attributes="0"/>
                               <Component id="resetpasswordButton" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
                               <Component id="saveButton" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="160" max="-2" attributes="0"/>
-                              <Component id="ManagerLabel" min="-2" pref="78" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Component id="editButton" min="-2" max="-2" attributes="0"/>
-                          </Group>
+                          <Component id="editButton" alignment="1" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="116" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="120" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="EmployeeId" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="ManagerTextField" max="32767" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                          <Component id="emailLabel" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="nameLabel" alignment="0" max="32767" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="NameTextField" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="EmailTextField" alignment="0" max="32767" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                              </Group>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                  <Component id="addressLabel" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="phonenumberLabel" alignment="0" pref="148" max="32767" attributes="0"/>
-                              </Group>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="phonenumberTextField" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="AddressTextField" alignment="0" max="32767" attributes="0"/>
+                                  <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                                      <Component id="emailLabel" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="nameLabel" alignment="0" max="32767" attributes="0"/>
+                                  </Group>
+                                  <Component id="EmployeeID" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="ManagerLabel" alignment="0" min="-2" pref="103" max="-2" attributes="0"/>
                               </Group>
                           </Group>
+                          <Component id="phonenumberLabel" alignment="0" pref="161" max="32767" attributes="0"/>
+                          <Component id="addressLabel" alignment="0" max="32767" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="351" max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="sender_id" alignment="0" max="32767" attributes="0"/>
+                          <Component id="NameTextField" alignment="0" max="32767" attributes="0"/>
+                          <Component id="EmailTextField" alignment="0" pref="190" max="32767" attributes="0"/>
+                          <Component id="phonenumberTextField" alignment="0" max="32767" attributes="0"/>
+                          <Component id="AddressTextField" alignment="0" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace pref="333" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -342,8 +284,8 @@
                       </Group>
                       <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="EmployeeId" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="ManagerTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="EmployeeID" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="sender_id" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -365,7 +307,7 @@
                           <Component id="addressLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="AddressTextField" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="58" max="32767" attributes="0"/>
+                      <EmptySpace pref="63" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="saveButton" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="resetpasswordButton" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -376,6 +318,20 @@
             </DimensionLayout>
           </Layout>
           <SubComponents>
+            <Component class="javax.swing.JLabel" name="phonenumberLabel">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Phone Number              :"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="addressLabel">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Address                       :"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="sender_id">
+            </Component>
+            <Component class="javax.swing.JTextField" name="NameTextField">
+            </Component>
             <Component class="javax.swing.JButton" name="editButton">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -386,6 +342,8 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Edit"/>
               </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="EmailTextField">
             </Component>
             <Component class="javax.swing.JButton" name="saveButton">
               <Properties>
@@ -398,6 +356,8 @@
                 <Property name="text" type="java.lang.String" value="Save"/>
               </Properties>
             </Component>
+            <Component class="javax.swing.JTextField" name="phonenumberTextField">
+            </Component>
             <Component class="javax.swing.JButton" name="resetpasswordButton">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -409,14 +369,19 @@
                 <Property name="text" type="java.lang.String" value="Reset Password"/>
               </Properties>
             </Component>
+            <Component class="javax.swing.JTextField" name="AddressTextField">
+            </Component>
             <Component class="javax.swing.JLabel" name="ManagerLabel">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI" size="14" style="1"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="   My Details"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="EmployeeId">
+            <Component class="javax.swing.JLabel" name="EmployeeID">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Employee ID                 :"/>
+                <Property name="text" type="java.lang.String" value="Employee ID                     :"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="nameLabel">
@@ -429,40 +394,53 @@
                 <Property name="text" type="java.lang.String" value="Email                           :"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="phonenumberLabel">
+          </SubComponents>
+        </Container>
+        <Container class="javax.swing.JPanel" name="Topbar">
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+              <AbsoluteConstraints x="180" y="0" width="870" height="70"/>
+            </Constraint>
+          </Constraints>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
+            <Property name="useNullLayout" type="boolean" value="true"/>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="name">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Phone Number              :"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI" size="16" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Name"/>
               </Properties>
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                  <AbsoluteConstraints x="770" y="20" width="100" height="-1"/>
+                </Constraint>
+              </Constraints>
             </Component>
-            <Component class="javax.swing.JLabel" name="addressLabel">
+            <Component class="javax.swing.JLabel" name="role">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Address                       :"/>
+                <Property name="text" type="java.lang.String" value="Role"/>
               </Properties>
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                  <AbsoluteConstraints x="770" y="40" width="90" height="-1"/>
+                </Constraint>
+              </Constraints>
             </Component>
-            <Component class="javax.swing.JTextField" name="ManagerTextField">
+            <Component class="javax.swing.JLabel" name="jLabel2">
               <Properties>
-                <Property name="text" type="java.lang.String" value="#1111"/>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/image/pfp.jpg"/>
+                </Property>
               </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="NameTextField">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Unish Gautam"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="EmailTextField">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="unishgautam07@gmail.com"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="phonenumberTextField">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="9800000000"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="AddressTextField">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Dillibazar,kathmandu"/>
-              </Properties>
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                  <AbsoluteConstraints x="700" y="6" width="60" height="60"/>
+                </Constraint>
+              </Constraints>
             </Component>
           </SubComponents>
         </Container>

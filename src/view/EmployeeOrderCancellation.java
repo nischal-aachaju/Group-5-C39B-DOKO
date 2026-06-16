@@ -40,11 +40,6 @@ public class EmployeeOrderCancellation extends javax.swing.JFrame {
         jSeparator1 = new javax.swing.JSeparator();
         jLabel1 = new javax.swing.JLabel();
         jSeparator2 = new javax.swing.JSeparator();
-        Topbar = new javax.swing.JPanel();
-        profile = new javax.swing.JLabel();
-        Profile = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -64,8 +59,11 @@ public class EmployeeOrderCancellation extends javax.swing.JFrame {
         jButton4 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jTextField7 = new javax.swing.JTextField();
-        jPanel2 = new javax.swing.JPanel();
         jButton5 = new javax.swing.JButton();
+        Topbar1 = new javax.swing.JPanel();
+        name = new javax.swing.JLabel();
+        role = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Employee Dashboard");
@@ -165,27 +163,6 @@ public class EmployeeOrderCancellation extends javax.swing.JFrame {
         MainPanel.add(Sidebar);
         Sidebar.setBounds(0, 0, 180, 600);
 
-        Topbar.setLayout(null);
-
-        profile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/profile.png"))); // NOI18N
-        Topbar.add(profile);
-        profile.setBounds(757, 0, 0, 82);
-
-        Profile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/profile.png"))); // NOI18N
-        Topbar.add(Profile);
-        Profile.setBounds(670, 0, 84, 82);
-
-        jLabel9.setText("Username");
-        Topbar.add(jLabel9);
-        jLabel9.setBounds(760, 10, 90, 30);
-
-        jLabel10.setText("Role");
-        Topbar.add(jLabel10);
-        jLabel10.setBounds(760, 50, 43, 16);
-
-        MainPanel.add(Topbar);
-        Topbar.setBounds(186, 0, 0, 0);
-
         jPanel1.setLayout(null);
 
         jLabel2.setText("Tracking ID");
@@ -275,16 +252,30 @@ public class EmployeeOrderCancellation extends javax.swing.JFrame {
         MainPanel.add(jTextField7);
         jTextField7.setBounds(240, 120, 350, 50);
 
-        jPanel2.setLayout(null);
-        MainPanel.add(jPanel2);
-        jPanel2.setBounds(180, 0, 870, 70);
-
         jButton5.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jButton5.setText("Search");
         jButton5.setMaximumSize(new java.awt.Dimension(84, 32));
         jButton5.setMinimumSize(new java.awt.Dimension(84, 32));
         MainPanel.add(jButton5);
         jButton5.setBounds(610, 120, 110, 50);
+
+        Topbar1.setLayout(null);
+
+        name.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        name.setText("Name");
+        Topbar1.add(name);
+        name.setBounds(770, 20, 100, 22);
+
+        role.setText("Role");
+        Topbar1.add(role);
+        role.setBounds(770, 40, 90, 16);
+
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/pfp.jpg"))); // NOI18N
+        Topbar1.add(jLabel11);
+        jLabel11.setBounds(700, 6, 60, 60);
+
+        MainPanel.add(Topbar1);
+        Topbar1.setBounds(180, 0, 870, 70);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -360,9 +351,8 @@ public class EmployeeOrderCancellation extends javax.swing.JFrame {
     private javax.swing.JButton MyProfile;
     private javax.swing.JButton MyShipments;
     private javax.swing.JButton OrdersHistory;
-    private javax.swing.JLabel Profile;
     private javax.swing.JPanel Sidebar;
-    private javax.swing.JPanel Topbar;
+    private javax.swing.JPanel Topbar1;
     private javax.swing.JButton dashboard;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
@@ -370,7 +360,7 @@ public class EmployeeOrderCancellation extends javax.swing.JFrame {
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -378,9 +368,7 @@ public class EmployeeOrderCancellation extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JTextField jTextField1;
@@ -392,6 +380,7 @@ public class EmployeeOrderCancellation extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField7;
     private javax.swing.JLabel logo;
     private javax.swing.JButton logout;
-    private javax.swing.JLabel profile;
+    private javax.swing.JLabel name;
+    private javax.swing.JLabel role;
     // End of variables declaration//GEN-END:variables
 }

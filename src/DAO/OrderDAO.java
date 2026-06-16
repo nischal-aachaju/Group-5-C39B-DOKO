@@ -231,4 +231,87 @@ public class OrderDAO {
         
         return orderList;
     }
+     // Inside DAO.OrderDAO
+    public java.util.Map<String, Integer> getDashboardStats(int senderId) {
+        
+        // Create a map and set default values to 0 to prevent NullPointer errors
+        java.util.Map<String, Integer> stats = new java.util.HashMap<>();
+        stats.put("total", 0);
+        stats.put("pending", 0);
+        stats.put("cancelled", 0);
+        stats.put("delivered", 0);
+        stats.put("intransit", 0);
+        stats.put("return", 0);
+        
+        // This query counts how many orders exist for EACH status for this specific sender
+        String sql = "SELECT status, COUNT(order_id) as status_count FROM orders WHERE sender_id = ? GROUP BY status";
+        
+        try (java.sql.Connection conn = db.openConnection();
+             java.sql.PreparedStatement pstmt = conn.prepareStatement(sql)) {
+             
+            pstmt.setInt(1, senderId);
+            
+            int totalOrders = 0;
+            
+            try (java.sql.ResultSet rs = pstmt.executeQuery()) {
+                while (rs.next()) {
+                    String status = rs.getString("status").toLowerCase();
+                    int count = rs.getInt("status_count");
+                    
+                    // Put the count into the map using the status as the key
+                    stats.put(status, count);
+                    
+                    // Add to the total count
+                    totalOrders += count;
+                }
+            }
+            
+            // Save the grand total into the map
+            stats.put("total", totalOrders);
+            
+        } catch (java.sql.SQLException e) {
+            System.out.println("Error fetching dashboard stats: " + e.getMessage());
+            e.printStackTrace();
+        }
+        
+        return stats;
+    }
+    // Inside DAO.OrderDAO
+    public java.util.List<Model.Order> getRecent5OrdersBySender(int senderId) {
+        
+        java.util.List<Model.Order> orderList = new java.util.ArrayList<>();
+        
+        // LIMIT 5 tells the database to only give us the 5 most recent rows!
+        String sql = "SELECT * FROM orders WHERE sender_id = ? ORDER BY order_id DESC LIMIT 5";
+        
+        try (java.sql.Connection conn = db.openConnection();
+             java.sql.PreparedStatement pstmt = conn.prepareStatement(sql)) {
+             
+            pstmt.setInt(1, senderId);
+            
+            try (java.sql.ResultSet rs = pstmt.executeQuery()) {
+                while (rs.next()) {
+                    
+                    Model.Order order = new Model.Order(
+                        rs.getString("tracking_id"),
+                        rs.getString("receiver_name"),
+                        rs.getString("receiver_email"),
+                        rs.getString("receiver_contact"),
+                        rs.getString("receiver_location"),
+                        rs.getString("street"),
+                        rs.getDouble("weight"),
+                        rs.getDouble("total_cost"), 
+                        rs.getString("description")
+                    );
+                    
+                    order.setStatus(rs.getString("status"));
+                    orderList.add(order);
+                }
+            }
+        } catch (java.sql.SQLException e) {
+            e.printStackTrace();
+        }
+        
+        return orderList;
+    }
 }

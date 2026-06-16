@@ -33,6 +33,21 @@ public class UserController {
         this.userView.addCreateOrderListener(new OpenCreateOrderListener());
         this.userView.addMyShipmentsListener(new OpenMyShipmentsListener());
         this.userView.addOrdersHistoryListener(new OpenOrdersHistoryListener());
+        
+        DAO.OrderDAO OrderDao = new DAO.OrderDAO();
+        java.util.Map<String, Integer> stats = OrderDao.getDashboardStats(currentUser.getUserID());
+        
+        java.util.List<Model.Order> recentOrders = OrderDao.getRecent5OrdersBySender(currentUser.getUserID());
+        this.userView.populateRecentOrdersTable(recentOrders);
+        
+        this.userView.updateDashboardStats(
+            stats.getOrDefault("total", 0),
+            stats.getOrDefault("pending", 0),
+            stats.getOrDefault("cancelled", 0),
+            stats.getOrDefault("delivered", 0),
+            stats.getOrDefault("intransit", 0),
+            stats.getOrDefault("return", 0)
+        );
     }
 
     // =========================================================================

@@ -43,8 +43,6 @@ public class Sender_Dashboard extends javax.swing.JFrame {
         username = new javax.swing.JLabel();
         user_role = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        RecentOrders = new javax.swing.JTable();
         Total_orders = new javax.swing.JPanel();
         total_orders_text = new javax.swing.JLabel();
         total_orders_value = new javax.swing.JLabel();
@@ -57,6 +55,15 @@ public class Sender_Dashboard extends javax.swing.JFrame {
         Delivered_shipments = new javax.swing.JPanel();
         Deliverd_shipments_text = new javax.swing.JLabel();
         Deliverd_shipments_value = new javax.swing.JLabel();
+        In_transit = new javax.swing.JPanel();
+        In_transit_text = new javax.swing.JLabel();
+        In_transit_value = new javax.swing.JLabel();
+        Return_orders = new javax.swing.JPanel();
+        return_text = new javax.swing.JLabel();
+        return_value = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        recent_5_orders = new javax.swing.JTable();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(204, 204, 204));
@@ -143,34 +150,6 @@ public class Sender_Dashboard extends javax.swing.JFrame {
         MainPanel.add(topbar);
         topbar.setBounds(180, 0, 860, 70);
 
-        RecentOrders.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Recent Orders", "", "", ""
-            }
-        ));
-        jScrollPane1.setViewportView(RecentOrders);
-
-        MainPanel.add(jScrollPane1);
-        jScrollPane1.setBounds(263, 300, 710, 250);
-
         Total_orders.setLayout(null);
 
         total_orders_text.setBackground(new java.awt.Color(238, 238, 238));
@@ -197,7 +176,7 @@ public class Sender_Dashboard extends javax.swing.JFrame {
         Cancel_orders_text.setBackground(new java.awt.Color(238, 238, 238));
         Cancel_orders_text.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         Cancel_orders_text.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Cancel_orders_text.setText("Cancel Orders");
+        Cancel_orders_text.setText("Cancelled");
         Cancel_orders_text.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         Cancel_Orders.add(Cancel_orders_text);
         Cancel_orders_text.setBounds(0, 0, 140, 60);
@@ -211,14 +190,14 @@ public class Sender_Dashboard extends javax.swing.JFrame {
         Cancel_orders_value.setBounds(140, 0, 50, 60);
 
         MainPanel.add(Cancel_Orders);
-        Cancel_Orders.setBounds(550, 120, 190, 60);
+        Cancel_Orders.setBounds(530, 120, 190, 60);
 
         Pending_shipments.setLayout(null);
 
         Pending_shipments_text.setBackground(new java.awt.Color(238, 238, 238));
         Pending_shipments_text.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         Pending_shipments_text.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Pending_shipments_text.setText("Pending_shipments");
+        Pending_shipments_text.setText("Pending");
         Pending_shipments_text.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         Pending_shipments.add(Pending_shipments_text);
         Pending_shipments_text.setBounds(0, 0, 140, 60);
@@ -239,7 +218,7 @@ public class Sender_Dashboard extends javax.swing.JFrame {
         Deliverd_shipments_text.setBackground(new java.awt.Color(238, 238, 238));
         Deliverd_shipments_text.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         Deliverd_shipments_text.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Deliverd_shipments_text.setText("Cancel Orders");
+        Deliverd_shipments_text.setText("Delivered");
         Deliverd_shipments_text.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         Delivered_shipments.add(Deliverd_shipments_text);
         Deliverd_shipments_text.setBounds(0, 0, 140, 60);
@@ -253,7 +232,85 @@ public class Sender_Dashboard extends javax.swing.JFrame {
         Deliverd_shipments_value.setBounds(140, 0, 50, 60);
 
         MainPanel.add(Delivered_shipments);
-        Delivered_shipments.setBounds(550, 210, 190, 60);
+        Delivered_shipments.setBounds(530, 210, 190, 60);
+
+        In_transit.setLayout(null);
+
+        In_transit_text.setBackground(new java.awt.Color(238, 238, 238));
+        In_transit_text.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        In_transit_text.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        In_transit_text.setText("In transit");
+        In_transit_text.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        In_transit.add(In_transit_text);
+        In_transit_text.setBounds(0, 0, 140, 60);
+
+        In_transit_value.setBackground(new java.awt.Color(238, 238, 238));
+        In_transit_value.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        In_transit_value.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        In_transit_value.setText("0");
+        In_transit_value.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        In_transit.add(In_transit_value);
+        In_transit_value.setBounds(140, 0, 50, 60);
+
+        MainPanel.add(In_transit);
+        In_transit.setBounds(800, 120, 190, 60);
+
+        Return_orders.setLayout(null);
+
+        return_text.setBackground(new java.awt.Color(238, 238, 238));
+        return_text.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        return_text.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        return_text.setText("Return");
+        return_text.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        Return_orders.add(return_text);
+        return_text.setBounds(0, 0, 140, 60);
+
+        return_value.setBackground(new java.awt.Color(238, 238, 238));
+        return_value.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        return_value.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        return_value.setText("0");
+        return_value.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        Return_orders.add(return_value);
+        return_value.setBounds(140, 0, 50, 60);
+
+        MainPanel.add(Return_orders);
+        Return_orders.setBounds(800, 210, 190, 60);
+
+        recent_5_orders.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        recent_5_orders.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "Tracking ID", "Customer", "Contact", "Destination", "Status"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(recent_5_orders);
+
+        MainPanel.add(jScrollPane1);
+        jScrollPane1.setBounds(240, 430, 760, 110);
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel1.setText("Recent Orders :");
+        MainPanel.add(jLabel1);
+        jLabel1.setBounds(240, 390, 150, 30);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -316,6 +373,9 @@ public class Sender_Dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel Deliverd_shipments_text;
     private javax.swing.JLabel Deliverd_shipments_value;
     private javax.swing.JPanel Delivered_shipments;
+    private javax.swing.JPanel In_transit;
+    private javax.swing.JLabel In_transit_text;
+    private javax.swing.JLabel In_transit_value;
     private javax.swing.JPanel MainPanel;
     private javax.swing.JButton MyProfile;
     private javax.swing.JButton MyShipments;
@@ -323,15 +383,19 @@ public class Sender_Dashboard extends javax.swing.JFrame {
     private javax.swing.JPanel Pending_shipments;
     private javax.swing.JLabel Pending_shipments_text;
     private javax.swing.JLabel Pending_shipments_value;
-    private javax.swing.JTable RecentOrders;
+    private javax.swing.JPanel Return_orders;
     private javax.swing.JPanel Total_orders;
     private javax.swing.JButton create_orders;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JLabel logo;
     private javax.swing.JButton logout;
+    private javax.swing.JTable recent_5_orders;
+    private javax.swing.JLabel return_text;
+    private javax.swing.JLabel return_value;
     private javax.swing.JPanel sidebar;
     private javax.swing.JPanel topbar;
     private javax.swing.JLabel total_orders_text;
@@ -372,5 +436,45 @@ public void setUsernameLabel(String name) {
     public void addOrdersHistoryListener(java.awt.event.ActionListener listener) {
         // Ensure 'OrdersHistory' perfectly matches the variable name of your button!
         OrdersHistory.addActionListener(listener); 
+    }
+    // =========================================================================
+    // DASHBOARD STATS POPULATION
+    // =========================================================================
+
+    public void updateDashboardStats(int total, int pending, int cancelled, int delivered, int inTransit, int returned) {
+        // We use String.valueOf() to convert the integers into text for the labels
+        total_orders_value.setText(String.valueOf(total));
+        Pending_shipments_value.setText(String.valueOf(pending));
+        Cancel_orders_value.setText(String.valueOf(cancelled));
+        
+        // Note: Using your exact variable names from the list!
+        Deliverd_shipments_value.setText(String.valueOf(delivered)); 
+        In_transit_value.setText(String.valueOf(inTransit));
+        return_value.setText(String.valueOf(returned));
+    }
+    // =========================================================================
+    // RECENT 5 ORDERS TABLE POPULATION (5 Columns Only)
+    // =========================================================================
+
+    public void populateRecentOrdersTable(java.util.List<Model.Order> orderList) {
+        
+        // 1. Get the table model using your exact variable name
+        javax.swing.table.DefaultTableModel model = (javax.swing.table.DefaultTableModel) recent_5_orders.getModel();
+        
+        // 2. Clear all existing empty rows
+        model.setRowCount(0);
+        
+        // 3. Loop through the list and add each order as a new row
+        for (Model.Order order : orderList) {
+            Object[] row = {
+                order.getTrackingId(),
+                order.getReceiverName(),      // Customer
+                order.getReceiverContact(),   // Contact
+                order.getReceiverLocation(),  // Destination
+                order.getStatus()             // Status
+            };
+            
+            model.addRow(row);
+        }
     }
 }

@@ -3,14 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/Group-5-C39B-DOKO/src/DAO/userDAO.java</file>
-            <file>file:/D:/Group-5-C39B-DOKO/src/DAO/orderFilterdao.java</file>
-            <file>file:/D:/Group-5-C39B-DOKO/src/controllor/OrderController.java</file>
             <file>file:/D:/Group-5-C39B-DOKO/src/view/Admin_Dashboard.java</file>
+            <file>file:/D:/Group-5-C39B-DOKO/src/view/Admin_Workload.java</file>
+            <file>file:/D:/Group-5-C39B-DOKO/src/DAO/orderFilterdao.java</file>
             <file>file:/D:/Group-5-C39B-DOKO/src/Model/Order.java</file>
-            <file>file:/D:/Group-5-C39B-DOKO/src/DB/Dbconnector.java</file>
-            <file>file:/D:/Group-5-C39B-DOKO/src/controllor/PublicParcelTracking.java</file>
-            <file>file:/D:/Group-5-C39B-DOKO/src/DB/database.java</file>
+            <file>file:/D:/Group-5-C39B-DOKO/src/Model/userData.java</file>
+            <file>file:/D:/Group-5-C39B-DOKO/src/controllor/OrderController.java</file>
+            <file>file:/D:/Group-5-C39B-DOKO/src/view/Manager_Workload.java</file>
         </group>
     </open-files>
 </project-private>

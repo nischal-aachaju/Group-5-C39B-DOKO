@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package useraccountmanagement2m;
+package view;
 
 /**
  *
@@ -12,9 +12,7 @@ public class Useraccountmanagement extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Useraccountmanagement.class.getName());
 
-    /**
-     * Creates new form useraccountmanagement2MM
-     */
+
     public Useraccountmanagement() {
         initComponents();
     }
@@ -43,20 +41,20 @@ public class Useraccountmanagement extends javax.swing.JFrame {
         jLabel19 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
         dashboard = new javax.swing.JButton();
-        jPanel4 = new javax.swing.JPanel();
-        jLabel22 = new javax.swing.JLabel();
-        jLabel23 = new javax.swing.JLabel();
-        jLabel24 = new javax.swing.JLabel();
-        jLabel25 = new javax.swing.JLabel();
-        jLabel26 = new javax.swing.JLabel();
-        jLabel27 = new javax.swing.JLabel();
-        jLabel28 = new javax.swing.JLabel();
-        jLabel29 = new javax.swing.JLabel();
-        jLabel30 = new javax.swing.JLabel();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        trackingID = new javax.swing.JTextField();
-        searchBtn = new javax.swing.JButton();
+        edit_of_email_and_number_panel = new javax.swing.JPanel();
+        employee_ID = new javax.swing.JLabel();
+        employee_details = new javax.swing.JLabel();
+        Employee_Name = new javax.swing.JLabel();
+        Employee_Email = new javax.swing.JLabel();
+        Employee_Phone = new javax.swing.JLabel();
+        Employee_Email_value = new javax.swing.JLabel();
+        Employee_ID_value = new javax.swing.JLabel();
+        Employee_Name_value = new javax.swing.JLabel();
+        Employee_Phone_value = new javax.swing.JLabel();
+        editBtn = new javax.swing.JButton();
+        savebtn = new javax.swing.JButton();
+        entered_user_id = new javax.swing.JTextField();
+        search_id = new javax.swing.JButton();
         top_bar_panel = new javax.swing.JPanel();
         username = new javax.swing.JLabel();
         user_role = new javax.swing.JLabel();
@@ -177,117 +175,70 @@ public class Useraccountmanagement extends javax.swing.JFrame {
         MainPanel1.add(sidebar1);
         sidebar1.setBounds(0, 0, 180, 644);
 
-        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
+        edit_of_email_and_number_panel.setBackground(new java.awt.Color(255, 255, 255));
+        edit_of_email_and_number_panel.setLayout(null);
 
-        jLabel22.setText("Employee ID");
+        employee_ID.setText("Employee ID");
+        edit_of_email_and_number_panel.add(employee_ID);
+        employee_ID.setBounds(26, 93, 100, 32);
 
-        jLabel23.setText("Employee Details");
+        employee_details.setText("Employee Details");
+        edit_of_email_and_number_panel.add(employee_details);
+        employee_details.setBounds(30, 29, 160, 32);
 
-        jLabel24.setText("Employee Name");
+        Employee_Name.setText("Employee Name");
+        edit_of_email_and_number_panel.add(Employee_Name);
+        Employee_Name.setBounds(26, 131, 100, 35);
 
-        jLabel25.setText("Employee Email");
+        Employee_Email.setText("Employee Email");
+        edit_of_email_and_number_panel.add(Employee_Email);
+        Employee_Email.setBounds(26, 172, 100, 35);
 
-        jLabel26.setText("Phone Number");
+        Employee_Phone.setText("Phone Number");
+        edit_of_email_and_number_panel.add(Employee_Phone);
+        Employee_Phone.setBounds(26, 213, 90, 35);
 
-        jLabel27.setText(": ram@gmail.com");
+        Employee_Email_value.setText(": ram@gmail.com");
+        edit_of_email_and_number_panel.add(Employee_Email_value);
+        Employee_Email_value.setBounds(139, 173, 270, 32);
 
-        jLabel28.setText(": #11111");
+        Employee_ID_value.setText(": #11111");
+        edit_of_email_and_number_panel.add(Employee_ID_value);
+        Employee_ID_value.setBounds(139, 93, 210, 32);
 
-        jLabel29.setText(": Ram");
+        Employee_Name_value.setText(": Ram");
+        edit_of_email_and_number_panel.add(Employee_Name_value);
+        Employee_Name_value.setBounds(139, 134, 230, 32);
 
-        jLabel30.setText(": 980000000000");
+        Employee_Phone_value.setText(": 980000000000");
+        edit_of_email_and_number_panel.add(Employee_Phone_value);
+        Employee_Phone_value.setBounds(139, 213, 280, 32);
 
-        jButton5.setBackground(new java.awt.Color(242, 242, 242));
-        jButton5.setText("Edit");
+        editBtn.setBackground(new java.awt.Color(242, 242, 242));
+        editBtn.setText("Edit");
+        edit_of_email_and_number_panel.add(editBtn);
+        editBtn.setBounds(599, 30, 72, 31);
 
-        jButton6.setBackground(new java.awt.Color(242, 242, 242));
-        jButton6.setText("Save");
-        jButton6.addActionListener(this::jButton6ActionPerformed);
+        savebtn.setBackground(new java.awt.Color(242, 242, 242));
+        savebtn.setText("Save");
+        savebtn.addActionListener(this::savebtnActionPerformed);
+        edit_of_email_and_number_panel.add(savebtn);
+        savebtn.setBounds(599, 266, 72, 31);
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel22)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel25)
-                            .addComponent(jLabel24)
-                            .addComponent(jLabel26))
-                        .addGap(25, 25, 25)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel30, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel27, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap(461, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton6)
-                    .addComponent(jButton5))
-                .addGap(23, 23, 23))
-            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel4Layout.createSequentialGroup()
-                    .addGap(30, 30, 30)
-                    .addComponent(jLabel23)
-                    .addContainerGap(562, Short.MAX_VALUE)))
-            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel4Layout.createSequentialGroup()
-                    .addGap(149, 149, 149)
-                    .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(485, Short.MAX_VALUE)))
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(32, 32, 32)
-                .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel27, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(45, Short.MAX_VALUE))
-            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel4Layout.createSequentialGroup()
-                    .addGap(29, 29, 29)
-                    .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(223, Short.MAX_VALUE)))
-            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel4Layout.createSequentialGroup()
-                    .addGap(103, 103, 103)
-                    .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(207, Short.MAX_VALUE)))
-        );
+        MainPanel1.add(edit_of_email_and_number_panel);
+        edit_of_email_and_number_panel.setBounds(250, 180, 694, 342);
 
-        MainPanel1.add(jPanel4);
-        jPanel4.setBounds(250, 180, 694, 342);
+        entered_user_id.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        entered_user_id.setText("# Enter User ID");
+        entered_user_id.addActionListener(this::entered_user_idActionPerformed);
+        MainPanel1.add(entered_user_id);
+        entered_user_id.setBounds(240, 120, 350, 31);
 
-        trackingID.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        trackingID.setText("# Enter User ID");
-        trackingID.addActionListener(this::trackingIDActionPerformed);
-        MainPanel1.add(trackingID);
-        trackingID.setBounds(240, 120, 350, 31);
-
-        searchBtn.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        searchBtn.setText("Search");
-        searchBtn.addActionListener(this::searchBtnActionPerformed);
-        MainPanel1.add(searchBtn);
-        searchBtn.setBounds(600, 120, 100, 30);
+        search_id.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        search_id.setText("Search");
+        search_id.addActionListener(this::search_idActionPerformed);
+        MainPanel1.add(search_id);
+        search_id.setBounds(600, 120, 100, 30);
 
         top_bar_panel.setLayout(null);
 
@@ -298,7 +249,7 @@ public class Useraccountmanagement extends javax.swing.JFrame {
 
         user_role.setText("Role");
         top_bar_panel.add(user_role);
-        user_role.setBounds(770, 40, 37, 16);
+        user_role.setBounds(770, 40, 100, 16);
 
         profile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/pfp.jpg"))); // NOI18N
         top_bar_panel.add(profile);
@@ -321,17 +272,17 @@ public class Useraccountmanagement extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+    private void savebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_savebtnActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton6ActionPerformed
+    }//GEN-LAST:event_savebtnActionPerformed
 
-    private void trackingIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_trackingIDActionPerformed
+    private void entered_user_idActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entered_user_idActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_trackingIDActionPerformed
+    }//GEN-LAST:event_entered_user_idActionPerformed
 
-    private void searchBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchBtnActionPerformed
+    private void search_idActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_search_idActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_searchBtnActionPerformed
+    }//GEN-LAST:event_search_idActionPerformed
 
     private void Dashboard1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Dashboard1ActionPerformed
         // TODO add your handling code here:
@@ -366,35 +317,78 @@ public class Useraccountmanagement extends javax.swing.JFrame {
     private javax.swing.JButton ActiveOrders1;
     private javax.swing.JButton AssignOrder1;
     private javax.swing.JButton Dashboard1;
+    private javax.swing.JLabel Employee_Email;
+    private javax.swing.JLabel Employee_Email_value;
+    private javax.swing.JLabel Employee_ID_value;
+    private javax.swing.JLabel Employee_Name;
+    private javax.swing.JLabel Employee_Name_value;
+    private javax.swing.JLabel Employee_Phone;
+    private javax.swing.JLabel Employee_Phone_value;
     private javax.swing.JPanel MainPanel1;
     private javax.swing.JButton ManageUser1;
     private javax.swing.JButton MyProfile1;
     private javax.swing.JButton WorkLoad1;
     private javax.swing.JButton dashboard;
+    private javax.swing.JButton editBtn;
+    private javax.swing.JPanel edit_of_email_and_number_panel;
+    private javax.swing.JLabel employee_ID;
+    private javax.swing.JLabel employee_details;
+    private javax.swing.JTextField entered_user_id;
     private javax.swing.JButton jButton11;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel24;
-    private javax.swing.JLabel jLabel25;
-    private javax.swing.JLabel jLabel26;
-    private javax.swing.JLabel jLabel27;
-    private javax.swing.JLabel jLabel28;
-    private javax.swing.JLabel jLabel29;
-    private javax.swing.JLabel jLabel30;
-    private javax.swing.JPanel jPanel4;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JButton logout1;
     private javax.swing.JLabel profile;
-    private javax.swing.JButton searchBtn;
+    private javax.swing.JButton savebtn;
+    private javax.swing.JButton search_id;
     private javax.swing.JPanel sidebar1;
     private javax.swing.JPanel top_bar_panel;
-    private javax.swing.JTextField trackingID;
     private javax.swing.JLabel user_role;
     private javax.swing.JLabel username;
     // End of variables declaration//GEN-END:variables
+// =========================================================================
+    // GETTERS AND SETTERS FOR UI COMPONENTS
+    // =========================================================================
+
+    public void setUsernameLabel(String name) { username.setText(name); }
+    public void setRoleLabel(String role) { user_role.setText(role); }
+
+    // Grabs the text typed into your new search box
+    public String getSearchId() {
+        return entered_user_id.getText().trim();
+    }
+
+    // Injects data into the display labels
+    public void setEmployeeDetails(String id, String name, String email, String phone) {
+        Employee_ID_value.setText(id);
+        Employee_Name_value.setText(name);
+        Employee_Email_value.setText(email);
+        Employee_Phone_value.setText(phone);
+    }
+    
+    // Grabs the text currently sitting in the labels
+    public String getDisplayedEmail() { return Employee_Email_value.getText(); }
+    public String getDisplayedPhone() { return Employee_Phone_value.getText(); }
+
+    // =========================================================================
+    // BUTTON LISTENERS (Using your updated '1' variables)
+    // =========================================================================
+
+    public void addSearchListener(java.awt.event.ActionListener listener) {
+        search_id.addActionListener(listener);
+    }
+
+    public void addEditListener(java.awt.event.ActionListener listener) {
+        editBtn.addActionListener(listener);
+    }
+
+    public void addSaveListener(java.awt.event.ActionListener listener) {
+        savebtn.addActionListener(listener);
+    }
+    
+    public void addDashboardListener(java.awt.event.ActionListener listener) {
+        Dashboard1.addActionListener(listener); 
+    }
 }

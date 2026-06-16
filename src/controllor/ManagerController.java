@@ -30,6 +30,7 @@ public class ManagerController {
         // 2. Connect the logout button
         this.managerView.addLogoutListener(new LogoutListener());
         this.managerView.addMyProfileListener(new OpenManagerProfileListener());
+        this.managerView.addManageUserListener(new OpenManageUserListener());
     }
 
     public void open() {
@@ -78,6 +79,27 @@ public class ManagerController {
             
             // 4. Open the profile page!
             profileController.open();
+        }
+    }
+    // =========================================================================
+    // NAVIGATION LISTENERS
+    // =========================================================================
+
+    class OpenManageUserListener implements java.awt.event.ActionListener {
+        @Override
+        public void actionPerformed(java.awt.event.ActionEvent e) {
+            
+            // 1. Close the current Manager Dashboard
+            close(); 
+            
+            // 2. Create the User Management View
+            view.Useraccountmanagement manageUserView = new view.Useraccountmanagement();
+            
+            // 3. Pass it entirely to your dedicated Manage User Controller
+            controllor.ManageUserController manageUserController = new controllor.ManageUserController(manageUserView, currentUser);
+            
+            // 4. Open the User Management page!
+            manageUserController.open();
         }
     }
 }

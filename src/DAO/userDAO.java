@@ -134,5 +134,53 @@ public userData loginUser(String username, String password) {
             return false;
         }
     }
+    // =========================================================================
+    // MANAGER DATA METHODS
+    // =========================================================================
+
+    // 1. Fetch a single user by their ID
+    public Model.userData getUserById(int searchId) {
+        String sql = "SELECT * FROM users WHERE user_id = ?";
+        
+        try (java.sql.Connection conn = db.openConnection();
+             java.sql.PreparedStatement pstmt = conn.prepareStatement(sql)) {
+             
+            pstmt.setInt(1, searchId);
+            
+            try (java.sql.ResultSet rs = pstmt.executeQuery()) {
+                if (rs.next()) {
+                    Model.userData user = new Model.userData();
+                    user.setUserID(rs.getInt("user_id"));
+                    user.setUsername(rs.getString("username"));
+                    user.setEmail(rs.getString("email"));
+                    user.setPhone(rs.getString("phone"));
+                    user.setRole(rs.getString("role"));
+                    return user; // Return the found user
+                }
+            }
+        } catch (java.sql.SQLException e) {
+            e.printStackTrace();
+        }
+        return null; // Return null if user doesn't exist
+    }
+
+    // 2. Update specifically the Email and Phone
+    public boolean updateUserEmailAndPhone(int userId, String newEmail, String newPhone) {
+        String sql = "UPDATE users SET email = ?, phone = ? WHERE user_id = ?";
+        
+        try (java.sql.Connection conn = db.openConnection();
+             java.sql.PreparedStatement pstmt = conn.prepareStatement(sql)) {
+             
+            pstmt.setString(1, newEmail);
+            pstmt.setString(2, newPhone);
+            pstmt.setInt(3, userId);
+            
+            return pstmt.executeUpdate() > 0;
+            
+        } catch (java.sql.SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
 }
     

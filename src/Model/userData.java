@@ -16,7 +16,9 @@ public class userData {
     private String address;
     private String password;
     private String role;
-    
+    public userData() {
+        // This allows us to create a blank user object and fill it later
+    }
 
     
     // user ID getter

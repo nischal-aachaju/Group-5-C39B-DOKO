@@ -428,5 +428,14 @@ public void addMyProfileListener(java.awt.event.ActionListener listener) {
        
         MyProfile.addActionListener(listener); 
     }
+// =========================================================================
+    // EXPOSE UI BUTTONS TO THE CONTROLLER
+    // =========================================================================
+
+    public void addManageUserListener(java.awt.event.ActionListener listener) {
+        // NOTE: If your NetBeans variable is 'ManageUser1' due to copy-pasting, 
+        // make sure to add the '1' here so it perfectly matches!
+        ManageUser.addActionListener(listener); 
+    }
 
 }

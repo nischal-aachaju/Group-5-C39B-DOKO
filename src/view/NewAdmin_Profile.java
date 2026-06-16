@@ -283,7 +283,7 @@ public class NewAdmin_Profile extends javax.swing.JFrame {
         );
 
         MainPanel.add(jPanel3);
-        jPanel3.setBounds(210, 110, 810, 460);
+        jPanel3.setBounds(200, 110, 810, 460);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

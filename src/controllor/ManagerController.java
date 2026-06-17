@@ -35,6 +35,9 @@ public class ManagerController {
         this.managerView.addManageUserListener(new OpenManageUserListener());
         this.managerView.addManageOrdersListener(new OpenManageOrdersListener());
         this.managerView.addAssiggnedOrdersListener(new OpenAssiggnedrdersListener() );
+        this.managerView.addActiveOrdersListener(new OpenActiveOrdersListener() );
+        this.managerView.addWorkloadListener(new OpenWorkloadListener() );
+        
     }
 
     public void open() {
@@ -129,6 +132,38 @@ public class ManagerController {
             
             // 3. Fixed spelling from "controller" to "controllor" to perfectly match your package structure
             controllor.ManagerAssignOrderController managerAssignOrderController = new controllor.ManagerAssignOrderController(assignedorderView, currentUser);
+            
+            // 4. Open the Manager Order Edit page!
+            managerAssignOrderController.open();
+        }
+    }
+        class OpenActiveOrdersListener implements java.awt.event.ActionListener {
+        @Override
+        public void actionPerformed(java.awt.event.ActionEvent e) {
+            // 1. Close the current Manager Dashboard
+            close(); 
+            
+            // 2. Create the Manager Order Edit View
+            view.Manager_active_orders activeorderView = new view.Manager_active_orders();
+            
+            // 3. Fixed spelling from "controller" to "controllor" to perfectly match your package structure
+            controllor.ManagerActiveOrdersController managerAssignOrderController = new controllor.ManagerActiveOrdersController(activeorderView, currentUser);
+            
+            // 4. Open the Manager Order Edit page!
+            managerAssignOrderController.open();
+        }
+    }
+        class OpenWorkloadListener implements java.awt.event.ActionListener {
+        @Override
+        public void actionPerformed(java.awt.event.ActionEvent e) {
+            // 1. Close the current Manager Dashboard
+            close(); 
+            
+            // 2. Create the Manager Order Edit View
+            view.Manager_Workload WorkloadView = new view.Manager_Workload();
+            
+            // 3. Fixed spelling from "controller" to "controllor" to perfectly match your package structure
+            controllor.ManagerWorkloadController managerAssignOrderController = new controllor.ManagerWorkloadController(WorkloadView, currentUser);
             
             // 4. Open the Manager Order Edit page!
             managerAssignOrderController.open();

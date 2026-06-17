@@ -361,4 +361,90 @@ public class OrderDAO {
             return false;
         }
     }
+    // =========================================================================
+    // MANAGER: FETCH ACTIVE / FILTERED ORDERS
+    // =========================================================================
+
+    public java.sql.ResultSet getFilteredOrders(String statusFilter) {
+        String sql;
+        
+        // If they ask for "All" or pass null, fetch everything
+        if (statusFilter == null || statusFilter.equalsIgnoreCase("All")) {
+            sql = "SELECT tracking_id, receiver_name, receiver_contact, receiver_location, status, delivery_cost, total_cost FROM orders";
+        } else {
+            // Otherwise, fetch only the specific status
+            sql = "SELECT tracking_id, receiver_name, receiver_contact, receiver_location, status, delivery_cost, total_cost FROM orders WHERE status = ?";
+        }
+        
+        try {
+            java.sql.Connection conn = db.openConnection();
+            java.sql.PreparedStatement pstmt = conn.prepareStatement(sql);
+            
+            // If we are filtering by a specific status, inject it into the '?'
+            if (statusFilter != null && !statusFilter.equalsIgnoreCase("All")) {
+                pstmt.setString(1, statusFilter);
+            }
+            
+            return pstmt.executeQuery(); 
+            
+        } catch (java.sql.SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+// =========================================================================
+    // MANAGER: EMPLOYEE WORKLOAD DATA
+    // =========================================================================
+
+    // 1. Fetch the total counts for the top cards
+    public int[] getEmployeeWorkloadStats(int employeeId) {
+        // Index mapping: 0=Total, 1=Active(intransit), 2=Delivered, 3=Cancelled, 4=Returned
+        int[] stats = new int[5]; 
+        
+        String sql = "SELECT "
+                   + "COUNT(*) as total, "
+                   + "SUM(CASE WHEN status = 'intransit' THEN 1 ELSE 0 END) as active, "
+                   + "SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered, "
+                   + "SUM(CASE WHEN status = 'cancelled' THEN 1 ELSE 0 END) as cancelled, "
+                   + "SUM(CASE WHEN status = 'return' THEN 1 ELSE 0 END) as returned "
+                   + "FROM orders o "
+                   + "JOIN assignedOrders a ON o.tracking_id = a.ordersTrackingID "
+                   + "WHERE a.usersID = ?";
+                   
+        try (java.sql.Connection conn = db.openConnection();
+             java.sql.PreparedStatement pstmt = conn.prepareStatement(sql)) {
+             
+            pstmt.setInt(1, employeeId);
+            try (java.sql.ResultSet rs = pstmt.executeQuery()) {
+                if (rs.next()) {
+                    stats[0] = rs.getInt("total");
+                    stats[1] = rs.getInt("active");
+                    stats[2] = rs.getInt("delivered");
+                    stats[3] = rs.getInt("cancelled");
+                    stats[4] = rs.getInt("returned");
+                }
+            }
+        } catch (java.sql.SQLException e) {
+            e.printStackTrace();
+        }
+        return stats;
+    }
+
+    // 2. Fetch the actual list of orders for the table
+    public java.sql.ResultSet getEmployeeAssignedOrdersList(int employeeId) {
+        String sql = "SELECT o.tracking_id, o.receiver_name, o.receiver_location, o.status "
+                   + "FROM orders o "
+                   + "JOIN assignedOrders a ON o.tracking_id = a.ordersTrackingID "
+                   + "WHERE a.usersID = ?";
+        try {
+            java.sql.Connection conn = db.openConnection();
+            java.sql.PreparedStatement pstmt = conn.prepareStatement(sql);
+            pstmt.setInt(1, employeeId);
+            return pstmt.executeQuery();
+        } catch (java.sql.SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
 }

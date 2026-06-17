@@ -50,9 +50,9 @@ public class Manager_Dashboard extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         OrderTable = new javax.swing.JTable();
-        recent_orders = new javax.swing.JPanel();
-        recentOrderValue = new javax.swing.JLabel();
-        recent_orders_text = new javax.swing.JLabel();
+        total_orders = new javax.swing.JPanel();
+        total_orders_value = new javax.swing.JLabel();
+        total_orders_text = new javax.swing.JLabel();
         Pending_shipments = new javax.swing.JPanel();
         pending_shipments_text = new javax.swing.JLabel();
         pending_shipments_Value = new javax.swing.JLabel();
@@ -217,26 +217,27 @@ public class Manager_Dashboard extends javax.swing.JFrame {
         MainPanel.add(jScrollPane1);
         jScrollPane1.setBounds(240, 324, 750, 250);
 
-        recent_orders.setLayout(null);
+        total_orders.setVerifyInputWhenFocusTarget(false);
+        total_orders.setLayout(null);
 
-        recentOrderValue.setBackground(new java.awt.Color(238, 238, 238));
-        recentOrderValue.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        recentOrderValue.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        recentOrderValue.setText("0");
-        recentOrderValue.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        recent_orders.add(recentOrderValue);
-        recentOrderValue.setBounds(140, 0, 50, 60);
+        total_orders_value.setBackground(new java.awt.Color(238, 238, 238));
+        total_orders_value.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        total_orders_value.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        total_orders_value.setText("0");
+        total_orders_value.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        total_orders.add(total_orders_value);
+        total_orders_value.setBounds(140, 0, 50, 60);
 
-        recent_orders_text.setBackground(new java.awt.Color(238, 238, 238));
-        recent_orders_text.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        recent_orders_text.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        recent_orders_text.setText("Recent Orders");
-        recent_orders_text.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        recent_orders.add(recent_orders_text);
-        recent_orders_text.setBounds(0, 0, 140, 60);
+        total_orders_text.setBackground(new java.awt.Color(238, 238, 238));
+        total_orders_text.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        total_orders_text.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        total_orders_text.setText("Total Orders");
+        total_orders_text.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        total_orders.add(total_orders_text);
+        total_orders_text.setBounds(0, 0, 140, 60);
 
-        MainPanel.add(recent_orders);
-        recent_orders.setBounds(480, 120, 190, 60);
+        MainPanel.add(total_orders);
+        total_orders.setBounds(250, 120, 190, 60);
 
         Pending_shipments.setLayout(null);
 
@@ -278,7 +279,7 @@ public class Manager_Dashboard extends javax.swing.JFrame {
         activeShipmentValue2.setBounds(140, 0, 50, 60);
 
         MainPanel.add(Active_orders);
-        Active_orders.setBounds(250, 120, 190, 60);
+        Active_orders.setBounds(480, 120, 190, 60);
 
         Delivered_shipments.setVerifyInputWhenFocusTarget(false);
         Delivered_shipments.setLayout(null);
@@ -403,11 +404,11 @@ public class Manager_Dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel pending_shipments_Value;
     private javax.swing.JLabel pending_shipments_text;
     private javax.swing.JLabel profile;
-    private javax.swing.JLabel recentOrderValue;
-    private javax.swing.JPanel recent_orders;
-    private javax.swing.JLabel recent_orders_text;
     private javax.swing.JPanel sidebar;
     private javax.swing.JPanel topbar;
+    private javax.swing.JPanel total_orders;
+    private javax.swing.JLabel total_orders_text;
+    private javax.swing.JLabel total_orders_value;
     private javax.swing.JLabel user_role;
     private javax.swing.JLabel username;
     // End of variables declaration//GEN-END:variables
@@ -427,6 +428,16 @@ public class Manager_Dashboard extends javax.swing.JFrame {
 public void addMyProfileListener(java.awt.event.ActionListener listener) {
        
         MyProfile.addActionListener(listener); 
+    }
+
+public void addWorkloadListener(java.awt.event.ActionListener listener) {
+       
+        WorkLoad.addActionListener(listener); 
+    }
+
+        public void addActiveOrdersListener(java.awt.event.ActionListener listener) {
+       
+        ActiveOrders.addActionListener(listener); 
     }
 
     public void addManageUserListener(java.awt.event.ActionListener listener) {

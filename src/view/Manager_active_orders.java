@@ -32,7 +32,7 @@ public class Manager_active_orders extends javax.swing.JFrame {
         Topbar = new javax.swing.JPanel();
         username = new javax.swing.JLabel();
         user_role = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        profile = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         OrderTable = new javax.swing.JTable();
         filter = new javax.swing.JButton();
@@ -48,10 +48,8 @@ public class Manager_active_orders extends javax.swing.JFrame {
         MyProfile = new javax.swing.JButton();
         jSeparator2 = new javax.swing.JSeparator();
         logout = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1050, 600));
 
         MainPanel.setBackground(new java.awt.Color(238, 233, 223));
         MainPanel.setPreferredSize(new java.awt.Dimension(1050, 600));
@@ -69,9 +67,9 @@ public class Manager_active_orders extends javax.swing.JFrame {
         Topbar.add(user_role);
         user_role.setBounds(770, 40, 37, 16);
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/pfp.jpg"))); // NOI18N
-        Topbar.add(jLabel3);
-        jLabel3.setBounds(700, 5, 60, 60);
+        profile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/pfp.jpg"))); // NOI18N
+        Topbar.add(profile);
+        profile.setBounds(700, 5, 60, 60);
 
         MainPanel.add(Topbar);
         Topbar.setBounds(180, 0, 870, 75);
@@ -167,8 +165,7 @@ public class Manager_active_orders extends javax.swing.JFrame {
                 .addGroup(sidebarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Dashboard, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(sidebarLayout.createSequentialGroup()
-                        .addComponent(jLabel4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(6, 6, 6)
                         .addComponent(logout, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(6, 6, 6))
                     .addComponent(logo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE)
@@ -204,14 +201,9 @@ public class Manager_active_orders extends javax.swing.JFrame {
                 .addComponent(MyProfile, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(sidebarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(sidebarLayout.createSequentialGroup()
-                        .addGap(45, 45, 45)
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(sidebarLayout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(logout, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(logout, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(23, Short.MAX_VALUE))
         );
 
         MainPanel.add(sidebar);
@@ -271,16 +263,56 @@ public class Manager_active_orders extends javax.swing.JFrame {
     private javax.swing.JPanel Topbar;
     private javax.swing.JButton WorkLoad;
     private javax.swing.JButton filter;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JLabel logo;
     private javax.swing.JButton logout;
     private javax.swing.JButton manage_order;
+    private javax.swing.JLabel profile;
     private javax.swing.JPanel sidebar;
     private javax.swing.JLabel user_role;
     private javax.swing.JLabel username;
     // End of variables declaration//GEN-END:variables
+
+public void setUsernameLabel(String name) {
+        username.setText(name); 
+    }
+
+    public void setRoleLabel(String role) {
+        user_role.setText(role); 
+    }
+
+    public void addDashboardListener(java.awt.event.ActionListener listener) {
+        Dashboard.addActionListener(listener); 
+    }
+
+    public void addLogoutListener(java.awt.event.ActionListener listener) {
+        logout.addActionListener(listener); 
+    }
+
+
+
+// =========================================================================
+    // TABLE SETUP (DIRECT INJECTION)
+    // =========================================================================
+
+    public void clearTable() {
+        ((javax.swing.table.DefaultTableModel)OrderTable.getModel()).setRowCount(0);
+    }
+
+    public void addTableRow(Object[] rowData) {
+        ((javax.swing.table.DefaultTableModel)OrderTable.getModel()).addRow(rowData);
+    }
+
+    // =========================================================================
+    // BUTTON LISTENERS
+    // =========================================================================
+    
+    public void addFilterListener(java.awt.event.ActionListener listener) {
+        // NOTE: Replace 'jButton1' or 'FilterBtn' with whatever you actually named 
+        // the Filter button in your NetBeans Design tab!
+        filter.addActionListener(listener); 
+    }
+
 }

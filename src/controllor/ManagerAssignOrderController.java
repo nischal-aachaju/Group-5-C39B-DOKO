@@ -32,6 +32,8 @@ public class ManagerAssignOrderController {
         this.assignView = assignView;
         this.currentUser = currentUser;
         
+        this.assignView.setUsernameLabel(currentUser.getUsername());
+        this.assignView.setRoleLabel(currentUser.getRole());
         // 1. Reset the label by default
         this.assignView.setEmployeeNameLabel("---");
         

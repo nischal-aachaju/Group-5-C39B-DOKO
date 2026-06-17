@@ -428,9 +428,6 @@ public void addMyProfileListener(java.awt.event.ActionListener listener) {
        
         MyProfile.addActionListener(listener); 
     }
-// =========================================================================
-    // EXPOSE UI BUTTONS TO THE CONTROLLER
-    // =========================================================================
 
     public void addManageUserListener(java.awt.event.ActionListener listener) {
         // NOTE: If your NetBeans variable is 'ManageUser1' due to copy-pasting, 
@@ -439,5 +436,9 @@ public void addMyProfileListener(java.awt.event.ActionListener listener) {
     }
 public void addManageOrdersListener(java.awt.event.ActionListener listener) {
     manage_order.addActionListener(listener); 
+}
+
+public void addAssiggnedOrdersListener(java.awt.event.ActionListener listener) {
+    AssignOrder.addActionListener(listener); 
 }
 }

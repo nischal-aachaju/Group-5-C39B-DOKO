@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package assigedorderview;
+package view;
 
 /**
  *
@@ -12,11 +12,9 @@ public class assignedorder extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(assignedorder.class.getName());
 
-    /**
-     * Creates new form assignedorder
-     */
     public assignedorder() {
         initComponents();
+        ((javax.swing.table.DefaultTableModel)jTable1.getModel()).setRowCount(0);
     }
 
     /**
@@ -29,13 +27,7 @@ public class assignedorder extends javax.swing.JFrame {
     private void initComponents() {
 
         MainPanel = new javax.swing.JPanel();
-        jPanel1 = new javax.swing.JPanel();
-        Entered_emp_id = new javax.swing.JLabel();
-        Entered_emp_id_search_btn = new javax.swing.JButton();
-        jPanel2 = new javax.swing.JPanel();
-        jPanel3 = new javax.swing.JPanel();
-        jPanel6 = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
+        Name = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         top_bar_panel = new javax.swing.JPanel();
@@ -52,9 +44,11 @@ public class assignedorder extends javax.swing.JFrame {
         MyProfile = new javax.swing.JButton();
         jSeparator4 = new javax.swing.JSeparator();
         logout = new javax.swing.JButton();
-        jLabel19 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
         dashboard = new javax.swing.JButton();
+        Entered_emp_id = new javax.swing.JTextField();
+        Entered_emp_id_search_btn = new javax.swing.JButton();
+        Assigned = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -62,108 +56,32 @@ public class assignedorder extends javax.swing.JFrame {
         MainPanel.setPreferredSize(new java.awt.Dimension(1050, 600));
         MainPanel.setLayout(null);
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-
-        Entered_emp_id.setText("# Enter employee ID");
-
-        Entered_emp_id_search_btn.setText("Search");
-        Entered_emp_id_search_btn.addActionListener(this::Entered_emp_id_search_btnActionPerformed);
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addComponent(Entered_emp_id, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 161, Short.MAX_VALUE)
-                .addComponent(Entered_emp_id_search_btn)
-                .addContainerGap())
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Entered_emp_id)
-                    .addComponent(Entered_emp_id_search_btn))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        MainPanel.add(jPanel1);
-        jPanel1.setBounds(220, 110, 386, 35);
-
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
-
-        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-        jPanel6.setLayout(jPanel6Layout);
-        jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        jPanel6Layout.setVerticalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap(256, Short.MAX_VALUE)
-                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-
-        MainPanel.add(jPanel2);
-        jPanel2.setBounds(181, 731, 262, 0);
-
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel4.setText("Employee name :Ram");
-        MainPanel.add(jLabel4);
-        jLabel4.setBounds(220, 180, 241, 17);
+        Name.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        Name.setText("Employee name :Ram");
+        MainPanel.add(Name);
+        Name.setBounds(220, 180, 241, 17);
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
+
             },
             new String [] {
-                "Assign", "Order Id", "Receiver Name", "Contact", "Email", "Address", "CDO"
+                "Assign", "Tracking Id", "Receiver Name", "Contact", "Email", "Address", "CDO"
             }
         ) {
             Class[] types = new Class [] {
                 java.lang.Boolean.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
+            boolean[] canEdit = new boolean [] {
+                true, false, true, true, true, true, true
+            };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
             }
         });
         jTable1.setRowHeight(40);
@@ -172,7 +90,7 @@ public class assignedorder extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTable1);
 
         MainPanel.add(jScrollPane1);
-        jScrollPane1.setBounds(200, 210, 797, 402);
+        jScrollPane1.setBounds(200, 210, 797, 380);
 
         top_bar_panel.setLayout(null);
 
@@ -193,107 +111,88 @@ public class assignedorder extends javax.swing.JFrame {
         top_bar_panel.setBounds(180, 0, 870, 70);
 
         sidebar1.setBackground(new java.awt.Color(33, 38, 49));
+        sidebar1.setLayout(null);
+        sidebar1.add(jSeparator3);
+        jSeparator3.setBounds(0, 76, 180, 3);
 
         ManageUser.setBackground(new java.awt.Color(33, 38, 49));
         ManageUser.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
         ManageUser.setForeground(new java.awt.Color(255, 255, 255));
         ManageUser.setText("Manage User");
+        sidebar1.add(ManageUser);
+        ManageUser.setBounds(6, 146, 168, 57);
 
         WorkLoad.setBackground(new java.awt.Color(33, 38, 49));
         WorkLoad.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
         WorkLoad.setForeground(new java.awt.Color(255, 255, 255));
         WorkLoad.setText("Workload");
+        sidebar1.add(WorkLoad);
+        WorkLoad.setBounds(6, 209, 168, 50);
 
         ActiveOrders.setBackground(new java.awt.Color(33, 38, 49));
         ActiveOrders.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
         ActiveOrders.setForeground(new java.awt.Color(255, 255, 255));
         ActiveOrders.setText("Active Orders");
+        sidebar1.add(ActiveOrders);
+        ActiveOrders.setBounds(6, 265, 168, 50);
 
         ManageOrder.setBackground(new java.awt.Color(33, 38, 49));
         ManageOrder.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
         ManageOrder.setForeground(new java.awt.Color(255, 255, 255));
         ManageOrder.setText("Manage Order");
+        sidebar1.add(ManageOrder);
+        ManageOrder.setBounds(6, 321, 168, 50);
 
         AssignOrder.setBackground(new java.awt.Color(216, 140, 81));
         AssignOrder.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
         AssignOrder.setForeground(new java.awt.Color(255, 255, 255));
         AssignOrder.setText("Assign Orders");
+        sidebar1.add(AssignOrder);
+        AssignOrder.setBounds(6, 377, 168, 50);
 
         MyProfile.setBackground(new java.awt.Color(33, 38, 49));
         MyProfile.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
         MyProfile.setForeground(new java.awt.Color(255, 255, 255));
         MyProfile.setText("My Profile");
+        sidebar1.add(MyProfile);
+        MyProfile.setBounds(6, 433, 168, 50);
+        sidebar1.add(jSeparator4);
+        jSeparator4.setBounds(0, 530, 180, 10);
 
         logout.setBackground(new java.awt.Color(33, 38, 49));
         logout.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
         logout.setForeground(new java.awt.Color(255, 51, 51));
         logout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/logout.png"))); // NOI18N
         logout.setText("Logout");
+        sidebar1.add(logout);
+        logout.setBounds(6, 540, 168, 53);
 
         jLabel20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/logo.png"))); // NOI18N
+        sidebar1.add(jLabel20);
+        jLabel20.setBounds(6, 6, 174, 64);
 
         dashboard.setBackground(new java.awt.Color(33, 38, 49));
         dashboard.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
         dashboard.setForeground(new java.awt.Color(255, 255, 255));
         dashboard.setText("Dashboard");
-
-        javax.swing.GroupLayout sidebar1Layout = new javax.swing.GroupLayout(sidebar1);
-        sidebar1.setLayout(sidebar1Layout);
-        sidebar1Layout.setHorizontalGroup(
-            sidebar1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jSeparator4)
-            .addComponent(jSeparator3)
-            .addGroup(sidebar1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(sidebar1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel20, javax.swing.GroupLayout.DEFAULT_SIZE, 174, Short.MAX_VALUE)
-                    .addGroup(sidebar1Layout.createSequentialGroup()
-                        .addComponent(logout, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel19))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, sidebar1Layout.createSequentialGroup()
-                        .addGroup(sidebar1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(dashboard, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(MyProfile, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(AssignOrder, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(ManageOrder, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(ActiveOrders, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(WorkLoad, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(ManageUser, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addContainerGap())))
-        );
-        sidebar1Layout.setVerticalGroup(
-            sidebar1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(sidebar1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(dashboard, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(ManageUser, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(WorkLoad, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(ActiveOrders, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(ManageOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(AssignOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(MyProfile, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(86, 86, 86)
-                .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(sidebar1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(logout, javax.swing.GroupLayout.DEFAULT_SIZE, 53, Short.MAX_VALUE)
-                    .addComponent(jLabel19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
-        );
+        sidebar1.add(dashboard);
+        dashboard.setBounds(6, 85, 168, 55);
 
         MainPanel.add(sidebar1);
-        sidebar1.setBounds(0, 0, 180, 644);
+        sidebar1.setBounds(0, 0, 180, 610);
+
+        Entered_emp_id.setText("Enter Employee ID (eg:3232)");
+        MainPanel.add(Entered_emp_id);
+        Entered_emp_id.setBounds(220, 120, 310, 30);
+
+        Entered_emp_id_search_btn.setText("Search");
+        Entered_emp_id_search_btn.addActionListener(this::Entered_emp_id_search_btnActionPerformed);
+        MainPanel.add(Entered_emp_id_search_btn);
+        Entered_emp_id_search_btn.setBounds(530, 120, 72, 30);
+
+        Assigned.setText("Assigned");
+        MainPanel.add(Assigned);
+        Assigned.setBounds(880, 160, 110, 30);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -341,21 +240,17 @@ public class assignedorder extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ActiveOrders;
     private javax.swing.JButton AssignOrder;
-    private javax.swing.JLabel Entered_emp_id;
+    private javax.swing.JButton Assigned;
+    private javax.swing.JTextField Entered_emp_id;
     private javax.swing.JButton Entered_emp_id_search_btn;
     private javax.swing.JPanel MainPanel;
     private javax.swing.JButton ManageOrder;
     private javax.swing.JButton ManageUser;
     private javax.swing.JButton MyProfile;
+    private javax.swing.JLabel Name;
     private javax.swing.JButton WorkLoad;
     private javax.swing.JButton dashboard;
-    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
@@ -367,4 +262,77 @@ public class assignedorder extends javax.swing.JFrame {
     private javax.swing.JLabel user_role;
     private javax.swing.JLabel username;
     // End of variables declaration//GEN-END:variables
+ 
+    
+    public void setUsernameLabel(String name) {
+        username.setText(name);
+    }
+
+    public void setRoleLabel(String role) {
+        user_role.setText(role);
+    }
+    
+    public String getSearchId() {
+        return Entered_emp_id.getText().trim(); 
+    }
+
+    public void setEmployeeNameLabel(String employeeName) {
+        Name.setText("Employee name : " + employeeName);
+    }
+
+    public void addSearchListener(java.awt.event.ActionListener listener) {
+        Entered_emp_id_search_btn.addActionListener(listener);
+    }
+
+    // =========================================================================
+    // TABLE SETUP AND LISTENER
+    // =========================================================================
+
+public void setupTable(Object[][] data) {
+        String[] columnNames = {"Assign", "Tracking Id", "Receiver Name", "Contact", "Email", "Address", "CDO"};
+        
+        javax.swing.table.DefaultTableModel model = new javax.swing.table.DefaultTableModel(data, columnNames) {
+            @Override
+            public Class<?> getColumnClass(int columnIndex) {
+                // This is the magic fix! ONLY Column 0 (the first one) is allowed to be a Checkbox.
+                if (columnIndex == 0) {
+                    return Boolean.class; 
+                }
+                // Everything else (names, emails, IDs) stays as normal Text.
+                return String.class;
+            }
+
+            @Override
+            public boolean isCellEditable(int row, int column) {
+                return column == 0; // Only the Checkbox is clickable
+            }
+        };
+        
+        jTable1.setModel(model);
+    }
+public void clearTable() {
+        // Wipes the table clean before loading new data
+        ((javax.swing.table.DefaultTableModel)jTable1.getModel()).setRowCount(0);
+    }
+
+    public void addTableRow(Object[] rowData) {
+        // Adds a single row of data directly into your perfectly configured UI table
+        ((javax.swing.table.DefaultTableModel)jTable1.getModel()).addRow(rowData);
+    }
+
+    public void addTableCheckboxListener(javax.swing.event.TableModelListener listener) {
+        jTable1.getModel().addTableModelListener(listener);
+    }
+    
+    public javax.swing.table.DefaultTableModel getTableModel() {
+        return (javax.swing.table.DefaultTableModel) jTable1.getModel();
+    }
+    public void addSubmitAssignmentListener(java.awt.event.ActionListener listener) {
+        
+        Assigned.addActionListener(listener); 
+    }
+
+    public void addDashboardListener(java.awt.event.ActionListener listener) {
+        dashboard.addActionListener(listener);
+    }
 }

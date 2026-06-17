@@ -32,6 +32,8 @@ public class ManageUserController {
         
         // 4. Connect Navigation
         this.manageView.addDashboardListener(new OpenDashboardListener());
+        this.manageView.addLogoutListener(new LogoutListener());
+        this.manageView.addMyProfileListener(new OpenManagerProfileListener());
     }
 
     public void open() {
@@ -150,6 +152,34 @@ public class ManageUserController {
             close(); 
             view.Manager_Dashboard dashboardView = new view.Manager_Dashboard();
             new controllor.ManagerController(dashboardView, currentUser).open();
+        }
+    }
+        class LogoutListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            // 1. Close the manager dashboard
+            close(); 
+            
+            // 2. Re-open the Login window safely
+            view.login loginView = new view.login();
+            controllor.LoginController loginController = new controllor.LoginController(loginView);
+            loginController.open();
+        }
+    }
+        class OpenManagerProfileListener implements java.awt.event.ActionListener {
+        @Override
+        public void actionPerformed(java.awt.event.ActionEvent e) {
+            // 1. Close the current Manager Dashboard
+            close(); 
+            
+            // 2. Create the exact Manager Profile View
+            view.Manager_profileEdit profileView = new view.Manager_profileEdit();
+            
+            // 3. Pass it entirely to your dedicated Manager Profile Controller
+            controllor.Manager_ProfileController profileController = new controllor.Manager_ProfileController(profileView, currentUser);
+            
+            // 4. Open the profile page!
+            profileController.open();
         }
     }
 }

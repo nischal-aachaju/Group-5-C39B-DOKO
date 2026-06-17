@@ -34,6 +34,7 @@ public class ManagerController {
         this.managerView.addMyProfileListener(new OpenManagerProfileListener());
         this.managerView.addManageUserListener(new OpenManageUserListener());
         this.managerView.addManageOrdersListener(new OpenManageOrdersListener());
+        this.managerView.addAssiggnedOrdersListener(new OpenAssiggnedrdersListener() );
     }
 
     public void open() {
@@ -115,6 +116,22 @@ public class ManagerController {
             
             // 4. Open the Manager Order Edit page!
             managerOrderEditController.open();
+        }
+    }
+    class OpenAssiggnedrdersListener implements java.awt.event.ActionListener {
+        @Override
+        public void actionPerformed(java.awt.event.ActionEvent e) {
+            // 1. Close the current Manager Dashboard
+            close(); 
+            
+            // 2. Create the Manager Order Edit View
+            view.assignedorder assignedorderView = new view.assignedorder();
+            
+            // 3. Fixed spelling from "controller" to "controllor" to perfectly match your package structure
+            controllor.ManagerAssignOrderController managerAssignOrderController = new controllor.ManagerAssignOrderController(assignedorderView, currentUser);
+            
+            // 4. Open the Manager Order Edit page!
+            managerAssignOrderController.open();
         }
     }
 }

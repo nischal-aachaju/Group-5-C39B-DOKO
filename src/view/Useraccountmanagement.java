@@ -35,12 +35,12 @@ public class Useraccountmanagement extends javax.swing.JFrame {
         ActiveOrders1 = new javax.swing.JButton();
         jButton11 = new javax.swing.JButton();
         AssignOrder1 = new javax.swing.JButton();
-        MyProfile1 = new javax.swing.JButton();
+        MyProfile = new javax.swing.JButton();
         jSeparator4 = new javax.swing.JSeparator();
-        logout1 = new javax.swing.JButton();
+        logout = new javax.swing.JButton();
         jLabel19 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
-        dashboard = new javax.swing.JButton();
+        Dashboard = new javax.swing.JButton();
         edit_of_email_and_number_panel = new javax.swing.JPanel();
         employee_ID = new javax.swing.JLabel();
         employee_details = new javax.swing.JLabel();
@@ -99,23 +99,23 @@ public class Useraccountmanagement extends javax.swing.JFrame {
         AssignOrder1.setForeground(new java.awt.Color(255, 255, 255));
         AssignOrder1.setText("Assign Orders");
 
-        MyProfile1.setBackground(new java.awt.Color(33, 38, 49));
-        MyProfile1.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
-        MyProfile1.setForeground(new java.awt.Color(255, 255, 255));
-        MyProfile1.setText("My Profile");
+        MyProfile.setBackground(new java.awt.Color(33, 38, 49));
+        MyProfile.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
+        MyProfile.setForeground(new java.awt.Color(255, 255, 255));
+        MyProfile.setText("My Profile");
 
-        logout1.setBackground(new java.awt.Color(33, 38, 49));
-        logout1.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
-        logout1.setForeground(new java.awt.Color(255, 51, 51));
-        logout1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/logout.png"))); // NOI18N
-        logout1.setText("Logout");
+        logout.setBackground(new java.awt.Color(33, 38, 49));
+        logout.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
+        logout.setForeground(new java.awt.Color(255, 51, 51));
+        logout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/logout.png"))); // NOI18N
+        logout.setText("Logout");
 
         jLabel20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/logo.png"))); // NOI18N
 
-        dashboard.setBackground(new java.awt.Color(33, 38, 49));
-        dashboard.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
-        dashboard.setForeground(new java.awt.Color(255, 255, 255));
-        dashboard.setText("Dashboard");
+        Dashboard.setBackground(new java.awt.Color(33, 38, 49));
+        Dashboard.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
+        Dashboard.setForeground(new java.awt.Color(255, 255, 255));
+        Dashboard.setText("Dashboard");
 
         javax.swing.GroupLayout sidebar1Layout = new javax.swing.GroupLayout(sidebar1);
         sidebar1.setLayout(sidebar1Layout);
@@ -128,13 +128,13 @@ public class Useraccountmanagement extends javax.swing.JFrame {
                 .addGroup(sidebar1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel20, javax.swing.GroupLayout.DEFAULT_SIZE, 174, Short.MAX_VALUE)
                     .addGroup(sidebar1Layout.createSequentialGroup()
-                        .addComponent(logout1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(logout, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel19))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, sidebar1Layout.createSequentialGroup()
                         .addGroup(sidebar1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(dashboard, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(MyProfile1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(Dashboard, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(MyProfile, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(AssignOrder1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jButton11, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(ActiveOrders1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -150,7 +150,7 @@ public class Useraccountmanagement extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(dashboard, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Dashboard, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(ManageUser1, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -162,12 +162,12 @@ public class Useraccountmanagement extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(AssignOrder1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(MyProfile1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(MyProfile, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(86, 86, 86)
                 .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(sidebar1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(logout1, javax.swing.GroupLayout.DEFAULT_SIZE, 53, Short.MAX_VALUE)
+                    .addComponent(logout, javax.swing.GroupLayout.DEFAULT_SIZE, 53, Short.MAX_VALUE)
                     .addComponent(jLabel19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -317,6 +317,7 @@ public class Useraccountmanagement extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ActiveOrders1;
     private javax.swing.JButton AssignOrder1;
+    private javax.swing.JButton Dashboard;
     private javax.swing.JButton Dashboard1;
     private javax.swing.JLabel Employee_Email;
     private javax.swing.JLabel Employee_Email_value;
@@ -327,9 +328,8 @@ public class Useraccountmanagement extends javax.swing.JFrame {
     private javax.swing.JLabel Employee_Phone_value;
     private javax.swing.JPanel MainPanel1;
     private javax.swing.JButton ManageUser1;
-    private javax.swing.JButton MyProfile1;
+    private javax.swing.JButton MyProfile;
     private javax.swing.JButton WorkLoad1;
-    private javax.swing.JButton dashboard;
     private javax.swing.JButton editBtn;
     private javax.swing.JPanel edit_of_email_and_number_panel;
     private javax.swing.JLabel employee_ID;
@@ -340,7 +340,7 @@ public class Useraccountmanagement extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel20;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
-    private javax.swing.JButton logout1;
+    private javax.swing.JButton logout;
     private javax.swing.JLabel profile;
     private javax.swing.JButton savebtn;
     private javax.swing.JButton search_id;
@@ -390,6 +390,12 @@ public class Useraccountmanagement extends javax.swing.JFrame {
     }
     
     public void addDashboardListener(java.awt.event.ActionListener listener) {
-        Dashboard1.addActionListener(listener); 
+        Dashboard.addActionListener(listener); 
+    }
+    public void addLogoutListener(java.awt.event.ActionListener listener) {
+        logout.addActionListener(listener);
+    }
+    public void addMyProfileListener(java.awt.event.ActionListener listener) {
+        MyProfile.addActionListener(listener);
     }
 }

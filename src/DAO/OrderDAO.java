@@ -314,4 +314,51 @@ public class OrderDAO {
         
         return orderList;
     }
+    
+    // 1. Fetch all pending orders for the table
+    public java.sql.ResultSet getPendingOrders() {
+        // Assuming your status column is named 'status' and holds 'Pending'
+//        String sql = "SELECT tracking_id, recipient_name, status FROM orders WHERE status = 'Pending'";
+
+    String sql = "SELECT tracking_id, receiver_name, receiver_contact, receiver_email, receiver_location, total_cost FROM orders WHERE status = 'Pending'";
+        try {
+            java.sql.Connection conn = db.openConnection();
+            java.sql.PreparedStatement pstmt = conn.prepareStatement(sql);
+            return pstmt.executeQuery(); // The controller will read this and close it
+        } catch (java.sql.SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    // 2. Assign the order and update the order status
+    public boolean assignOrderToEmployee(int employeeId, String trackingId) {
+        String insertSql = "INSERT INTO assignedOrders (usersID, ordersTrackingID) VALUES (?, ?)";
+        String updateSql = "UPDATE orders SET status = 'intransit' WHERE tracking_id = ?";
+        
+        try (java.sql.Connection conn = db.openConnection()) {
+            // Start a transaction so both queries succeed, or neither do
+            conn.setAutoCommit(false); 
+            
+            // Insert into bridging table
+            try (java.sql.PreparedStatement insertStmt = conn.prepareStatement(insertSql)) {
+                insertStmt.setInt(1, employeeId);
+                insertStmt.setString(2, trackingId);
+                insertStmt.executeUpdate();
+            }
+            
+            // Update the main orders table status
+            try (java.sql.PreparedStatement updateStmt = conn.prepareStatement(updateSql)) {
+                updateStmt.setString(1, trackingId);
+                updateStmt.executeUpdate();
+            }
+            
+            conn.commit(); // Save changes!
+            return true;
+            
+        } catch (java.sql.SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
 }

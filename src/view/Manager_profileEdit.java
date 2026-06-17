@@ -40,7 +40,7 @@ public class Manager_profileEdit extends javax.swing.JFrame {
         ManageUser = new javax.swing.JButton();
         WorkLoad = new javax.swing.JButton();
         ActiveOrders = new javax.swing.JButton();
-        jButton10 = new javax.swing.JButton();
+        ManageOrder = new javax.swing.JButton();
         AssignOrder = new javax.swing.JButton();
         MyProfile = new javax.swing.JButton();
         jSeparator2 = new javax.swing.JSeparator();
@@ -123,10 +123,10 @@ public class Manager_profileEdit extends javax.swing.JFrame {
         ActiveOrders.setForeground(new java.awt.Color(255, 255, 255));
         ActiveOrders.setText("Active Orders");
 
-        jButton10.setBackground(new java.awt.Color(33, 38, 49));
-        jButton10.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
-        jButton10.setForeground(new java.awt.Color(255, 255, 255));
-        jButton10.setText("Manage Order");
+        ManageOrder.setBackground(new java.awt.Color(33, 38, 49));
+        ManageOrder.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
+        ManageOrder.setForeground(new java.awt.Color(255, 255, 255));
+        ManageOrder.setText("Manage Order");
 
         AssignOrder.setBackground(new java.awt.Color(33, 38, 49));
         AssignOrder.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
@@ -161,7 +161,7 @@ public class Manager_profileEdit extends javax.swing.JFrame {
                     .addComponent(ManageUser, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(WorkLoad, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(ActiveOrders, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(ManageOrder, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(AssignOrder, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(MyProfile, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
@@ -182,7 +182,7 @@ public class Manager_profileEdit extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(ActiveOrders, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(ManageOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(AssignOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -387,6 +387,7 @@ public class Manager_profileEdit extends javax.swing.JFrame {
     private javax.swing.JButton Dashboard;
     private javax.swing.JTextField EmailTextField;
     private javax.swing.JPanel MainPanel;
+    private javax.swing.JButton ManageOrder;
     private javax.swing.JButton ManageUser;
     private javax.swing.JLabel ManagerId;
     private javax.swing.JLabel ManagerLabel;
@@ -397,7 +398,6 @@ public class Manager_profileEdit extends javax.swing.JFrame {
     private javax.swing.JLabel addressLabel;
     private javax.swing.JButton editButton;
     private javax.swing.JLabel emailLabel;
-    private javax.swing.JButton jButton10;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
@@ -484,5 +484,25 @@ public class Manager_profileEdit extends javax.swing.JFrame {
     public void addLogoutListener(java.awt.event.ActionListener listener) {
         logout.addActionListener(listener); 
     }
-
+public void addManageUserListener(java.awt.event.ActionListener listener) {
+      ManageUser.addActionListener(listener);
+}
+public void addWorkloadListener(java.awt.event.ActionListener listener) {
+       
+        WorkLoad.addActionListener(listener); 
+    }
+public void addActiveOrdersListener(java.awt.event.ActionListener listener) {
+       
+        ActiveOrders.addActionListener(listener); 
+    }
+public void addMyProfileListener(java.awt.event.ActionListener listener) {
+       
+        MyProfile.addActionListener(listener); 
+    }
+public void addAssiggnedOrdersListener(java.awt.event.ActionListener listener) {
+    AssignOrder.addActionListener(listener); 
+}
+public void addManageOrdersListener(java.awt.event.ActionListener listener) {
+    ManageOrder.addActionListener(listener); 
+}
 }

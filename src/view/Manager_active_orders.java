@@ -290,8 +290,24 @@ public void setUsernameLabel(String name) {
     public void addLogoutListener(java.awt.event.ActionListener listener) {
         logout.addActionListener(listener); 
     }
+public void addManageUserListener(java.awt.event.ActionListener listener) {
+      ManageUser.addActionListener(listener);
+}
+public void addWorkloadListener(java.awt.event.ActionListener listener) {
+       
+        WorkLoad.addActionListener(listener); 
+    }
+public void addManageOrdersListener(java.awt.event.ActionListener listener) {
+    manage_order.addActionListener(listener); 
+}
 
-
+public void addAssiggnedOrdersListener(java.awt.event.ActionListener listener) {
+    AssignOrder.addActionListener(listener); 
+}
+public void addMyProfileListener(java.awt.event.ActionListener listener) {
+       
+        MyProfile.addActionListener(listener); 
+    }
 
 // =========================================================================
     // TABLE SETUP (DIRECT INJECTION)

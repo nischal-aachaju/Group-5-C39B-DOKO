@@ -440,6 +440,24 @@ public void addDashboardListener(java.awt.event.ActionListener listener) {
         Dashboard.addActionListener(listener);
     }
 
+public void addManageUserListener(java.awt.event.ActionListener listener) {
+      ManageUser.addActionListener(listener);
+}
+public void addWorkloadListener(java.awt.event.ActionListener listener) {
+       
+        WorkLoad.addActionListener(listener); 
+    }
+public void addActiveOrdersListener(java.awt.event.ActionListener listener) {
+       
+        ActiveOrders.addActionListener(listener); 
+    }
+public void addMyProfileListener(java.awt.event.ActionListener listener) {
+       
+        MyProfile.addActionListener(listener); 
+    }
+public void addAssiggnedOrdersListener(java.awt.event.ActionListener listener) {
+    AssignOrder.addActionListener(listener); 
+}
 // =========================================================================
     // GETTERS, SETTERS, AND LOCKING LOGIC
     // =========================================================================

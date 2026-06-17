@@ -95,9 +95,9 @@
                           <Group type="102" alignment="1" attributes="0">
                               <Group type="103" groupAlignment="1" attributes="0">
                                   <Component id="Dashboard" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="MyProfile" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="MyProfile1" alignment="0" max="32767" attributes="0"/>
                                   <Component id="AssignOrder1" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jButton11" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="ManageOrder1" alignment="0" max="32767" attributes="0"/>
                                   <Component id="ActiveOrders1" alignment="0" max="32767" attributes="0"/>
                                   <Component id="WorkLoad1" alignment="0" max="32767" attributes="0"/>
                                   <Component id="ManageUser1" max="32767" attributes="0"/>
@@ -124,11 +124,11 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="ActiveOrders1" min="-2" pref="50" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jButton11" min="-2" pref="50" max="-2" attributes="0"/>
+                      <Component id="ManageOrder1" min="-2" pref="50" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="AssignOrder1" min="-2" pref="50" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="MyProfile" min="-2" pref="50" max="-2" attributes="0"/>
+                      <Component id="MyProfile1" min="-2" pref="50" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="86" max="-2" attributes="0"/>
                       <Component id="jSeparator4" min="-2" pref="10" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
@@ -186,7 +186,7 @@
                 <Property name="text" type="java.lang.String" value="Active Orders"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton11">
+            <Component class="javax.swing.JButton" name="ManageOrder1">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="31" green="26" red="21" type="rgb"/>
@@ -214,7 +214,7 @@
                 <Property name="text" type="java.lang.String" value="Assign Orders"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="MyProfile">
+            <Component class="javax.swing.JButton" name="MyProfile1">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="31" green="26" red="21" type="rgb"/>

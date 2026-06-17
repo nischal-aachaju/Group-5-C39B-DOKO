@@ -335,4 +335,25 @@ public void clearTable() {
     public void addDashboardListener(java.awt.event.ActionListener listener) {
         dashboard.addActionListener(listener);
     }
+    public void addLogoutListener(java.awt.event.ActionListener listener) {
+        logout.addActionListener(listener);
+    }
+    public void addManageUserListener(java.awt.event.ActionListener listener) {
+      ManageUser.addActionListener(listener);
+}
+    public void addWorkloadListener(java.awt.event.ActionListener listener) {
+       
+        WorkLoad.addActionListener(listener); 
+    }
+public void addActiveOrdersListener(java.awt.event.ActionListener listener) {
+       
+        ActiveOrders.addActionListener(listener); 
+    }
+public void addManageOrdersListener(java.awt.event.ActionListener listener) {
+    ManageOrder.addActionListener(listener); 
+}
+public void addMyProfileListener(java.awt.event.ActionListener listener) {
+       
+        MyProfile.addActionListener(listener); 
+    }
 }

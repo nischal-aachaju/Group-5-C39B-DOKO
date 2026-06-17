@@ -153,7 +153,7 @@
                           <Component id="ManageUser" alignment="0" max="32767" attributes="0"/>
                           <Component id="WorkLoad" alignment="0" max="32767" attributes="0"/>
                           <Component id="ActiveOrders" alignment="0" max="32767" attributes="0"/>
-                          <Component id="jButton10" alignment="0" max="32767" attributes="0"/>
+                          <Component id="ManageOrder" alignment="0" max="32767" attributes="0"/>
                           <Component id="AssignOrder" max="32767" attributes="0"/>
                           <Component id="MyProfile" alignment="0" max="32767" attributes="0"/>
                       </Group>
@@ -177,7 +177,7 @@
                       <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                       <Component id="ActiveOrders" min="-2" pref="50" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-                      <Component id="jButton10" min="-2" pref="50" max="-2" attributes="0"/>
+                      <Component id="ManageOrder" min="-2" pref="50" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="AssignOrder" min="-2" pref="50" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
@@ -257,7 +257,7 @@
                 <Property name="text" type="java.lang.String" value="Active Orders"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton10">
+            <Component class="javax.swing.JButton" name="ManageOrder">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="31" green="26" red="21" type="rgb"/>

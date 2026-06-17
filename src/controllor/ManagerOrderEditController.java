@@ -1,12 +1,14 @@
 package controllor;
 
 import Model.userData;
+
 import java.awt.Window;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.ResultSet;
 import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
+
 
 public class ManagerOrderEditController {
 
@@ -32,6 +34,12 @@ public class ManagerOrderEditController {
         this.view.addLogoutListener(new LogoutListener());
         this.view.addDashboardListener(new DashboardListener());
         this.view.addReturnOrderListener(new ReturnOrderListener()); // Assuming Return goes to dashboard
+         this.view.addManageUserListener(new OpenManageUserListener());
+         this.view.addWorkloadListener(new OpenWorkloadListener() );
+         this.view.addActiveOrdersListener(new OpenActiveOrdersListener() );
+         this.view.addMyProfileListener(new OpenManagerProfileListener());
+         this.view.addAssiggnedOrdersListener(new OpenAssiggnedrdersListener() );
+
     }
 
     public void open() {
@@ -135,6 +143,7 @@ public class ManagerOrderEditController {
                 JOptionPane.showMessageDialog(view, "Total Cost must be a valid number.");
             }
         }
+       
     }
 
     // =========================================================================
@@ -158,7 +167,86 @@ public class ManagerOrderEditController {
             new controllor.ManagerController(dashboardView, currentUser).open();
         }
     }
-    // =========================================================================
+     class OpenManageUserListener implements java.awt.event.ActionListener {
+        @Override
+        public void actionPerformed(java.awt.event.ActionEvent e) {
+            close(); 
+            
+            // 2. Create the User Management View
+            view.Useraccountmanagement manageUserView = new view.Useraccountmanagement();
+            
+            // 3. Pass it entirely to your dedicated Manage User Controller
+            controllor.ManageUserController manageUserController = new controllor.ManageUserController(manageUserView, currentUser);
+            
+            // 4. Open the User Management page!
+            manageUserController.open();
+        }
+    }
+     class OpenWorkloadListener implements java.awt.event.ActionListener {
+        @Override
+        public void actionPerformed(java.awt.event.ActionEvent e) {
+            // 1. Close the current Manager Dashboard
+            close(); 
+            
+            // 2. Create the Manager Order Edit View
+            view.Manager_Workload WorkloadView = new view.Manager_Workload();
+            
+            // 3. Fixed spelling from "controller" to "controllor" to perfectly match your package structure
+            controllor.ManagerWorkloadController managerAssignOrderController = new controllor.ManagerWorkloadController(WorkloadView, currentUser);
+            
+            // 4. Open the Manager Order Edit page!
+            managerAssignOrderController.open();
+        }
+    }
+     class OpenActiveOrdersListener implements java.awt.event.ActionListener {
+        @Override
+        public void actionPerformed(java.awt.event.ActionEvent e) {
+            // 1. Close the current Manager Dashboard
+            close(); 
+            
+            // 2. Create the Manager Order Edit View
+            view.Manager_active_orders activeorderView = new view.Manager_active_orders();
+            
+            // 3. Fixed spelling from "controller" to "controllor" to perfectly match your package structure
+            controllor.ManagerActiveOrdersController managerAssignOrderController = new controllor.ManagerActiveOrdersController(activeorderView, currentUser);
+            
+            // 4. Open the Manager Order Edit page!
+            managerAssignOrderController.open();
+        }
+    }
+class OpenAssiggnedrdersListener implements java.awt.event.ActionListener {
+        @Override
+        public void actionPerformed(java.awt.event.ActionEvent e) {
+            // 1. Close the current Manager Dashboard
+            close(); 
+            
+            // 2. Create the Manager Order Edit View
+            view.assignedorder assignedorderView = new view.assignedorder();
+            
+            // 3. Fixed spelling from "controller" to "controllor" to perfectly match your package structure
+            controllor.ManagerAssignOrderController managerAssignOrderController = new controllor.ManagerAssignOrderController(assignedorderView, currentUser);
+            
+            // 4. Open the Manager Order Edit page!
+            managerAssignOrderController.open();
+        }
+    }
+ class OpenManagerProfileListener implements java.awt.event.ActionListener {
+        @Override
+        public void actionPerformed(java.awt.event.ActionEvent e) {
+            // 1. Close the current Manager Dashboard
+            close(); 
+            
+            // 2. Create the exact Manager Profile View
+            view.Manager_profileEdit profileView = new view.Manager_profileEdit();
+            
+            // 3. Pass it entirely to your dedicated Manager Profile Controller
+            controllor.Manager_ProfileController profileController = new controllor.Manager_ProfileController(profileView, currentUser);
+            
+            // 4. Open the profile page!
+            profileController.open();
+        }
+    }
+        // =========================================================================
     // RETURN ORDER STATUS LOGIC
     // =========================================================================
 

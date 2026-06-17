@@ -446,5 +446,62 @@ public class OrderDAO {
             return null;
         }
     }
+// =========================================================================
+    // MANAGER: EDIT ORDER METHODS
+    // =========================================================================
 
+    // 1. Fetch a single order by Tracking ID
+    public java.sql.ResultSet getOrderByTrackingId(String trackingId) {
+        String sql = "SELECT receiver_name, receiver_email, receiver_contact, street, receiver_location, total_cost FROM orders WHERE tracking_id = ?";
+        try {
+            java.sql.Connection conn = db.openConnection();
+            java.sql.PreparedStatement pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1, trackingId);
+            return pstmt.executeQuery(); // Controller will handle closing this
+        } catch (java.sql.SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    // 2. Update the specific editable fields
+    public boolean updateOrderDetails(String trackingId, String name, String contact, String address, double totalCost) {
+        String sql = "UPDATE orders SET receiver_name = ?, receiver_contact = ?, receiver_location = ?, total_cost = ? WHERE tracking_id = ?";
+        
+        try (java.sql.Connection conn = db.openConnection();
+             java.sql.PreparedStatement pstmt = conn.prepareStatement(sql)) {
+             
+            pstmt.setString(1, name);
+            pstmt.setString(2, contact);
+            pstmt.setString(3, address);
+            pstmt.setDouble(4, totalCost);
+            pstmt.setString(5, trackingId);
+            
+            return pstmt.executeUpdate() > 0;
+            
+        } catch (java.sql.SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+    // =========================================================================
+    // UPDATE ORDER STATUS
+    // =========================================================================
+
+    public boolean updateOrderStatus(String trackingId, String newStatus) {
+        String sql = "UPDATE orders SET status = ? WHERE tracking_id = ?";
+        
+        try (java.sql.Connection conn = db.openConnection();
+             java.sql.PreparedStatement pstmt = conn.prepareStatement(sql)) {
+             
+            pstmt.setString(1, newStatus);
+            pstmt.setString(2, trackingId);
+            
+            return pstmt.executeUpdate() > 0;
+            
+        } catch (java.sql.SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
 }

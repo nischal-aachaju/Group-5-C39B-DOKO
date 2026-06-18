@@ -111,6 +111,29 @@ public userData loginUser(String username, String password) {
             return false;
         }
     }
+    // =========================================================================
+    // UPDATE PROFILE DETAILS
+    // =========================================================================
+
+    public boolean updateUserProfile(int userId, String email, String phone, String address) {
+        // Change column names here if your database uses different names!
+        String sql = "UPDATE users SET email = ?, phone = ?, address = ? WHERE user_id = ?";
+        
+        try (java.sql.Connection conn = db.openConnection();
+             java.sql.PreparedStatement pstmt = conn.prepareStatement(sql)) {
+             
+            pstmt.setString(1, email);
+            pstmt.setString(2, phone);
+            pstmt.setString(3, address);
+            pstmt.setInt(4, userId);
+            
+            return pstmt.executeUpdate() > 0;
+            
+        } catch (java.sql.SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
    // Inside DAO.userDAO
     public boolean changeUserPassword(int userId, String currentPassword, String newPassword) {
         
@@ -181,6 +204,24 @@ public userData loginUser(String username, String password) {
             e.printStackTrace();
             return false;
         }
+    }
+    // =========================================================================
+    // ADMIN DASHBOARD: ACTIVE EMPLOYEE COUNT
+    // =========================================================================
+
+    public int getActiveEmployeeCount() {
+        String sql = "SELECT COUNT(*) FROM users WHERE role = 'Employee'";
+        try (java.sql.Connection conn = db.openConnection();
+             java.sql.PreparedStatement pstmt = conn.prepareStatement(sql);
+             java.sql.ResultSet rs = pstmt.executeQuery()) {
+             
+            if (rs.next()) {
+                return rs.getInt(1);
+            }
+        } catch (java.sql.SQLException e) {
+            e.printStackTrace();
+        }
+        return 0;
     }
 }
     

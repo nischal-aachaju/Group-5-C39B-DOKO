@@ -28,7 +28,6 @@ public class AdminOrderEdit extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        Dashboardbutton = new javax.swing.JButton();
         Manageuserbutton = new javax.swing.JButton();
         Workloadbutton = new javax.swing.JButton();
         Branchandnetworkbutton = new javax.swing.JButton();
@@ -40,13 +39,13 @@ public class AdminOrderEdit extends javax.swing.JFrame {
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
         jLabel1 = new javax.swing.JLabel();
-        logoutlabel = new javax.swing.JLabel();
+        Dashboardbutton = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         TrackingIdtextfield = new javax.swing.JTextField();
         toppanel = new javax.swing.JPanel();
-        namelabel = new javax.swing.JLabel();
-        Rolelabel = new javax.swing.JLabel();
-        pfplabel = new javax.swing.JLabel();
+        username = new javax.swing.JLabel();
+        user_role = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         returnbutton = new javax.swing.JButton();
         editbutton = new javax.swing.JButton();
@@ -67,14 +66,8 @@ public class AdminOrderEdit extends javax.swing.JFrame {
         searchbutton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(1050, 600));
         getContentPane().setLayout(null);
-
-        Dashboardbutton.setBackground(new java.awt.Color(33, 38, 49));
-        Dashboardbutton.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
-        Dashboardbutton.setForeground(new java.awt.Color(255, 255, 255));
-        Dashboardbutton.setText("Dashboard");
-        getContentPane().add(Dashboardbutton);
-        Dashboardbutton.setBounds(14, 83, 158, 50);
 
         Manageuserbutton.setBackground(new java.awt.Color(33, 38, 49));
         Manageuserbutton.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
@@ -124,95 +117,82 @@ public class AdminOrderEdit extends javax.swing.JFrame {
         logoutbutton.setBackground(new java.awt.Color(33, 38, 49));
         logoutbutton.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
         logoutbutton.setForeground(new java.awt.Color(239, 68, 68));
+        logoutbutton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/logout.png"))); // NOI18N
         logoutbutton.setText("Logout");
         logoutbutton.setPreferredSize(new java.awt.Dimension(148, 50));
         getContentPane().add(logoutbutton);
-        logoutbutton.setBounds(14, 544, 100, 50);
+        logoutbutton.setBounds(14, 544, 160, 50);
 
         jPanel3.setBackground(new java.awt.Color(33, 38, 49));
+        jPanel3.setLayout(null);
+        jPanel3.add(jSeparator1);
+        jSeparator1.setBounds(0, 531, 190, 10);
+        jPanel3.add(jSeparator2);
+        jSeparator2.setBounds(0, 76, 190, 30);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/dokologo.jpeg"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/logo.png"))); // NOI18N
         jLabel1.setText("jLabel1");
         jLabel1.setPreferredSize(new java.awt.Dimension(99, 47));
+        jPanel3.add(jLabel1);
+        jLabel1.setBounds(6, 6, 169, 64);
 
-        logoutlabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/logout.png"))); // NOI18N
-        logoutlabel.setText("jLabel2");
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jSeparator1)
-            .addComponent(jSeparator2)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(15, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(logoutlabel, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20))
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 425, Short.MAX_VALUE)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(logoutlabel, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
+        Dashboardbutton.setBackground(new java.awt.Color(33, 38, 49));
+        Dashboardbutton.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
+        Dashboardbutton.setForeground(new java.awt.Color(255, 255, 255));
+        Dashboardbutton.setText("Dashboard");
+        jPanel3.add(Dashboardbutton);
+        Dashboardbutton.setBounds(15, 97, 158, 50);
 
         getContentPane().add(jPanel3);
         jPanel3.setBounds(0, 0, 190, 600);
 
         jPanel2.setBackground(new java.awt.Color(238, 233, 223));
+        jPanel2.setLayout(null);
 
         TrackingIdtextfield.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
         TrackingIdtextfield.setText("#Enter Tracking ID");
         TrackingIdtextfield.setPreferredSize(new java.awt.Dimension(626, 65));
         TrackingIdtextfield.addActionListener(this::TrackingIdtextfieldActionPerformed);
+        jPanel2.add(TrackingIdtextfield);
+        TrackingIdtextfield.setBounds(256, 117, 420, 46);
 
         toppanel.setBackground(new java.awt.Color(255, 255, 255));
 
-        namelabel.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
-        namelabel.setText("Name");
+        username.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        username.setText("Name");
 
-        Rolelabel.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
-        Rolelabel.setText("Role");
+        user_role.setText("Role");
 
-        pfplabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/pfp.jpg"))); // NOI18N
-        pfplabel.setText("jLabel2");
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/pfp.jpg"))); // NOI18N
 
         javax.swing.GroupLayout toppanelLayout = new javax.swing.GroupLayout(toppanel);
         toppanel.setLayout(toppanelLayout);
         toppanelLayout.setHorizontalGroup(
             toppanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, toppanelLayout.createSequentialGroup()
-                .addContainerGap(739, Short.MAX_VALUE)
-                .addComponent(pfplabel, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(0, 700, Short.MAX_VALUE)
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(10, 10, 10)
                 .addGroup(toppanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Rolelabel, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(namelabel, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(21, 21, 21))
+                    .addComponent(username, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(user_role, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
         toppanelLayout.setVerticalGroup(
             toppanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, toppanelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(toppanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(pfplabel, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(toppanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(toppanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel4)
                     .addGroup(toppanelLayout.createSequentialGroup()
-                        .addComponent(namelabel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Rolelabel)))
-                .addGap(12, 12, 12))
+                        .addGap(14, 14, 14)
+                        .addComponent(username, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, 0)
+                        .addComponent(user_role)))
+                .addContainerGap(13, Short.MAX_VALUE))
         );
+
+        jPanel2.add(toppanel);
+        toppanel.setBounds(190, 0, 860, 74);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(168, 168, 168)));
@@ -320,11 +300,11 @@ public class AdminOrderEdit extends javax.swing.JFrame {
                                             .addComponent(receiveraddresstextfield, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                         .addGap(103, 103, 103)
                         .addComponent(returnbutton)
-                        .addGap(0, 82, Short.MAX_VALUE)))
+                        .addGap(0, 81, Short.MAX_VALUE)))
                 .addGap(23, 23, 23))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                    .addContainerGap(643, Short.MAX_VALUE)
+                    .addContainerGap(652, Short.MAX_VALUE)
                     .addComponent(savebutton1)
                     .addGap(13, 13, 13)))
         );
@@ -372,38 +352,13 @@ public class AdminOrderEdit extends javax.swing.JFrame {
                     .addGap(17, 17, 17)))
         );
 
+        jPanel2.add(jPanel1);
+        jPanel1.setBounds(256, 201, 739, 340);
+
         searchbutton.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
         searchbutton.setText("Search");
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addGap(0, 155, Short.MAX_VALUE)
-                .addComponent(toppanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(TrackingIdtextfield, javax.swing.GroupLayout.PREFERRED_SIZE, 420, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(searchbutton, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(54, 54, 54))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(toppanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(43, 43, 43)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(TrackingIdtextfield, javax.swing.GroupLayout.DEFAULT_SIZE, 46, Short.MAX_VALUE)
-                    .addComponent(searchbutton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(38, 38, 38)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(59, Short.MAX_VALUE))
-        );
+        jPanel2.add(searchbutton);
+        searchbutton.setBounds(688, 117, 89, 46);
 
         getContentPane().add(jPanel2);
         jPanel2.setBounds(0, 0, 1050, 600);
@@ -462,11 +417,11 @@ public class AdminOrderEdit extends javax.swing.JFrame {
     private javax.swing.JButton ManageOrderbutton;
     private javax.swing.JButton Manageuserbutton;
     private javax.swing.JLabel Orderdetaillabel;
-    private javax.swing.JLabel Rolelabel;
     private javax.swing.JTextField TrackingIdtextfield;
     private javax.swing.JButton Workloadbutton;
     private javax.swing.JButton editbutton;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -474,10 +429,7 @@ public class AdminOrderEdit extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JTextField jTextField7;
     private javax.swing.JButton logoutbutton;
-    private javax.swing.JLabel logoutlabel;
     private javax.swing.JButton myprofilebutton;
-    private javax.swing.JLabel namelabel;
-    private javax.swing.JLabel pfplabel;
     private javax.swing.JButton priceconfigurationbutton;
     private javax.swing.JLabel receiveraddresslabel;
     private javax.swing.JTextField receiveraddresstextfield;
@@ -494,5 +446,70 @@ public class AdminOrderEdit extends javax.swing.JFrame {
     private javax.swing.JLabel totalcostlabel;
     private javax.swing.JLabel trackingIDlabel;
     private javax.swing.JTextField trackingidtextfield;
+    private javax.swing.JLabel user_role;
+    private javax.swing.JLabel username;
     // End of variables declaration//GEN-END:variables
+// =========================================================================
+    // TOP BAR & GETTERS
+    // =========================================================================
+
+    public void setTopBar(String name, String role) {
+        username.setText(name);
+        user_role.setText(role);
+    }
+
+    public String getSearchInput() {
+        return TrackingIdtextfield.getText().trim(); // The top search bar
+    }
+
+    // =========================================================================
+    // DATA INJECTION & LOCKING
+    // =========================================================================
+
+    public void setOrderDetails(String trackingId, String name, String email, String senderAddr, String receiverAddr, String cost) {
+        trackingidtextfield.setText(trackingId); // The display label
+        receivernametextfield.setText(name);
+        receiveremailtextfield.setText(email);
+        senderaddresstextfield.setText(senderAddr);
+        receiveraddresstextfield.setText(receiverAddr);
+        jTextField7.setText(cost); 
+    }
+
+    public void setFormEditable(boolean isEditable) {
+        // Tracking ID is ALWAYS locked
+        trackingidtextfield.setEditable(false); 
+        
+        // Admin can edit everything else
+        receivernametextfield.setEditable(isEditable);
+        receiveremailtextfield.setEditable(isEditable);
+        senderaddresstextfield.setEditable(isEditable);
+        receiveraddresstextfield.setEditable(isEditable);
+        jTextField7.setEditable(isEditable);
+        
+        // Toggle buttons (using your exact variable: savebutton1)
+        savebutton1.setEnabled(isEditable);
+        editbutton.setEnabled(!isEditable);
+    }
+
+    // Grab updated data
+    public String getUpdatedName() { return receivernametextfield.getText().trim(); }
+    public String getUpdatedEmail() { return receiveremailtextfield.getText().trim(); }
+    public String getUpdatedSender() { return senderaddresstextfield.getText().trim(); }
+    public String getUpdatedReceiver() { return receiveraddresstextfield.getText().trim(); }
+    public String getUpdatedCost() { return jTextField7.getText().trim(); }
+
+    // =========================================================================
+    // BUTTON LISTENERS
+    // =========================================================================
+    
+    public void addSearchListener(java.awt.event.ActionListener listener) { searchbutton.addActionListener(listener); }
+    public void addEditListener(java.awt.event.ActionListener listener) { editbutton.addActionListener(listener); }
+    public void addSaveListener(java.awt.event.ActionListener listener) { savebutton1.addActionListener(listener); }
+    public void addReturnListener(java.awt.event.ActionListener listener) { returnbutton.addActionListener(listener); }
+    
+    // Navigators
+    public void addLogoutListener(java.awt.event.ActionListener listener) { logoutbutton.addActionListener(listener); }
+    public void addDashboardListener(java.awt.event.ActionListener listener) { Dashboardbutton.addActionListener(listener); }
+    public void addMyProfileListener(java.awt.event.ActionListener listener) { myprofilebutton.addActionListener(listener); }
+
 }

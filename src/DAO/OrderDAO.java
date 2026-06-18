@@ -504,4 +504,77 @@ public class OrderDAO {
             return false;
         }
     }
+    // =========================================================================
+    // ADMIN: FULL ORDER EDIT & STATUS UPDATE
+    // =========================================================================
+
+    public boolean adminUpdateOrder(String trackingId, String name, String email, String senderAddr, String receiverAddr, double cost) {
+        // 'street' is used for Sender Address based on your schema
+        String sql = "UPDATE orders SET receiver_name = ?, receiver_email = ?, street = ?, receiver_location = ?, total_cost = ? WHERE tracking_id = ?";
+        
+        try (java.sql.Connection conn = db.openConnection();
+             java.sql.PreparedStatement pstmt = conn.prepareStatement(sql)) {
+             
+            pstmt.setString(1, name);
+            pstmt.setString(2, email);
+            pstmt.setString(3, senderAddr);
+            pstmt.setString(4, receiverAddr);
+            pstmt.setDouble(5, cost);
+            pstmt.setString(6, trackingId);
+            
+            return pstmt.executeUpdate() > 0;
+            
+        } catch (java.sql.SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+    // =========================================================================
+    // ADMIN DASHBOARD: STATS AND RECENT ORDERS
+    // =========================================================================
+
+    public int[] getAdminDashboardStats() {
+        // Index mapping: 0=Total, 1=Active(intransit), 2=Pending, 3=Delivered, 4=Cancelled, 5=Returned
+        int[] stats = new int[6]; 
+        
+        String sql = "SELECT "
+                   + "COUNT(*) as total, "
+                   + "SUM(CASE WHEN status = 'intransit' THEN 1 ELSE 0 END) as active, "
+                   + "SUM(CASE WHEN status = 'pending' THEN 1 ELSE 0 END) as pending, "
+                   + "SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered, "
+                   + "SUM(CASE WHEN status = 'cancelled' THEN 1 ELSE 0 END) as cancelled, "
+                   + "SUM(CASE WHEN status = 'return' THEN 1 ELSE 0 END) as returned "
+                   + "FROM orders";
+                   
+        try (java.sql.Connection conn = db.openConnection();
+             java.sql.PreparedStatement pstmt = conn.prepareStatement(sql);
+             java.sql.ResultSet rs = pstmt.executeQuery()) {
+             
+            if (rs.next()) {
+                stats[0] = rs.getInt("total");
+                stats[1] = rs.getInt("active");
+                stats[2] = rs.getInt("pending");
+                stats[3] = rs.getInt("delivered");
+                stats[4] = rs.getInt("cancelled");
+                stats[5] = rs.getInt("returned");
+            }
+        } catch (java.sql.SQLException e) {
+            e.printStackTrace();
+        }
+        return stats;
+    }
+
+    public java.sql.ResultSet getRecentOrders(int limit) {
+        // Fetches the most recent orders based on order_date
+        String sql = "SELECT tracking_id, receiver_name, receiver_contact, status, total_cost FROM orders ORDER BY order_date DESC LIMIT ?";
+        try {
+            java.sql.Connection conn = db.openConnection();
+            java.sql.PreparedStatement pstmt = conn.prepareStatement(sql);
+            pstmt.setInt(1, limit);
+            return pstmt.executeQuery();
+        } catch (java.sql.SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
 }

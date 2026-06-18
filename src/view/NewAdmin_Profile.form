@@ -348,7 +348,7 @@
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="sender_id" alignment="0" max="32767" attributes="0"/>
+                          <Component id="user_id" alignment="0" max="32767" attributes="0"/>
                           <Component id="NameTextField" alignment="0" max="32767" attributes="0"/>
                           <Component id="EmailTextField" alignment="0" pref="190" max="32767" attributes="0"/>
                           <Component id="phonenumberTextField" alignment="0" max="32767" attributes="0"/>
@@ -369,7 +369,7 @@
                       <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="EmployeeID" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="sender_id" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="user_id" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -412,7 +412,7 @@
                 <Property name="text" type="java.lang.String" value="Address                       :"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="sender_id">
+            <Component class="javax.swing.JTextField" name="user_id">
             </Component>
             <Component class="javax.swing.JTextField" name="NameTextField">
             </Component>

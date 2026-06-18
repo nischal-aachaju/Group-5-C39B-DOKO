@@ -48,7 +48,7 @@ public class NewAdmin_Profile extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         phonenumberLabel = new javax.swing.JLabel();
         addressLabel = new javax.swing.JLabel();
-        sender_id = new javax.swing.JTextField();
+        user_id = new javax.swing.JTextField();
         NameTextField = new javax.swing.JTextField();
         editButton = new javax.swing.JButton();
         EmailTextField = new javax.swing.JTextField();
@@ -174,7 +174,7 @@ public class NewAdmin_Profile extends javax.swing.JFrame {
 
         user_role.setText("Role");
         Topbar.add(user_role);
-        user_role.setBounds(770, 40, 37, 17);
+        user_role.setBounds(770, 40, 37, 16);
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/pfp.jpg"))); // NOI18N
         Topbar.add(jLabel4);
@@ -241,7 +241,7 @@ public class NewAdmin_Profile extends javax.swing.JFrame {
                     .addComponent(addressLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(sender_id)
+                    .addComponent(user_id)
                     .addComponent(NameTextField)
                     .addComponent(EmailTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
                     .addComponent(phonenumberTextField)
@@ -258,7 +258,7 @@ public class NewAdmin_Profile extends javax.swing.JFrame {
                 .addGap(39, 39, 39)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(EmployeeID)
-                    .addComponent(sender_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(user_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(nameLabel)
@@ -356,10 +356,63 @@ public class NewAdmin_Profile extends javax.swing.JFrame {
     private javax.swing.JTextField phonenumberTextField;
     private javax.swing.JButton resetpasswordButton;
     private javax.swing.JButton saveButton;
-    private javax.swing.JTextField sender_id;
     private javax.swing.JPanel sidebar;
+    private javax.swing.JTextField user_id;
     private javax.swing.JLabel user_role;
     private javax.swing.JLabel username;
     private javax.swing.JButton workload;
     // End of variables declaration//GEN-END:variables
+// =========================================================================
+    // PROFILE DATA AND TOP BAR
+    // =========================================================================
+
+    public void setTopBar(String name, String role) {
+        username.setText(name);
+        user_role.setText(role);
+    }
+
+    public void setProfileData(String id, String name, String email, String phone, String address) {
+        user_id.setText(id);
+        NameTextField.setText(name);
+        EmailTextField.setText(email);
+        phonenumberTextField.setText(phone);
+        AddressTextField.setText(address);
+    }
+
+    // =========================================================================
+    // LOCKING & EDITING LOGIC
+    // =========================================================================
+
+    public void setFormEditable(boolean isEditable) {
+        // Only these three are allowed to be edited
+        EmailTextField.setEditable(isEditable);
+        phonenumberTextField.setEditable(isEditable);
+        AddressTextField.setEditable(isEditable);
+        
+        // These are strictly locked forever
+        user_id.setEditable(false);
+        NameTextField.setEditable(false);
+        
+        // Toggle Buttons
+        saveButton.setEnabled(isEditable);
+        editButton.setEnabled(!isEditable);
+    }
+
+    // Getters for the Controller to read the new saved data
+    public String getUpdatedEmail() { return EmailTextField.getText().trim(); }
+    public String getUpdatedPhone() { return phonenumberTextField.getText().trim(); }
+    public String getUpdatedAddress() { return AddressTextField.getText().trim(); }
+
+    // =========================================================================
+    // BUTTON LISTENERS
+    // =========================================================================
+    
+    public void addEditListener(java.awt.event.ActionListener listener) { editButton.addActionListener(listener); }
+    public void addSaveListener(java.awt.event.ActionListener listener) { saveButton.addActionListener(listener); }
+    public void addResetPasswordListener(java.awt.event.ActionListener listener) { resetpasswordButton.addActionListener(listener); }
+    
+    public void addDashboardListener(java.awt.event.ActionListener listener) { Dashboard.addActionListener(listener); }
+    public void addLogoutListener(java.awt.event.ActionListener listener) { logout.addActionListener(listener); }
+
+
 }

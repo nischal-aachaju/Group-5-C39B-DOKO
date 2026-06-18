@@ -45,23 +45,30 @@ public class Admin_Dashboard extends javax.swing.JFrame {
         username = new javax.swing.JLabel();
         user_role = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        OrderTable = new javax.swing.JTable();
-        Active_Shipment = new javax.swing.JPanel();
-        Active_Shipment_text = new javax.swing.JLabel();
-        Active_Shipment_value = new javax.swing.JLabel();
         Delivered_Shipment = new javax.swing.JPanel();
         Delivered_Shipment_text = new javax.swing.JLabel();
         Delivered_Shipment_value = new javax.swing.JLabel();
-        Recent_orders = new javax.swing.JPanel();
-        Recent_orders_text = new javax.swing.JLabel();
-        Recent_orders_value = new javax.swing.JLabel();
         Active_Employee = new javax.swing.JPanel();
         Active_Employee_text = new javax.swing.JLabel();
         Active_Employee_value = new javax.swing.JLabel();
         Pending_Shipment = new javax.swing.JPanel();
         Pending_Shipment_text = new javax.swing.JLabel();
         Pending_Shipment_value = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        recent_5_orders = new javax.swing.JTable();
+        jLabel1 = new javax.swing.JLabel();
+        Total_orders = new javax.swing.JPanel();
+        total_orders_text = new javax.swing.JLabel();
+        total_orders_value = new javax.swing.JLabel();
+        Active_orders = new javax.swing.JPanel();
+        active_shpiment_text2 = new javax.swing.JLabel();
+        activeShipmentValue2 = new javax.swing.JLabel();
+        return_shipments = new javax.swing.JPanel();
+        return_shipments_text = new javax.swing.JLabel();
+        return_shipments_Value = new javax.swing.JLabel();
+        Cancel_Orders = new javax.swing.JPanel();
+        Cancel_Orders_text = new javax.swing.JLabel();
+        Cancel_Orders_value = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(238, 233, 223));
@@ -186,54 +193,6 @@ public class Admin_Dashboard extends javax.swing.JFrame {
         MainPanel.add(Topbar);
         Topbar.setBounds(182, 0, 870, 70);
 
-        OrderTable.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"1001", "Nishchal", "Electronics", "Pending", "20 May", "Rs 500"},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
-            },
-            new String [] {
-                "Order ID", "Customer", "Shipment", "Status", "Date", "Price"
-            }
-        ));
-        jScrollPane1.setViewportView(OrderTable);
-
-        MainPanel.add(jScrollPane1);
-        jScrollPane1.setBounds(240, 320, 762, 250);
-
-        Active_Shipment.setLayout(null);
-
-        Active_Shipment_text.setBackground(new java.awt.Color(238, 238, 238));
-        Active_Shipment_text.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        Active_Shipment_text.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Active_Shipment_text.setText("Active Shipment");
-        Active_Shipment_text.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        Active_Shipment.add(Active_Shipment_text);
-        Active_Shipment_text.setBounds(0, 0, 140, 60);
-
-        Active_Shipment_value.setBackground(new java.awt.Color(238, 238, 238));
-        Active_Shipment_value.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        Active_Shipment_value.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Active_Shipment_value.setText("0");
-        Active_Shipment_value.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        Active_Shipment.add(Active_Shipment_value);
-        Active_Shipment_value.setBounds(140, 0, 50, 60);
-
-        MainPanel.add(Active_Shipment);
-        Active_Shipment.setBounds(250, 120, 190, 60);
-
         Delivered_Shipment.setLayout(null);
 
         Delivered_Shipment_text.setBackground(new java.awt.Color(238, 238, 238));
@@ -255,27 +214,6 @@ public class Admin_Dashboard extends javax.swing.JFrame {
         MainPanel.add(Delivered_Shipment);
         Delivered_Shipment.setBounds(250, 210, 190, 60);
 
-        Recent_orders.setLayout(null);
-
-        Recent_orders_text.setBackground(new java.awt.Color(238, 238, 238));
-        Recent_orders_text.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        Recent_orders_text.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Recent_orders_text.setText("Recent Orders");
-        Recent_orders_text.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        Recent_orders.add(Recent_orders_text);
-        Recent_orders_text.setBounds(0, 0, 140, 60);
-
-        Recent_orders_value.setBackground(new java.awt.Color(238, 238, 238));
-        Recent_orders_value.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        Recent_orders_value.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Recent_orders_value.setText("0");
-        Recent_orders_value.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        Recent_orders.add(Recent_orders_value);
-        Recent_orders_value.setBounds(140, 0, 50, 60);
-
-        MainPanel.add(Recent_orders);
-        Recent_orders.setBounds(520, 120, 190, 60);
-
         Active_Employee.setLayout(null);
 
         Active_Employee_text.setBackground(new java.awt.Color(238, 238, 238));
@@ -295,7 +233,7 @@ public class Admin_Dashboard extends javax.swing.JFrame {
         Active_Employee_value.setBounds(140, 0, 50, 60);
 
         MainPanel.add(Active_Employee);
-        Active_Employee.setBounds(520, 210, 190, 60);
+        Active_Employee.setBounds(250, 300, 190, 60);
 
         Pending_Shipment.setLayout(null);
 
@@ -317,6 +255,126 @@ public class Admin_Dashboard extends javax.swing.JFrame {
 
         MainPanel.add(Pending_Shipment);
         Pending_Shipment.setBounds(800, 120, 190, 60);
+
+        recent_5_orders.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        recent_5_orders.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "Tracking ID", "Customer", "Contact", "Destination", "Status"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(recent_5_orders);
+
+        MainPanel.add(jScrollPane1);
+        jScrollPane1.setBounds(240, 420, 760, 150);
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel1.setText("Recent Orders :");
+        MainPanel.add(jLabel1);
+        jLabel1.setBounds(240, 380, 150, 30);
+
+        Total_orders.setLayout(null);
+
+        total_orders_text.setBackground(new java.awt.Color(238, 238, 238));
+        total_orders_text.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        total_orders_text.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        total_orders_text.setText("Total Orders");
+        total_orders_text.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        Total_orders.add(total_orders_text);
+        total_orders_text.setBounds(0, 0, 140, 60);
+
+        total_orders_value.setBackground(new java.awt.Color(238, 238, 238));
+        total_orders_value.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        total_orders_value.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        total_orders_value.setText("0");
+        total_orders_value.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        Total_orders.add(total_orders_value);
+        total_orders_value.setBounds(140, 0, 50, 60);
+
+        MainPanel.add(Total_orders);
+        Total_orders.setBounds(250, 120, 190, 60);
+
+        Active_orders.setLayout(null);
+
+        active_shpiment_text2.setBackground(new java.awt.Color(238, 238, 238));
+        active_shpiment_text2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        active_shpiment_text2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        active_shpiment_text2.setText("Active Shipments");
+        active_shpiment_text2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        Active_orders.add(active_shpiment_text2);
+        active_shpiment_text2.setBounds(0, 0, 140, 60);
+
+        activeShipmentValue2.setBackground(new java.awt.Color(238, 238, 238));
+        activeShipmentValue2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        activeShipmentValue2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        activeShipmentValue2.setText("0");
+        activeShipmentValue2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        Active_orders.add(activeShipmentValue2);
+        activeShipmentValue2.setBounds(140, 0, 50, 60);
+
+        MainPanel.add(Active_orders);
+        Active_orders.setBounds(550, 120, 190, 60);
+
+        return_shipments.setLayout(null);
+
+        return_shipments_text.setBackground(new java.awt.Color(238, 238, 238));
+        return_shipments_text.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        return_shipments_text.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        return_shipments_text.setText("Return Shipments");
+        return_shipments_text.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        return_shipments.add(return_shipments_text);
+        return_shipments_text.setBounds(0, 0, 140, 60);
+
+        return_shipments_Value.setBackground(new java.awt.Color(238, 238, 238));
+        return_shipments_Value.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        return_shipments_Value.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        return_shipments_Value.setText("0");
+        return_shipments_Value.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        return_shipments.add(return_shipments_Value);
+        return_shipments_Value.setBounds(140, 0, 50, 60);
+
+        MainPanel.add(return_shipments);
+        return_shipments.setBounds(550, 210, 190, 60);
+
+        Cancel_Orders.setLayout(null);
+
+        Cancel_Orders_text.setBackground(new java.awt.Color(238, 238, 238));
+        Cancel_Orders_text.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Cancel_Orders_text.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Cancel_Orders_text.setText("Cancel Orders");
+        Cancel_Orders_text.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        Cancel_Orders.add(Cancel_Orders_text);
+        Cancel_Orders_text.setBounds(0, 0, 140, 60);
+
+        Cancel_Orders_value.setBackground(new java.awt.Color(238, 238, 238));
+        Cancel_Orders_value.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Cancel_Orders_value.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Cancel_Orders_value.setText("0");
+        Cancel_Orders_value.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        Cancel_Orders.add(Cancel_Orders_value);
+        Cancel_Orders_value.setBounds(140, 0, 50, 60);
+
+        MainPanel.add(Cancel_Orders);
+        Cancel_Orders.setBounds(800, 210, 190, 60);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -365,9 +423,10 @@ public class Admin_Dashboard extends javax.swing.JFrame {
     private javax.swing.JPanel Active_Employee;
     private javax.swing.JLabel Active_Employee_text;
     private javax.swing.JLabel Active_Employee_value;
-    private javax.swing.JPanel Active_Shipment;
-    private javax.swing.JLabel Active_Shipment_text;
-    private javax.swing.JLabel Active_Shipment_value;
+    private javax.swing.JPanel Active_orders;
+    private javax.swing.JPanel Cancel_Orders;
+    private javax.swing.JLabel Cancel_Orders_text;
+    private javax.swing.JLabel Cancel_Orders_value;
     private javax.swing.JButton Dashboard;
     private javax.swing.JPanel Delivered_Shipment;
     private javax.swing.JLabel Delivered_Shipment_text;
@@ -376,23 +435,29 @@ public class Admin_Dashboard extends javax.swing.JFrame {
     private javax.swing.JButton ManageOrders;
     private javax.swing.JButton ManageUser;
     private javax.swing.JButton MyProfile;
-    private javax.swing.JTable OrderTable;
     private javax.swing.JPanel Pending_Shipment;
     private javax.swing.JLabel Pending_Shipment_text;
     private javax.swing.JLabel Pending_Shipment_value;
     private javax.swing.JButton PriceConfiguration;
-    private javax.swing.JPanel Recent_orders;
-    private javax.swing.JLabel Recent_orders_text;
-    private javax.swing.JLabel Recent_orders_value;
     private javax.swing.JPanel Topbar;
+    private javax.swing.JPanel Total_orders;
+    private javax.swing.JLabel activeShipmentValue2;
+    private javax.swing.JLabel active_shpiment_text2;
     private javax.swing.JButton jButton4;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JButton logout;
+    private javax.swing.JTable recent_5_orders;
+    private javax.swing.JPanel return_shipments;
+    private javax.swing.JLabel return_shipments_Value;
+    private javax.swing.JLabel return_shipments_text;
     private javax.swing.JPanel sidebar;
+    private javax.swing.JLabel total_orders_text;
+    private javax.swing.JLabel total_orders_value;
     private javax.swing.JLabel user_role;
     private javax.swing.JLabel username;
     private javax.swing.JButton workload;
@@ -417,4 +482,48 @@ public void addMyProfileListener(java.awt.event.ActionListener listener) {
         MyProfile.addActionListener(listener); 
     }
 
+public void addManageOrdersistener(java.awt.event.ActionListener listener) {
+        
+        ManageOrders.addActionListener(listener); 
+    }
+// =========================================================================
+    // TOP BAR & METRIC CARDS
+    // =========================================================================
+
+    public void setTopBar(String name, String role) {
+        username.setText(name);
+        user_role.setText(role);
+    }
+
+    public void setDashboardStats(String total, String active, String pending, String delivered, String cancelled, String returned, String activeEmployees) {
+        total_orders_value.setText(total);
+        activeShipmentValue2.setText(active);
+        Pending_Shipment_value.setText(pending);
+        Delivered_Shipment_value.setText(delivered);
+        Cancel_Orders_value.setText(cancelled);
+        return_shipments_Value.setText(returned);
+        Active_Employee_value.setText(activeEmployees);
+    }
+
+    // =========================================================================
+    // RECENT ORDERS TABLE
+    // =========================================================================
+
+    public void clearRecentOrdersTable() {
+        ((javax.swing.table.DefaultTableModel)recent_5_orders.getModel()).setRowCount(0);
+    }
+
+    public void addRecentOrderRow(Object[] rowData) {
+        ((javax.swing.table.DefaultTableModel)recent_5_orders.getModel()).addRow(rowData);
+    }
+
+    // =========================================================================
+    // NAVIGATION LISTENERS
+    // =========================================================================
+    
+    public void addManageUserListener(java.awt.event.ActionListener listener) { ManageUser.addActionListener(listener); }
+    public void addWorkloadListener(java.awt.event.ActionListener listener) { workload.addActionListener(listener); }
+    public void addManageOrdersListener(java.awt.event.ActionListener listener) { ManageOrders.addActionListener(listener); }
+    public void addPriceConfigListener(java.awt.event.ActionListener listener) { PriceConfiguration.addActionListener(listener); }
+ 
 }

@@ -577,4 +577,44 @@ public class OrderDAO {
             return null;
         }
     }
+    // =========================================================================
+    // EMPLOYEE: GET ASSIGNED ORDER HISTORY
+    // =========================================================================
+
+    public java.sql.ResultSet getEmployeeOrderHistory(int employeeId, String statusFilter) {
+        String sql;
+        
+        // If "All", fetch everything assigned to this employee
+        if (statusFilter == null || statusFilter.equalsIgnoreCase("All")) {
+            sql = "SELECT o.tracking_id, o.receiver_name, o.receiver_location, o.status, o.order_date, o.total_cost "
+                + "FROM orders o "
+                + "JOIN assignedOrders a ON o.tracking_id = a.ordersTrackingID "
+                + "WHERE a.usersID = ? "
+                + "ORDER BY o.order_date DESC";
+        } else {
+            // Otherwise, filter by specific status
+            sql = "SELECT o.tracking_id, o.receiver_name, o.receiver_location, o.status, o.order_date, o.total_cost "
+                + "FROM orders o "
+                + "JOIN assignedOrders a ON o.tracking_id = a.ordersTrackingID "
+                + "WHERE a.usersID = ? AND o.status = ? "
+                + "ORDER BY o.order_date DESC";
+        }
+        
+        try {
+            java.sql.Connection conn = db.openConnection();
+            java.sql.PreparedStatement pstmt = conn.prepareStatement(sql);
+            
+            pstmt.setInt(1, employeeId);
+            
+            if (statusFilter != null && !statusFilter.equalsIgnoreCase("All")) {
+                pstmt.setString(2, statusFilter);
+            }
+            
+            return pstmt.executeQuery(); 
+            
+        } catch (java.sql.SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
 }

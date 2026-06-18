@@ -22,6 +22,9 @@ public class ManagerOrderEditController {
         this.view = view;
         this.currentUser = currentUser;
         
+        this.view.setUsernameLabel(currentUser.getUsername());
+        this.view.setRoleLabel(currentUser.getRole());
+        
         // 1. Lock the form and disable the save button on startup
         this.view.setFormEditable(false);
         

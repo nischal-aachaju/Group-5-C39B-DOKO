@@ -28,6 +28,8 @@ public class EmployeeController {
         // 2. Connect the logout button
         this.employeeView.addLogoutListener(new LogoutListener());
         this.employeeView.addMyProfileListener(new OpenEmployeeProfileListener());
+        
+                this.employeeView.addOrdersHistoryListener(new OpenOrdersHistoryListener());
     }
 
     public void open() {
@@ -68,6 +70,22 @@ public class EmployeeController {
             
             // 3. Pass it to your dedicated Employee Profile Controller
             controllor.Employee_ProfileController profileController = new controllor.Employee_ProfileController(profileView, currentUser);
+            
+            // 4. Open it
+            profileController.open();
+        }
+    }
+        class OpenOrdersHistoryListener implements java.awt.event.ActionListener {
+        @Override
+        public void actionPerformed(java.awt.event.ActionEvent e) {
+            // 1. Close the Employee Dashboard
+            close(); 
+            
+            // 2. Create the Employee Profile View
+            view.Employee_Order_History profileView = new view.Employee_Order_History();
+            
+            // 3. Pass it to your dedicated Employee Profile Controller
+            controllor.EmployeeOrderHistoryController profileController = new controllor.EmployeeOrderHistoryController(profileView, currentUser);
             
             // 4. Open it
             profileController.open();

@@ -31,9 +31,9 @@ public class ManagerOrderEdit extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         TrackingIdtextfield = new javax.swing.JTextField();
         toppanel = new javax.swing.JPanel();
-        namelabel = new javax.swing.JLabel();
-        Rolelabel = new javax.swing.JLabel();
-        pfplabel = new javax.swing.JLabel();
+        username = new javax.swing.JLabel();
+        user_role = new javax.swing.JLabel();
+        profile = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         savebutton = new javax.swing.JButton();
         editbutton = new javax.swing.JButton();
@@ -82,41 +82,20 @@ public class ManagerOrderEdit extends javax.swing.JFrame {
         TrackingIdtextfield.setBounds(246, 104, 420, 46);
 
         toppanel.setBackground(new java.awt.Color(255, 255, 255));
+        toppanel.setLayout(null);
 
-        namelabel.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
-        namelabel.setText("Name");
+        username.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        username.setText("Name");
+        toppanel.add(username);
+        username.setBounds(770, 20, 100, 22);
 
-        Rolelabel.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
-        Rolelabel.setText("Role");
+        user_role.setText("Role");
+        toppanel.add(user_role);
+        user_role.setBounds(770, 40, 100, 16);
 
-        pfplabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/pfp.jpg"))); // NOI18N
-        pfplabel.setText("jLabel2");
-
-        javax.swing.GroupLayout toppanelLayout = new javax.swing.GroupLayout(toppanel);
-        toppanel.setLayout(toppanelLayout);
-        toppanelLayout.setHorizontalGroup(
-            toppanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, toppanelLayout.createSequentialGroup()
-                .addContainerGap(714, Short.MAX_VALUE)
-                .addComponent(pfplabel, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(toppanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Rolelabel, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(namelabel, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(21, 21, 21))
-        );
-        toppanelLayout.setVerticalGroup(
-            toppanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, toppanelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(toppanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(pfplabel, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(toppanelLayout.createSequentialGroup()
-                        .addComponent(namelabel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Rolelabel)))
-                .addGap(12, 12, 12))
-        );
+        profile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/pfp.jpg"))); // NOI18N
+        toppanel.add(profile);
+        profile.setBounds(700, 5, 60, 60);
 
         jPanel2.add(toppanel);
         toppanel.setBounds(180, 0, 870, 74);
@@ -379,7 +358,6 @@ public class ManagerOrderEdit extends javax.swing.JFrame {
     private javax.swing.JButton ManageUser;
     private javax.swing.JButton MyProfile;
     private javax.swing.JLabel Orderdetaillabel;
-    private javax.swing.JLabel Rolelabel;
     private javax.swing.JTextField TrackingIdtextfield;
     private javax.swing.JButton WorkLoad;
     private javax.swing.JButton editbutton;
@@ -390,8 +368,7 @@ public class ManagerOrderEdit extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField7;
     private javax.swing.JLabel logo;
     private javax.swing.JButton logout;
-    private javax.swing.JLabel namelabel;
-    private javax.swing.JLabel pfplabel;
+    private javax.swing.JLabel profile;
     private javax.swing.JLabel receiveraddresslabel;
     private javax.swing.JTextField receiveraddresstextfield;
     private javax.swing.JLabel receivercontactlabel;
@@ -410,8 +387,19 @@ public class ManagerOrderEdit extends javax.swing.JFrame {
     private javax.swing.JLabel totalcostlabel;
     private javax.swing.JLabel trackingIDlabel;
     private javax.swing.JTextField trackingidtextfield;
+    private javax.swing.JLabel user_role;
+    private javax.swing.JLabel username;
     // End of variables declaration//GEN-END:variables
 // Example additions inside ManagerOrderEdit.java
+    public void setUsernameLabel(String name) {
+        username.setText(name); 
+    }
+
+    public void setRoleLabel(String role) {
+        user_role.setText(role); 
+    }
+    
+    
 public javax.swing.JButton getSearchbutton() { return searchbutton; }
 public javax.swing.JButton getEditbutton() { return editbutton; }
 public javax.swing.JButton getSavebutton() { return savebutton; }

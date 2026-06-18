@@ -65,7 +65,7 @@ public class Manager_active_orders extends javax.swing.JFrame {
 
         user_role.setText("Role");
         Topbar.add(user_role);
-        user_role.setBounds(770, 40, 37, 16);
+        user_role.setBounds(770, 40, 100, 16);
 
         profile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/pfp.jpg"))); // NOI18N
         Topbar.add(profile);

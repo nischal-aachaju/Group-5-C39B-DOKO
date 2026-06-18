@@ -142,8 +142,6 @@ public class Employee_Order_History extends javax.swing.JFrame {
 
         OrderTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"1001", "Nishchal", "Electronics", "Pending", "20 May", "Rs 500"},
-                {"1002", "Nirjal", "Laptop", "Delivered", "25 May", "Rs 400"},
                 {null, null, null, null, null, null},
                 {null, null, null, null, null, null},
                 {null, null, null, null, null, null},
@@ -254,4 +252,37 @@ public class Employee_Order_History extends javax.swing.JFrame {
     private javax.swing.JLabel role;
     private javax.swing.JPanel sidebar;
     // End of variables declaration//GEN-END:variables
+// =========================================================================
+    // TOP BAR
+    // =========================================================================
+
+    public void setTopBar(String userName, String userRole) {
+        name.setText(userName);
+        role.setText(userRole);
+    }
+
+    // =========================================================================
+    // TABLE SETUP
+    // =========================================================================
+
+    public void clearTable() {
+        ((javax.swing.table.DefaultTableModel)OrderTable.getModel()).setRowCount(0);
+    }
+
+    public void addTableRow(Object[] rowData) {
+        ((javax.swing.table.DefaultTableModel)OrderTable.getModel()).addRow(rowData);
+    }
+
+    // =========================================================================
+    // BUTTON LISTENERS
+    // =========================================================================
+    
+    public void addFilterListener(java.awt.event.ActionListener listener) { filter.addActionListener(listener); }
+    
+    // Navigation
+    public void addDashboardListener(java.awt.event.ActionListener listener) { Dashboard.addActionListener(listener); }
+    public void addMyProfileListener(java.awt.event.ActionListener listener) { MyProfile.addActionListener(listener); }
+    public void addMyShipmentsListener(java.awt.event.ActionListener listener) { myShipments.addActionListener(listener); }
+    public void addLogoutListener(java.awt.event.ActionListener listener) { Logout.addActionListener(listener); }
+
 }

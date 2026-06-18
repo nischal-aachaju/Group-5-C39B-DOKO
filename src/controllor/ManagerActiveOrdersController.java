@@ -20,6 +20,9 @@ public class ManagerActiveOrdersController {
         this.activeView = activeView;
         this.currentUser = currentUser;
         
+        this.activeView.setUsernameLabel(currentUser.getUsername());
+        this.activeView.setRoleLabel(currentUser.getRole());
+        
         // 1. Load all orders by default when the window first opens
         loadOrdersToTable("All");
         

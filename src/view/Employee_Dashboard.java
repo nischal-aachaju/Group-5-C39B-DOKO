@@ -403,4 +403,8 @@ public class Employee_Dashboard extends javax.swing.JFrame {
      
         MyProfile.addActionListener(listener); 
     }
+        public void addOrdersHistoryListener(java.awt.event.ActionListener listener) {
+     
+        OrdersHistory.addActionListener(listener); 
+    }
 }

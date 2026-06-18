@@ -40,22 +40,6 @@ public class EmployeeOrderEdit extends javax.swing.JFrame {
         Manageuserbutton = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         TrackingIdtextfield = new javax.swing.JTextField();
-        jPanel1 = new javax.swing.JPanel();
-        savebutton = new javax.swing.JButton();
-        editbutton = new javax.swing.JButton();
-        jTextField7 = new javax.swing.JTextField();
-        receiveraddresstextfield = new javax.swing.JTextField();
-        senderaddresstextfield = new javax.swing.JTextField();
-        receiveremailtextfield = new javax.swing.JTextField();
-        receivernametextfield = new javax.swing.JTextField();
-        trackingidtextfield = new javax.swing.JTextField();
-        trackingIDlabel = new javax.swing.JLabel();
-        receivernamelabel = new javax.swing.JLabel();
-        receiveremaillabel = new javax.swing.JLabel();
-        senderaddresslabel = new javax.swing.JLabel();
-        receiveraddresslabel = new javax.swing.JLabel();
-        totalcostlabel = new javax.swing.JLabel();
-        Orderdetaillabel = new javax.swing.JLabel();
         searchButton = new javax.swing.JButton();
         Topbar = new javax.swing.JPanel();
         name = new javax.swing.JLabel();
@@ -64,7 +48,7 @@ public class EmployeeOrderEdit extends javax.swing.JFrame {
         jPanel4 = new javax.swing.JPanel();
         savebutton1 = new javax.swing.JButton();
         editbutton1 = new javax.swing.JButton();
-        jTextField8 = new javax.swing.JTextField();
+        total_cost_value = new javax.swing.JTextField();
         receiveraddresstextfield1 = new javax.swing.JTextField();
         senderaddresstextfield1 = new javax.swing.JTextField();
         receiveremailtextfield1 = new javax.swing.JTextField();
@@ -79,6 +63,7 @@ public class EmployeeOrderEdit extends javax.swing.JFrame {
         Orderdetaillabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(1050, 600));
         getContentPane().setLayout(null);
 
         logoutbutton.setBackground(new java.awt.Color(33, 38, 49));
@@ -108,21 +93,21 @@ public class EmployeeOrderEdit extends javax.swing.JFrame {
         ManageOrderbutton.setForeground(new java.awt.Color(255, 255, 255));
         ManageOrderbutton.setText("Manage Order");
         jPanel3.add(ManageOrderbutton);
-        ManageOrderbutton.setBounds(10, 230, 158, 50);
+        ManageOrderbutton.setBounds(10, 210, 158, 50);
 
         order_history.setBackground(new java.awt.Color(33, 38, 49));
         order_history.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
         order_history.setForeground(new java.awt.Color(255, 255, 255));
         order_history.setText("Orders History");
         jPanel3.add(order_history);
-        order_history.setBounds(10, 290, 158, 50);
+        order_history.setBounds(10, 270, 158, 50);
 
         myprofilebutton.setBackground(new java.awt.Color(33, 38, 49));
         myprofilebutton.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
         myprofilebutton.setForeground(new java.awt.Color(255, 255, 255));
         myprofilebutton.setText("My profile");
         jPanel3.add(myprofilebutton);
-        myprofilebutton.setBounds(10, 350, 158, 50);
+        myprofilebutton.setBounds(10, 330, 158, 50);
 
         Dashboardbutton.setBackground(new java.awt.Color(33, 38, 49));
         Dashboardbutton.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
@@ -138,7 +123,7 @@ public class EmployeeOrderEdit extends javax.swing.JFrame {
         Manageuserbutton.setPreferredSize(new java.awt.Dimension(99, 27));
         Manageuserbutton.addActionListener(this::ManageuserbuttonActionPerformed);
         jPanel3.add(Manageuserbutton);
-        Manageuserbutton.setBounds(10, 160, 158, 50);
+        Manageuserbutton.setBounds(10, 150, 158, 50);
 
         getContentPane().add(jPanel3);
         jPanel3.setBounds(0, 0, 180, 600);
@@ -152,98 +137,6 @@ public class EmployeeOrderEdit extends javax.swing.JFrame {
         TrackingIdtextfield.addActionListener(this::TrackingIdtextfieldActionPerformed);
         jPanel2.add(TrackingIdtextfield);
         TrackingIdtextfield.setBounds(266, 117, 420, 46);
-
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(168, 168, 168)));
-        jPanel1.setLayout(null);
-
-        savebutton.setBackground(new java.awt.Color(244, 246, 248));
-        savebutton.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
-        savebutton.setText("Save");
-        jPanel1.add(savebutton);
-        savebutton.setBounds(634, 280, 72, 32);
-
-        editbutton.setBackground(new java.awt.Color(244, 246, 248));
-        editbutton.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
-        editbutton.setText("Edit");
-        jPanel1.add(editbutton);
-        editbutton.setBounds(634, 19, 72, 32);
-
-        jTextField7.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
-        jTextField7.setText("1200");
-        jTextField7.setBorder(null);
-        jPanel1.add(jTextField7);
-        jTextField7.setBounds(169, 269, 280, 25);
-
-        receiveraddresstextfield.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
-        receiveraddresstextfield.setText(" Kapan");
-        receiveraddresstextfield.setBorder(null);
-        receiveraddresstextfield.addActionListener(this::receiveraddresstextfieldActionPerformed);
-        jPanel1.add(receiveraddresstextfield);
-        receiveraddresstextfield.setBounds(169, 226, 280, 25);
-
-        senderaddresstextfield.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
-        senderaddresstextfield.setText("Dillibazar pipalbot");
-        senderaddresstextfield.setBorder(null);
-        jPanel1.add(senderaddresstextfield);
-        senderaddresstextfield.setBounds(169, 184, 280, 30);
-
-        receiveremailtextfield.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
-        receiveremailtextfield.setText("ram@gmail.com\n");
-        receiveremailtextfield.setBorder(null);
-        receiveremailtextfield.addActionListener(this::receiveremailtextfieldActionPerformed);
-        jPanel1.add(receiveremailtextfield);
-        receiveremailtextfield.setBounds(169, 141, 280, 25);
-
-        receivernametextfield.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
-        receivernametextfield.setText("Ram");
-        receivernametextfield.setBorder(null);
-        jPanel1.add(receivernametextfield);
-        receivernametextfield.setBounds(169, 98, 280, 25);
-
-        trackingidtextfield.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
-        trackingidtextfield.setText("#1111");
-        trackingidtextfield.setBorder(null);
-        jPanel1.add(trackingidtextfield);
-        trackingidtextfield.setBounds(169, 61, 280, 25);
-
-        trackingIDlabel.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
-        trackingIDlabel.setText("Tracking ID:");
-        jPanel1.add(trackingIDlabel);
-        trackingIDlabel.setBounds(29, 61, 102, 25);
-
-        receivernamelabel.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
-        receivernamelabel.setText("Receiver Name:");
-        jPanel1.add(receivernamelabel);
-        receivernamelabel.setBounds(29, 98, 122, 25);
-
-        receiveremaillabel.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
-        receiveremaillabel.setText("Receiver Email:");
-        jPanel1.add(receiveremaillabel);
-        receiveremaillabel.setBounds(29, 141, 122, 25);
-
-        senderaddresslabel.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
-        senderaddresslabel.setText("Sender Address:");
-        jPanel1.add(senderaddresslabel);
-        senderaddresslabel.setBounds(29, 186, 122, 25);
-
-        receiveraddresslabel.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
-        receiveraddresslabel.setText("Receiver Address:");
-        jPanel1.add(receiveraddresslabel);
-        receiveraddresslabel.setBounds(29, 226, 134, 25);
-
-        totalcostlabel.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
-        totalcostlabel.setText("Total cost:");
-        jPanel1.add(totalcostlabel);
-        totalcostlabel.setBounds(29, 269, 134, 25);
-
-        Orderdetaillabel.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
-        Orderdetaillabel.setText("Order Details:");
-        jPanel1.add(Orderdetaillabel);
-        Orderdetaillabel.setBounds(32, 19, 117, 25);
-
-        jPanel2.add(jPanel1);
-        jPanel1.setBounds(266, 201, 0, 0);
 
         searchButton.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
         searchButton.setText("Search");
@@ -279,30 +172,31 @@ public class EmployeeOrderEdit extends javax.swing.JFrame {
         editbutton1.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
         editbutton1.setText("Edit");
 
-        jTextField8.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
-        jTextField8.setText("1200");
-        jTextField8.setBorder(null);
+        total_cost_value.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
+        total_cost_value.setText("cost*");
+        total_cost_value.setBorder(null);
 
         receiveraddresstextfield1.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
-        receiveraddresstextfield1.setText(" Kapan");
+        receiveraddresstextfield1.setText("eg : Kapan");
         receiveraddresstextfield1.setBorder(null);
         receiveraddresstextfield1.addActionListener(this::receiveraddresstextfield1ActionPerformed);
 
         senderaddresstextfield1.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
-        senderaddresstextfield1.setText("Dillibazar pipalbot");
+        senderaddresstextfield1.setText("eg : Dillibazar pipalbot");
         senderaddresstextfield1.setBorder(null);
 
         receiveremailtextfield1.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
-        receiveremailtextfield1.setText("ram@gmail.com\n");
+        receiveremailtextfield1.setText("eg : ram@gmail.com ");
         receiveremailtextfield1.setBorder(null);
         receiveremailtextfield1.addActionListener(this::receiveremailtextfield1ActionPerformed);
 
         receivernametextfield1.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
-        receivernametextfield1.setText("Ram");
+        receivernametextfield1.setText("eg :Ram");
         receivernametextfield1.setBorder(null);
+        receivernametextfield1.addActionListener(this::receivernametextfield1ActionPerformed);
 
         trackingidtextfield1.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
-        trackingidtextfield1.setText("#1111");
+        trackingidtextfield1.setText("eg: #114351");
         trackingidtextfield1.setBorder(null);
 
         trackingIDlabel1.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
@@ -351,7 +245,7 @@ public class EmployeeOrderEdit extends javax.swing.JFrame {
                                         .addGroup(jPanel4Layout.createSequentialGroup()
                                             .addComponent(totalcostlabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addComponent(total_cost_value, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addGroup(jPanel4Layout.createSequentialGroup()
                                             .addComponent(senderaddresslabel1)
                                             .addGap(18, 18, 18)
@@ -406,7 +300,7 @@ public class EmployeeOrderEdit extends javax.swing.JFrame {
                         .addGap(27, 27, 27))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(total_cost_value, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(totalcostlabel1))
                         .addGap(45, 45, 45))))
         );
@@ -428,14 +322,6 @@ public class EmployeeOrderEdit extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_TrackingIdtextfieldActionPerformed
 
-    private void receiveremailtextfieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_receiveremailtextfieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_receiveremailtextfieldActionPerformed
-
-    private void receiveraddresstextfieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_receiveraddresstextfieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_receiveraddresstextfieldActionPerformed
-
     private void receiveraddresstextfield1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_receiveraddresstextfield1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_receiveraddresstextfield1ActionPerformed
@@ -443,6 +329,10 @@ public class EmployeeOrderEdit extends javax.swing.JFrame {
     private void receiveremailtextfield1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_receiveremailtextfield1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_receiveremailtextfield1ActionPerformed
+
+    private void receivernametextfield1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_receivernametextfield1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_receivernametextfield1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -473,51 +363,95 @@ public class EmployeeOrderEdit extends javax.swing.JFrame {
     private javax.swing.JButton Dashboardbutton;
     private javax.swing.JButton ManageOrderbutton;
     private javax.swing.JButton Manageuserbutton;
-    private javax.swing.JLabel Orderdetaillabel;
     private javax.swing.JLabel Orderdetaillabel1;
     private javax.swing.JPanel Topbar;
     private javax.swing.JTextField TrackingIdtextfield;
-    private javax.swing.JButton editbutton;
     private javax.swing.JButton editbutton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
     private javax.swing.JButton logoutbutton;
     private javax.swing.JButton myprofilebutton;
     private javax.swing.JLabel name;
     private javax.swing.JButton order_history;
-    private javax.swing.JLabel receiveraddresslabel;
     private javax.swing.JLabel receiveraddresslabel1;
-    private javax.swing.JTextField receiveraddresstextfield;
     private javax.swing.JTextField receiveraddresstextfield1;
-    private javax.swing.JLabel receiveremaillabel;
     private javax.swing.JLabel receiveremaillabel1;
-    private javax.swing.JTextField receiveremailtextfield;
     private javax.swing.JTextField receiveremailtextfield1;
-    private javax.swing.JLabel receivernamelabel;
     private javax.swing.JLabel receivernamelabel1;
-    private javax.swing.JTextField receivernametextfield;
     private javax.swing.JTextField receivernametextfield1;
     private javax.swing.JLabel role;
-    private javax.swing.JButton savebutton;
     private javax.swing.JButton savebutton1;
     private javax.swing.JButton searchButton;
-    private javax.swing.JLabel senderaddresslabel;
     private javax.swing.JLabel senderaddresslabel1;
-    private javax.swing.JTextField senderaddresstextfield;
     private javax.swing.JTextField senderaddresstextfield1;
-    private javax.swing.JLabel totalcostlabel;
+    private javax.swing.JTextField total_cost_value;
     private javax.swing.JLabel totalcostlabel1;
-    private javax.swing.JLabel trackingIDlabel;
     private javax.swing.JLabel trackingIDlabel1;
-    private javax.swing.JTextField trackingidtextfield;
     private javax.swing.JTextField trackingidtextfield1;
     // End of variables declaration//GEN-END:variables
+// =========================================================================
+    // TOP BAR & SEARCH INPUT
+    // =========================================================================
+
+    public void setTopBar(String userName, String userRole) {
+        name.setText(userName);
+        role.setText(userRole);
+    }
+
+    public String getSearchInput() {
+        return TrackingIdtextfield.getText().trim();
+    }
+
+    // =========================================================================
+    // DATA INJECTION & LOCKING
+    // =========================================================================
+
+    public void setOrderDetails(String trackingId, String receiverName, String email, String senderAddr, String receiverAddr, String cost) {
+        trackingidtextfield1.setText(trackingId); 
+        receivernametextfield1.setText(receiverName);
+        receiveremailtextfield1.setText(email);
+        senderaddresstextfield1.setText(senderAddr);
+        receiveraddresstextfield1.setText(receiverAddr);
+        total_cost_value.setText(cost); 
+    }
+
+    public void setFormEditable(boolean isEditable) {
+        // Locked fields that the employee can NEVER change here
+        trackingidtextfield1.setEditable(false); 
+        senderaddresstextfield1.setEditable(false);
+        
+        // Allowed fields
+        receivernametextfield1.setEditable(isEditable);
+        receiveremailtextfield1.setEditable(isEditable);
+        receiveraddresstextfield1.setEditable(isEditable);
+        total_cost_value.setEditable(isEditable);
+        
+        // Toggle buttons
+        savebutton1.setEnabled(isEditable);
+        editbutton1.setEnabled(!isEditable);
+    }
+
+    // Grab updated data for the database
+    public String getUpdatedName() { return receivernametextfield1.getText().trim(); }
+    public String getUpdatedEmail() { return receiveremailtextfield1.getText().trim(); }
+    public String getUpdatedAddress() { return receiveraddresstextfield1.getText().trim(); }
+    public String getUpdatedCost() { return total_cost_value.getText().trim(); }
+
+    // =========================================================================
+    // BUTTON LISTENERS
+    // =========================================================================
+    
+    public void addSearchListener(java.awt.event.ActionListener listener) { searchButton.addActionListener(listener); }
+    public void addEditListener(java.awt.event.ActionListener listener) { editbutton1.addActionListener(listener); }
+    public void addSaveListener(java.awt.event.ActionListener listener) { savebutton1.addActionListener(listener); }
+    
+    // Navigators
+    public void addDashboardListener(java.awt.event.ActionListener listener) { Dashboardbutton.addActionListener(listener); }
+    public void addLogoutListener(java.awt.event.ActionListener listener) { logoutbutton.addActionListener(listener); }
+
 }

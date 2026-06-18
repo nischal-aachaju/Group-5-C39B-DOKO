@@ -54,7 +54,6 @@ public class EmployeeOrderCancellation extends javax.swing.JFrame {
         jTextField5 = new javax.swing.JTextField();
         jTextField6 = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
@@ -219,12 +218,6 @@ public class EmployeeOrderCancellation extends javax.swing.JFrame {
         jPanel1.add(jLabel8);
         jLabel8.setBounds(16, 6, 120, 33);
 
-        jButton1.setBackground(new java.awt.Color(168, 168, 168));
-        jButton1.setText("Edit");
-        jButton1.addActionListener(this::jButton1ActionPerformed);
-        jPanel1.add(jButton1);
-        jButton1.setBounds(620, 8, 99, 35);
-
         jButton3.setBackground(new java.awt.Color(168, 168, 168));
         jButton3.setText("Delivered");
         jButton3.addActionListener(this::jButton3ActionPerformed);
@@ -296,10 +289,6 @@ public class EmployeeOrderCancellation extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField7ActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
-
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
@@ -354,7 +343,6 @@ public class EmployeeOrderCancellation extends javax.swing.JFrame {
     private javax.swing.JPanel Sidebar;
     private javax.swing.JPanel Topbar1;
     private javax.swing.JButton dashboard;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;

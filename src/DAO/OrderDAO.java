@@ -617,4 +617,46 @@ public class OrderDAO {
             return null;
         }
     }
+    // =========================================================================
+    // EMPLOYEE: SECURE SEARCH & EDIT
+    // =========================================================================
+
+    // 1. Fetch order ONLY if it is assigned to this specific employee
+    public java.sql.ResultSet getEmployeeOrderByTrackingId(String trackingId, int employeeId) {
+        String sql = "SELECT o.receiver_name, o.receiver_email, o.street, o.receiver_location, o.total_cost " +
+                     "FROM orders o " +
+                     "JOIN assignedOrders a ON o.tracking_id = a.ordersTrackingID " +
+                     "WHERE o.tracking_id = ? AND a.usersID = ?";
+        try {
+            java.sql.Connection conn = db.openConnection();
+            java.sql.PreparedStatement pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1, trackingId);
+            pstmt.setInt(2, employeeId);
+            return pstmt.executeQuery(); 
+        } catch (java.sql.SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    // 2. Update only the allowed fields
+    public boolean employeeUpdateOrderDetails(String trackingId, String name, String email, String address, double totalCost) {
+        String sql = "UPDATE orders SET receiver_name = ?, receiver_email = ?, receiver_location = ?, total_cost = ? WHERE tracking_id = ?";
+        
+        try (java.sql.Connection conn = db.openConnection();
+             java.sql.PreparedStatement pstmt = conn.prepareStatement(sql)) {
+             
+            pstmt.setString(1, name);
+            pstmt.setString(2, email);
+            pstmt.setString(3, address);
+            pstmt.setDouble(4, totalCost);
+            pstmt.setString(5, trackingId);
+            
+            return pstmt.executeUpdate() > 0;
+            
+        } catch (java.sql.SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
 }

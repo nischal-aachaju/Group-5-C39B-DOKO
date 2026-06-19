@@ -327,8 +327,6 @@ public class newordersubmissionform extends javax.swing.JFrame {
 
         jLabel28.setText("200");
 
-        jLabel29.setText("yes");
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(

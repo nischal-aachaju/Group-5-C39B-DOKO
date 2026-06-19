@@ -631,9 +631,6 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel29">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="yes"/>
-              </Properties>
             </Component>
           </SubComponents>
         </Container>

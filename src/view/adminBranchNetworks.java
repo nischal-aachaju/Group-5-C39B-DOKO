@@ -101,7 +101,7 @@ public class adminBranchNetworks extends javax.swing.JFrame {
         jPanel3.add(ManageUserButton);
         ManageUserButton.setBounds(10, 150, 170, 50);
 
-        workLoadButton.setBackground(new java.awt.Color(216, 140, 81));
+        workLoadButton.setBackground(new java.awt.Color(33, 38, 49));
         workLoadButton.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
         workLoadButton.setForeground(new java.awt.Color(255, 255, 255));
         workLoadButton.setText("Workload");
@@ -123,7 +123,7 @@ public class adminBranchNetworks extends javax.swing.JFrame {
         jPanel3.add(Dashboardbutton);
         Dashboardbutton.setBounds(10, 90, 170, 50);
 
-        branchAndNetworksButton.setBackground(new java.awt.Color(33, 38, 49));
+        branchAndNetworksButton.setBackground(new java.awt.Color(216, 140, 81));
         branchAndNetworksButton.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
         branchAndNetworksButton.setForeground(new java.awt.Color(255, 255, 255));
         branchAndNetworksButton.setText("Branch and Network");

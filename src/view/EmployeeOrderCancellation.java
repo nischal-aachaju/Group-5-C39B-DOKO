@@ -41,28 +41,28 @@ public class EmployeeOrderCancellation extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jSeparator2 = new javax.swing.JSeparator();
         jPanel1 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
-        jLabel8 = new javax.swing.JLabel();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jTextField7 = new javax.swing.JTextField();
-        jButton5 = new javax.swing.JButton();
+        trackingIdLabel = new javax.swing.JLabel();
+        receiverNameLabel = new javax.swing.JLabel();
+        ReceiverEmailLabel = new javax.swing.JLabel();
+        senderAddressLabel = new javax.swing.JLabel();
+        receiverAddressLabel = new javax.swing.JLabel();
+        totalCostLabel = new javax.swing.JLabel();
+        TrackingIdTextF = new javax.swing.JTextField();
+        receiverNameTextf = new javax.swing.JTextField();
+        receiverEmailTextF = new javax.swing.JTextField();
+        senderAddressTextf = new javax.swing.JTextField();
+        receiverAddressTextF = new javax.swing.JTextField();
+        totalCostTextF = new javax.swing.JTextField();
+        orderDetailsLabel = new javax.swing.JLabel();
+        DeliveredButton = new javax.swing.JButton();
+        cancelOrderButtton = new javax.swing.JButton();
+        returnButton = new javax.swing.JButton();
+        TrackingIdInput = new javax.swing.JTextField();
+        searchButton = new javax.swing.JButton();
         Topbar1 = new javax.swing.JPanel();
-        name = new javax.swing.JLabel();
+        username = new javax.swing.JLabel();
         role = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
+        icon = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Employee Dashboard");
@@ -164,108 +164,109 @@ public class EmployeeOrderCancellation extends javax.swing.JFrame {
 
         jPanel1.setLayout(null);
 
-        jLabel2.setText("Tracking ID");
-        jPanel1.add(jLabel2);
-        jLabel2.setBounds(68, 66, 79, 16);
+        trackingIdLabel.setText("Tracking ID");
+        jPanel1.add(trackingIdLabel);
+        trackingIdLabel.setBounds(68, 66, 79, 16);
 
-        jLabel3.setText("Recever's Name");
-        jPanel1.add(jLabel3);
-        jLabel3.setBounds(68, 125, 90, 16);
+        receiverNameLabel.setText("Recever's Name");
+        jPanel1.add(receiverNameLabel);
+        receiverNameLabel.setBounds(68, 125, 90, 16);
 
-        jLabel4.setText("Receiver's Email");
-        jPanel1.add(jLabel4);
-        jLabel4.setBounds(68, 180, 90, 16);
+        ReceiverEmailLabel.setText("Receiver's Email");
+        jPanel1.add(ReceiverEmailLabel);
+        ReceiverEmailLabel.setBounds(68, 180, 90, 16);
 
-        jLabel5.setText("Sender's Address");
-        jPanel1.add(jLabel5);
-        jLabel5.setBounds(68, 235, 100, 16);
+        senderAddressLabel.setText("Sender's Address");
+        jPanel1.add(senderAddressLabel);
+        senderAddressLabel.setBounds(68, 235, 100, 16);
 
-        jLabel6.setText("Receiver's Address");
-        jPanel1.add(jLabel6);
-        jLabel6.setBounds(68, 286, 100, 16);
+        receiverAddressLabel.setText("Receiver's Address");
+        jPanel1.add(receiverAddressLabel);
+        receiverAddressLabel.setBounds(68, 286, 100, 16);
 
-        jLabel7.setText("Total cost");
-        jPanel1.add(jLabel7);
-        jLabel7.setBounds(68, 341, 79, 16);
+        totalCostLabel.setText("Total cost");
+        jPanel1.add(totalCostLabel);
+        totalCostLabel.setBounds(68, 341, 79, 16);
 
-        jTextField1.setText("#2345");
-        jTextField1.addActionListener(this::jTextField1ActionPerformed);
-        jPanel1.add(jTextField1);
-        jTextField1.setBounds(197, 59, 147, 31);
+        TrackingIdTextF.setText("#2345");
+        TrackingIdTextF.addActionListener(this::TrackingIdTextFActionPerformed);
+        jPanel1.add(TrackingIdTextF);
+        TrackingIdTextF.setBounds(197, 59, 147, 31);
 
-        jTextField2.setText("Unish");
-        jPanel1.add(jTextField2);
-        jTextField2.setBounds(197, 118, 147, 31);
+        receiverNameTextf.setText("Unish");
+        jPanel1.add(receiverNameTextf);
+        receiverNameTextf.setBounds(197, 118, 147, 31);
 
-        jTextField3.setText("unishg@gmail.com");
-        jPanel1.add(jTextField3);
-        jTextField3.setBounds(197, 173, 147, 30);
+        receiverEmailTextF.setText("unishg@gmail.com");
+        jPanel1.add(receiverEmailTextF);
+        receiverEmailTextF.setBounds(197, 173, 147, 30);
 
-        jTextField4.setText("kapan");
-        jPanel1.add(jTextField4);
-        jTextField4.setBounds(197, 228, 146, 30);
+        senderAddressTextf.setText("kapan");
+        jPanel1.add(senderAddressTextf);
+        senderAddressTextf.setBounds(197, 228, 146, 30);
 
-        jTextField5.setText("maitidevi");
-        jPanel1.add(jTextField5);
-        jTextField5.setBounds(197, 279, 146, 30);
+        receiverAddressTextF.setText("maitidevi");
+        receiverAddressTextF.addActionListener(this::receiverAddressTextFActionPerformed);
+        jPanel1.add(receiverAddressTextF);
+        receiverAddressTextF.setBounds(197, 279, 146, 30);
 
-        jTextField6.setText("1233");
-        jPanel1.add(jTextField6);
-        jTextField6.setBounds(197, 334, 146, 30);
+        totalCostTextF.setText("1233");
+        jPanel1.add(totalCostTextF);
+        totalCostTextF.setBounds(197, 334, 146, 30);
 
-        jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel8.setText("Order Details");
-        jPanel1.add(jLabel8);
-        jLabel8.setBounds(16, 6, 120, 33);
+        orderDetailsLabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        orderDetailsLabel.setText("Order Details");
+        jPanel1.add(orderDetailsLabel);
+        orderDetailsLabel.setBounds(16, 6, 120, 33);
 
-        jButton3.setBackground(new java.awt.Color(168, 168, 168));
-        jButton3.setText("Delivered");
-        jButton3.addActionListener(this::jButton3ActionPerformed);
-        jPanel1.add(jButton3);
-        jButton3.setBounds(620, 330, 99, 40);
+        DeliveredButton.setBackground(new java.awt.Color(168, 168, 168));
+        DeliveredButton.setText("Delivered");
+        DeliveredButton.addActionListener(this::DeliveredButtonActionPerformed);
+        jPanel1.add(DeliveredButton);
+        DeliveredButton.setBounds(620, 330, 99, 40);
 
-        jButton4.setBackground(new java.awt.Color(168, 168, 168));
-        jButton4.setText("Cancel Order");
-        jButton4.addActionListener(this::jButton4ActionPerformed);
-        jPanel1.add(jButton4);
-        jButton4.setBounds(500, 330, 99, 40);
+        cancelOrderButtton.setBackground(new java.awt.Color(168, 168, 168));
+        cancelOrderButtton.setText("Cancel Order");
+        cancelOrderButtton.addActionListener(this::cancelOrderButttonActionPerformed);
+        jPanel1.add(cancelOrderButtton);
+        cancelOrderButtton.setBounds(500, 330, 99, 40);
 
-        jButton2.setBackground(new java.awt.Color(168, 168, 168));
-        jButton2.setText("Return");
-        jButton2.addActionListener(this::jButton2ActionPerformed);
-        jPanel1.add(jButton2);
-        jButton2.setBounds(410, 330, 72, 40);
+        returnButton.setBackground(new java.awt.Color(168, 168, 168));
+        returnButton.setText("Return");
+        returnButton.addActionListener(this::returnButtonActionPerformed);
+        jPanel1.add(returnButton);
+        returnButton.setBounds(410, 330, 72, 40);
 
         MainPanel.add(jPanel1);
         jPanel1.setBounds(240, 180, 740, 400);
 
-        jTextField7.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jTextField7.setText("# Enter Tracking ID");
-        jTextField7.addActionListener(this::jTextField7ActionPerformed);
-        MainPanel.add(jTextField7);
-        jTextField7.setBounds(240, 120, 350, 50);
+        TrackingIdInput.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        TrackingIdInput.setText("# Enter Tracking ID");
+        TrackingIdInput.addActionListener(this::TrackingIdInputActionPerformed);
+        MainPanel.add(TrackingIdInput);
+        TrackingIdInput.setBounds(240, 120, 350, 50);
 
-        jButton5.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jButton5.setText("Search");
-        jButton5.setMaximumSize(new java.awt.Dimension(84, 32));
-        jButton5.setMinimumSize(new java.awt.Dimension(84, 32));
-        MainPanel.add(jButton5);
-        jButton5.setBounds(610, 120, 110, 50);
+        searchButton.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        searchButton.setText("Search");
+        searchButton.setMaximumSize(new java.awt.Dimension(84, 32));
+        searchButton.setMinimumSize(new java.awt.Dimension(84, 32));
+        MainPanel.add(searchButton);
+        searchButton.setBounds(610, 120, 110, 50);
 
         Topbar1.setLayout(null);
 
-        name.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
-        name.setText("Name");
-        Topbar1.add(name);
-        name.setBounds(770, 20, 100, 22);
+        username.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        username.setText("Name");
+        Topbar1.add(username);
+        username.setBounds(770, 10, 100, 22);
 
         role.setText("Role");
         Topbar1.add(role);
         role.setBounds(770, 40, 90, 16);
 
-        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/pfp.jpg"))); // NOI18N
-        Topbar1.add(jLabel11);
-        jLabel11.setBounds(700, 6, 60, 60);
+        icon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/pfp.jpg"))); // NOI18N
+        Topbar1.add(icon);
+        icon.setBounds(700, 6, 60, 60);
 
         MainPanel.add(Topbar1);
         Topbar1.setBounds(180, 0, 870, 70);
@@ -285,29 +286,33 @@ public class EmployeeOrderCancellation extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField7ActionPerformed
+    private void TrackingIdInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TrackingIdInputActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField7ActionPerformed
+    }//GEN-LAST:event_TrackingIdInputActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void DeliveredButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeliveredButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_DeliveredButtonActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void TrackingIdTextFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TrackingIdTextFActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_TrackingIdTextFActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void cancelOrderButttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelOrderButttonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_cancelOrderButttonActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void returnButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_returnButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_returnButtonActionPerformed
 
     private void OrdersHistoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OrdersHistoryActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_OrdersHistoryActionPerformed
+
+    private void receiverAddressTextFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_receiverAddressTextFActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_receiverAddressTextFActionPerformed
 
     /**
      * @param args the command line arguments
@@ -335,40 +340,40 @@ public class EmployeeOrderCancellation extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton DeliveredButton;
     private javax.swing.JPanel MainPanel;
     private javax.swing.JButton ManageOrders;
     private javax.swing.JButton MyProfile;
     private javax.swing.JButton MyShipments;
     private javax.swing.JButton OrdersHistory;
+    private javax.swing.JLabel ReceiverEmailLabel;
     private javax.swing.JPanel Sidebar;
     private javax.swing.JPanel Topbar1;
+    private javax.swing.JTextField TrackingIdInput;
+    private javax.swing.JTextField TrackingIdTextF;
+    private javax.swing.JButton cancelOrderButtton;
     private javax.swing.JButton dashboard;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
+    private javax.swing.JLabel icon;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
     private javax.swing.JLabel logo;
     private javax.swing.JButton logout;
-    private javax.swing.JLabel name;
+    private javax.swing.JLabel orderDetailsLabel;
+    private javax.swing.JLabel receiverAddressLabel;
+    private javax.swing.JTextField receiverAddressTextF;
+    private javax.swing.JTextField receiverEmailTextF;
+    private javax.swing.JLabel receiverNameLabel;
+    private javax.swing.JTextField receiverNameTextf;
+    private javax.swing.JButton returnButton;
     private javax.swing.JLabel role;
+    private javax.swing.JButton searchButton;
+    private javax.swing.JLabel senderAddressLabel;
+    private javax.swing.JTextField senderAddressTextf;
+    private javax.swing.JLabel totalCostLabel;
+    private javax.swing.JTextField totalCostTextF;
+    private javax.swing.JLabel trackingIdLabel;
+    private javax.swing.JLabel username;
     // End of variables declaration//GEN-END:variables
 }

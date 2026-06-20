@@ -133,6 +133,7 @@ public class Manager_ProfileController {
         @Override
         public void actionPerformed(ActionEvent e) {
             // 1. Create the Reset Password View
+            close();
             view.OTPBasedPasswordReset resetView = new view.OTPBasedPasswordReset();
             
             // 2. Pass it to our shared ResetPasswordController

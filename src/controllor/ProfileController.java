@@ -169,6 +169,7 @@ public void initProfileSection() {
         @Override
         public void actionPerformed(java.awt.event.ActionEvent e) {
             
+            close();
             // 1. Create the Reset Password View
             view.OTPBasedPasswordReset resetView = new view.OTPBasedPasswordReset();
             

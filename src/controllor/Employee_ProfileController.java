@@ -136,7 +136,7 @@ public class Employee_ProfileController {
     class OpenResetPasswordListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            
+            close();
             // 1. Create the Reset Password View
             view.OTPBasedPasswordReset resetView = new view.OTPBasedPasswordReset();
             

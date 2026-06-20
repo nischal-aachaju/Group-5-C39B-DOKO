@@ -34,7 +34,7 @@ public class Admin_Dashboard extends javax.swing.JFrame {
         Dashboard = new javax.swing.JButton();
         ManageUser = new javax.swing.JButton();
         workload = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        branchNetwork = new javax.swing.JButton();
         ManageOrders = new javax.swing.JButton();
         PriceConfiguration = new javax.swing.JButton();
         MyProfile = new javax.swing.JButton();
@@ -96,10 +96,10 @@ public class Admin_Dashboard extends javax.swing.JFrame {
         workload.setForeground(new java.awt.Color(255, 255, 255));
         workload.setText("Workload");
 
-        jButton4.setBackground(new java.awt.Color(33, 38, 49));
-        jButton4.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(255, 255, 255));
-        jButton4.setText("Branch & Network");
+        branchNetwork.setBackground(new java.awt.Color(33, 38, 49));
+        branchNetwork.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
+        branchNetwork.setForeground(new java.awt.Color(255, 255, 255));
+        branchNetwork.setText("Branch & Network");
 
         ManageOrders.setBackground(new java.awt.Color(33, 38, 49));
         ManageOrders.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
@@ -136,7 +136,7 @@ public class Admin_Dashboard extends javax.swing.JFrame {
                     .addComponent(Dashboard, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(ManageUser, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(workload, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(branchNetwork, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(ManageOrders, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(PriceConfiguration, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE)
                     .addComponent(MyProfile, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -158,7 +158,7 @@ public class Admin_Dashboard extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(workload, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(branchNetwork, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(ManageOrders, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -443,7 +443,7 @@ public class Admin_Dashboard extends javax.swing.JFrame {
     private javax.swing.JPanel Total_orders;
     private javax.swing.JLabel activeShipmentValue2;
     private javax.swing.JLabel active_shpiment_text2;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JButton branchNetwork;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
@@ -525,5 +525,6 @@ public void addManageOrdersistener(java.awt.event.ActionListener listener) {
     public void addWorkloadListener(java.awt.event.ActionListener listener) { workload.addActionListener(listener); }
     public void addManageOrdersListener(java.awt.event.ActionListener listener) { ManageOrders.addActionListener(listener); }
     public void addPriceConfigListener(java.awt.event.ActionListener listener) { PriceConfiguration.addActionListener(listener); }
+     public void addbranchNetwork(java.awt.event.ActionListener listener) { branchNetwork.addActionListener(listener); }
  
 }

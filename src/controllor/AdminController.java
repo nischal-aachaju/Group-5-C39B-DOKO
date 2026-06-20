@@ -28,7 +28,9 @@ public class AdminController {
         
         // 3. Connect navigation buttons
         this.adminView.addLogoutListener(new LogoutListener());
-        this.adminView.addMyProfileListener(new MyProfileListener()); 
+        this.adminView.addMyProfileListener(new MyProfileListener());
+        this.adminView.addbranchNetwork(new branchNetworkListener());
+        
         
         // Note: Using your exact method name from your View class
         this.adminView.addManageOrdersistener(new ManageOrdersListener()); 
@@ -137,6 +139,16 @@ public class AdminController {
             view.AdminOrderEdit ManageOrder = new view.AdminOrderEdit();
             controllor.AdminManageOrderController moc = new controllor.AdminManageOrderController(ManageOrder, currentUser);
             moc.open();
+        }
+    }
+    class branchNetworkListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            close();
+    
+            view.adminBranchNetworks adminBranchOrder = new view.adminBranchNetworks();
+            controllor.AdminBranchController aboc = new controllor.AdminBranchController(adminBranchOrder, currentUser);
+            aboc.open();
         }
     }
 }

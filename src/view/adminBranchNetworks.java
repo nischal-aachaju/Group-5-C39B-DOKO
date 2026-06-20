@@ -70,6 +70,7 @@ public class adminBranchNetworks extends javax.swing.JFrame {
         createButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(1050, 600));
         getContentPane().setLayout(null);
 
         logoutbutton.setBackground(new java.awt.Color(33, 38, 49));
@@ -227,7 +228,7 @@ public class adminBranchNetworks extends javax.swing.JFrame {
         BranchDetailsLabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         BranchDetailsLabel.setText("Branch Details");
         jPanel4.add(BranchDetailsLabel);
-        BranchDetailsLabel.setBounds(0, 0, 190, 40);
+        BranchDetailsLabel.setBounds(20, 0, 190, 40);
 
         branchIDlabel.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         branchIDlabel.setText("Branch ID");
@@ -370,61 +371,88 @@ public class adminBranchNetworks extends javax.swing.JFrame {
 // =========================================================================
     // TOP BAR & SEARCH INPUT
     // =========================================================================
-//
-//    public void setTopBar(String userName, String userRole) {
-//        name.setText(userName);
-//        role.setText(userRole);
-//    }
-//
-//    public String getSearchInput() {
-//        return employeeIdTextF.getText().trim();
-//    }
-//
-//    // =========================================================================
-//    // DATA INJECTION & LOCKING
-//    // =========================================================================
-//
-//    public void setOrderDetails(String trackingId, String receiverName, String email, String senderAddr, String receiverAddr, String cost) {
-//        employeeIDtextfield.setText(trackingId); 
-//        employeeNameTextfield1.setText(receiverName);
-//        employeeEmailTextField.setText(email);
-//        phoneNumbertextfield.setText(senderAddr);
-//        receiveraddresstextfield1.setText(receiverAddr);
-//        total_cost_value.setText(cost); 
-//    }
-//
-//    public void setFormEditable(boolean isEditable) {
-//        // Locked fields that the employee can NEVER change here
-//        employeeIDtextfield.setEditable(false); 
-//        phoneNumbertextfield.setEditable(false);
-//        
-//        // Allowed fields
-//        employeeNameTextfield1.setEditable(isEditable);
-//        employeeEmailTextField.setEditable(isEditable);
-//        receiveraddresstextfield1.setEditable(isEditable);
-//        total_cost_value.setEditable(isEditable);
-//        
-//        // Toggle buttons
-//        saveButton.setEnabled(isEditable);
-//        editButton.setEnabled(!isEditable);
-//    }
-//
-//    // Grab updated data for the database
-//    public String getUpdatedName() { return employeeNameTextfield1.getText().trim(); }
-//    public String getUpdatedEmail() { return employeeEmailTextField.getText().trim(); }
-//    public String getUpdatedAddress() { return receiveraddresstextfield1.getText().trim(); }
-//    public String getUpdatedCost() { return total_cost_value.getText().trim(); }
-//
-//    // =========================================================================
-//    // BUTTON LISTENERS
-//    // =========================================================================
-//    
-//    public void addSearchListener(java.awt.event.ActionListener listener) { searchButton.addActionListener(listener); }
-//    public void addEditListener(java.awt.event.ActionListener listener) { editButton.addActionListener(listener); }
-//    public void addSaveListener(java.awt.event.ActionListener listener) { saveButton.addActionListener(listener); }
-//    
-//    // Navigators
-//    public void addDashboardListener(java.awt.event.ActionListener listener) { Dashboardbutton.addActionListener(listener); }
-//    public void addLogoutListener(java.awt.event.ActionListener listener) { logoutbutton.addActionListener(listener); }
 
+    public void setTopBar(String userName, String userRole) {
+        name.setText(userName);
+        role.setText(userRole);
+    }
+
+    public String getSearchInput() {
+        return employeeIdTextF.getText().trim(); // This is the search bar at the top!
+    }
+
+    // =========================================================================
+    // DATA INJECTION & LOCKING
+    // =========================================================================
+
+    public void setBranchStats(String totalOrders, String totalEmployees) {
+        TotalOrdersLabel.setText(totalOrders);
+        TotalEmployeesLabel.setText(totalEmployees);
+    }
+
+    public void setBranchDetails(String id, String branchName, String email, String phone, String address) {
+        branchIDtextF.setText(id); 
+        BranchNametextF.setText(branchName);
+        branchEmailTextF.setText(email);
+        BranchNumberTextF.setText(phone);
+        BranchAddressTextF.setText(address); 
+    }
+
+    public void setFormState(String state) {
+        if (state.equals("VIEW")) {
+            // Locked - User just searched
+            branchIDtextF.setEditable(false);
+            BranchNametextF.setEditable(false);
+            branchEmailTextF.setEditable(false);
+            BranchNumberTextF.setEditable(false);
+            BranchAddressTextF.setEditable(false);
+            
+            saveButton.setEnabled(false);
+            editButton.setEnabled(true);
+            
+        } else if (state.equals("EDIT")) {
+            // Unlocked - User clicked Edit (ID is always locked!)
+            branchIDtextF.setEditable(false);
+            BranchNametextF.setEditable(true);
+            branchEmailTextF.setEditable(true);
+            BranchNumberTextF.setEditable(true);
+            BranchAddressTextF.setEditable(true);
+            
+            saveButton.setEnabled(true);
+            editButton.setEnabled(false);
+            
+        } else if (state.equals("CREATE")) {
+            // Completely wiped clean to type a new branch!
+            setBranchDetails("AUTO", "", "", "", "");
+            setBranchStats("0", "0"); // New branches have no stats yet
+            
+            branchIDtextF.setEditable(false); // ID is generated by database
+            BranchNametextF.setEditable(true);
+            branchEmailTextF.setEditable(true);
+            BranchNumberTextF.setEditable(true);
+            BranchAddressTextF.setEditable(true);
+            
+            saveButton.setEnabled(true);
+            editButton.setEnabled(false);
+        }
+    }
+
+    // Grab updated/new data for the database
+    public String getBranchNameInput() { return BranchNametextF.getText().trim(); }
+    public String getBranchEmailInput() { return branchEmailTextF.getText().trim(); }
+    public String getBranchPhoneInput() { return BranchNumberTextF.getText().trim(); }
+    public String getBranchAddressInput() { return BranchAddressTextF.getText().trim(); }
+
+    // =========================================================================
+    // BUTTON LISTENERS
+    // =========================================================================
+    
+    public void addSearchListener(java.awt.event.ActionListener listener) { searchButton.addActionListener(listener); }
+    public void addEditListener(java.awt.event.ActionListener listener) { editButton.addActionListener(listener); }
+    public void addSaveListener(java.awt.event.ActionListener listener) { saveButton.addActionListener(listener); }
+    public void addCreateListener(java.awt.event.ActionListener listener) { createButton.addActionListener(listener); }
+    
+    // Navigators
+    public void addDashboardListener(java.awt.event.ActionListener listener) { Dashboardbutton.addActionListener(listener); }
+    public void addLogoutListener(java.awt.event.ActionListener listener) { logoutbutton.addActionListener(listener); }
 }

@@ -12,9 +12,7 @@ public class OrderSubmissionForm extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(OrderSubmissionForm.class.getName());
 
-    /**
-     * Creates new form newordersubmissionform
-     */
+
     public OrderSubmissionForm() {
         initComponents();
     }
@@ -50,7 +48,6 @@ public class OrderSubmissionForm extends javax.swing.JFrame {
         description_field = new javax.swing.JTextField();
         reciver_email_field = new javax.swing.JTextField();
         reciver_contact_number_field = new javax.swing.JTextField();
-        reciver_location_field = new javax.swing.JTextField();
         reciver_weight_field = new javax.swing.JTextField();
         reciver_street_field = new javax.swing.JTextField();
         submit = new javax.swing.JButton();
@@ -70,6 +67,7 @@ public class OrderSubmissionForm extends javax.swing.JFrame {
         MyProfile = new javax.swing.JButton();
         jSeparator2 = new javax.swing.JSeparator();
         logout = new javax.swing.JButton();
+        reciver_location_field = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -155,8 +153,6 @@ public class OrderSubmissionForm extends javax.swing.JFrame {
         reciver_email_field.setBounds(210, 250, 350, 30);
         MainPanel.add(reciver_contact_number_field);
         reciver_contact_number_field.setBounds(210, 330, 350, 30);
-        MainPanel.add(reciver_location_field);
-        reciver_location_field.setBounds(210, 410, 350, 30);
         MainPanel.add(reciver_weight_field);
         reciver_weight_field.setBounds(210, 490, 350, 30);
         MainPanel.add(reciver_street_field);
@@ -169,7 +165,7 @@ public class OrderSubmissionForm extends javax.swing.JFrame {
 
         RandomtrackingID.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         MainPanel.add(RandomtrackingID);
-        RandomtrackingID.setBounds(210, 90, 370, 30);
+        RandomtrackingID.setBounds(210, 80, 370, 40);
 
         username.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         username.setText("Name");
@@ -290,13 +286,16 @@ public class OrderSubmissionForm extends javax.swing.JFrame {
         MainPanel.add(jPanel2);
         jPanel2.setBounds(0, 0, 180, 600);
 
+        MainPanel.add(reciver_location_field);
+        reciver_location_field.setBounds(210, 420, 350, 30);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(MainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 1038, Short.MAX_VALUE)
+                .addComponent(MainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -381,7 +380,7 @@ public class OrderSubmissionForm extends javax.swing.JFrame {
     private javax.swing.JLabel reciver_email;
     private javax.swing.JTextField reciver_email_field;
     private javax.swing.JLabel reciver_location;
-    private javax.swing.JTextField reciver_location_field;
+    private javax.swing.JComboBox<String> reciver_location_field;
     private javax.swing.JLabel reciver_name;
     private javax.swing.JTextField reciver_name_field;
     private javax.swing.JLabel reciver_street;
@@ -396,89 +395,123 @@ public class OrderSubmissionForm extends javax.swing.JFrame {
     private javax.swing.JLabel user_role;
     private javax.swing.JLabel username;
     // End of variables declaration//GEN-END:variables
-// --- DATA EXTRACTION ---
-    public String getReceiverNameInput() { return reciver_name_field.getText(); }
-    public String getReceiverEmailInput() { return reciver_email_field.getText(); }
-    public String getReceiverContactInput() { return reciver_contact_number_field.getText(); }
-    public String getReceiverLocationInput() { return reciver_location_field.getText(); }
-    public String getStreetInput() { return reciver_street_field.getText(); }
-    public String getDescriptionInput() { return description_field.getText(); }
+// =========================================================================
+    // 1. DATA EXTRACTION (Fixed for ComboBoxes)
+    // =========================================================================
+    
+    public String getReceiverNameInput() { return reciver_name_field.getText().trim(); }
+    public String getReceiverEmailInput() { return reciver_email_field.getText().trim(); }
+    public String getReceiverContactInput() { return reciver_contact_number_field.getText().trim(); }
+    public String getStreetInput() { return reciver_street_field.getText().trim(); }
+    public String getDescriptionInput() { return description_field.getText().trim(); }
+    
+    // Extracts the selected item from the Location Dropdown
+    public String getReceiverLocationInput() { 
+        Object selected = reciver_location_field.getSelectedItem();
+        return selected != null ? selected.toString() : ""; 
+    }
     
     public double getWeightInput() { 
-        try { return Double.parseDouble(reciver_weight_field.getText()); } 
+        try { return Double.parseDouble(reciver_weight_field.getText().trim()); } 
         catch (NumberFormatException e) { return 0.0; }
     }
+    
     public double getTotalCostInput() { 
-        try { return Double.parseDouble(total_Cost_field.getText()); } 
+        try { return Double.parseDouble(total_Cost_field.getText().trim()); } 
         catch (NumberFormatException e) { return 0.0; }
     }
 
-    // --- BILL GENERATION ---
+    // =========================================================================
+    // 2. BRANCH DROPDOWN LOGIC
+    // =========================================================================
 
-public void updateBillSection(Model.Order order) {
-        // Map Customer details
-        bill_customer_name.setText("Customer Name :"+order.getReceiverName());
-        bill_customer_location.setText("Customer Location :"+order.getReceiverLocation()); 
-        bill_customer_contact.setText("Customer Contact :"+order.getReceiverContact());
-        
-        // Map costs exactly the same way, without extra text prefixes
-        bill_order_cost.setText("Order Cost :"+String.valueOf(order.getDeclaredCost()));   
+    public void populateBranchDropdown(java.sql.ResultSet rs) {
+        reciver_location_field.removeAllItems(); 
+        try {
+            while (rs != null && rs.next()) {
+                // Combines ID and Name visually: "1 - Hamro Doko Kathmandu"
+                String item = rs.getInt("branch_id") + " - " + rs.getString("branch_name");
+                reciver_location_field.addItem(item);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
-        bill_delivery_cost.setText("Delivery Cost Cost :"+String.valueOf(order.getDeliveryCost()));  
-        COD_totalCost_sum_delivery_cost.setText("COD :"+String.valueOf(order.getFinalBillAmount()));   
+    public int getSelectedBranchId() {
+        String selected = (String) reciver_location_field.getSelectedItem();
+        if (selected == null || selected.isEmpty()) {
+            return -1; 
+        }
         
-        // Ensure the bill section also matches the new Tracking ID format
+        // Splits "1 - Hamro Doko Kathmandu" and grabs just the "1"
+        String[] parts = selected.split(" - ");
+        try {
+            return Integer.parseInt(parts[0]);
+        } catch (NumberFormatException e) {
+            return -1;
+        }
+    }
+
+    // =========================================================================
+    // 3. BILL GENERATION & UI UPDATES
+    // =========================================================================
+
+    public void updateBillSection(Model.Order order) {
+        bill_customer_name.setText("Customer Name: " + order.getReceiverName());
+        bill_customer_location.setText("Customer Location: " + order.getReceiverLocation()); 
+        bill_customer_contact.setText("Customer Contact: " + order.getReceiverContact());
+        
+        bill_order_cost.setText("Order Cost: " + String.valueOf(order.getDeclaredCost()));   
+        bill_delivery_cost.setText("Delivery Cost: " + String.valueOf(order.getDeliveryCost()));  
+        COD_totalCost_sum_delivery_cost.setText("COD: " + String.valueOf(order.getFinalBillAmount()));   
+        
         RandomtrackingID.setText("TrackingID: #" + order.getTrackingId());
     }
-    
-    // --- LISTENER ---
-    public void addSubmitListener(java.awt.event.ActionListener listener) {
-        submit.addActionListener(listener); 
+
+    public void setInitialTrackingId(String trackingId) {
+        RandomtrackingID.setText("TrackingID: #" + trackingId);
     }
     
-    // Clear the form after a successful submission
+    public void setUsernameLabel(String name) {
+        username.setText(name); 
+    }
+
+    public void setRoleLabel(String role) {
+        user_role.setText(role); 
+    }
+
+    // =========================================================================
+    // 4. CLEAR FORM AFTER SUCCESS
+    // =========================================================================
+
     public void clearOrderForm() {
         reciver_name_field.setText("");
         reciver_email_field.setText("");
         reciver_contact_number_field.setText("");
-        reciver_location_field.setText("");
         reciver_street_field.setText("");
         reciver_weight_field.setText("");
         total_Cost_field.setText("");
         description_field.setText("");
         RandomtrackingID.setText("");
+        
+        // Safely reset dropdowns to their first option
+        if (reciver_location_field.getItemCount() > 0) {
+            reciver_location_field.setSelectedIndex(0); 
+        }
+        if (reciver_location_field.getItemCount() > 0) {
+            reciver_location_field.setSelectedIndex(0);
+        }
     }
 
-    // 1. Methods to update the top-bar user details
-    public void setUsernameLabel(String name) {
-        username.setText(name); // Sets actual username to 'username' JLabel
-    }
-
-    public void setRoleLabel(String role) {
-        user_role.setText(role); // Sets actual role to 'user_role' JLabel
-    }
-
-    // 2. Methods to hook up button clicks to the UserController listeners
-
-
-    public void addDashboardListener(java.awt.event.ActionListener listener) {
-        Dashboard.addActionListener(listener); 
-    }
-
-    public void addLogoutListener(java.awt.event.ActionListener listener) {
-        logout.addActionListener(listener); 
-    }
-    public void addMyProfileListener(java.awt.event.ActionListener listener) {
-        MyProfile.addActionListener(listener); 
-    }
-public void setInitialTrackingId(String trackingId) {
-        // Adds the full "TrackingID: #" prefix exactly as requested
-        RandomtrackingID.setText("TrackingID: #" + trackingId);
-    }
-public void addMyShipmentsListener(java.awt.event.ActionListener listener) {
-        MyShipments.addActionListener(listener); 
-    }
-public void addOrdersHistoryListener(java.awt.event.ActionListener listener) {
-        OrdersHistory.addActionListener(listener); 
-    }
+    // =========================================================================
+    // 5. ACTION LISTENERS
+    // =========================================================================
+    
+    public void addSubmitListener(java.awt.event.ActionListener listener) { submit.addActionListener(listener); }
+    public void addDashboardListener(java.awt.event.ActionListener listener) { Dashboard.addActionListener(listener); }
+    public void addLogoutListener(java.awt.event.ActionListener listener) { logout.addActionListener(listener); }
+    public void addMyProfileListener(java.awt.event.ActionListener listener) { MyProfile.addActionListener(listener); }
+    public void addMyShipmentsListener(java.awt.event.ActionListener listener) { MyShipments.addActionListener(listener); }
+    public void addOrdersHistoryListener(java.awt.event.ActionListener listener) { OrdersHistory.addActionListener(listener); }
 }

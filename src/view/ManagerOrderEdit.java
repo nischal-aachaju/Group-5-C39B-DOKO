@@ -69,6 +69,7 @@ public class ManagerOrderEdit extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(1050, 600));
+        setResizable(false);
         getContentPane().setLayout(null);
 
         jPanel2.setBackground(new java.awt.Color(238, 233, 223));
@@ -98,7 +99,7 @@ public class ManagerOrderEdit extends javax.swing.JFrame {
         profile.setBounds(700, 5, 60, 60);
 
         jPanel2.add(toppanel);
-        toppanel.setBounds(180, 0, 870, 74);
+        toppanel.setBounds(180, 0, 870, 0);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(168, 168, 168)));
@@ -290,7 +291,7 @@ public class ManagerOrderEdit extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Dashboard, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(12, 12, 12)
-                .addComponent(ManageUser, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
+                .addComponent(ManageUser, javax.swing.GroupLayout.DEFAULT_SIZE, 68, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(WorkLoad, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -304,15 +305,15 @@ public class ManagerOrderEdit extends javax.swing.JFrame {
                 .addGap(47, 47, 47)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(logout, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addComponent(logout)
+                .addGap(8, 8, 8))
         );
 
         jPanel2.add(sidebar);
-        sidebar.setBounds(0, 0, 180, 590);
+        sidebar.setBounds(0, 0, 180, 610);
 
         getContentPane().add(jPanel2);
-        jPanel2.setBounds(0, 0, 1050, 600);
+        jPanel2.setBounds(0, 0, 1050, 610);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

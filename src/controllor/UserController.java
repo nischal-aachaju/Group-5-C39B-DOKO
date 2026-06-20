@@ -60,6 +60,11 @@ public class UserController {
         this.orderSubmission.setUsernameLabel(currentUser.getUsername());
         this.orderSubmission.setRoleLabel(currentUser.getRole());
         
+        // --- ADDED: Populate Branch Dropdown on Startup ---
+        DAO.BranchDAO bDao = new DAO.BranchDAO();
+        this.orderSubmission.populateBranchDropdown(bDao.getAllBranches());
+        // --------------------------------------------------
+        
         DAO.OrderDAO orderDao = new DAO.OrderDAO();
         boolean isUnique = false;
         java.util.Random rand = new java.util.Random();
@@ -76,7 +81,6 @@ public class UserController {
         this.orderSubmission.addLogoutListener(new LogoutFromOrderListener());
         this.orderSubmission.addMyProfileListener(new NavigateToProfileFromOrder());
         this.orderSubmission.addOrdersHistoryListener(new NavigateToHistoryFromOrder());
-
         this.orderSubmission.addMyShipmentsListener(new NavigateToShipmentsFromOrder()); 
     }
 
@@ -87,13 +91,14 @@ public class UserController {
     public void open() {
         if (this.userView != null) {
             this.userView.setVisible(true);
+            this.userView.setLocationRelativeTo(null);
         } else if (this.orderSubmission != null) {
             this.orderSubmission.setVisible(true);
+            this.orderSubmission.setLocationRelativeTo(null);
         }
     }
 
     public void close() {
-        // Direct dispose() is the safest way to close JFrames
         if (this.userView != null) {
             this.userView.dispose();
         } else if (this.orderSubmission != null) {
@@ -154,6 +159,15 @@ public class UserController {
     class SubmitOrderListener implements java.awt.event.ActionListener {
         @Override
         public void actionPerformed(java.awt.event.ActionEvent e) {
+            
+            // --- ADDED: Grab the selected Branch ID before checking anything else ---
+            int selectedBranchId = orderSubmission.getSelectedBranchId();
+            if (selectedBranchId == -1) {
+                JOptionPane.showMessageDialog(orderSubmission, "Please select a Drop-off Branch!", "Validation Error", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+            // ------------------------------------------------------------------------
+
             String name = orderSubmission.getReceiverNameInput();
             String email = orderSubmission.getReceiverEmailInput();
             String contact = orderSubmission.getReceiverContactInput();
@@ -171,9 +185,16 @@ public class UserController {
             Model.Order newOrder = new Model.Order(currentTrackingId, name, email, contact, location, street, weight, cost, description);
             DAO.OrderDAO orderDao = new DAO.OrderDAO();
             
+            // If the order successfully saves to the database...
             if (orderDao.saveOrder(newOrder, currentUser.getUserID())) {
+                
+                // --- ADDED: Instantly link this new order to the selected branch ---
+                DAO.BranchDAO branchDao = new DAO.BranchDAO();
+                branchDao.assignOrderToBranch(selectedBranchId, currentTrackingId);
+                // -------------------------------------------------------------------
+                
                 orderSubmission.updateBillSection(newOrder); 
-                JOptionPane.showMessageDialog(orderSubmission, "Order Placed Successfully!\nTracking ID: " + currentTrackingId);
+                JOptionPane.showMessageDialog(orderSubmission, "Order Placed and Assigned Successfully!\nTracking ID: " + currentTrackingId);
                 orderSubmission.clearOrderForm(); 
                 
                 boolean isNewUnique = false;
@@ -185,6 +206,7 @@ public class UserController {
                 } while (!isNewUnique);
 
                 orderSubmission.setInitialTrackingId(currentTrackingId);
+                
             } else {
                 JOptionPane.showMessageDialog(orderSubmission, "Database Error: Could not save order records.");
             }
@@ -226,24 +248,20 @@ public class UserController {
             new controllor.Sender_shipment_controller(shipmentsView, currentUser).open();
         }
     }
-    // Paste this with your other DASHBOARD NAVIGATION LISTENERS
+    
     class OpenOrdersHistoryListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            close(); // 1. Close the Dashboard
-            
-
+            close(); 
             view.Sender_Order_History historyView = new view.Sender_Order_History();
-            
-            // 3. Open it using the new Controller
             new controllor.HistoryController(historyView, currentUser).open();
         }
     }
+    
     class NavigateToHistoryFromOrder implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            closeSubWindow(orderSubmission); // Destroy the Order window
-            
+            closeSubWindow(orderSubmission); 
             view.Sender_Order_History historyView = new view.Sender_Order_History();
             new controllor.HistoryController(historyView, currentUser).open();
         }

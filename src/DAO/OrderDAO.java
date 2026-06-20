@@ -58,38 +58,6 @@ public class OrderDAO {
         }
     }
 
-//    public Order getOrderByTrackingIdAndSender(String trackingId, int senderId) {
-//        String sql = "SELECT * FROM orders WHERE tracking_id = ? AND sender_id = ?";
-//
-//        try (Connection conn = db.openConnection();
-//             PreparedStatement pstmt = conn.prepareStatement(sql)) {
-//
-//            pstmt.setString(1, trackingId);
-//            pstmt.setInt(2, senderId);
-//
-//            try (ResultSet rs = pstmt.executeQuery()) {
-//                if (rs.next()) {
-//                    return new Order(
-//                        rs.getString("tracking_id"),
-//                        rs.getString("receiver_name"),
-//                        rs.getString("receiver_email"),
-//                        rs.getString("receiver_contact"),
-//                        rs.getString("receiver_location"),
-//                        rs.getString("street"),
-//                        rs.getDouble("weight"),
-//                        rs.getDouble("total_cost"),
-//                        rs.getString("description")
-//                    );
-//                }
-//            }
-//
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//        }
-//
-//        return null;
-//    }
-    
     public Order getOrderByTrackingIdAndSender(String trackingId, int senderId) {
         String sql = "SELECT * FROM orders WHERE tracking_id = ? AND sender_id = ?";
 

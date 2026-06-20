@@ -524,7 +524,8 @@ public void addManageOrdersistener(java.awt.event.ActionListener listener) {
     public void addManageUserListener(java.awt.event.ActionListener listener) { ManageUser.addActionListener(listener); }
     public void addWorkloadListener(java.awt.event.ActionListener listener) { workload.addActionListener(listener); }
     public void addManageOrdersListener(java.awt.event.ActionListener listener) { ManageOrders.addActionListener(listener); }
-    public void addPriceConfigListener(java.awt.event.ActionListener listener) { PriceConfiguration.addActionListener(listener); }
+//    public void addPriceConfigListener(java.awt.event.ActionListener listener) { PriceConfiguration.addActionListener(listener); }
      public void addbranchNetwork(java.awt.event.ActionListener listener) { branchNetwork.addActionListener(listener); }
+     public void addPriceConfiguration(java.awt.event.ActionListener listener) { PriceConfiguration.addActionListener(listener); }
  
 }

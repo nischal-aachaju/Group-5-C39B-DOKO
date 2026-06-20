@@ -28,172 +28,57 @@ public class priceConfiguration extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jCheckBox1 = new javax.swing.JCheckBox();
         MainPanel = new javax.swing.JPanel();
-        sidebar = new javax.swing.JPanel();
-        logo = new javax.swing.JLabel();
-        jSeparator1 = new javax.swing.JSeparator();
-        Dashboard = new javax.swing.JButton();
-        ManageUser = new javax.swing.JButton();
-        Workload = new javax.swing.JButton();
-        branch = new javax.swing.JButton();
-        ManageOrder = new javax.swing.JButton();
-        priceconfiguration = new javax.swing.JButton();
-        Myprofile = new javax.swing.JButton();
-        jSeparator2 = new javax.swing.JSeparator();
-        logout = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
-        profile = new javax.swing.JLabel();
-        Name = new javax.swing.JLabel();
-        Role = new javax.swing.JLabel();
+        name = new javax.swing.JLabel();
+        role = new javax.swing.JLabel();
+        profile1 = new javax.swing.JLabel();
         Priceconfiguration = new javax.swing.JLabel();
         pricePerkg = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         PriceperMeter = new javax.swing.JTextField();
         Save = new javax.swing.JButton();
+        sidebar = new javax.swing.JPanel();
+        jSeparator1 = new javax.swing.JSeparator();
+        Dashboard = new javax.swing.JButton();
+        ManageUser = new javax.swing.JButton();
+        workload = new javax.swing.JButton();
+        branchNetwork = new javax.swing.JButton();
+        ManageOrders = new javax.swing.JButton();
+        PriceConfiguration = new javax.swing.JButton();
+        MyProfile = new javax.swing.JButton();
+        jSeparator2 = new javax.swing.JSeparator();
+        logout = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+
+        jCheckBox1.setText("jCheckBox1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(1050, 600));
         getContentPane().setLayout(null);
 
         MainPanel.setBackground(new java.awt.Color(238, 233, 223));
         MainPanel.setLayout(null);
 
-        sidebar.setBackground(new java.awt.Color(33, 38, 49));
+        jPanel1.setLayout(null);
 
-        logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/logo.png"))); // NOI18N
+        name.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        name.setText("Name");
+        jPanel1.add(name);
+        name.setBounds(760, 10, 100, 22);
 
-        Dashboard.setBackground(new java.awt.Color(33, 38, 49));
-        Dashboard.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
-        Dashboard.setForeground(new java.awt.Color(255, 255, 255));
-        Dashboard.setText("Dashboard");
+        role.setText("Role");
+        jPanel1.add(role);
+        role.setBounds(760, 40, 90, 16);
 
-        ManageUser.setBackground(new java.awt.Color(33, 38, 49));
-        ManageUser.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
-        ManageUser.setForeground(new java.awt.Color(255, 255, 255));
-        ManageUser.setText("ManageUser");
-
-        Workload.setBackground(new java.awt.Color(33, 38, 49));
-        Workload.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
-        Workload.setForeground(new java.awt.Color(255, 255, 255));
-        Workload.setText("Workload");
-        Workload.addActionListener(this::WorkloadActionPerformed);
-
-        branch.setBackground(new java.awt.Color(33, 38, 49));
-        branch.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
-        branch.setForeground(new java.awt.Color(255, 255, 255));
-        branch.setText("Branch&network");
-        branch.addActionListener(this::branchActionPerformed);
-
-        ManageOrder.setBackground(new java.awt.Color(33, 38, 49));
-        ManageOrder.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
-        ManageOrder.setForeground(new java.awt.Color(255, 255, 255));
-        ManageOrder.setText("Manage Order");
-        ManageOrder.addActionListener(this::ManageOrderActionPerformed);
-
-        priceconfiguration.setBackground(new java.awt.Color(33, 38, 49));
-        priceconfiguration.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
-        priceconfiguration.setForeground(new java.awt.Color(255, 255, 255));
-        priceconfiguration.setText("Price Configuration");
-
-        Myprofile.setBackground(new java.awt.Color(33, 38, 49));
-        Myprofile.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
-        Myprofile.setForeground(new java.awt.Color(255, 255, 255));
-        Myprofile.setText("My profile");
-        Myprofile.addActionListener(this::MyprofileActionPerformed);
-
-        logout.setBackground(new java.awt.Color(33, 38, 49));
-        logout.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
-        logout.setForeground(new java.awt.Color(255, 0, 51));
-        logout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/logout.png"))); // NOI18N
-        logout.setText("logout");
-        logout.addActionListener(this::logoutActionPerformed);
-
-        javax.swing.GroupLayout sidebarLayout = new javax.swing.GroupLayout(sidebar);
-        sidebar.setLayout(sidebarLayout);
-        sidebarLayout.setHorizontalGroup(
-            sidebarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(logo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING)
-            .addGroup(sidebarLayout.createSequentialGroup()
-                .addGroup(sidebarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, sidebarLayout.createSequentialGroup()
-                        .addGap(0, 6, Short.MAX_VALUE)
-                        .addComponent(priceconfiguration))
-                    .addGroup(sidebarLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(sidebarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Workload, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(branch, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(Myprofile, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(ManageOrder, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(ManageUser, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(Dashboard, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(logout, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap())
-            .addComponent(jSeparator2)
-        );
-        sidebarLayout.setVerticalGroup(
-            sidebarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(sidebarLayout.createSequentialGroup()
-                .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Dashboard, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(ManageUser, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Workload, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(branch, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(ManageOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(priceconfiguration, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Myprofile, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(24, 24, 24)
-                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(logout, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        MainPanel.add(sidebar);
-        sidebar.setBounds(0, 0, 194, 602);
-
-        profile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/profile.png"))); // NOI18N
-
-        Name.setText("Name");
-
-        Role.setText("Role");
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(713, Short.MAX_VALUE)
-                .addComponent(profile)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Name, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Role, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(56, 56, 56))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(profile, javax.swing.GroupLayout.PREFERRED_SIZE, 76, Short.MAX_VALUE)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addComponent(Name)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Role)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        profile1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/pfp.jpg"))); // NOI18N
+        jPanel1.add(profile1);
+        profile1.setBounds(690, 8, 60, 60);
 
         MainPanel.add(jPanel1);
-        jPanel1.setBounds(200, 0, 896, 76);
+        jPanel1.setBounds(190, 0, 860, 70);
 
         Priceconfiguration.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
         Priceconfiguration.setText("Price Configuration");
@@ -210,9 +95,9 @@ public class priceConfiguration extends javax.swing.JFrame {
         jLabel1.setBounds(251, 186, 123, 20);
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
-        jLabel2.setText("Price per Meter");
+        jLabel2.setText("Price per KiloMeter");
         MainPanel.add(jLabel2);
-        jLabel2.setBounds(251, 270, 110, 20);
+        jLabel2.setBounds(251, 270, 160, 20);
 
         PriceperMeter.addActionListener(this::PriceperMeterActionPerformed);
         MainPanel.add(PriceperMeter);
@@ -224,6 +109,104 @@ public class priceConfiguration extends javax.swing.JFrame {
         Save.setText("Save");
         MainPanel.add(Save);
         Save.setBounds(905, 501, 101, 38);
+
+        sidebar.setBackground(new java.awt.Color(33, 38, 49));
+
+        Dashboard.setBackground(new java.awt.Color(33, 38, 49));
+        Dashboard.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
+        Dashboard.setForeground(new java.awt.Color(255, 255, 255));
+        Dashboard.setText("Dashboard");
+        Dashboard.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 1, true));
+
+        ManageUser.setBackground(new java.awt.Color(33, 38, 49));
+        ManageUser.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
+        ManageUser.setForeground(new java.awt.Color(255, 255, 255));
+        ManageUser.setText("Manage User");
+        ManageUser.addActionListener(this::ManageUserActionPerformed);
+
+        workload.setBackground(new java.awt.Color(33, 38, 49));
+        workload.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
+        workload.setForeground(new java.awt.Color(255, 255, 255));
+        workload.setText("Workload");
+
+        branchNetwork.setBackground(new java.awt.Color(33, 38, 49));
+        branchNetwork.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
+        branchNetwork.setForeground(new java.awt.Color(255, 255, 255));
+        branchNetwork.setText("Branch & Network");
+
+        ManageOrders.setBackground(new java.awt.Color(33, 38, 49));
+        ManageOrders.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
+        ManageOrders.setForeground(new java.awt.Color(255, 255, 255));
+        ManageOrders.setText("Manage Order");
+
+        PriceConfiguration.setBackground(new java.awt.Color(216, 140, 81));
+        PriceConfiguration.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
+        PriceConfiguration.setForeground(new java.awt.Color(255, 255, 255));
+        PriceConfiguration.setText("Price Configuration");
+
+        MyProfile.setBackground(new java.awt.Color(33, 38, 49));
+        MyProfile.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
+        MyProfile.setForeground(new java.awt.Color(255, 255, 255));
+        MyProfile.setText("My Profile");
+
+        logout.setBackground(new java.awt.Color(33, 38, 49));
+        logout.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
+        logout.setForeground(new java.awt.Color(255, 51, 51));
+        logout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/logout.png"))); // NOI18N
+        logout.setText("Logout");
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/logo.png"))); // NOI18N
+
+        javax.swing.GroupLayout sidebarLayout = new javax.swing.GroupLayout(sidebar);
+        sidebar.setLayout(sidebarLayout);
+        sidebarLayout.setHorizontalGroup(
+            sidebarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jSeparator2)
+            .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addGroup(sidebarLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(sidebarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Dashboard, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(ManageUser, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(workload, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(branchNetwork, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(ManageOrders, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(PriceConfiguration, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE)
+                    .addComponent(MyProfile, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(logout, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+        sidebarLayout.setVerticalGroup(
+            sidebarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(sidebarLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Dashboard, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(ManageUser, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(workload, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(branchNetwork, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(ManageOrders, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(PriceConfiguration, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(MyProfile, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27)
+                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(logout, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(74, Short.MAX_VALUE))
+        );
+
+        MainPanel.add(sidebar);
+        sidebar.setBounds(0, 0, 180, 658);
 
         getContentPane().add(MainPanel);
         MainPanel.setBounds(0, 0, 1050, 600);
@@ -239,25 +222,9 @@ public class priceConfiguration extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_PriceperMeterActionPerformed
 
-    private void branchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_branchActionPerformed
+    private void ManageUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ManageUserActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_branchActionPerformed
-
-    private void ManageOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ManageOrderActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ManageOrderActionPerformed
-
-    private void MyprofileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MyprofileActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_MyprofileActionPerformed
-
-    private void WorkloadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_WorkloadActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_WorkloadActionPerformed
-
-    private void logoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_logoutActionPerformed
+    }//GEN-LAST:event_ManageUserActionPerformed
 
     /**
      * @param args the command line arguments
@@ -287,26 +254,65 @@ public class priceConfiguration extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Dashboard;
     private javax.swing.JPanel MainPanel;
-    private javax.swing.JButton ManageOrder;
+    private javax.swing.JButton ManageOrders;
     private javax.swing.JButton ManageUser;
-    private javax.swing.JButton Myprofile;
-    private javax.swing.JLabel Name;
+    private javax.swing.JButton MyProfile;
+    private javax.swing.JButton PriceConfiguration;
     private javax.swing.JLabel Priceconfiguration;
     private javax.swing.JTextField PriceperMeter;
-    private javax.swing.JLabel Role;
     private javax.swing.JButton Save;
-    private javax.swing.JButton Workload;
-    private javax.swing.JButton branch;
+    private javax.swing.JButton branchNetwork;
+    private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JLabel logo;
     private javax.swing.JButton logout;
+    private javax.swing.JLabel name;
     private javax.swing.JTextField pricePerkg;
-    private javax.swing.JButton priceconfiguration;
-    private javax.swing.JLabel profile;
+    private javax.swing.JLabel profile1;
+    private javax.swing.JLabel role;
     private javax.swing.JPanel sidebar;
+    private javax.swing.JButton workload;
     // End of variables declaration//GEN-END:variables
+
+    // =========================================================================
+    // DATA EXTRACTION (Getters)
+    // =========================================================================
+    public String getPricePerKgInput() { 
+        return pricePerkg.getText().trim(); 
+    }
+    
+    public String getPricePerMeterInput() { 
+        return PriceperMeter.getText().trim(); 
+    }
+
+    // =========================================================================
+    // DATA POPULATION (Setters to load current prices)
+    // =========================================================================
+    public void setPricePerKgInput(String price) { 
+        pricePerkg.setText(price); 
+    }
+    
+    public void setPricePerMeterInput(String price) { 
+        PriceperMeter.setText(price); 
+    }
+
+    // =========================================================================
+    // ACTION LISTENERS
+    // =========================================================================
+    public void addSaveListener(java.awt.event.ActionListener listener) { 
+        Save.addActionListener(listener); 
+    }
+    
+    public void addDashboardListener(java.awt.event.ActionListener listener) { 
+        Dashboard.addActionListener(listener); 
+    }
+    
+    public void addLogoutListener(java.awt.event.ActionListener listener) { 
+        logout.addActionListener(listener); 
+    }
+
 }

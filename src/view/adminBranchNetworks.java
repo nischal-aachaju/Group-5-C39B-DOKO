@@ -48,11 +48,11 @@ public class adminBranchNetworks extends javax.swing.JFrame {
         role = new javax.swing.JLabel();
         profile = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
+        TotalOrders = new javax.swing.JLabel();
         TotalOrdersLabel = new javax.swing.JLabel();
-        TotalOrderNumbers = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
+        TotalEmployees = new javax.swing.JLabel();
         TotalEmployeesLabel = new javax.swing.JLabel();
-        TotalEmployeesNumber = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         editButton = new javax.swing.JButton();
         saveButton = new javax.swing.JButton();
@@ -185,30 +185,30 @@ public class adminBranchNetworks extends javax.swing.JFrame {
 
         jPanel1.setLayout(null);
 
-        TotalOrdersLabel.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        TotalOrders.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        TotalOrders.setText("0");
+        jPanel1.add(TotalOrders);
+        TotalOrders.setBounds(70, 40, 50, 20);
+
+        TotalOrdersLabel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         TotalOrdersLabel.setText("Total Orders");
         jPanel1.add(TotalOrdersLabel);
-        TotalOrdersLabel.setBounds(40, 10, 90, 20);
-
-        TotalOrderNumbers.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        TotalOrderNumbers.setText("100");
-        jPanel1.add(TotalOrderNumbers);
-        TotalOrderNumbers.setBounds(60, 30, 80, 32);
+        TotalOrdersLabel.setBounds(30, 10, 100, 20);
 
         jPanel2.add(jPanel1);
         jPanel1.setBounds(260, 240, 160, 70);
 
         jPanel6.setLayout(null);
 
-        TotalEmployeesLabel.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        TotalEmployees.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        TotalEmployees.setText("0");
+        jPanel6.add(TotalEmployees);
+        TotalEmployees.setBounds(70, 30, 70, 32);
+
+        TotalEmployeesLabel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         TotalEmployeesLabel.setText("Total Employees");
         jPanel6.add(TotalEmployeesLabel);
-        TotalEmployeesLabel.setBounds(20, 10, 130, 20);
-
-        TotalEmployeesNumber.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        TotalEmployeesNumber.setText("20");
-        jPanel6.add(TotalEmployeesNumber);
-        TotalEmployeesNumber.setBounds(70, 30, 70, 32);
+        TotalEmployeesLabel.setBounds(30, 10, 130, 20);
 
         jPanel2.add(jPanel6);
         jPanel6.setBounds(490, 240, 160, 70);
@@ -339,9 +339,9 @@ public class adminBranchNetworks extends javax.swing.JFrame {
     private javax.swing.JButton MyProfileButton;
     private javax.swing.JButton PriceConfigurationButton;
     private javax.swing.JPanel Topbar;
+    private javax.swing.JLabel TotalEmployees;
     private javax.swing.JLabel TotalEmployeesLabel;
-    private javax.swing.JLabel TotalEmployeesNumber;
-    private javax.swing.JLabel TotalOrderNumbers;
+    private javax.swing.JLabel TotalOrders;
     private javax.swing.JLabel TotalOrdersLabel;
     private javax.swing.JLabel addressLabel;
     private javax.swing.JButton branchAndNetworksButton;
@@ -386,8 +386,8 @@ public class adminBranchNetworks extends javax.swing.JFrame {
     // =========================================================================
 
     public void setBranchStats(String totalOrders, String totalEmployees) {
-        TotalOrdersLabel.setText(totalOrders);
-        TotalEmployeesLabel.setText(totalEmployees);
+        TotalOrders.setText(totalOrders);
+        TotalEmployees.setText(totalEmployees);
     }
 
     public void setBranchDetails(String id, String branchName, String email, String phone, String address) {

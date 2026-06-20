@@ -2,10 +2,9 @@ package controllor;
 
 import Model.userData;
 import view.SenderOrderCancellation;
-import java.awt.Window;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.SwingUtilities;
+import javax.swing.JOptionPane;
 
 public class Sender_shipment_controller {
     
@@ -25,24 +24,20 @@ public class Sender_shipment_controller {
         this.shipmentView.addLogoutListener(new LogoutListener());
         this.shipmentView.addCreateOrderListener(new CreateOrderListener());
         this.shipmentView.addMyProfileListener(new NavigateToProfileFromShipments());
-        
         this.shipmentView.addOrdersHistoryListener(new NavigateToHistoryFromShipments());
     
         this.shipmentView.addSearchListener(new SearchOrderListener());
-
-        
-        // --- ADD THIS NEW LINE ---
         this.shipmentView.addCancelOrderListener(new CancelOrderListener());
-    
     }
 
     public void open() {
         this.shipmentView.setVisible(true);
+        this.shipmentView.setLocationRelativeTo(null);
     }
 
-public void close() {
+    public void close() {
         if (this.shipmentView != null) {
-            this.shipmentView.dispose(); // This permanently destroys the My Shipments window!
+            this.shipmentView.dispose(); 
         }
     }
 
@@ -53,9 +48,7 @@ public void close() {
     class BackToDashboardListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            close(); // Close the Shipments page
-            
-            // Re-open the main Dashboard
+            close(); 
             view.Sender_Dashboard dashboardView = new view.Sender_Dashboard();
             controllor.UserController dashboardController = new controllor.UserController(dashboardView, currentUser);
             dashboardController.open();
@@ -74,78 +67,80 @@ public void close() {
     class CreateOrderListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            // 1. Close the current My Shipments window
             close(); 
-            
-            // 2. Create the Create Order View
             view.OrderSubmissionForm orderView = new view.OrderSubmissionForm();
-            
-            // 3. Pass the view AND the current user to the Create Order Controller
             controllor.UserController orderController = new controllor.UserController(orderView, currentUser);
-            
-            // 4. Open the new page
             orderController.open();
         }
     }
+    
     class NavigateToProfileFromShipments implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            close(); // Closes the Shipments window completely
-            
+            close(); 
             view.Sender_profile profileView = new view.Sender_profile();
             new controllor.ProfileController(profileView, currentUser).open();
         }
     }
-class CancelOrderListener implements ActionListener {
+    
+    class NavigateToHistoryFromShipments implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            close(); 
+            view.Sender_Order_History historyView = new view.Sender_Order_History();
+            new controllor.HistoryController(historyView, currentUser).open();
+        }
+    }
+
+    // =========================================================================
+    // CANCEL & SEARCH LISTENERS
+    // =========================================================================
+
+    class CancelOrderListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
             
-            // 1. Check if there is actually an order loaded on the screen
             String loadedTrackingId = shipmentView.getLoadedTrackingId();
             
             if (loadedTrackingId == null || loadedTrackingId.trim().isEmpty()) {
-                javax.swing.JOptionPane.showMessageDialog(shipmentView, 
+                JOptionPane.showMessageDialog(shipmentView, 
                         "Please search for an order to cancel first.", 
                         "No Order Selected", 
-                        javax.swing.JOptionPane.WARNING_MESSAGE);
+                        JOptionPane.WARNING_MESSAGE);
                 return;
             }
 
-            // 2. The Yes/No Double-Check Popup
-            int confirm = javax.swing.JOptionPane.showConfirmDialog(
+            int confirm = JOptionPane.showConfirmDialog(
                     shipmentView, 
                     "Are you absolutely sure you want to cancel Order #" + loadedTrackingId + "?", 
                     "Confirm Cancellation", 
-                    javax.swing.JOptionPane.YES_NO_OPTION,
-                    javax.swing.JOptionPane.WARNING_MESSAGE
+                    JOptionPane.YES_NO_OPTION,
+                    JOptionPane.WARNING_MESSAGE
             );
 
-            // 3. Process the Cancellation if they clicked "Yes"
-            if (confirm == javax.swing.JOptionPane.YES_OPTION) {
-                
+            if (confirm == JOptionPane.YES_OPTION) {
                 DAO.OrderDAO orderDao = new DAO.OrderDAO();
                 boolean success = orderDao.cancelOrder(loadedTrackingId, currentUser.getUserID());
                 
                 if (success) {
-                    javax.swing.JOptionPane.showMessageDialog(shipmentView, 
+                    JOptionPane.showMessageDialog(shipmentView, 
                             "Success! Order #" + loadedTrackingId + " has been cancelled.", 
                             "Order Cancelled", 
-                            javax.swing.JOptionPane.INFORMATION_MESSAGE);
+                            JOptionPane.INFORMATION_MESSAGE);
                             
-                    // Clear the screen so they know it's gone
                     shipmentView.clearOrderDetails(); 
                     
                 } else {
-                    javax.swing.JOptionPane.showMessageDialog(shipmentView, 
+                    JOptionPane.showMessageDialog(shipmentView, 
                             "Failed to cancel the order. It may have already been shipped.", 
                             "Error", 
-                            javax.swing.JOptionPane.ERROR_MESSAGE);
+                            JOptionPane.ERROR_MESSAGE);
                 }
             }
         }
     }
 
-class SearchOrderListener implements ActionListener {
+    class SearchOrderListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
             
@@ -153,7 +148,7 @@ class SearchOrderListener implements ActionListener {
             String cleanTrackingId = rawSearchInput.replaceAll("[^0-9]", "");
 
             if (cleanTrackingId.isEmpty()) {
-                javax.swing.JOptionPane.showMessageDialog(shipmentView, "Please enter a valid numeric Tracking ID.");
+                JOptionPane.showMessageDialog(shipmentView, "Please enter a valid numeric Tracking ID.");
                 return;
             }
 
@@ -161,35 +156,20 @@ class SearchOrderListener implements ActionListener {
             Model.Order foundOrder = orderDao.getOrderByTrackingIdAndSender(cleanTrackingId, currentUser.getUserID()); 
 
             if (foundOrder != null) {
-                
-                // --- NEW LOGIC: Check if the order is cancelled! ---
                 if ("cancelled".equalsIgnoreCase(foundOrder.getStatus())) {
-                    
-                    javax.swing.JOptionPane.showMessageDialog(shipmentView, 
+                    JOptionPane.showMessageDialog(shipmentView, 
                             "Order #" + cleanTrackingId + " has been cancelled.", 
                             "Order Cancelled", 
-                            javax.swing.JOptionPane.WARNING_MESSAGE);
+                            JOptionPane.WARNING_MESSAGE);
                             
-                    // Clear the screen so they don't see old data
                     shipmentView.clearOrderDetails(); 
                     
                 } else {
-                    // If it is NOT cancelled (e.g., "pending"), load the data normally!
                     shipmentView.populateOrderDetails(foundOrder, currentUser);
                 }
-                
             } else {
-                javax.swing.JOptionPane.showMessageDialog(shipmentView, "Order not found! Please check the Tracking ID.");
+                JOptionPane.showMessageDialog(shipmentView, "Order not found! Please check the Tracking ID.");
             }
-        }
-    }
-class NavigateToHistoryFromShipments implements ActionListener {
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            close(); // Destroy the Shipments window
-            
-            view.Sender_Order_History historyView = new view.Sender_Order_History();
-            new controllor.HistoryController(historyView, currentUser).open();
         }
     }
 }

@@ -3,11 +3,11 @@ package controllor;
 import Model.userData;
 import view.Admin_Dashboard;
 
-import java.awt.Window;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.ResultSet;
-import javax.swing.SwingUtilities;
+
 
 public class AdminController {
     
@@ -30,6 +30,8 @@ public class AdminController {
         this.adminView.addLogoutListener(new LogoutListener());
         this.adminView.addMyProfileListener(new MyProfileListener());
         this.adminView.addbranchNetwork(new branchNetworkListener());
+        this.adminView.addPriceConfiguration(new PriceConfigurationListener());
+        
         
         
         // Note: Using your exact method name from your View class
@@ -41,14 +43,24 @@ public class AdminController {
         this.adminView.setLocationRelativeTo(null); // Centers the window
     }
 
+//    public void close() {
+//        Window window = SwingUtilities.getWindowAncestor(this.adminView);
+//        if (window != null) {
+//            window.dispose();
+//        } else {
+//            this.adminView.setVisible(false);
+//        }
+//    }
+    
     public void close() {
-        Window window = SwingUtilities.getWindowAncestor(this.adminView);
-        if (window != null) {
-            window.dispose();
-        } else {
-            this.adminView.setVisible(false);
-        }
-    }
+    // adminView IS the JFrame, so dispose it directly.
+    // Relying on getWindowAncestor() was the bug — if it ever returned null
+    // (e.g. adminView's hierarchy wasn't fully realized when close() ran),
+    // you fell into setVisible(false), which doesn't fully tear the frame
+    // down, leaving the old window alive behind the new one.
+    this.adminView.setVisible(false);
+    this.adminView.dispose();
+}
 
     // =========================================================================
     // DATA LOADING
@@ -149,6 +161,15 @@ public class AdminController {
             view.adminBranchNetworks adminBranchOrder = new view.adminBranchNetworks();
             controllor.AdminBranchController aboc = new controllor.AdminBranchController(adminBranchOrder, currentUser);
             aboc.open();
+        }
+    }
+    class PriceConfigurationListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            close();
+            view.priceConfiguration priceConfig = new view.priceConfiguration();
+            controllor.PriceConfigController pcc = new controllor.PriceConfigController(priceConfig, currentUser);
+            pcc.open();
         }
     }
 }

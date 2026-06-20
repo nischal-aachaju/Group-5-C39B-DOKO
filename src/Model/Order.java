@@ -17,10 +17,11 @@ public class Order {
     private double declaredCost; 
     private String description;
     private String status;
+   
 
     public void setStatus(String status) { this.status = status; }
     public String getStatus() { return status; }
-    private final double deliveryCost = 200.0; // FIXED DEFAULT COST
+    private double deliveryCost; // FIXED DEFAULT COST
     private double finalBillAmount; 
 
 public Order(String trackingId, String name, String email, String contact, String location, 
@@ -52,5 +53,5 @@ public Order(String trackingId, String name, String email, String contact, Strin
     public String getDescription() { return description; }
     public double getDeliveryCost() { return deliveryCost; }
     public double getFinalBillAmount() { return finalBillAmount; }
-    
+    public void setDeliveryCost(double deliveryCost) { this.deliveryCost = deliveryCost;}
 }

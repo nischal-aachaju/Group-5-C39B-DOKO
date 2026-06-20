@@ -68,6 +68,10 @@ public class OrderSubmissionForm extends javax.swing.JFrame {
         jSeparator2 = new javax.swing.JSeparator();
         logout = new javax.swing.JButton();
         reciver_location_field = new javax.swing.JComboBox<>();
+        sender_branch_dropdown = new javax.swing.JComboBox<>();
+        jLabel1 = new javax.swing.JLabel();
+        reciver_location1 = new javax.swing.JLabel();
+        calculateBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -75,9 +79,9 @@ public class OrderSubmissionForm extends javax.swing.JFrame {
         MainPanel.setPreferredSize(new java.awt.Dimension(1050, 600));
         MainPanel.setLayout(null);
 
-        reciver_location.setText("Receiver location*");
+        reciver_location.setText("Sender location*");
         MainPanel.add(reciver_location);
-        reciver_location.setBounds(210, 390, 160, 16);
+        reciver_location.setBounds(210, 390, 130, 16);
 
         reciver_name.setText("Receiver Name*");
         MainPanel.add(reciver_name);
@@ -212,9 +216,9 @@ public class OrderSubmissionForm extends javax.swing.JFrame {
 
         logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/logo.png"))); // NOI18N
         sidebar.add(logo);
-        logo.setBounds(0, 0, 176, 61);
+        logo.setBounds(0, -10, 176, 61);
         sidebar.add(jSeparator1);
-        jSeparator1.setBounds(0, 67, 179, 10);
+        jSeparator1.setBounds(0, 60, 179, 10);
 
         Dashboard.setBackground(new java.awt.Color(33, 38, 49));
         Dashboard.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
@@ -286,8 +290,26 @@ public class OrderSubmissionForm extends javax.swing.JFrame {
         MainPanel.add(jPanel2);
         jPanel2.setBounds(0, 0, 180, 600);
 
+        reciver_location_field.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Kathmandu", "Pokhara", "Chitwan", "Biratnagar" }));
         MainPanel.add(reciver_location_field);
-        reciver_location_field.setBounds(210, 420, 350, 30);
+        reciver_location_field.setBounds(410, 420, 150, 30);
+
+        sender_branch_dropdown.setToolTipText("");
+        MainPanel.add(sender_branch_dropdown);
+        sender_branch_dropdown.setBounds(210, 420, 160, 30);
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel1.setText("TO");
+        MainPanel.add(jLabel1);
+        jLabel1.setBounds(382, 428, 20, 16);
+
+        reciver_location1.setText("Receiver location*");
+        MainPanel.add(reciver_location1);
+        reciver_location1.setBounds(410, 390, 160, 16);
+
+        calculateBtn.setText("Calculate");
+        MainPanel.add(calculateBtn);
+        calculateBtn.setBounds(350, 460, 100, 23);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -366,9 +388,11 @@ public class OrderSubmissionForm extends javax.swing.JFrame {
     private javax.swing.JLabel bill_delivery_cost;
     private javax.swing.JLabel bill_details;
     private javax.swing.JLabel bill_order_cost;
+    private javax.swing.JButton calculateBtn;
     private javax.swing.JButton create_orders;
     private javax.swing.JLabel description;
     private javax.swing.JTextField description_field;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JSeparator jSeparator1;
@@ -380,6 +404,7 @@ public class OrderSubmissionForm extends javax.swing.JFrame {
     private javax.swing.JLabel reciver_email;
     private javax.swing.JTextField reciver_email_field;
     private javax.swing.JLabel reciver_location;
+    private javax.swing.JLabel reciver_location1;
     private javax.swing.JComboBox<String> reciver_location_field;
     private javax.swing.JLabel reciver_name;
     private javax.swing.JTextField reciver_name_field;
@@ -387,6 +412,7 @@ public class OrderSubmissionForm extends javax.swing.JFrame {
     private javax.swing.JTextField reciver_street_field;
     private javax.swing.JLabel reciver_weight;
     private javax.swing.JTextField reciver_weight_field;
+    private javax.swing.JComboBox<String> sender_branch_dropdown;
     private javax.swing.JPanel sidebar;
     private javax.swing.JButton submit;
     private javax.swing.JPanel topBar;
@@ -395,43 +421,174 @@ public class OrderSubmissionForm extends javax.swing.JFrame {
     private javax.swing.JLabel user_role;
     private javax.swing.JLabel username;
     // End of variables declaration//GEN-END:variables
-// =========================================================================
-    // 1. DATA EXTRACTION (Fixed for ComboBoxes)
-    // =========================================================================
+//// =========================================================================
+//    // 1. DATA EXTRACTION (Fixed for ComboBoxes)
+//    // =========================================================================
+//    
+//    public String getReceiverNameInput() { return reciver_name_field.getText().trim(); }
+//    public String getReceiverEmailInput() { return reciver_email_field.getText().trim(); }
+//    public String getReceiverContactInput() { return reciver_contact_number_field.getText().trim(); }
+//    public String getStreetInput() { return reciver_street_field.getText().trim(); }
+//    public String getDescriptionInput() { return description_field.getText().trim(); }
+//    
+//    // Extracts the selected item from the Location Dropdown
+//    public String getReceiverLocationInput() { 
+//        Object selected = reciver_location_field.getSelectedItem();
+//        return selected != null ? selected.toString() : ""; 
+//    }
+//    
+//    public double getWeightInput() { 
+//        try { return Double.parseDouble(reciver_weight_field.getText().trim()); } 
+//        catch (NumberFormatException e) { return 0.0; }
+//    }
+//    
+//    public double getTotalCostInput() { 
+//        try { return Double.parseDouble(total_Cost_field.getText().trim()); } 
+//        catch (NumberFormatException e) { return 0.0; }
+//    }
+//
+//    // =========================================================================
+//    // 2. BRANCH DROPDOWN LOGIC
+//    // =========================================================================
+//
+//    public void populateBranchDropdown(java.sql.ResultSet rs) {
+//        reciver_location_field.removeAllItems(); 
+//        try {
+//            while (rs != null && rs.next()) {
+//                // Combines ID and Name visually: "1 - Hamro Doko Kathmandu"
+//                String item = rs.getInt("branch_id") + " - " + rs.getString("branch_name");
+//                reciver_location_field.addItem(item);
+//            }
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//    }
+//
+//    public int getSelectedBranchId() {
+//        String selected = (String) reciver_location_field.getSelectedItem();
+//        if (selected == null || selected.isEmpty()) {
+//            return -1; 
+//        }
+//        
+//        // Splits "1 - Hamro Doko Kathmandu" and grabs just the "1"
+//        String[] parts = selected.split(" - ");
+//        try {
+//            return Integer.parseInt(parts[0]);
+//        } catch (NumberFormatException e) {
+//            return -1;
+//        }
+//    }
+//
+//    // =========================================================================
+//    // 3. BILL GENERATION & UI UPDATES
+//    // =========================================================================
+//
+//    public void updateBillSection(Model.Order order) {
+//        bill_customer_name.setText("Customer Name: " + order.getReceiverName());
+//        bill_customer_location.setText("Customer Location: " + order.getReceiverLocation()); 
+//        bill_customer_contact.setText("Customer Contact: " + order.getReceiverContact());
+//        
+//        bill_order_cost.setText("Order Cost: " + String.valueOf(order.getDeclaredCost()));   
+//        bill_delivery_cost.setText("Delivery Cost: " + String.valueOf(order.getDeliveryCost()));  
+//        COD_totalCost_sum_delivery_cost.setText("COD: " + String.valueOf(order.getFinalBillAmount()));   
+//        
+//        RandomtrackingID.setText("TrackingID: #" + order.getTrackingId());
+//    }
+//
+//    public void setInitialTrackingId(String trackingId) {
+//        RandomtrackingID.setText("TrackingID: #" + trackingId);
+//    }
+//    
+//    public void setUsernameLabel(String name) {
+//        username.setText(name); 
+//    }
+//
+//    public void setRoleLabel(String role) {
+//        user_role.setText(role); 
+//    }
+//
+//    // =========================================================================
+//    // 4. CLEAR FORM AFTER SUCCESS
+//    // =========================================================================
+//
+//    public void clearOrderForm() {
+//        reciver_name_field.setText("");
+//        reciver_email_field.setText("");
+//        reciver_contact_number_field.setText("");
+//        reciver_street_field.setText("");
+//        reciver_weight_field.setText("");
+//        total_Cost_field.setText("");
+//        description_field.setText("");
+//        RandomtrackingID.setText("");
+//        
+//        // Safely reset dropdowns to their first option
+//        if (reciver_location_field.getItemCount() > 0) {
+//            reciver_location_field.setSelectedIndex(0); 
+//        }
+//        if (reciver_location_field.getItemCount() > 0) {
+//            reciver_location_field.setSelectedIndex(0);
+//        }
+//    }
+//
+//    // =========================================================================
+//    // 5. ACTION LISTENERS
+//    // =========================================================================
+//    
+//    public void addSubmitListener(java.awt.event.ActionListener listener) { submit.addActionListener(listener); }
+//    public void addDashboardListener(java.awt.event.ActionListener listener) { Dashboard.addActionListener(listener); }
+//    public void addLogoutListener(java.awt.event.ActionListener listener) { logout.addActionListener(listener); }
+//    public void addMyProfileListener(java.awt.event.ActionListener listener) { MyProfile.addActionListener(listener); }
+//    public void addMyShipmentsListener(java.awt.event.ActionListener listener) { MyShipments.addActionListener(listener); }
+//    public void addOrdersHistoryListener(java.awt.event.ActionListener listener) { OrdersHistory.addActionListener(listener); }
+//// Grabs just the city/name part of the branch for cost calculation
+//    public String getSelectedBranchName() {
+//        String selected = (String) branch_dropdown.getSelectedItem();
+//        if (selected == null || selected.isEmpty()) return "";
+//        
+//        // Splits "1 - Hamro Doko Kathmandu" and grabs the text part
+//        String[] parts = selected.split(" - ");
+//        if (parts.length > 1) {
+//            return parts[1].trim(); 
+//        }
+//        return "";
+//    }
     
+    // =========================================================================
+    // 1. DATA EXTRACTION
+    // =========================================================================
+
     public String getReceiverNameInput() { return reciver_name_field.getText().trim(); }
     public String getReceiverEmailInput() { return reciver_email_field.getText().trim(); }
     public String getReceiverContactInput() { return reciver_contact_number_field.getText().trim(); }
     public String getStreetInput() { return reciver_street_field.getText().trim(); }
     public String getDescriptionInput() { return description_field.getText().trim(); }
-    
-    // Extracts the selected item from the Location Dropdown
+
+    // FIXED: Receiver location is a ComboBox, use getSelectedItem()
     public String getReceiverLocationInput() { 
         Object selected = reciver_location_field.getSelectedItem();
         return selected != null ? selected.toString() : ""; 
     }
-    
+
     public double getWeightInput() { 
         try { return Double.parseDouble(reciver_weight_field.getText().trim()); } 
         catch (NumberFormatException e) { return 0.0; }
     }
-    
     public double getTotalCostInput() { 
         try { return Double.parseDouble(total_Cost_field.getText().trim()); } 
         catch (NumberFormatException e) { return 0.0; }
     }
 
     // =========================================================================
-    // 2. BRANCH DROPDOWN LOGIC
+    // 2. DYNAMIC BRANCH DROPDOWN (Fetched from DB)
     // =========================================================================
 
     public void populateBranchDropdown(java.sql.ResultSet rs) {
-        reciver_location_field.removeAllItems(); 
+        sender_branch_dropdown.removeAllItems(); // Clears any default "Item 1, 2"
         try {
             while (rs != null && rs.next()) {
                 // Combines ID and Name visually: "1 - Hamro Doko Kathmandu"
                 String item = rs.getInt("branch_id") + " - " + rs.getString("branch_name");
-                reciver_location_field.addItem(item);
+                sender_branch_dropdown.addItem(item);
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -439,12 +596,10 @@ public class OrderSubmissionForm extends javax.swing.JFrame {
     }
 
     public int getSelectedBranchId() {
-        String selected = (String) reciver_location_field.getSelectedItem();
-        if (selected == null || selected.isEmpty()) {
-            return -1; 
-        }
+        String selected = (String) sender_branch_dropdown.getSelectedItem();
+        if (selected == null || selected.isEmpty()) return -1; // No branch selected
         
-        // Splits "1 - Hamro Doko Kathmandu" and grabs just the "1"
+        // This splits "1 - Hamro Doko Kathmandu" and just grabs the "1"
         String[] parts = selected.split(" - ");
         try {
             return Integer.parseInt(parts[0]);
@@ -453,8 +608,21 @@ public class OrderSubmissionForm extends javax.swing.JFrame {
         }
     }
 
+    // NEW: Captures just the city/name part for cost calculation
+    public String getSelectedBranchName() {
+        String selected = (String) sender_branch_dropdown.getSelectedItem();
+        if (selected == null || selected.isEmpty()) return "";
+        
+        // This splits "1 - Hamro Doko Kathmandu" and grabs the text part
+        String[] parts = selected.split(" - ");
+        if (parts.length > 1) {
+            return parts[1].trim(); // Returns "Hamro Doko Kathmandu"
+        }
+        return "";
+    }
+
     // =========================================================================
-    // 3. BILL GENERATION & UI UPDATES
+    // 3. BILL GENERATION
     // =========================================================================
 
     public void updateBillSection(Model.Order order) {
@@ -462,8 +630,9 @@ public class OrderSubmissionForm extends javax.swing.JFrame {
         bill_customer_location.setText("Customer Location: " + order.getReceiverLocation()); 
         bill_customer_contact.setText("Customer Contact: " + order.getReceiverContact());
         
-        bill_order_cost.setText("Order Cost: " + String.valueOf(order.getDeclaredCost()));   
-        bill_delivery_cost.setText("Delivery Cost: " + String.valueOf(order.getDeliveryCost()));  
+        // Use Model.Order declaredCost parameter name
+        bill_order_cost.setText("Order cost: " + String.valueOf(order.getDeclaredCost()));   
+        bill_delivery_cost.setText("Delivery cost: " + String.valueOf(order.getDeliveryCost()));  
         COD_totalCost_sum_delivery_cost.setText("COD: " + String.valueOf(order.getFinalBillAmount()));   
         
         RandomtrackingID.setText("TrackingID: #" + order.getTrackingId());
@@ -495,12 +664,12 @@ public class OrderSubmissionForm extends javax.swing.JFrame {
         description_field.setText("");
         RandomtrackingID.setText("");
         
-        // Safely reset dropdowns to their first option
+        // FIXED: Reset ComboBoxes safely to their first option
         if (reciver_location_field.getItemCount() > 0) {
             reciver_location_field.setSelectedIndex(0); 
         }
-        if (reciver_location_field.getItemCount() > 0) {
-            reciver_location_field.setSelectedIndex(0);
+        if (sender_branch_dropdown.getItemCount() > 0) {
+            sender_branch_dropdown.setSelectedIndex(0);
         }
     }
 
@@ -514,4 +683,9 @@ public class OrderSubmissionForm extends javax.swing.JFrame {
     public void addMyProfileListener(java.awt.event.ActionListener listener) { MyProfile.addActionListener(listener); }
     public void addMyShipmentsListener(java.awt.event.ActionListener listener) { MyShipments.addActionListener(listener); }
     public void addOrdersHistoryListener(java.awt.event.ActionListener listener) { OrdersHistory.addActionListener(listener); }
+    
+    public void addCalculateListener(java.awt.event.ActionListener listener) { 
+        calculateBtn.addActionListener(listener); 
+    }
+
 }

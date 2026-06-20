@@ -43,7 +43,6 @@ public class sign_up extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        passwordField = new javax.swing.JTextField();
         nameField = new javax.swing.JTextField();
         emailField = new javax.swing.JTextField();
         phoneNum = new javax.swing.JTextField();
@@ -57,6 +56,8 @@ public class sign_up extends javax.swing.JFrame {
         Register = new javax.swing.JButton();
         roleFileld = new javax.swing.JComboBox<>();
         login = new javax.swing.JButton();
+        openEye = new javax.swing.JButton();
+        passwordField = new javax.swing.JPasswordField();
         orderSearch = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         total_cost_value = new javax.swing.JTextField();
@@ -131,10 +132,6 @@ public class sign_up extends javax.swing.JFrame {
         jPanel2.add(jLabel6);
         jLabel6.setBounds(40, 273, 80, 16);
 
-        passwordField.setText("Enter password from E-mail *");
-        jPanel2.add(passwordField);
-        passwordField.setBounds(150, 310, 230, 22);
-
         nameField.setText("Full Name *");
         jPanel2.add(nameField);
         nameField.setBounds(150, 110, 230, 22);
@@ -197,10 +194,23 @@ public class sign_up extends javax.swing.JFrame {
         jPanel2.add(roleFileld);
         roleFileld.setBounds(150, 270, 230, 22);
 
+        login.setBackground(new java.awt.Color(236, 236, 236));
         login.setText("Login");
+        login.setBorder(null);
         login.addActionListener(this::loginActionPerformed);
         jPanel2.add(login);
-        login.setBounds(270, 417, 75, 23);
+        login.setBounds(255, 417, 60, 23);
+
+        openEye.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/CloseEye.png"))); // NOI18N
+        openEye.setPreferredSize(new java.awt.Dimension(40, 8));
+        openEye.addActionListener(this::openEyeActionPerformed);
+        jPanel2.add(openEye);
+        openEye.setBounds(355, 309, 30, 25);
+
+        passwordField.setText("Enter password from E-mail *");
+        passwordField.setPreferredSize(new java.awt.Dimension(170, 22));
+        jPanel2.add(passwordField);
+        passwordField.setBounds(150, 310, 200, 22);
 
         jPanel3.add(jPanel2);
         jPanel2.setBounds(530, 0, 420, 450);
@@ -355,6 +365,10 @@ public class sign_up extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_trackingidtextfield1ActionPerformed
 
+    private void openEyeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_openEyeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_openEyeActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -403,8 +417,9 @@ public class sign_up extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JButton login;
     private javax.swing.JTextField nameField;
+    private javax.swing.JButton openEye;
     private javax.swing.JButton orderSearch;
-    private javax.swing.JTextField passwordField;
+    private javax.swing.JPasswordField passwordField;
     private javax.swing.JTextField phoneNum;
     private javax.swing.JLabel receiveraddresslabel1;
     private javax.swing.JTextField receiveraddresstextfield1;
@@ -437,6 +452,10 @@ public class sign_up extends javax.swing.JFrame {
         verify.addActionListener(listener); // Fix: Use addActionListener
 
     }
+
+    public javax.swing.JButton getOpenEyeButton() {
+        return openEye; 
+    }
     public javax.swing.JCheckBox getTermsAndCondition() {
 
         return termsAndCondition;
@@ -466,11 +485,10 @@ public class sign_up extends javax.swing.JFrame {
         return phoneNum;
     }
 
-    public javax.swing.JTextField getPasswordField() {
 
-        return passwordField;
-
-    }
+public javax.swing.JPasswordField getPasswordField() {
+    return passwordField; 
+}
 
     public javax.swing.JComboBox<String> getRole() {
 
@@ -510,6 +528,9 @@ public class sign_up extends javax.swing.JFrame {
 
     public void addOrderSearchListener(java.awt.event.ActionListener listener) {
         orderSearch.addActionListener(listener);
+    }
+    public void addOpenEyeListener(java.awt.event.ActionListener listener) {
+        openEye.addActionListener(listener); 
     }
 }
 

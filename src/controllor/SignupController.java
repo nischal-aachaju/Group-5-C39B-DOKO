@@ -12,6 +12,7 @@ import javax.swing.SwingUtilities;
 public class SignupController {
     private final userDAO userDao = new userDAO();
     private final sign_up userView;
+    private boolean isPasswordVisible = false;
     
     // 1. ADD THIS MEMORY VARIABLE
     private String storedPassword = ""; 
@@ -25,6 +26,7 @@ public SignupController(sign_up userView) {
         
         // ADD THIS LINE: Connect the login button
         userView.addLoginListener(new SwitchToLoginListener());
+        userView.addOpenEyeListener(new TogglePasswordListener());
     }
 
     public void open() {
@@ -178,6 +180,32 @@ public SignupController(sign_up userView) {
                 JOptionPane.showMessageDialog(userView, "Database error while searching.", "Error", JOptionPane.ERROR_MESSAGE);
             }
         }
+ }
+  
+ class TogglePasswordListener implements java.awt.event.ActionListener {
+        
+        private boolean isPasswordVisible = false; 
+        
+        @Override
+        public void actionPerformed(java.awt.event.ActionEvent e) {
+            
+            if (isPasswordVisible) {
+                // HIDE THE PASSWORD
+                userView.getPasswordField().setEchoChar('\u2022'); 
+                isPasswordVisible = false;
+                
+                // Change button to CLOSED EYE image
+                userView.getOpenEyeButton().setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/CloseEye.png")));
+                
+            } else {
+                // REVEAL THE PASSWORD
+                userView.getPasswordField().setEchoChar((char) 0); 
+                isPasswordVisible = true;
+                
+                // Change button to OPEN EYE image
+                userView.getOpenEyeButton().setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/OpenEye.png")));
+            }
+        }
     }
-
-}
+    
+} 

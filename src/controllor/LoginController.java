@@ -25,6 +25,7 @@ public class LoginController {
         this.userDao = new userDAO();
         
         this.loginView.addOrderSearchListener(new SearchOrderListener());
+        this.loginView.addOpenEyeListener(new TogglePasswordListener());
         
         // Connect the login button in the View to the LoginListener logic below
         this.loginView.addLoginListener(new LoginListener());
@@ -54,7 +55,7 @@ public class LoginController {
             
             // 1. Get text from the view
             String username = loginView.getUsername();
-            String password = loginView.getPassword();
+           String password = new String(loginView.getPasswordField().getPassword());
 
             // 2. Validate empty fields
             if (username.isEmpty() || password.isEmpty()) {
@@ -211,6 +212,31 @@ public class LoginController {
             } catch (java.sql.SQLException ex) {
                 ex.printStackTrace();
                 JOptionPane.showMessageDialog(loginView, "Database error while searching.", "Error", JOptionPane.ERROR_MESSAGE);
+            }
+        }
+    }
+     class TogglePasswordListener implements java.awt.event.ActionListener {
+        
+        private boolean isPasswordVisible = false; 
+        
+        @Override
+        public void actionPerformed(java.awt.event.ActionEvent e) {
+            
+            if (isPasswordVisible) {
+                // HIDE THE PASSWORD
+                loginView.getPasswordField().setEchoChar('\u2022'); 
+                isPasswordVisible = false;
+                
+                // Change button to CLOSED EYE image
+                loginView.getOpenEyeButton().setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/CloseEye.png")));
+                
+            } else {
+                // REVEAL THE PASSWORD
+                loginView.getPasswordField().setEchoChar((char) 0); 
+                isPasswordVisible = true;
+                
+                // Change button to OPEN EYE image
+                loginView.getOpenEyeButton().setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/OpenEye.png")));
             }
         }
     }

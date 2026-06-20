@@ -35,13 +35,14 @@ public class login extends javax.swing.JFrame {
         username_txtfld = new javax.swing.JTextField();
         username_label = new javax.swing.JLabel();
         password_label = new javax.swing.JLabel();
-        password_txtfld = new javax.swing.JTextField();
         loginbtn = new javax.swing.JButton();
         whatsup = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         dont_have_act_label = new javax.swing.JLabel();
         registerBtn = new javax.swing.JButton();
         forgotPassword = new javax.swing.JButton();
+        openEye = new javax.swing.JButton();
+        password_txtfld = new javax.swing.JPasswordField();
         tracking_id_label = new javax.swing.JLabel();
         tracking_id_textfield = new javax.swing.JTextField();
         orderSearch = new javax.swing.JButton();
@@ -93,10 +94,6 @@ public class login extends javax.swing.JFrame {
         jPanel2.add(password_label);
         password_label.setBounds(40, 160, 63, 16);
 
-        password_txtfld.addActionListener(this::password_txtfldActionPerformed);
-        jPanel2.add(password_txtfld);
-        password_txtfld.setBounds(120, 152, 145, 30);
-
         loginbtn.setBackground(new java.awt.Color(96, 188, 82));
         loginbtn.setFont(new java.awt.Font("Righteous", 0, 12)); // NOI18N
         loginbtn.setForeground(new java.awt.Color(255, 255, 255));
@@ -135,6 +132,16 @@ public class login extends javax.swing.JFrame {
         forgotPassword.setBorder(null);
         jPanel2.add(forgotPassword);
         forgotPassword.setBounds(150, 190, 150, 20);
+
+        openEye.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/CloseEye.png"))); // NOI18N
+        openEye.setPreferredSize(new java.awt.Dimension(40, 8));
+        openEye.addActionListener(this::openEyeActionPerformed);
+        jPanel2.add(openEye);
+        openEye.setBounds(268, 153, 30, 25);
+
+        password_txtfld.addActionListener(this::password_txtfldActionPerformed);
+        jPanel2.add(password_txtfld);
+        password_txtfld.setBounds(120, 152, 145, 30);
 
         jPanel3.add(jPanel2);
         jPanel2.setBounds(550, 0, 332, 370);
@@ -262,10 +269,6 @@ public class login extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_username_txtfldActionPerformed
 
-    private void password_txtfldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_password_txtfldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_password_txtfldActionPerformed
-
     private void loginbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginbtnActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_loginbtnActionPerformed
@@ -293,6 +296,14 @@ public class login extends javax.swing.JFrame {
     private void registerBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerBtnActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_registerBtnActionPerformed
+
+    private void openEyeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_openEyeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_openEyeActionPerformed
+
+    private void password_txtfldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_password_txtfldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_password_txtfldActionPerformed
 
     /**
      * @param args the command line arguments
@@ -330,9 +341,10 @@ public class login extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JButton loginbtn;
+    private javax.swing.JButton openEye;
     private javax.swing.JButton orderSearch;
     private javax.swing.JLabel password_label;
-    private javax.swing.JTextField password_txtfld;
+    private javax.swing.JPasswordField password_txtfld;
     private javax.swing.JLabel receiveraddresslabel1;
     private javax.swing.JTextField receiveraddresstextfield1;
     private javax.swing.JLabel receiveremaillabel1;
@@ -358,10 +370,9 @@ public class login extends javax.swing.JFrame {
         return username_txtfld.getText();
     }
 
-    public String getPassword() {
-        return password_txtfld.getText(); 
-    }
-
+public javax.swing.JPasswordField getPasswordField() {
+    return password_txtfld; 
+}
     public void addLoginListener(java.awt.event.ActionListener listener) {
         loginbtn.addActionListener(listener);
     }
@@ -407,6 +418,12 @@ public class login extends javax.swing.JFrame {
 
     public void addOrderSearchListener(java.awt.event.ActionListener listener) {
         orderSearch.addActionListener(listener);
+    }
+        public javax.swing.JButton getOpenEyeButton() {
+        return openEye; 
+    }
+        public void addOpenEyeListener(java.awt.event.ActionListener listener) {
+        openEye.addActionListener(listener); 
     }
   
         

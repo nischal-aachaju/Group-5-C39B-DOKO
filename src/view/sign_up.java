@@ -35,8 +35,6 @@ public class sign_up extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         trackingField = new javax.swing.JTextField();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
         jLabel13 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -60,6 +58,21 @@ public class sign_up extends javax.swing.JFrame {
         roleFileld = new javax.swing.JComboBox<>();
         login = new javax.swing.JButton();
         orderSearch = new javax.swing.JButton();
+        jPanel4 = new javax.swing.JPanel();
+        total_cost_value = new javax.swing.JTextField();
+        receiveraddresstextfield1 = new javax.swing.JTextField();
+        senderaddresstextfield1 = new javax.swing.JTextField();
+        receiveremailtextfield1 = new javax.swing.JTextField();
+        receivernametextfield1 = new javax.swing.JTextField();
+        trackingidtextfield1 = new javax.swing.JTextField();
+        trackingIDlabel1 = new javax.swing.JLabel();
+        receivernamelabel1 = new javax.swing.JLabel();
+        receiveremaillabel1 = new javax.swing.JLabel();
+        senderaddresslabel1 = new javax.swing.JLabel();
+        receiveraddresslabel1 = new javax.swing.JLabel();
+        totalcostlabel1 = new javax.swing.JLabel();
+        Orderdetaillabel1 = new javax.swing.JLabel();
+        status = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -86,13 +99,6 @@ public class sign_up extends javax.swing.JFrame {
         trackingField.addActionListener(this::trackingFieldActionPerformed);
         jPanel3.add(trackingField);
         trackingField.setBounds(50, 120, 180, 38);
-
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
-
-        jPanel3.add(jScrollPane1);
-        jScrollPane1.setBounds(50, 210, 440, 220);
 
         jLabel13.setFont(new java.awt.Font("REM", 1, 18)); // NOI18N
         jLabel13.setText("Details:");
@@ -150,7 +156,7 @@ public class sign_up extends javax.swing.JFrame {
 
         termsAndCondition.setText("Terms and Conditions");
         jPanel2.add(termsAndCondition);
-        termsAndCondition.setBounds(140, 350, 140, 20);
+        termsAndCondition.setBounds(140, 350, 180, 20);
 
         App_name.setFont(new java.awt.Font("Righteous", 0, 36)); // NOI18N
         App_name.setForeground(new java.awt.Color(41, 51, 123));
@@ -203,6 +209,86 @@ public class sign_up extends javax.swing.JFrame {
         jPanel3.add(orderSearch);
         orderSearch.setBounds(235, 125, 80, 30);
 
+        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(168, 168, 168)));
+        jPanel4.setLayout(null);
+
+        total_cost_value.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
+        total_cost_value.setBorder(null);
+        jPanel4.add(total_cost_value);
+        total_cost_value.setBounds(169, 167, 280, 16);
+
+        receiveraddresstextfield1.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
+        receiveraddresstextfield1.setBorder(null);
+        receiveraddresstextfield1.addActionListener(this::receiveraddresstextfield1ActionPerformed);
+        jPanel4.add(receiveraddresstextfield1);
+        receiveraddresstextfield1.setBounds(169, 133, 280, 16);
+
+        senderaddresstextfield1.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
+        senderaddresstextfield1.setBorder(null);
+        jPanel4.add(senderaddresstextfield1);
+        senderaddresstextfield1.setBounds(169, 111, 280, 16);
+
+        receiveremailtextfield1.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
+        receiveremailtextfield1.setBorder(null);
+        receiveremailtextfield1.addActionListener(this::receiveremailtextfield1ActionPerformed);
+        jPanel4.add(receiveremailtextfield1);
+        receiveremailtextfield1.setBounds(169, 89, 280, 16);
+
+        receivernametextfield1.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
+        receivernametextfield1.setBorder(null);
+        receivernametextfield1.addActionListener(this::receivernametextfield1ActionPerformed);
+        jPanel4.add(receivernametextfield1);
+        receivernametextfield1.setBounds(169, 67, 280, 16);
+
+        trackingidtextfield1.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
+        trackingidtextfield1.setBorder(null);
+        trackingidtextfield1.addActionListener(this::trackingidtextfield1ActionPerformed);
+        jPanel4.add(trackingidtextfield1);
+        trackingidtextfield1.setBounds(169, 45, 280, 16);
+
+        trackingIDlabel1.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
+        trackingIDlabel1.setText("Tracking ID:");
+        jPanel4.add(trackingIDlabel1);
+        trackingIDlabel1.setBounds(29, 45, 102, 16);
+
+        receivernamelabel1.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
+        receivernamelabel1.setText("Receiver Name:");
+        jPanel4.add(receivernamelabel1);
+        receivernamelabel1.setBounds(29, 67, 79, 16);
+
+        receiveremaillabel1.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
+        receiveremaillabel1.setText("Receiver Email:");
+        jPanel4.add(receiveremaillabel1);
+        receiveremaillabel1.setBounds(29, 89, 122, 16);
+
+        senderaddresslabel1.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
+        senderaddresslabel1.setText("Sender Address:");
+        jPanel4.add(senderaddresslabel1);
+        senderaddresslabel1.setBounds(29, 111, 78, 16);
+
+        receiveraddresslabel1.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
+        receiveraddresslabel1.setText("Receiver Address:");
+        jPanel4.add(receiveraddresslabel1);
+        receiveraddresslabel1.setBounds(29, 133, 87, 16);
+
+        totalcostlabel1.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
+        totalcostlabel1.setText("Total cost:");
+        jPanel4.add(totalcostlabel1);
+        totalcostlabel1.setBounds(29, 167, 134, 16);
+
+        Orderdetaillabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Orderdetaillabel1.setText("Order Details:");
+        jPanel4.add(Orderdetaillabel1);
+        Orderdetaillabel1.setBounds(32, 19, 117, 20);
+
+        status.setText("status :");
+        jPanel4.add(status);
+        status.setBounds(310, 10, 150, 30);
+
+        jPanel3.add(jPanel4);
+        jPanel4.setBounds(40, 220, 470, 190);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -253,6 +339,22 @@ public class sign_up extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_loginActionPerformed
 
+    private void receiveraddresstextfield1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_receiveraddresstextfield1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_receiveraddresstextfield1ActionPerformed
+
+    private void receiveremailtextfield1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_receiveremailtextfield1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_receiveremailtextfield1ActionPerformed
+
+    private void receivernametextfield1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_receivernametextfield1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_receivernametextfield1ActionPerformed
+
+    private void trackingidtextfield1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_trackingidtextfield1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_trackingidtextfield1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -280,6 +382,7 @@ public class sign_up extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel App_name;
+    private javax.swing.JLabel Orderdetaillabel1;
     private javax.swing.JButton Register;
     private javax.swing.JTextField addressField;
     private javax.swing.JTextField emailField;
@@ -297,17 +400,29 @@ public class sign_up extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JButton login;
     private javax.swing.JTextField nameField;
     private javax.swing.JButton orderSearch;
     private javax.swing.JTextField passwordField;
     private javax.swing.JTextField phoneNum;
+    private javax.swing.JLabel receiveraddresslabel1;
+    private javax.swing.JTextField receiveraddresstextfield1;
+    private javax.swing.JLabel receiveremaillabel1;
+    private javax.swing.JTextField receiveremailtextfield1;
+    private javax.swing.JLabel receivernamelabel1;
+    private javax.swing.JTextField receivernametextfield1;
     private javax.swing.JComboBox<String> roleFileld;
+    private javax.swing.JLabel senderaddresslabel1;
+    private javax.swing.JTextField senderaddresstextfield1;
     private javax.swing.JLabel sign_in_label;
+    private javax.swing.JLabel status;
     private javax.swing.JCheckBox termsAndCondition;
+    private javax.swing.JTextField total_cost_value;
+    private javax.swing.JLabel totalcostlabel1;
     private javax.swing.JTextField trackingField;
+    private javax.swing.JLabel trackingIDlabel1;
+    private javax.swing.JTextField trackingidtextfield1;
     private javax.swing.JButton verify;
     // End of variables declaration//GEN-END:variables
   
@@ -361,6 +476,40 @@ public class sign_up extends javax.swing.JFrame {
 
         return roleFileld;
 
+    }
+    // =========================================================================
+    // PUBLIC TRACKING LOGIC
+    // =========================================================================
+
+    public String getTrackingInput() {
+        return trackingField.getText().trim(); // Using your specific 'trackingField' variable
+    }
+
+    public void setTrackingResult(String tId, String name, String email, String sender, String receiver, String cost, String orderStatus) {
+        trackingidtextfield1.setText(tId);
+        receivernametextfield1.setText(name);
+        receiveremailtextfield1.setText(email);
+        senderaddresstextfield1.setText(sender);
+        receiveraddresstextfield1.setText(receiver);
+        total_cost_value.setText(cost);
+        status.setText(orderStatus); 
+    }
+
+    public void lockTrackingDisplayFields() {
+        // Ensure users cannot type into the result boxes!
+        trackingidtextfield1.setEditable(false);
+        receivernametextfield1.setEditable(false);
+        receiveremailtextfield1.setEditable(false);
+        senderaddresstextfield1.setEditable(false);
+        receiveraddresstextfield1.setEditable(false);
+        total_cost_value.setEditable(false);
+        
+        // Clear them out by default
+        setTrackingResult("", "", "", "", "", "", "---");
+    }
+
+    public void addOrderSearchListener(java.awt.event.ActionListener listener) {
+        orderSearch.addActionListener(listener);
     }
 }
 

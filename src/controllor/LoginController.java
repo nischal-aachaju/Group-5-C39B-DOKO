@@ -24,6 +24,8 @@ public class LoginController {
         this.loginView = loginView;
         this.userDao = new userDAO();
         
+        this.loginView.addOrderSearchListener(new SearchOrderListener());
+        
         // Connect the login button in the View to the LoginListener logic below
         this.loginView.addLoginListener(new LoginListener());
         this.loginView.addRegisterListener(new SwitchToRegisterListener());
@@ -170,6 +172,46 @@ public class LoginController {
             controllor.ForgotPasswordController signupController = new controllor.ForgotPasswordController(forgotPass);
             
             signupController.open();
+        }
+    }
+    // =========================================================================
+    // PUBLIC ORDER TRACKING LOGIC
+    // =========================================================================
+
+    class SearchOrderListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            String trackingId = loginView.getTrackingInput();
+            
+            if (trackingId.isEmpty()) {
+                JOptionPane.showMessageDialog(loginView, "Please enter a Tracking ID to search.", "Input Required", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+            
+            DAO.OrderDAO dao = new DAO.OrderDAO();
+            java.sql.ResultSet rs = dao.getPublicTrackingDetails(trackingId);
+            
+            try {
+                if (rs != null && rs.next()) {
+                    // Extract data from the database
+                    String tId = rs.getString("tracking_id");
+                    String name = rs.getString("receiver_name");
+                    String email = rs.getString("receiver_email");
+                    String sender = rs.getString("street");
+                    String receiver = rs.getString("receiver_location");
+                    String cost = String.valueOf(rs.getDouble("total_cost"));
+                    String orderStatus = rs.getString("status").toUpperCase(); // Uppercase for UI emphasis
+                    
+                    // Inject into the locked UI text fields
+                    loginView.setTrackingResult(tId, name, email, sender, receiver, cost, orderStatus);
+                } else {
+                    JOptionPane.showMessageDialog(loginView, "No order found with Tracking ID: " + trackingId, "Not Found", JOptionPane.ERROR_MESSAGE);
+                    loginView.lockTrackingDisplayFields(); // Reset fields to empty
+                }
+            } catch (java.sql.SQLException ex) {
+                ex.printStackTrace();
+                JOptionPane.showMessageDialog(loginView, "Database error while searching.", "Error", JOptionPane.ERROR_MESSAGE);
+            }
         }
     }
 }

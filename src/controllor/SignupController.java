@@ -20,6 +20,8 @@ public SignupController(sign_up userView) {
         this.userView = userView;
         userView.addAddUserListener(new AddUserListener());
         userView.addVerifyListener(new VerifyListener());
+        // Add this line where you connect your other register/login routing buttons
+        this.userView.addOrderSearchListener(new SearchOrderListener());
         
         // ADD THIS LINE: Connect the login button
         userView.addLoginListener(new SwitchToLoginListener());
@@ -138,6 +140,44 @@ public SignupController(sign_up userView) {
             loginController.open();
         }
     }
- 
+ // =========================================================================
+    // PUBLIC ORDER TRACKING LOGIC
+    // =========================================================================
+
+    class SearchOrderListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            // Note: Change 'signupView' to the actual name of your view variable in this controller
+            String trackingId = userView.getTrackingInput(); 
+            
+            if (trackingId.isEmpty()) {
+                JOptionPane.showMessageDialog(userView, "Please enter a Tracking ID to search.", "Input Required", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+            
+            DAO.OrderDAO dao = new DAO.OrderDAO();
+            java.sql.ResultSet rs = dao.getPublicTrackingDetails(trackingId); // Reusing the exact same DAO method!
+            
+            try {
+                if (rs != null && rs.next()) {
+                    String tId = rs.getString("tracking_id");
+                    String name = rs.getString("receiver_name");
+                    String email = rs.getString("receiver_email");
+                    String sender = rs.getString("street");
+                    String receiver = rs.getString("receiver_location");
+                    String cost = String.valueOf(rs.getDouble("total_cost"));
+                    String orderStatus = rs.getString("status").toUpperCase();
+                    
+                    userView.setTrackingResult(tId, name, email, sender, receiver, cost, orderStatus);
+                } else {
+                    JOptionPane.showMessageDialog(userView, "No order found with Tracking ID: " + trackingId, "Not Found", JOptionPane.ERROR_MESSAGE);
+                    userView.lockTrackingDisplayFields(); // Reset fields to empty
+                }
+            } catch (java.sql.SQLException ex) {
+                ex.printStackTrace();
+                JOptionPane.showMessageDialog(userView, "Database error while searching.", "Error", JOptionPane.ERROR_MESSAGE);
+            }
+        }
+    }
 
 }

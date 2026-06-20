@@ -659,4 +659,20 @@ public class OrderDAO {
             return false;
         }
     }
+    // =========================================================================
+    // PUBLIC: TRACK ORDER (NO LOGIN REQUIRED)
+    // =========================================================================
+
+    public java.sql.ResultSet getPublicTrackingDetails(String trackingId) {
+        String sql = "SELECT tracking_id, receiver_name, receiver_email, street, receiver_location, total_cost, status FROM orders WHERE tracking_id = ?";
+        try {
+            java.sql.Connection conn = db.openConnection();
+            java.sql.PreparedStatement pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1, trackingId);
+            return pstmt.executeQuery(); 
+        } catch (java.sql.SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
 }

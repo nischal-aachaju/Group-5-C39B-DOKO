@@ -12,13 +12,13 @@ import java.sql.Statement;
  *
  * @author nischal
  */
-public class Dbconnector implements database {
+public class Dbconnector implements Database {
 
     @Override 
     public Connection openConnection() {
         try{
             String username="root";
-            String password="root";
+            String password="22110615";
             String database="doko";
             
             Connection connection;

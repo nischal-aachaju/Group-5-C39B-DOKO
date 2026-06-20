@@ -455,4 +455,14 @@ public class adminBranchNetworks extends javax.swing.JFrame {
     // Navigators
     public void addDashboardListener(java.awt.event.ActionListener listener) { Dashboardbutton.addActionListener(listener); }
     public void addLogoutListener(java.awt.event.ActionListener listener) { logoutbutton.addActionListener(listener); }
+   
+    public void addWorkloadListener(java.awt.event.ActionListener listener) { workLoadButton.addActionListener(listener); }
+    public void addManageOrdersListener(java.awt.event.ActionListener listener) { ManageOrderButton.addActionListener(listener); }
+     public void addPriceConfiguration(java.awt.event.ActionListener listener) { PriceConfigurationButton.addActionListener(listener); }
+ public void addMyProfileListener(java.awt.event.ActionListener listener) { 
+        MyProfileButton.addActionListener(listener); 
+    }
+      public void addManageUserListener(java.awt.event.ActionListener listener) {
+    ManageUserButton.addActionListener(listener);
+      }
 }

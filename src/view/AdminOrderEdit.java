@@ -511,5 +511,10 @@ public class AdminOrderEdit extends javax.swing.JFrame {
     public void addLogoutListener(java.awt.event.ActionListener listener) { logoutbutton.addActionListener(listener); }
     public void addDashboardListener(java.awt.event.ActionListener listener) { Dashboardbutton.addActionListener(listener); }
     public void addMyProfileListener(java.awt.event.ActionListener listener) { myprofilebutton.addActionListener(listener); }
+public void addWorkloadListener(java.awt.event.ActionListener listener) { Workloadbutton.addActionListener(listener); }
+   public void addbranchNetwork(java.awt.event.ActionListener listener) { Branchandnetworkbutton.addActionListener(listener); }
 
-}
+     public void addPriceConfiguration(java.awt.event.ActionListener listener) { priceconfigurationbutton.addActionListener(listener); }
+     public void addManageUserListener(java.awt.event.ActionListener listener) { Manageuserbutton.addActionListener(listener); }
+
+    }

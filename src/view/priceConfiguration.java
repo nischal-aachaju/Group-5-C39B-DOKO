@@ -314,5 +314,20 @@ public class priceConfiguration extends javax.swing.JFrame {
     public void addLogoutListener(java.awt.event.ActionListener listener) { 
         logout.addActionListener(listener); 
     }
+ public void addManageUserListener(java.awt.event.ActionListener listener) { ManageUser.addActionListener(listener); }
+    public void addWorkloadListener(java.awt.event.ActionListener listener) { workload.addActionListener(listener); }
+    public void addManageOrdersListener(java.awt.event.ActionListener listener) { ManageOrders.addActionListener(listener); }
 
+     public void addbranchNetwork(java.awt.event.ActionListener listener) { branchNetwork.addActionListener(listener); }
+    
+      public void addworkload(java.awt.event.ActionListener listener) {  workload.addActionListener(listener); }
+ public void addMyProfileListener(java.awt.event.ActionListener listener) {
+        
+        MyProfile.addActionListener(listener); 
+    }
+
+public void addManageOrdersistener(java.awt.event.ActionListener listener) {
+        
+        ManageOrders.addActionListener(listener); 
+    }
 }

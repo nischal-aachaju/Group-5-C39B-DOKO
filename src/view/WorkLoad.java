@@ -354,10 +354,6 @@ public class WorkLoad extends javax.swing.JFrame {
         Dashboardbutton.addActionListener(listener); 
     }
     
-    public void addManageOrderListener(java.awt.event.ActionListener listener) { 
-        ManageOrderButton.addActionListener(listener); 
-    }
-    
     public void addManageUserListener(java.awt.event.ActionListener listener) { 
         ManageUserButton.addActionListener(listener); 
     }
@@ -366,15 +362,18 @@ public class WorkLoad extends javax.swing.JFrame {
         MyProfileButton.addActionListener(listener); 
     }
     
-    public void addPriceConfigListener(java.awt.event.ActionListener listener) { 
+    public void addPriceConfiguration(java.awt.event.ActionListener listener) { 
         PriceConfigurationButton.addActionListener(listener); 
     }
     
-    public void addBranchListener(java.awt.event.ActionListener listener) { 
+    public void addbranchNetwork(java.awt.event.ActionListener listener) { 
         branchAndNetworksButton.addActionListener(listener); 
     }
     
     public void addLogoutListener(java.awt.event.ActionListener listener) { 
         logoutbutton.addActionListener(listener); 
     }
+   public void addManageOrdersListener(java.awt.event.ActionListener listener) {
+    ManageOrderButton.addActionListener(listener);
+}
 }

@@ -31,7 +31,7 @@ public class AdminController {
         this.adminView.addMyProfileListener(new MyProfileListener());
         this.adminView.addbranchNetwork(new branchNetworkListener());
         this.adminView.addPriceConfiguration(new PriceConfigurationListener());
-        
+
         this.adminView.addManageUserListener(new openManageUserListenerListener());
         this.adminView.addworkload(new openworkloadListener());
         

@@ -34,6 +34,11 @@ public class AdminBranchController {
         // 3. Connect Navigators
         this.view.addDashboardListener(new DashboardNavListener());
         this.view.addLogoutListener(new LogoutNavListener());
+        this.view.addMyProfileListener(new MyProfileListener());
+        this.view.addPriceConfiguration(new PriceConfigurationListener());
+        this.view.addManageUserListener(new openManageUserListenerListener());
+        this.view.addWorkloadListener(new openworkloadListener());
+    this.view.addManageOrdersListener(new ManageOrdersListener()); 
     }
 
     public void open() {
@@ -182,4 +187,54 @@ public class AdminBranchController {
             new controllor.LoginController(new view.login()).open();
         }
     }
+    class MyProfileListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            close();
+    
+            view.NewAdmin_Profile admin_profile = new view.NewAdmin_Profile();
+            controllor.AdminProfileController ac = new controllor.AdminProfileController(admin_profile, currentUser);
+            ac.open();
+        }
+    }
+    
+    class ManageOrdersListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            close();
+    
+            view.AdminOrderEdit ManageOrder = new view.AdminOrderEdit();
+            controllor.AdminManageOrderController moc = new controllor.AdminManageOrderController(ManageOrder, currentUser);
+            moc.open();
+        }
+    }
+  
+    class PriceConfigurationListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            close();
+            view.priceConfiguration priceConfig = new view.priceConfiguration();
+            controllor.PriceConfigController pcc = new controllor.PriceConfigController(priceConfig, currentUser);
+            pcc.open();
+        }
+    } 
+    class openworkloadListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            close();
+            view.WorkLoad wl = new view.WorkLoad();
+            controllor.AdminWorkloadController wlc = new controllor.AdminWorkloadController(wl, currentUser);
+            wlc.open();
+        }
+    }
+    class openManageUserListenerListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            close();
+            view.ManageUser uam = new view.ManageUser();
+            controllor.AdminManageUserController wlc = new controllor.AdminManageUserController(uam, currentUser);
+            wlc.open();
+        }
+    }
 }
+

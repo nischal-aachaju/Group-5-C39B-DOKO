@@ -30,9 +30,11 @@ public class AdminWorkloadController {
         // 4. Attach Navigation (Add your specific target pages to these later)
         this.workloadView.addLogoutListener(new LogoutListener());
         this.workloadView.addDashboardListener(new NavToDashboardListener());
-        // this.workloadView.addManageOrderListener(...);
-        // this.workloadView.addManageUserListener(...);
-        // this.workloadView.addPriceConfigListener(...);
+        this.workloadView.addMyProfileListener(new MyProfileListener());
+        this.workloadView.addbranchNetwork(new branchNetworkListener());
+        this.workloadView.addPriceConfiguration(new PriceConfigurationListener());
+        this.workloadView.addManageUserListener(new openManageUserListenerListener());
+        this.workloadView.addManageOrdersListener(new ManageOrdersListener()); 
     }
 
     // =========================================================================
@@ -125,6 +127,55 @@ public class AdminWorkloadController {
             // Assuming your Admin dashboard is named Admin_Dashboard
              view.Admin_Dashboard dashView = new view.Admin_Dashboard();
              new controllor.AdminController(dashView, currentUser).open();
+        }
+    }
+    class MyProfileListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            safeClose();
+    
+            view.NewAdmin_Profile admin_profile = new view.NewAdmin_Profile();
+            controllor.AdminProfileController ac = new controllor.AdminProfileController(admin_profile, currentUser);
+            ac.open();
+        }
+    }
+    class branchNetworkListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            safeClose();
+    
+            view.adminBranchNetworks adminBranchOrder = new view.adminBranchNetworks();
+            controllor.AdminBranchController aboc = new controllor.AdminBranchController(adminBranchOrder, currentUser);
+            aboc.open();
+        }
+    }
+    class PriceConfigurationListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+             safeClose();
+            view.priceConfiguration priceConfig = new view.priceConfiguration();
+            controllor.PriceConfigController pcc = new controllor.PriceConfigController(priceConfig, currentUser);
+            pcc.open();
+        }
+    } 
+    
+    class openManageUserListenerListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+             safeClose();
+            view.ManageUser uam = new view.ManageUser();
+            controllor.AdminManageUserController wlc = new controllor.AdminManageUserController(uam, currentUser);
+            wlc.open();
+        }
+    }
+    class ManageOrdersListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            safeClose();
+    
+            view.AdminOrderEdit ManageOrder = new view.AdminOrderEdit();
+            controllor.AdminManageOrderController moc = new controllor.AdminManageOrderController(ManageOrder, currentUser);
+            moc.open();
         }
     }
 }

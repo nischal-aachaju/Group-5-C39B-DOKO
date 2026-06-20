@@ -70,7 +70,7 @@
                           <Component id="Dashboard" alignment="0" max="32767" attributes="0"/>
                           <Component id="ManageUser" alignment="0" max="32767" attributes="0"/>
                           <Component id="workload" alignment="0" max="32767" attributes="0"/>
-                          <Component id="jButton4" alignment="0" max="32767" attributes="0"/>
+                          <Component id="branchnetwork" alignment="0" max="32767" attributes="0"/>
                           <Component id="ManageOrders" alignment="0" max="32767" attributes="0"/>
                           <Component id="PriceConfiguration" alignment="0" pref="168" max="32767" attributes="0"/>
                           <Component id="MyProfile" alignment="0" max="32767" attributes="0"/>
@@ -95,7 +95,7 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="workload" min="-2" pref="52" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jButton4" min="-2" pref="50" max="-2" attributes="0"/>
+                      <Component id="branchnetwork" min="-2" pref="50" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="ManageOrders" min="-2" pref="52" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
@@ -166,7 +166,7 @@
                 <Property name="text" type="java.lang.String" value="Workload"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton4">
+            <Component class="javax.swing.JButton" name="branchnetwork">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="31" green="26" red="21" type="rgb"/>

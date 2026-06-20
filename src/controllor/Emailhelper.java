@@ -53,7 +53,7 @@ public class Emailhelper {
             msg.setFrom(new InternetAddress(fromEmail));
             msg.setRecipients(Message.RecipientType.TO, InternetAddress.parse(toEmail));
             msg.setSubject("Your DOKO App Verification Password");
-            msg.setText("Dear " + name + ",\n\nWelcome to DOKO!\n\nYour generated verification password is: " + generatedPassword + "\n\nPlease enter this password in the app to complete your registration.");
+            msg.setText("Dear " + name + ",\n\nWelcome to DOKO!\n\nYour generated verification password / OTP  is: " + generatedPassword + "\n\nPlease enter this password in the app to complete your registration.");
 
             
             Transport.send(msg);

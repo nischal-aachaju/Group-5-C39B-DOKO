@@ -223,5 +223,42 @@ public userData loginUser(String username, String password) {
         }
         return 0;
     }
+    // =========================================================================
+    // PASSWORD RECOVERY METHODS
+    // =========================================================================
+
+    // 1. Verify the user exists before sending an OTP
+    public boolean verifyUserForReset(String fullname, String email) {
+        String sql = "SELECT * FROM users WHERE username = ? AND email = ?";
+        try (java.sql.Connection conn = db.openConnection();
+             java.sql.PreparedStatement pstmt = conn.prepareStatement(sql)) {
+             
+            pstmt.setString(1, fullname);
+            pstmt.setString(2, email);
+            
+            try (java.sql.ResultSet rs = pstmt.executeQuery()) {
+                return rs.next(); // Returns true if a match is found in the database
+            }
+        } catch (java.sql.SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    // 2. Update the password in the database
+    public boolean resetPassword(String email, String newPassword) {
+        String sql = "UPDATE users SET userPassword = ? WHERE email = ?";
+        try (java.sql.Connection conn = db.openConnection();
+             java.sql.PreparedStatement pstmt = conn.prepareStatement(sql)) {
+             
+            pstmt.setString(1, newPassword);
+            pstmt.setString(2, email);
+            
+            return pstmt.executeUpdate() > 0;
+        } catch (java.sql.SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
 }
     

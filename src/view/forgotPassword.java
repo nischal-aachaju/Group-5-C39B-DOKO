@@ -44,6 +44,7 @@ public class forgotPassword extends javax.swing.JFrame {
         OtpButton = new javax.swing.JButton();
         ChangePassword = new javax.swing.JButton();
         TermsCheckBox = new javax.swing.JCheckBox();
+        backToLogin = new javax.swing.JButton();
         DOKO = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -58,7 +59,7 @@ public class forgotPassword extends javax.swing.JFrame {
 
         Fullname.setText("Fullname");
         jPanel1.add(Fullname);
-        Fullname.setBounds(30, 140, 49, 16);
+        Fullname.setBounds(30, 140, 100, 16);
 
         Email.setText("Email");
         jPanel1.add(Email);
@@ -66,7 +67,7 @@ public class forgotPassword extends javax.swing.JFrame {
 
         otp.setText("OTP");
         jPanel1.add(otp);
-        otp.setBounds(30, 220, 30, 16);
+        otp.setBounds(30, 220, 50, 16);
 
         NewPassword.setText("New password");
         jPanel1.add(NewPassword);
@@ -74,33 +75,28 @@ public class forgotPassword extends javax.swing.JFrame {
 
         ConfirmNewpassword.setText("Confirm new password");
         jPanel1.add(ConfirmNewpassword);
-        ConfirmNewpassword.setBounds(30, 300, 122, 16);
+        ConfirmNewpassword.setBounds(30, 300, 140, 16);
 
         FullnameTextField.setBackground(new java.awt.Color(217, 217, 217));
-        FullnameTextField.setText("Unish Gautam");
         FullnameTextField.addActionListener(this::FullnameTextFieldActionPerformed);
         jPanel1.add(FullnameTextField);
         FullnameTextField.setBounds(180, 130, 298, 22);
 
         EmailTextField.setBackground(new java.awt.Color(217, 217, 217));
-        EmailTextField.setText("unishgautam07@gmail.com");
         jPanel1.add(EmailTextField);
         EmailTextField.setBounds(180, 180, 203, 22);
 
         OtpTextField.setBackground(new java.awt.Color(217, 217, 217));
-        OtpTextField.setText("123456789");
         OtpTextField.addActionListener(this::OtpTextFieldActionPerformed);
         jPanel1.add(OtpTextField);
         OtpTextField.setBounds(180, 220, 298, 22);
 
         ConfirmNewPasswordField.setBackground(new java.awt.Color(217, 217, 217));
-        ConfirmNewPasswordField.setText("jPasswordField1");
         ConfirmNewPasswordField.addActionListener(this::ConfirmNewPasswordFieldActionPerformed);
         jPanel1.add(ConfirmNewPasswordField);
         ConfirmNewPasswordField.setBounds(180, 300, 298, 22);
 
         NewPasswordField.setBackground(new java.awt.Color(217, 217, 217));
-        NewPasswordField.setText("jPasswordField2");
         NewPasswordField.addActionListener(this::NewPasswordFieldActionPerformed);
         jPanel1.add(NewPasswordField);
         NewPasswordField.setBounds(180, 260, 298, 22);
@@ -120,7 +116,7 @@ public class forgotPassword extends javax.swing.JFrame {
         OtpButton.setText("Send OTP");
         OtpButton.addActionListener(this::OtpButtonActionPerformed);
         jPanel1.add(OtpButton);
-        OtpButton.setBounds(390, 180, 82, 22);
+        OtpButton.setBounds(390, 180, 100, 22);
 
         ChangePassword.setBackground(new java.awt.Color(213, 173, 100));
         ChangePassword.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
@@ -132,7 +128,11 @@ public class forgotPassword extends javax.swing.JFrame {
 
         TermsCheckBox.setText("Terms & Condition");
         jPanel1.add(TermsCheckBox);
-        TermsCheckBox.setBounds(170, 390, 125, 20);
+        TermsCheckBox.setBounds(180, 390, 160, 20);
+
+        backToLogin.setText("Back To Login");
+        jPanel1.add(backToLogin);
+        backToLogin.setBounds(350, 430, 130, 23);
 
         getContentPane().add(jPanel1);
         jPanel1.setBounds(280, 80, 520, 470);
@@ -212,7 +212,55 @@ public class forgotPassword extends javax.swing.JFrame {
     private javax.swing.JTextField OtpTextField;
     private javax.swing.JCheckBox TermsCheckBox;
     private javax.swing.JLabel WhyYouForget;
+    private javax.swing.JButton backToLogin;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel otp;
     // End of variables declaration//GEN-END:variables
+
+// =========================================================================
+    // GETTERS & SETTERS
+    // =========================================================================
+
+    public String getFullname() { return FullnameTextField.getText().trim(); }
+    public String getEmail() { return EmailTextField.getText().trim(); }
+    public String getEnteredOTP() { return OtpTextField.getText().trim(); }
+    public String getNewPassword() { return new String(NewPasswordField.getPassword()); }
+    public String getConfirmPassword() { return new String(ConfirmNewPasswordField.getPassword()); }
+    public boolean isTermsChecked() { return TermsCheckBox.isSelected(); }
+
+    // =========================================================================
+    // UI LOCKING LOGIC
+    // =========================================================================
+
+    public void lockPasswordFieldsInitialState() {
+        // Start with password fields locked until OTP is sent
+        OtpTextField.setEditable(false);
+        NewPasswordField.setEditable(false);
+        ConfirmNewPasswordField.setEditable(false);
+        TermsCheckBox.setEnabled(false);
+        ChangePassword.setEnabled(false);
+    }
+
+    public void setFormEditableAfterOTP() {
+        // Lock Name/Email so they can't change it after OTP is sent
+        FullnameTextField.setEditable(false);
+        EmailTextField.setEditable(false);
+        OtpButton.setEnabled(false); // Prevent spamming emails
+        
+        // Unlock Password fields
+        OtpTextField.setEditable(true);
+        NewPasswordField.setEditable(true);
+        ConfirmNewPasswordField.setEditable(true);
+        TermsCheckBox.setEnabled(true);
+        ChangePassword.setEnabled(true);
+    }
+
+    // =========================================================================
+    // BUTTON LISTENERS
+    // =========================================================================
+    
+    public void addSendOtpListener(java.awt.event.ActionListener listener) { OtpButton.addActionListener(listener); }
+    public void addChangePasswordListener(java.awt.event.ActionListener listener) { ChangePassword.addActionListener(listener); }
+    public void addBackToLogin(java.awt.event.ActionListener listener) { backToLogin.addActionListener(listener); }
+
 }

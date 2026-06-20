@@ -37,11 +37,11 @@ public class login extends javax.swing.JFrame {
         password_label = new javax.swing.JLabel();
         password_txtfld = new javax.swing.JTextField();
         loginbtn = new javax.swing.JButton();
-        change_pass_label = new javax.swing.JLabel();
         whatsup = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         dont_have_act_label = new javax.swing.JLabel();
         registerBtn = new javax.swing.JButton();
+        forgotPassword = new javax.swing.JButton();
         tracking_id_label = new javax.swing.JLabel();
         tracking_id_textfield = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -93,12 +93,6 @@ public class login extends javax.swing.JFrame {
         jPanel2.add(loginbtn);
         loginbtn.setBounds(120, 220, 145, 23);
 
-        change_pass_label.setFont(new java.awt.Font("Righteous", 0, 10)); // NOI18N
-        change_pass_label.setForeground(new java.awt.Color(41, 51, 123));
-        change_pass_label.setText("forget password");
-        jPanel2.add(change_pass_label);
-        change_pass_label.setBounds(180, 190, 90, 14);
-
         whatsup.setFont(new java.awt.Font("REM", 0, 18)); // NOI18N
         whatsup.setText("What's Up?");
         jPanel2.add(whatsup);
@@ -118,6 +112,10 @@ public class login extends javax.swing.JFrame {
         registerBtn.setText("Register");
         jPanel2.add(registerBtn);
         registerBtn.setBounds(190, 250, 100, 20);
+
+        forgotPassword.setText("forget password?");
+        jPanel2.add(forgotPassword);
+        forgotPassword.setBounds(150, 190, 150, 20);
 
         jPanel3.add(jPanel2);
         jPanel2.setBounds(550, 0, 332, 370);
@@ -215,9 +213,9 @@ public class login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel change_pass_label;
     private javax.swing.JTextArea details_txt_area;
     private javax.swing.JLabel dont_have_act_label;
+    private javax.swing.JButton forgotPassword;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -252,5 +250,10 @@ public class login extends javax.swing.JFrame {
         // Make sure the variable name matches your NetBeans designer!
         registerBtn.addActionListener(listener); 
     }
+    public void addForgotPassword(java.awt.event.ActionListener listener) {
+        forgotPassword.addActionListener(listener); 
+    }
+  
+        
 }
 

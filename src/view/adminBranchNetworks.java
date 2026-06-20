@@ -370,61 +370,61 @@ public class adminBranchNetworks extends javax.swing.JFrame {
 // =========================================================================
     // TOP BAR & SEARCH INPUT
     // =========================================================================
-
-    public void setTopBar(String userName, String userRole) {
-        name.setText(userName);
-        role.setText(userRole);
-    }
-
-    public String getSearchInput() {
-        return employeeIdTextF.getText().trim();
-    }
-
-    // =========================================================================
-    // DATA INJECTION & LOCKING
-    // =========================================================================
-
-    public void setOrderDetails(String trackingId, String receiverName, String email, String senderAddr, String receiverAddr, String cost) {
-        employeeIDtextfield.setText(trackingId); 
-        employeeNameTextfield1.setText(receiverName);
-        employeeEmailTextField.setText(email);
-        phoneNumbertextfield.setText(senderAddr);
-        receiveraddresstextfield1.setText(receiverAddr);
-        total_cost_value.setText(cost); 
-    }
-
-    public void setFormEditable(boolean isEditable) {
-        // Locked fields that the employee can NEVER change here
-        employeeIDtextfield.setEditable(false); 
-        phoneNumbertextfield.setEditable(false);
-        
-        // Allowed fields
-        employeeNameTextfield1.setEditable(isEditable);
-        employeeEmailTextField.setEditable(isEditable);
-        receiveraddresstextfield1.setEditable(isEditable);
-        total_cost_value.setEditable(isEditable);
-        
-        // Toggle buttons
-        saveButton.setEnabled(isEditable);
-        editButton.setEnabled(!isEditable);
-    }
-
-    // Grab updated data for the database
-    public String getUpdatedName() { return employeeNameTextfield1.getText().trim(); }
-    public String getUpdatedEmail() { return employeeEmailTextField.getText().trim(); }
-    public String getUpdatedAddress() { return receiveraddresstextfield1.getText().trim(); }
-    public String getUpdatedCost() { return total_cost_value.getText().trim(); }
-
-    // =========================================================================
-    // BUTTON LISTENERS
-    // =========================================================================
-    
-    public void addSearchListener(java.awt.event.ActionListener listener) { searchButton.addActionListener(listener); }
-    public void addEditListener(java.awt.event.ActionListener listener) { editButton.addActionListener(listener); }
-    public void addSaveListener(java.awt.event.ActionListener listener) { saveButton.addActionListener(listener); }
-    
-    // Navigators
-    public void addDashboardListener(java.awt.event.ActionListener listener) { Dashboardbutton.addActionListener(listener); }
-    public void addLogoutListener(java.awt.event.ActionListener listener) { logoutbutton.addActionListener(listener); }
+//
+//    public void setTopBar(String userName, String userRole) {
+//        name.setText(userName);
+//        role.setText(userRole);
+//    }
+//
+//    public String getSearchInput() {
+//        return employeeIdTextF.getText().trim();
+//    }
+//
+//    // =========================================================================
+//    // DATA INJECTION & LOCKING
+//    // =========================================================================
+//
+//    public void setOrderDetails(String trackingId, String receiverName, String email, String senderAddr, String receiverAddr, String cost) {
+//        employeeIDtextfield.setText(trackingId); 
+//        employeeNameTextfield1.setText(receiverName);
+//        employeeEmailTextField.setText(email);
+//        phoneNumbertextfield.setText(senderAddr);
+//        receiveraddresstextfield1.setText(receiverAddr);
+//        total_cost_value.setText(cost); 
+//    }
+//
+//    public void setFormEditable(boolean isEditable) {
+//        // Locked fields that the employee can NEVER change here
+//        employeeIDtextfield.setEditable(false); 
+//        phoneNumbertextfield.setEditable(false);
+//        
+//        // Allowed fields
+//        employeeNameTextfield1.setEditable(isEditable);
+//        employeeEmailTextField.setEditable(isEditable);
+//        receiveraddresstextfield1.setEditable(isEditable);
+//        total_cost_value.setEditable(isEditable);
+//        
+//        // Toggle buttons
+//        saveButton.setEnabled(isEditable);
+//        editButton.setEnabled(!isEditable);
+//    }
+//
+//    // Grab updated data for the database
+//    public String getUpdatedName() { return employeeNameTextfield1.getText().trim(); }
+//    public String getUpdatedEmail() { return employeeEmailTextField.getText().trim(); }
+//    public String getUpdatedAddress() { return receiveraddresstextfield1.getText().trim(); }
+//    public String getUpdatedCost() { return total_cost_value.getText().trim(); }
+//
+//    // =========================================================================
+//    // BUTTON LISTENERS
+//    // =========================================================================
+//    
+//    public void addSearchListener(java.awt.event.ActionListener listener) { searchButton.addActionListener(listener); }
+//    public void addEditListener(java.awt.event.ActionListener listener) { editButton.addActionListener(listener); }
+//    public void addSaveListener(java.awt.event.ActionListener listener) { saveButton.addActionListener(listener); }
+//    
+//    // Navigators
+//    public void addDashboardListener(java.awt.event.ActionListener listener) { Dashboardbutton.addActionListener(listener); }
+//    public void addLogoutListener(java.awt.event.ActionListener listener) { logoutbutton.addActionListener(listener); }
 
 }

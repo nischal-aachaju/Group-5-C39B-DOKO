@@ -27,6 +27,7 @@ public class LoginController {
         // Connect the login button in the View to the LoginListener logic below
         this.loginView.addLoginListener(new LoginListener());
         this.loginView.addRegisterListener(new SwitchToRegisterListener());
+        this.loginView.addForgotPassword(new  OpenForgotPassword());
     }
 
     // Method to open the login window
@@ -153,6 +154,20 @@ public class LoginController {
             // 2. Initialize and open the Sign-Up window
             view.sign_up signupView = new view.sign_up();
             controllor.SignupController signupController = new controllor.SignupController(signupView);
+            
+            signupController.open();
+        }
+    }
+    class OpenForgotPassword implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            
+            // 1. Close the current Login window
+            close(); 
+            
+            // 2. Initialize and open the Sign-Up window
+            view.forgotPassword forgotPass = new view.forgotPassword();
+            controllor.ForgotPasswordController signupController = new controllor.ForgotPasswordController(forgotPass);
             
             signupController.open();
         }

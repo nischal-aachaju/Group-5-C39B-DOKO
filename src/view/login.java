@@ -121,11 +121,18 @@ public class login extends javax.swing.JFrame {
         jPanel2.add(dont_have_act_label);
         dont_have_act_label.setBounds(60, 250, 140, 16);
 
-        registerBtn.setText("Register");
+        registerBtn.setBackground(new java.awt.Color(236, 236, 236));
+        registerBtn.setForeground(new java.awt.Color(51, 51, 255));
+        registerBtn.setText("Register Here!");
+        registerBtn.setBorder(null);
+        registerBtn.addActionListener(this::registerBtnActionPerformed);
         jPanel2.add(registerBtn);
-        registerBtn.setBounds(190, 250, 100, 20);
+        registerBtn.setBounds(175, 247, 100, 20);
 
+        forgotPassword.setBackground(new java.awt.Color(236, 236, 236));
+        forgotPassword.setForeground(new java.awt.Color(255, 0, 0));
         forgotPassword.setText("forget password?");
+        forgotPassword.setBorder(null);
         jPanel2.add(forgotPassword);
         forgotPassword.setBounds(150, 190, 150, 20);
 
@@ -282,6 +289,10 @@ public class login extends javax.swing.JFrame {
     private void trackingidtextfield1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_trackingidtextfield1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_trackingidtextfield1ActionPerformed
+
+    private void registerBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerBtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_registerBtnActionPerformed
 
     /**
      * @param args the command line arguments

@@ -248,6 +248,21 @@ public class UserController {
                 // Update UI visually
                 orderSubmission.updateBillSection(newOrder); 
                 JOptionPane.showMessageDialog(orderSubmission, "Order Placed Successfully!\nTracking ID: " + currentTrackingId + "\nDelivery Fee: Rs. " + deliveryFee);
+                
+                // ====================================================================
+                // EMAIL TRIGGER: SEND CREATION EMAIL IN THE BACKGROUND
+                // ====================================================================
+                final Model.Order emailOrder = newOrder; 
+                new Thread(() -> {
+                    try {
+                        // This calls the EmailService you built to send the Pending status email
+                        controllor.EmailService.sendOrderCreatedEmail(emailOrder);
+                    } catch (Exception ex) {
+                        System.out.println("Could not send email, but order was saved: " + ex.getMessage());
+                    }
+                }).start();
+                // ====================================================================
+
                 orderSubmission.clearOrderForm(); 
                 
                 // Roll new Tracking ID for next order

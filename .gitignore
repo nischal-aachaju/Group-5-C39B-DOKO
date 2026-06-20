@@ -1,8 +1,7 @@
 /src/DB/
-
-
+/test/
 # NetBeans Specific
-nbproject/private/private.xml
+nbproject/private/private.xml/
 /nbproject/private/
 /nbproject/private/
 /nbproject/Makefile-*.mk

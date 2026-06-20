@@ -253,7 +253,7 @@ class OpenAssiggnedrdersListener implements java.awt.event.ActionListener {
     // RETURN ORDER STATUS LOGIC
     // =========================================================================
 
-    class ReturnOrderListener implements ActionListener {
+   class ReturnOrderListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
             // 1. Make sure they actually searched for an order first
@@ -280,6 +280,48 @@ class OpenAssiggnedrdersListener implements java.awt.event.ActionListener {
                 
                 if (success) {
                     JOptionPane.showMessageDialog(view, "Order " + currentTrackingId + " successfully marked as RETURNED.");
+                    
+                    // ====================================================================
+                    // EMAIL TRIGGER: FETCH CUSTOMER INFO AND SEND STATUS UPDATE
+                    // ====================================================================
+                    final String safeTrackingId = currentTrackingId; // Save for the background thread
+                    
+                    try (java.sql.ResultSet rs = dao.getOrderByTrackingId(safeTrackingId)) {
+                       if (rs != null && rs.next()) {
+                                // Read the email and name from the database!
+                                final String recName = rs.getString("receiver_name");
+                                final String recEmail = rs.getString("receiver_email");
+                                
+                                // Grab Admin details (shows who processed the return)
+                                final String adminName = currentUser.getUsername();
+                                final String adminPhone = currentUser.getPhone();
+                                
+                                // Fire the background thread so the app doesn't freeze!
+                                new Thread(() -> {
+                                    try {
+                                        // Call EmailService directly since they are in the same package
+                                        EmailService.sendStatusUpdateEmail(
+                                            recEmail, 
+                                            recName, 
+                                            safeTrackingId, 
+                                            "return", 
+                                            adminName, 
+                                            adminPhone
+                                        );
+                                    } catch (Exception ex) {
+                                        // THIS WILL POP UP ON YOUR SCREEN TO REVEAL THE HIDDEN ERROR
+                                        javax.swing.JOptionPane.showMessageDialog(null, 
+                                            "Email Failed to Send!\nError: " + ex.getMessage(), 
+                                            "Email Error", 
+                                            javax.swing.JOptionPane.ERROR_MESSAGE);
+                                    }
+                                }).start();
+                            }
+                    } catch (Exception ex) {
+                        System.out.println("Could not fetch order details for email: " + ex.getMessage());
+                    }
+                    // ====================================================================
+
                     view.setFormEditable(false); // Lock the form
                 } else {
                     JOptionPane.showMessageDialog(view, "Failed to update database status.", "Database Error", JOptionPane.ERROR_MESSAGE);

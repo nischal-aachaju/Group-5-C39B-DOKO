@@ -1,10 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package Model;
-
-import java.util.Random;
 
 public class Order {
     private String trackingId;
@@ -17,18 +11,13 @@ public class Order {
     private double declaredCost; 
     private String description;
     private String status;
-   
+    private double deliveryCost;
 
-    public void setStatus(String status) { this.status = status; }
-    public String getStatus() { return status; }
-    private double deliveryCost; // FIXED DEFAULT COST
-    private double finalBillAmount; 
-
-public Order(String trackingId, String name, String email, String contact, String location, 
+    // CONSTRUCTOR
+    public Order(String trackingId, String name, String email, String contact, String location, 
                  String street, double weight, double declaredCost, String description) {
         
-        this.trackingId = trackingId; // Set from the parameter now!
-        
+        this.trackingId = trackingId; 
         this.receiverName = name;
         this.receiverEmail = email;
         this.receiverContact = contact;
@@ -37,12 +26,17 @@ public Order(String trackingId, String name, String email, String contact, Strin
         this.weight = weight;
         this.declaredCost = declaredCost;
         this.description = description;
-        
-        this.finalBillAmount = this.declaredCost + this.deliveryCost; 
+        this.deliveryCost = 0.0; // Defaults to 0 until the DAO sets it
     }
 
-    // --- GETTERS ---
-    public String getTrackingId(){return trackingId;}
+    // --- GETTERS & SETTERS ---
+    public void setStatus(String status) { this.status = status; }
+    public String getStatus() { return status; }
+    
+    public void setDeliveryCost(double deliveryCost) { this.deliveryCost = deliveryCost;}
+    public double getDeliveryCost() { return deliveryCost; }
+
+    public String getTrackingId() { return trackingId; }
     public String getReceiverName() { return receiverName; }
     public String getReceiverEmail() { return receiverEmail; }
     public String getReceiverContact() { return receiverContact; }
@@ -51,7 +45,10 @@ public Order(String trackingId, String name, String email, String contact, Strin
     public double getWeight() { return weight; }
     public double getDeclaredCost() { return declaredCost; }
     public String getDescription() { return description; }
-    public double getDeliveryCost() { return deliveryCost; }
-    public double getFinalBillAmount() { return finalBillAmount; }
-    public void setDeliveryCost(double deliveryCost) { this.deliveryCost = deliveryCost;}
+    
+    // --- DYNAMIC MATH ---
+    // This perfectly calculates the COD no matter when the delivery cost is loaded!
+    public double getFinalBillAmount() { 
+        return this.declaredCost + this.deliveryCost; 
+    }
 }

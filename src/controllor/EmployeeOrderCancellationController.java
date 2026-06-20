@@ -104,7 +104,7 @@ public class EmployeeOrderCancellationController {
         }
     }
 
-    // =========================================================================
+   // =========================================================================
     // STATUS UPDATE ACTION (Dynamic for Cancel/Return/Delivered)
     // =========================================================================
 
@@ -138,6 +138,42 @@ public class EmployeeOrderCancellationController {
                 if (success) {
                     JOptionPane.showMessageDialog(view, "Order " + currentTrackingId + " successfully marked as " + newStatus.toUpperCase() + "!");
                     
+                    // ====================================================================
+                    // EMAIL TRIGGER: FETCH CUSTOMER INFO AND SEND STATUS UPDATE
+                    // ====================================================================
+                    final String safeTrackingId = currentTrackingId; // Save for the background thread
+                    
+                    try (java.sql.ResultSet rs = dao.getOrderByTrackingId(safeTrackingId)) {
+                        if (rs != null && rs.next()) {
+                            // Read the email and name from the database!
+                            final String recName = rs.getString("receiver_name");
+                            final String recEmail = rs.getString("receiver_email");
+                            
+                            // Grab Employee details
+                            final String empName = currentUser.getUsername();
+                            final String empPhone = currentUser.getPhone();
+                            
+                            // Fire the background thread so the app doesn't freeze!
+                            new Thread(() -> {
+                                try {
+                                    controllor.EmailService.sendStatusUpdateEmail(
+                                        recEmail, 
+                                        recName, 
+                                        safeTrackingId, 
+                                        newStatus, 
+                                        empName, 
+                                        empPhone
+                                    );
+                                } catch (Exception ex) {
+                                    System.out.println("Email failed to send: " + ex.getMessage());
+                                }
+                            }).start();
+                        }
+                    } catch (Exception ex) {
+                        System.out.println("Could not fetch order details for email: " + ex.getMessage());
+                    }
+                    // ====================================================================
+                    
                     // Reset the form so they don't accidentally click another button
                     view.setOrderDetails("", "", "", "", "", "");
                     currentTrackingId = null;
@@ -149,8 +185,7 @@ public class EmployeeOrderCancellationController {
             }
         }
     }
-
-    // =========================================================================
+    // ===============================================================
     // NAVIGATION
     // =========================================================================
 

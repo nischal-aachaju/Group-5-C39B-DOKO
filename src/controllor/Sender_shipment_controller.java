@@ -120,6 +120,18 @@ public class Sender_shipment_controller {
 
             if (confirm == JOptionPane.YES_OPTION) {
                 DAO.OrderDAO orderDao = new DAO.OrderDAO();
+                
+                // ====================================================================
+                // NEW: FETCH THE ORDER DETAILS FIRST (We need the receiver's email!)
+                // ====================================================================
+                Model.Order orderToCancel = orderDao.getOrderByTrackingIdAndSender(loadedTrackingId, currentUser.getUserID());
+                
+                if (orderToCancel == null) {
+                    JOptionPane.showMessageDialog(shipmentView, "Order not found or you don't have permission to cancel it.");
+                    return;
+                }
+                
+                // Execute the database update
                 boolean success = orderDao.cancelOrder(loadedTrackingId, currentUser.getUserID());
                 
                 if (success) {
@@ -127,6 +139,30 @@ public class Sender_shipment_controller {
                             "Success! Order #" + loadedTrackingId + " has been cancelled.", 
                             "Order Cancelled", 
                             JOptionPane.INFORMATION_MESSAGE);
+                            
+                    // ====================================================================
+                    // NEW: SEND CANCELLATION EMAIL IN BACKGROUND
+                    // ====================================================================
+                    final String recEmail = orderToCancel.getReceiverEmail();
+                    final String recName = orderToCancel.getReceiverName();
+                    final String safeTrackingId = loadedTrackingId;
+                    
+                    new Thread(() -> {
+                        try {
+                            // Passing nulls for employee name/phone because a driver isn't assigned to a cancelled order
+                            controllor.EmailService.sendStatusUpdateEmail(
+                                recEmail, 
+                                recName, 
+                                safeTrackingId, 
+                                "cancelled", 
+                                null, 
+                                null
+                            );
+                        } catch (Exception ex) {
+                            System.out.println("Email failed to send: " + ex.getMessage());
+                        }
+                    }).start();
+                    // ====================================================================
                             
                     shipmentView.clearOrderDetails(); 
                     
@@ -139,7 +175,6 @@ public class Sender_shipment_controller {
             }
         }
     }
-
     class SearchOrderListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {

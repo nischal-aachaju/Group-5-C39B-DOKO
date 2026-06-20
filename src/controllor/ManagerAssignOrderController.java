@@ -1,26 +1,11 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-
-/**
- *
- * @author nischal
- */
 package controllor;
 
 import Model.userData;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.sql.ResultSet;
-import java.util.ArrayList;
 import javax.swing.JOptionPane;
-import javax.swing.event.TableModelEvent;
-import javax.swing.event.TableModelListener;
-//import view.assignedorder;
 
 public class ManagerAssignOrderController {
-    
     
     private final view.assignedorder assignView;
     private final userData currentUser;
@@ -34,14 +19,17 @@ public class ManagerAssignOrderController {
         
         this.assignView.setUsernameLabel(currentUser.getUsername());
         this.assignView.setRoleLabel(currentUser.getRole());
+        
         // 1. Reset the label by default
         this.assignView.setEmployeeNameLabel("---");
         
         // 2. Load the pending orders into the table immediately
         loadPendingOrders();
         
-        // 3. Connect the Search button
+        // 3. Connect all buttons
         this.assignView.addSearchListener(new SearchEmployeeListener());
+        this.assignView.addSubmitAssignmentListener(new SubmitAssignmentListener()); // The Bulk Assign Button!
+        
         this.assignView.addDashboardListener(new OpenDashboardListener());
         this.assignView.addLogoutListener(new LogoutListener());
         this.assignView.addManageUserListener(new OpenManageUserListener());
@@ -49,12 +37,9 @@ public class ManagerAssignOrderController {
         this.assignView.addActiveOrdersListener(new OpenActiveOrdersListener() );
         this.assignView.addManageOrdersListener(new OpenManageOrdersListener());
         this.assignView.addMyProfileListener(new OpenManagerProfileListener());
-
-
     }
 
     public void open() {
-        
         this.assignView.setVisible(true);
         this.assignView.setLocationRelativeTo(null);
     }
@@ -65,10 +50,6 @@ public class ManagerAssignOrderController {
 
     // =========================================================================
     // LOAD TABLE DATA
-    // =========================================================================
-
-    // =========================================================================
-    // LOAD TABLE DATA (DIRECT INJECTION)
     // =========================================================================
 
     private void loadPendingOrders() {
@@ -93,13 +74,11 @@ public class ManagerAssignOrderController {
                 assignView.addTableRow(new Object[]{isAssigned, trackingId, recipient, contact, email, address, cdo});
             }
             
-        // Put this inside your ManagerAssignOrderController constructor
-    this.assignView.addSubmitAssignmentListener(new SubmitAssignmentListener());
-            
         } catch (java.sql.SQLException e) {
             e.printStackTrace();
         }
     }
+
     // =========================================================================
     // SEARCH LISTENER
     // =========================================================================
@@ -117,7 +96,7 @@ public class ManagerAssignOrderController {
             try {
                 int searchId = Integer.parseInt(searchInput);
                 DAO.userDAO dao = new DAO.userDAO();
-                searchedEmployee = dao.getUserById(searchId); // Reusing your existing method!
+                searchedEmployee = dao.getUserById(searchId); 
                 
                 if (searchedEmployee != null && "Employee".equalsIgnoreCase(searchedEmployee.getRole())) {
                     assignView.setEmployeeNameLabel(searchedEmployee.getUsername());
@@ -133,149 +112,7 @@ public class ManagerAssignOrderController {
     }
 
     // =========================================================================
-    // CHECKBOX TICK LISTENER (Triggers instantly when clicked)
-    // =========================================================================
-
-    class CheckboxTickListener implements TableModelListener {
-        @Override
-        public void tableChanged(TableModelEvent e) {
-            // Check if the change happened in the Checkbox column (Column 2)
-            if (e.getColumn() == 2) {
-                int row = e.getFirstRow();
-                javax.swing.table.DefaultTableModel model = assignView.getTableModel();
-                
-                boolean isChecked = (boolean) model.getValueAt(row, 2);
-                String trackingId = (String) model.getValueAt(row, 0);
-
-                if (isChecked) {
-                    // Validation: Did they search for an employee first?
-                    if (searchedEmployee == null) {
-                        JOptionPane.showMessageDialog(assignView, "You must search and select an Employee first!", "Assignment Error", JOptionPane.ERROR_MESSAGE);
-                        model.setValueAt(false, row, 2); // Uncheck the box automatically
-                        return;
-                    }
-                    
-                    // Assign the order!
-                    DAO.OrderDAO dao = new DAO.OrderDAO();
-                    boolean success = dao.assignOrderToEmployee(searchedEmployee.getUserID(), trackingId);
-                    
-                    if (success) {
-                        JOptionPane.showMessageDialog(assignView, "Order " + trackingId + " successfully assigned to " + searchedEmployee.getUsername() + "!");
-                        // Reload table so the assigned order disappears from the pending list
-                        loadPendingOrders(); 
-                    } else {
-                        JOptionPane.showMessageDialog(assignView, "Database error. Failed to assign order.");
-                        model.setValueAt(false, row, 2); // Uncheck
-                    }
-                }
-            }
-        }
-    }
-        class OpenDashboardListener implements ActionListener {
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            // 1. Close the Manager Profile screen
-            close(); 
-            
-            // 2. Route directly back to the Manager Dashboard
-            view.Manager_Dashboard dashboardView = new view.Manager_Dashboard();
-            
-            // Assuming your controller for the manager dashboard is named ManagerController
-            new controllor.ManagerController(dashboardView, currentUser).open();
-        }
-    }
-         class LogoutListener implements ActionListener {
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            close(); 
-            view.login loginView = new view.login();
-            new controllor.LoginController(loginView).open();
-        }
-         }
-        class OpenManageUserListener implements java.awt.event.ActionListener {
-        @Override
-        public void actionPerformed(java.awt.event.ActionEvent e) {
-            close(); 
-            
-            // 2. Create the User Management View
-            view.Useraccountmanagement manageUserView = new view.Useraccountmanagement();
-            
-            // 3. Pass it entirely to your dedicated Manage User Controller
-            controllor.ManageUserController manageUserController = new controllor.ManageUserController(manageUserView, currentUser);
-            
-            // 4. Open the User Management page!
-            manageUserController.open();
-        }
-}
-        class OpenWorkloadListener implements java.awt.event.ActionListener {
-        @Override
-        public void actionPerformed(java.awt.event.ActionEvent e) {
-            // 1. Close the current Manager Dashboard
-            close(); 
-            
-            // 2. Create the Manager Order Edit View
-            view.Manager_Workload WorkloadView = new view.Manager_Workload();
-            
-            // 3. Fixed spelling from "controller" to "controllor" to perfectly match your package structure
-            controllor.ManagerWorkloadController managerAssignOrderController = new controllor.ManagerWorkloadController(WorkloadView, currentUser);
-            
-            // 4. Open the Manager Order Edit page!
-            managerAssignOrderController.open();
-        }
-    }
-class OpenActiveOrdersListener implements java.awt.event.ActionListener {
-        @Override
-        public void actionPerformed(java.awt.event.ActionEvent e) {
-            // 1. Close the current Manager Dashboard
-            close(); 
-            
-            // 2. Create the Manager Order Edit View
-            view.Manager_active_orders activeorderView = new view.Manager_active_orders();
-            
-            // 3. Fixed spelling from "controller" to "controllor" to perfectly match your package structure
-            controllor.ManagerActiveOrdersController managerAssignOrderController = new controllor.ManagerActiveOrdersController(activeorderView, currentUser);
-            
-            // 4. Open the Manager Order Edit page!
-            managerAssignOrderController.open();
-        }
-    }
-class OpenManageOrdersListener implements java.awt.event.ActionListener {
-        @Override
-        public void actionPerformed(java.awt.event.ActionEvent e) {
-            // 1. Close the current Manager Dashboard
-            close(); 
-            
-            // 2. Create the Manager Order Edit View
-            view.ManagerOrderEdit managerOrderEditView = new view.ManagerOrderEdit();
-            
-            // 3. Fixed spelling from "controller" to "controllor" to perfectly match your package structure
-            controllor.ManagerOrderEditController managerOrderEditController = new controllor.ManagerOrderEditController(managerOrderEditView, currentUser);
-            
-            // 4. Open the Manager Order Edit page!
-            managerOrderEditController.open();
-        }
-    }
-class OpenManagerProfileListener implements java.awt.event.ActionListener {
-        @Override
-        public void actionPerformed(java.awt.event.ActionEvent e) {
-            // 1. Close the current Manager Dashboard
-            close(); 
-            
-            // 2. Create the exact Manager Profile View
-            view.Manager_profileEdit profileView = new view.Manager_profileEdit();
-            
-            // 3. Pass it entirely to your dedicated Manager Profile Controller
-            controllor.Manager_ProfileController profileController = new controllor.Manager_ProfileController(profileView, currentUser);
-            
-            // 4. Open the profile page!
-            profileController.open();
-        }
-    }
-
-
-    
-        // =========================================================================
-    // BULK ASSIGN BUTTON LOGIC
+    // BULK ASSIGN & EMAIL TRIGGER LOGIC
     // =========================================================================
 
     class SubmitAssignmentListener implements ActionListener {
@@ -290,7 +127,10 @@ class OpenManagerProfileListener implements java.awt.event.ActionListener {
 
             javax.swing.table.DefaultTableModel model = assignView.getTableModel();
             DAO.OrderDAO dao = new DAO.OrderDAO();
-            int assignedCount = 0; // Keep track of how many we assign
+            int assignedCount = 0; 
+            
+            // This list will hold the details of the customers we need to email
+            java.util.List<String[]> emailQueue = new java.util.ArrayList<>();
 
             // 2. Loop through every row in the table
             for (int i = 0; i < model.getRowCount(); i++) {
@@ -301,23 +141,120 @@ class OpenManagerProfileListener implements java.awt.event.ActionListener {
                 // 3. If it is checked, assign it to the database!
                 if (isChecked) {
                     String trackingId = (String) model.getValueAt(i, 1); // Tracking ID is in Column 1
+                    String recipientName = (String) model.getValueAt(i, 2); // Name is in Column 2
+                    String recipientEmail = (String) model.getValueAt(i, 4); // Email is in Column 4
                     
-                    // Re-use the exact DAO method we wrote earlier
                     boolean success = dao.assignOrderToEmployee(searchedEmployee.getUserID(), trackingId);
                     
                     if (success) {
                         assignedCount++;
+                        // Add the customer details to our email queue
+                        emailQueue.add(new String[]{recipientEmail, recipientName, trackingId});
                     }
                 }
             }
 
-            // 4. Show success message and refresh the table
+            // 4. Show success message, refresh table, and trigger emails
             if (assignedCount > 0) {
                 JOptionPane.showMessageDialog(assignView, "Successfully assigned " + assignedCount + " order(s) to " + searchedEmployee.getUsername() + "!");
                 loadPendingOrders(); // Reload the table so the assigned orders disappear
+                
+                // ====================================================================
+                // PROCESS BULK EMAILS IN A SINGLE BACKGROUND THREAD
+                // ====================================================================
+                final String driverName = searchedEmployee.getUsername();
+                final String driverPhone = searchedEmployee.getPhone();
+                
+                new Thread(() -> {
+                    for (String[] customerData : emailQueue) {
+                        try {
+                            String email = customerData[0];
+                            String name = customerData[1];
+                            String tracking = customerData[2];
+                            
+                            // Using "intransit" as the new status when an order is assigned
+                            controllor.EmailService.sendStatusUpdateEmail(email, name, tracking, "intransit", driverName, driverPhone);
+                            
+                            // Sleep for 1 second between emails to prevent SMTP spam blocks
+                            Thread.sleep(1000); 
+                            
+                        } catch (Exception ex) {
+                            System.out.println("Failed to send bulk email: " + ex.getMessage());
+                        }
+                    }
+                }).start();
+                // ====================================================================
+                
             } else {
                 JOptionPane.showMessageDialog(assignView, "No orders were selected. Please tick the boxes to assign orders.");
             }
+        }
+    }
+
+    // =========================================================================
+    // NAVIGATION LISTENERS
+    // =========================================================================
+
+    class OpenDashboardListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            close(); 
+            view.Manager_Dashboard dashboardView = new view.Manager_Dashboard();
+            new controllor.ManagerController(dashboardView, currentUser).open();
+        }
+    }
+    
+    class LogoutListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            close(); 
+            view.login loginView = new view.login();
+            new controllor.LoginController(loginView).open();
+        }
+    }
+    
+    class OpenManageUserListener implements java.awt.event.ActionListener {
+        @Override
+        public void actionPerformed(java.awt.event.ActionEvent e) {
+            close(); 
+            view.Useraccountmanagement manageUserView = new view.Useraccountmanagement();
+            new controllor.ManageUserController(manageUserView, currentUser).open();
+        }
+    }
+    
+    class OpenWorkloadListener implements java.awt.event.ActionListener {
+        @Override
+        public void actionPerformed(java.awt.event.ActionEvent e) {
+            close(); 
+            view.Manager_Workload WorkloadView = new view.Manager_Workload();
+            new controllor.ManagerWorkloadController(WorkloadView, currentUser).open();
+        }
+    }
+    
+    class OpenActiveOrdersListener implements java.awt.event.ActionListener {
+        @Override
+        public void actionPerformed(java.awt.event.ActionEvent e) {
+            close(); 
+            view.Manager_active_orders activeorderView = new view.Manager_active_orders();
+            new controllor.ManagerActiveOrdersController(activeorderView, currentUser).open();
+        }
+    }
+    
+    class OpenManageOrdersListener implements java.awt.event.ActionListener {
+        @Override
+        public void actionPerformed(java.awt.event.ActionEvent e) {
+            close(); 
+            view.ManagerOrderEdit managerOrderEditView = new view.ManagerOrderEdit();
+            new controllor.ManagerOrderEditController(managerOrderEditView, currentUser).open();
+        }
+    }
+    
+    class OpenManagerProfileListener implements java.awt.event.ActionListener {
+        @Override
+        public void actionPerformed(java.awt.event.ActionEvent e) {
+            close(); 
+            view.Manager_profileEdit profileView = new view.Manager_profileEdit();
+            new controllor.Manager_ProfileController(profileView, currentUser).open();
         }
     }
 }

@@ -65,6 +65,7 @@ public class Manager_Dashboard extends javax.swing.JFrame {
         active_employee = new javax.swing.JPanel();
         active_employee_text = new javax.swing.JLabel();
         active_employee_value = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         jRadioButton1.setText("jRadioButton1");
 
@@ -209,13 +210,13 @@ public class Manager_Dashboard extends javax.swing.JFrame {
                 {null, null, null, null}
             },
             new String [] {
-                "Recent Orders", "", "", ""
+                "TrackingID", "Name", "Contact", "Status"
             }
         ));
         jScrollPane1.setViewportView(OrderTable);
 
         MainPanel.add(jScrollPane1);
-        jScrollPane1.setBounds(240, 324, 750, 250);
+        jScrollPane1.setBounds(230, 420, 750, 110);
 
         total_orders.setVerifyInputWhenFocusTarget(false);
         total_orders.setLayout(null);
@@ -324,6 +325,11 @@ public class Manager_Dashboard extends javax.swing.JFrame {
         MainPanel.add(active_employee);
         active_employee.setBounds(480, 220, 190, 60);
 
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel1.setText("Recent Ordres :");
+        MainPanel.add(jLabel1);
+        jLabel1.setBounds(240, 380, 130, 30);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -392,6 +398,7 @@ public class Manager_Dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel active_shpiment_text2;
     private javax.swing.JLabel delivered_shipment_text;
     private javax.swing.JLabel delivered_shipment_value;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JRadioButton jRadioButton1;
@@ -452,4 +459,23 @@ public void addManageOrdersListener(java.awt.event.ActionListener listener) {
 public void addAssiggnedOrdersListener(java.awt.event.ActionListener listener) {
     AssignOrder.addActionListener(listener); 
 }
+// =========================================================================
+    // METRIC CARDS & TABLE SETUP
+    // =========================================================================
+
+    public void setDashboardStats(String total, String active, String pending, String delivered, String activeEmployees) {
+        total_orders_value.setText(total);
+        activeShipmentValue2.setText(active); // Active shipments
+        pending_shipments_Value.setText(pending);
+        delivered_shipment_value.setText(delivered);
+        active_employee_value.setText(activeEmployees);
+    }
+
+    public void clearRecentOrdersTable() {
+        ((javax.swing.table.DefaultTableModel)OrderTable.getModel()).setRowCount(0);
+    }
+
+    public void addRecentOrderRow(Object[] rowData) {
+        ((javax.swing.table.DefaultTableModel)OrderTable.getModel()).addRow(rowData);
+    }
 }

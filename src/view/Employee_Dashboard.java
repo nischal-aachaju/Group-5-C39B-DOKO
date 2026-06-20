@@ -400,16 +400,39 @@ public class Employee_Dashboard extends javax.swing.JFrame {
         logout.addActionListener(listener); 
     }
     public void addMyProfileListener(java.awt.event.ActionListener listener) {
-     
+
         MyProfile.addActionListener(listener); 
     }
         public void addOrdersHistoryListener(java.awt.event.ActionListener listener) {
-     
+
         OrdersHistory.addActionListener(listener); 
     }
         
     public void addManageOrdersListener(java.awt.event.ActionListener listener) {
-     
+
         ManageOrders.addActionListener(listener); 
+    }
+    public void addMyShipmentsListener(java.awt.event.ActionListener listener) {
+
+        MyShipments.addActionListener(listener); 
+    }
+    // =========================================================================
+    // METRIC CARDS & TABLE SETUP
+    // =========================================================================
+
+    public void setDashboardStats(String total, String active, String delivered, String returned, String cancelled) {
+        total_orders_value.setText(total);
+        activeShipmentValue2.setText(active);
+        Delivered_shipment_value.setText(delivered);
+        return_shipments_Value.setText(returned);
+        Cancel_Orders_value.setText(cancelled);
+    }
+
+    public void clearRecentOrdersTable() {
+        ((javax.swing.table.DefaultTableModel)recent_5_orders.getModel()).setRowCount(0);
+    }
+
+    public void addRecentOrderRow(Object[] rowData) {
+        ((javax.swing.table.DefaultTableModel)recent_5_orders.getModel()).addRow(rowData);
     }
 }

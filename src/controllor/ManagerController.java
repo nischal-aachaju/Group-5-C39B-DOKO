@@ -1,8 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-
 package controllor;
 
 import Model.userData;
@@ -11,16 +6,14 @@ import view.Manager_Dashboard;
 import java.awt.Window;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.ResultSet;
 import javax.swing.SwingUtilities;
-
-
 
 public class ManagerController {
     
     private final Manager_Dashboard managerView;
     private final userData currentUser;
 
-    // Notice we pass the loggedInUser data into this constructor!
     public ManagerController(Manager_Dashboard managerView, userData currentUser) {
         this.managerView = managerView;
         this.currentUser = currentUser;
@@ -29,19 +22,23 @@ public class ManagerController {
         this.managerView.setUsernameLabel(currentUser.getUsername());
         this.managerView.setRoleLabel(currentUser.getRole());
         
-        // 2. Connect the navigation buttons
+        // 2. Load the live database metrics and table data instantly
+        loadDashboardMetrics();
+        loadRecentOrders();
+        
+        // 3. Connect the navigation buttons
         this.managerView.addLogoutListener(new LogoutListener());
         this.managerView.addMyProfileListener(new OpenManagerProfileListener());
         this.managerView.addManageUserListener(new OpenManageUserListener());
         this.managerView.addManageOrdersListener(new OpenManageOrdersListener());
-        this.managerView.addAssiggnedOrdersListener(new OpenAssiggnedrdersListener() );
-        this.managerView.addActiveOrdersListener(new OpenActiveOrdersListener() );
-        this.managerView.addWorkloadListener(new OpenWorkloadListener() );
-        
+        this.managerView.addAssiggnedOrdersListener(new OpenAssiggnedrdersListener());
+        this.managerView.addActiveOrdersListener(new OpenActiveOrdersListener());
+        this.managerView.addWorkloadListener(new OpenWorkloadListener());
     }
 
     public void open() {
         this.managerView.setVisible(true);
+        this.managerView.setLocationRelativeTo(null); // Centers window
     }
 
     public void close() {
@@ -53,37 +50,75 @@ public class ManagerController {
         }
     }
 
-    // --- Action Listener for Logout Button ---
+    // =========================================================================
+    // DATA LOADING LOGIC (NEW)
+    // =========================================================================
+
+    private void loadDashboardMetrics() {
+        DAO.OrderDAO oDao = new DAO.OrderDAO();
+        DAO.userDAO uDao = new DAO.userDAO();
+        
+        // Fetch order stats (Reusing the query we built for Admin!)
+        int[] stats = oDao.getAdminDashboardStats(); 
+        
+        // Fetch employee stats
+        int activeEmployees = uDao.getActiveEmployeeCount();
+        
+        // Inject into the View (Total, Active/In-transit, Pending, Delivered, Active Employees)
+        managerView.setDashboardStats(
+            String.valueOf(stats[0]), // Total
+            String.valueOf(stats[1]), // Active (Intransit)
+            String.valueOf(stats[2]), // Pending
+            String.valueOf(stats[3]), // Delivered
+            String.valueOf(activeEmployees) // Employees
+        );
+    }
+
+    private void loadRecentOrders() {
+        DAO.OrderDAO dao = new DAO.OrderDAO();
+        
+        // Fetch the 5 most recent orders
+        ResultSet rs = dao.getRecentOrders(5);
+        
+        managerView.clearRecentOrdersTable();
+        
+        try {
+            if (rs != null) {
+                while (rs.next()) {
+                    String trackingId = rs.getString("tracking_id");
+                    String receiver = rs.getString("receiver_name");
+                    String contact = rs.getString("receiver_contact");
+                    String status = rs.getString("status");
+                    
+                    // Adjust this array based on how many columns your 'OrderTable' actually has!
+                    managerView.addRecentOrderRow(new Object[]{trackingId, receiver, contact, status});
+                }
+            }
+        } catch (java.sql.SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    // =========================================================================
+    // NAVIGATION LISTENERS
+    // =========================================================================
+
     class LogoutListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            // 1. Close the manager dashboard
             close(); 
-            
-            // 2. Re-open the Login window safely
             view.login loginView = new view.login();
             controllor.LoginController loginController = new controllor.LoginController(loginView);
             loginController.open();
         }
     }
     
-    // =========================================================================
-    // NAVIGATION LISTENERS
-    // =========================================================================
-
     class OpenManagerProfileListener implements java.awt.event.ActionListener {
         @Override
         public void actionPerformed(java.awt.event.ActionEvent e) {
-            // 1. Close the current Manager Dashboard
             close(); 
-            
-            // 2. Create the exact Manager Profile View
             view.Manager_profileEdit profileView = new view.Manager_profileEdit();
-            
-            // 3. Pass it entirely to your dedicated Manager Profile Controller
             controllor.Manager_ProfileController profileController = new controllor.Manager_ProfileController(profileView, currentUser);
-            
-            // 4. Open the profile page!
             profileController.open();
         }
     }
@@ -91,16 +126,9 @@ public class ManagerController {
     class OpenManageUserListener implements java.awt.event.ActionListener {
         @Override
         public void actionPerformed(java.awt.event.ActionEvent e) {
-            // 1. Close the current Manager Dashboard
             close(); 
-            
-            // 2. Create the User Management View
             view.Useraccountmanagement manageUserView = new view.Useraccountmanagement();
-            
-            // 3. Pass it entirely to your dedicated Manage User Controller
             controllor.ManageUserController manageUserController = new controllor.ManageUserController(manageUserView, currentUser);
-            
-            // 4. Open the User Management page!
             manageUserController.open();
         }
     }
@@ -108,64 +136,39 @@ public class ManagerController {
     class OpenManageOrdersListener implements java.awt.event.ActionListener {
         @Override
         public void actionPerformed(java.awt.event.ActionEvent e) {
-            // 1. Close the current Manager Dashboard
             close(); 
-            
-            // 2. Create the Manager Order Edit View
             view.ManagerOrderEdit managerOrderEditView = new view.ManagerOrderEdit();
-            
-            // 3. Fixed spelling from "controller" to "controllor" to perfectly match your package structure
             controllor.ManagerOrderEditController managerOrderEditController = new controllor.ManagerOrderEditController(managerOrderEditView, currentUser);
-            
-            // 4. Open the Manager Order Edit page!
             managerOrderEditController.open();
         }
     }
+
     class OpenAssiggnedrdersListener implements java.awt.event.ActionListener {
         @Override
         public void actionPerformed(java.awt.event.ActionEvent e) {
-            // 1. Close the current Manager Dashboard
             close(); 
-            
-            // 2. Create the Manager Order Edit View
             view.assignedorder assignedorderView = new view.assignedorder();
-            
-            // 3. Fixed spelling from "controller" to "controllor" to perfectly match your package structure
             controllor.ManagerAssignOrderController managerAssignOrderController = new controllor.ManagerAssignOrderController(assignedorderView, currentUser);
-            
-            // 4. Open the Manager Order Edit page!
             managerAssignOrderController.open();
         }
     }
-        class OpenActiveOrdersListener implements java.awt.event.ActionListener {
+
+    class OpenActiveOrdersListener implements java.awt.event.ActionListener {
         @Override
         public void actionPerformed(java.awt.event.ActionEvent e) {
-            // 1. Close the current Manager Dashboard
             close(); 
-            
-            // 2. Create the Manager Order Edit View
             view.Manager_active_orders activeorderView = new view.Manager_active_orders();
-            
-            // 3. Fixed spelling from "controller" to "controllor" to perfectly match your package structure
             controllor.ManagerActiveOrdersController managerAssignOrderController = new controllor.ManagerActiveOrdersController(activeorderView, currentUser);
-            
-            // 4. Open the Manager Order Edit page!
             managerAssignOrderController.open();
         }
     }
-        class OpenWorkloadListener implements java.awt.event.ActionListener {
+
+    class OpenWorkloadListener implements java.awt.event.ActionListener {
         @Override
         public void actionPerformed(java.awt.event.ActionEvent e) {
-            // 1. Close the current Manager Dashboard
             close(); 
-            
-            // 2. Create the Manager Order Edit View
             view.Manager_Workload WorkloadView = new view.Manager_Workload();
-            
-            // 3. Fixed spelling from "controller" to "controllor" to perfectly match your package structure
             controllor.ManagerWorkloadController managerAssignOrderController = new controllor.ManagerWorkloadController(WorkloadView, currentUser);
-            
-            // 4. Open the Manager Order Edit page!
             managerAssignOrderController.open();
         }
     }

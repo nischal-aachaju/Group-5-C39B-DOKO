@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package controllor;
 
 import Model.userData;
@@ -10,6 +6,7 @@ import view.Employee_Dashboard;
 import java.awt.Window;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.ResultSet;
 import javax.swing.SwingUtilities;
 
 public class EmployeeController {
@@ -25,8 +22,13 @@ public class EmployeeController {
         this.employeeView.setUsernameLabel(currentUser.getUsername());
         this.employeeView.setRoleLabel(currentUser.getRole());
         
-        // 2. Connect the logout button
+        // 2. Load the live database metrics and table data instantly
+        loadDashboardMetrics();
+        loadRecentOrders();
+        
+        // 3. Connect the navigation buttons
         this.employeeView.addLogoutListener(new LogoutListener());
+        this.employeeView.addMyShipmentsListener(new MyShipmentListener());
         this.employeeView.addMyProfileListener(new OpenEmployeeProfileListener());
         this.employeeView.addManageOrdersListener(new OpenManageOrdersListener());
         this.employeeView.addOrdersHistoryListener(new OpenOrdersHistoryListener());
@@ -34,6 +36,7 @@ public class EmployeeController {
 
     public void open() {
         this.employeeView.setVisible(true);
+        this.employeeView.setLocationRelativeTo(null); // Centers window safely
     }
 
     public void close() {
@@ -45,66 +48,103 @@ public class EmployeeController {
         }
     }
 
-    // --- Action Listener for Logout Button ---
+    // =========================================================================
+    // DATA LOADING LOGIC
+    // =========================================================================
+
+    private void loadDashboardMetrics() {
+        DAO.OrderDAO dao = new DAO.OrderDAO();
+        
+        // Fetch stats specifically for this employee
+        int[] stats = dao.getEmployeeDashboardStats(currentUser.getUserID());
+        
+        // Inject into the View (Total, Active, Delivered, Returned, Cancelled)
+        employeeView.setDashboardStats(
+            String.valueOf(stats[0]), 
+            String.valueOf(stats[1]), 
+            String.valueOf(stats[2]), 
+            String.valueOf(stats[3]), 
+            String.valueOf(stats[4])  
+        );
+    }
+
+    private void loadRecentOrders() {
+        DAO.OrderDAO dao = new DAO.OrderDAO();
+        
+        // Fetch the 5 most recent assigned orders
+        ResultSet rs = dao.getRecentEmployeeOrders(currentUser.getUserID(), 5);
+        
+        employeeView.clearRecentOrdersTable();
+        
+        try {
+            if (rs != null) {
+                while (rs.next()) {
+                    // Match UI Columns: Tracking ID | Customer | Contact | Destination | Status
+                    String trackingId = rs.getString("tracking_id");
+                    String customer = rs.getString("receiver_name");
+                    String contact = rs.getString("receiver_contact");
+                    String destination = rs.getString("receiver_location");
+                    String status = rs.getString("status");
+                    
+                    employeeView.addRecentOrderRow(new Object[]{trackingId, customer, contact, destination, status});
+                }
+            }
+        } catch (java.sql.SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    // =========================================================================
+    // NAVIGATION LISTENERS
+    // =========================================================================
+
     class LogoutListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            
-            // 1. Close the Employee dashboard
             close(); 
-            
-            // 2. Re-open the Login window safely
             view.login loginView = new view.login();
             controllor.LoginController loginController = new controllor.LoginController(loginView);
             loginController.open();
         }
     }
+    
     class OpenEmployeeProfileListener implements java.awt.event.ActionListener {
         @Override
         public void actionPerformed(java.awt.event.ActionEvent e) {
-            // 1. Close the Employee Dashboard
             close(); 
-            
-            // 2. Create the Employee Profile View
             view.Employee_profile profileView = new view.Employee_profile();
-            
-            // 3. Pass it to your dedicated Employee Profile Controller
             controllor.Employee_ProfileController profileController = new controllor.Employee_ProfileController(profileView, currentUser);
-            
-            // 4. Open it
             profileController.open();
         }
     }
-        class OpenOrdersHistoryListener implements java.awt.event.ActionListener {
+    
+    class OpenOrdersHistoryListener implements java.awt.event.ActionListener {
         @Override
         public void actionPerformed(java.awt.event.ActionEvent e) {
-            // 1. Close the Employee Dashboard
             close(); 
-            
-            // 2. Create the Employee Profile View
             view.Employee_Order_History profileView = new view.Employee_Order_History();
-            
-            // 3. Pass it to your dedicated Employee Profile Controller
             controllor.EmployeeOrderHistoryController profileController = new controllor.EmployeeOrderHistoryController(profileView, currentUser);
-            
-            // 4. Open it
             profileController.open();
         }
     }
-            class OpenManageOrdersListener implements java.awt.event.ActionListener {
+    
+    class OpenManageOrdersListener implements java.awt.event.ActionListener {
         @Override
         public void actionPerformed(java.awt.event.ActionEvent e) {
-            // 1. Close the Employee Dashboard
             close(); 
-            
-            // 2. Create the Employee Profile View
             view.EmployeeOrderEdit profileView = new view.EmployeeOrderEdit();
-            
-            // 3. Pass it to your dedicated Employee Profile Controller
             controllor.EmployeeOrderEditController profileController = new controllor.EmployeeOrderEditController(profileView, currentUser);
-            
-            // 4. Open it
             profileController.open();
+        }
+    }
+    
+    class MyShipmentListener implements java.awt.event.ActionListener {
+        @Override
+        public void actionPerformed(java.awt.event.ActionEvent e) {
+            close(); 
+            view.EmployeeOrderCancellation EmployeeOrder = new view.EmployeeOrderCancellation();
+            controllor.EmployeeOrderCancellationController EmployeeOrderController = new controllor.EmployeeOrderCancellationController(EmployeeOrder, currentUser);
+            EmployeeOrderController.open();
         }
     }
 }

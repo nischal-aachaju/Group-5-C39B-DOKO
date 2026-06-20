@@ -38,7 +38,6 @@ public class EmployeeOrderCancellation extends javax.swing.JFrame {
         MyProfile = new javax.swing.JButton();
         logout = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
-        jLabel1 = new javax.swing.JLabel();
         jSeparator2 = new javax.swing.JSeparator();
         jPanel1 = new javax.swing.JPanel();
         trackingIdLabel = new javax.swing.JLabel();
@@ -109,8 +108,6 @@ public class EmployeeOrderCancellation extends javax.swing.JFrame {
         logout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/logout.png"))); // NOI18N
         logout.setText("Logout");
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/logout.png"))); // NOI18N
-
         javax.swing.GroupLayout SidebarLayout = new javax.swing.GroupLayout(Sidebar);
         Sidebar.setLayout(SidebarLayout);
         SidebarLayout.setHorizontalGroup(
@@ -129,8 +126,7 @@ public class EmployeeOrderCancellation extends javax.swing.JFrame {
                         .addContainerGap())
                     .addGroup(SidebarLayout.createSequentialGroup()
                         .addComponent(logout, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel1))))
+                        .addGap(6, 6, 6))))
             .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING)
             .addComponent(jSeparator2)
         );
@@ -153,9 +149,7 @@ public class EmployeeOrderCancellation extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 123, Short.MAX_VALUE)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(SidebarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(logout, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 53, Short.MAX_VALUE))
+                .addComponent(logout, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -188,29 +182,19 @@ public class EmployeeOrderCancellation extends javax.swing.JFrame {
         jPanel1.add(totalCostLabel);
         totalCostLabel.setBounds(68, 341, 79, 16);
 
-        TrackingIdTextF.setText("#2345");
         TrackingIdTextF.addActionListener(this::TrackingIdTextFActionPerformed);
         jPanel1.add(TrackingIdTextF);
         TrackingIdTextF.setBounds(197, 59, 147, 31);
-
-        receiverNameTextf.setText("Unish");
         jPanel1.add(receiverNameTextf);
         receiverNameTextf.setBounds(197, 118, 147, 31);
-
-        receiverEmailTextF.setText("unishg@gmail.com");
         jPanel1.add(receiverEmailTextF);
         receiverEmailTextF.setBounds(197, 173, 147, 30);
-
-        senderAddressTextf.setText("kapan");
         jPanel1.add(senderAddressTextf);
         senderAddressTextf.setBounds(197, 228, 146, 30);
 
-        receiverAddressTextF.setText("maitidevi");
         receiverAddressTextF.addActionListener(this::receiverAddressTextFActionPerformed);
         jPanel1.add(receiverAddressTextF);
         receiverAddressTextF.setBounds(197, 279, 146, 30);
-
-        totalCostTextF.setText("1233");
         jPanel1.add(totalCostTextF);
         totalCostTextF.setBounds(197, 334, 146, 30);
 
@@ -354,7 +338,6 @@ public class EmployeeOrderCancellation extends javax.swing.JFrame {
     private javax.swing.JButton cancelOrderButtton;
     private javax.swing.JButton dashboard;
     private javax.swing.JLabel icon;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
@@ -376,4 +359,59 @@ public class EmployeeOrderCancellation extends javax.swing.JFrame {
     private javax.swing.JLabel trackingIdLabel;
     private javax.swing.JLabel username;
     // End of variables declaration//GEN-END:variables
+// =========================================================================
+    // TOP BAR & SEARCH INPUT
+    // =========================================================================
+
+    public void setTopBar(String userName, String userRole) {
+        username.setText(userName);
+        role.setText(userRole);
+    }
+
+    public String getSearchInput() {
+        return TrackingIdInput.getText().trim(); 
+    }
+
+    // =========================================================================
+    // DATA INJECTION & LOCKING
+    // =========================================================================
+
+    public void setOrderDetails(String trackingId, String name, String email, String senderAddr, String receiverAddr, String cost) {
+        TrackingIdTextF.setText(trackingId); 
+        receiverNameTextf.setText(name);
+        receiverEmailTextF.setText(email);
+        senderAddressTextf.setText(senderAddr);
+        receiverAddressTextF.setText(receiverAddr);
+        totalCostTextF.setText(cost); 
+    }
+
+    public void lockDisplayFields() {
+        // Employees CANNOT edit text on this page, only click the status buttons!
+        TrackingIdTextF.setEditable(false); 
+        receiverNameTextf.setEditable(false);
+        receiverEmailTextF.setEditable(false);
+        senderAddressTextf.setEditable(false);
+        receiverAddressTextF.setEditable(false);
+        totalCostTextF.setEditable(false);
+    }
+
+    public void setStatusButtonsEnabled(boolean isEnabled) {
+        cancelOrderButtton.setEnabled(isEnabled);
+        returnButton.setEnabled(isEnabled);
+        DeliveredButton.setEnabled(isEnabled);
+    }
+
+    // =========================================================================
+    // BUTTON LISTENERS
+    // =========================================================================
+    
+    public void addSearchListener(java.awt.event.ActionListener listener) { searchButton.addActionListener(listener); }
+    public void addCancelListener(java.awt.event.ActionListener listener) { cancelOrderButtton.addActionListener(listener); }
+    public void addReturnListener(java.awt.event.ActionListener listener) { returnButton.addActionListener(listener); }
+    public void addDeliveredListener(java.awt.event.ActionListener listener) { DeliveredButton.addActionListener(listener); }
+    
+    // Navigators
+    public void addDashboardListener(java.awt.event.ActionListener listener) { dashboard.addActionListener(listener); }
+    public void addLogoutListener(java.awt.event.ActionListener listener) { logout.addActionListener(listener); }
+
 }

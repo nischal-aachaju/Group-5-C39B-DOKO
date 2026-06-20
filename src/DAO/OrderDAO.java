@@ -675,4 +675,60 @@ public class OrderDAO {
             return null;
         }
     }
+    // =========================================================================
+    // EMPLOYEE DASHBOARD: STATS AND RECENT ORDERS
+    // =========================================================================
+
+    public int[] getEmployeeDashboardStats(int employeeId) {
+        // Index mapping: 0=Total, 1=Active(intransit), 2=Delivered, 3=Returned, 4=Cancelled
+        int[] stats = new int[5]; 
+        
+        String sql = "SELECT "
+                   + "COUNT(*) as total, "
+                   + "SUM(CASE WHEN o.status = 'intransit' THEN 1 ELSE 0 END) as active, "
+                   + "SUM(CASE WHEN o.status = 'delivered' THEN 1 ELSE 0 END) as delivered, "
+                   + "SUM(CASE WHEN o.status = 'return' THEN 1 ELSE 0 END) as returned, "
+                   + "SUM(CASE WHEN o.status = 'cancelled' THEN 1 ELSE 0 END) as cancelled "
+                   + "FROM orders o "
+                   + "JOIN assignedOrders a ON o.tracking_id = a.ordersTrackingID "
+                   + "WHERE a.usersID = ?";
+                   
+        try (java.sql.Connection conn = db.openConnection();
+             java.sql.PreparedStatement pstmt = conn.prepareStatement(sql)) {
+             
+            pstmt.setInt(1, employeeId);
+            
+            try (java.sql.ResultSet rs = pstmt.executeQuery()) {
+                if (rs.next()) {
+                    stats[0] = rs.getInt("total");
+                    stats[1] = rs.getInt("active");
+                    stats[2] = rs.getInt("delivered");
+                    stats[3] = rs.getInt("returned");
+                    stats[4] = rs.getInt("cancelled");
+                }
+            }
+        } catch (java.sql.SQLException e) {
+            e.printStackTrace();
+        }
+        return stats;
+    }
+
+    public java.sql.ResultSet getRecentEmployeeOrders(int employeeId, int limit) {
+        // Fetches the most recent orders ASSIGNED to this specific employee
+        String sql = "SELECT o.tracking_id, o.receiver_name, o.receiver_contact, o.receiver_location, o.status "
+                   + "FROM orders o "
+                   + "JOIN assignedOrders a ON o.tracking_id = a.ordersTrackingID "
+                   + "WHERE a.usersID = ? "
+                   + "ORDER BY o.order_date DESC LIMIT ?";
+        try {
+            java.sql.Connection conn = db.openConnection();
+            java.sql.PreparedStatement pstmt = conn.prepareStatement(sql);
+            pstmt.setInt(1, employeeId);
+            pstmt.setInt(2, limit);
+            return pstmt.executeQuery();
+        } catch (java.sql.SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
 }

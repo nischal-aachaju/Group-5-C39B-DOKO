@@ -284,5 +284,14 @@ public class Employee_Order_History extends javax.swing.JFrame {
     public void addMyProfileListener(java.awt.event.ActionListener listener) { MyProfile.addActionListener(listener); }
     public void addMyShipmentsListener(java.awt.event.ActionListener listener) { myShipments.addActionListener(listener); }
     public void addLogoutListener(java.awt.event.ActionListener listener) { Logout.addActionListener(listener); }
+ 
+    public void addOrdersHistoryListener(java.awt.event.ActionListener listener) {
 
+        orderHistory.addActionListener(listener); 
+    }
+        
+    public void addManageOrdersListener(java.awt.event.ActionListener listener) {
+
+        manageOrders.addActionListener(listener); 
+    }
 }

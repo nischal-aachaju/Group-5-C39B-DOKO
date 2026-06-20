@@ -38,6 +38,9 @@ public class EmployeeOrderCancellationController {
         // 3. Connect Navigation
         this.view.addDashboardListener(new DashboardNavListener());
         this.view.addLogoutListener(new LogoutNavListener());
+        this.view.addMyProfileListener(new OpenEmployeeProfileListener());
+        this.view.addManageOrdersListener(new OpenManageOrdersListener());
+        this.view.addOrdersHistoryListener(new OpenOrdersHistoryListener());
     }
 
     public void open() {
@@ -165,6 +168,35 @@ public class EmployeeOrderCancellationController {
         public void actionPerformed(ActionEvent e) {
             close();
             new controllor.LoginController(new view.login()).open();
+        }
+    }
+    class OpenEmployeeProfileListener implements java.awt.event.ActionListener {
+        @Override
+        public void actionPerformed(java.awt.event.ActionEvent e) {
+            close(); 
+            view.Employee_profile profileView = new view.Employee_profile();
+            controllor.Employee_ProfileController profileController = new controllor.Employee_ProfileController(profileView, currentUser);
+            profileController.open();
+        }
+    }
+    
+    class OpenOrdersHistoryListener implements java.awt.event.ActionListener {
+        @Override
+        public void actionPerformed(java.awt.event.ActionEvent e) {
+            close(); 
+            view.Employee_Order_History profileView = new view.Employee_Order_History();
+            controllor.EmployeeOrderHistoryController profileController = new controllor.EmployeeOrderHistoryController(profileView, currentUser);
+            profileController.open();
+        }
+    }
+    
+    class OpenManageOrdersListener implements java.awt.event.ActionListener {
+        @Override
+        public void actionPerformed(java.awt.event.ActionEvent e) {
+            close(); 
+            view.EmployeeOrderEdit profileView = new view.EmployeeOrderEdit();
+            controllor.EmployeeOrderEditController profileController = new controllor.EmployeeOrderEditController(profileView, currentUser);
+            profileController.open();
         }
     }
 }

@@ -62,6 +62,9 @@ public class Employee_ProfileController {
         this.employeeProfile.addEditProfileListener(new EditProfileListener());
         this.employeeProfile.addSaveProfileListener(new SaveProfileListener());
         this.employeeProfile.addLogoutListener(new LogoutListener());
+        this.employeeProfile.addMyShipmentsListener(new MyShipmentListener());
+        this.employeeProfile.addManageOrdersListener(new OpenManageOrdersListener());
+        this.employeeProfile.addOrdersHistoryListener(new OpenOrdersHistoryListener());
     }
 
     class EditProfileListener implements ActionListener {
@@ -150,4 +153,35 @@ public class Employee_ProfileController {
             // screen to act like a popup that opens on top of their profile.
         }
     }
+
+    class OpenOrdersHistoryListener implements java.awt.event.ActionListener {
+        @Override
+        public void actionPerformed(java.awt.event.ActionEvent e) {
+            close(); 
+            view.Employee_Order_History profileView = new view.Employee_Order_History();
+            controllor.EmployeeOrderHistoryController profileController = new controllor.EmployeeOrderHistoryController(profileView, currentUser);
+            profileController.open();
+        }
+    }
+    
+    class OpenManageOrdersListener implements java.awt.event.ActionListener {
+        @Override
+        public void actionPerformed(java.awt.event.ActionEvent e) {
+            close(); 
+            view.EmployeeOrderEdit profileView = new view.EmployeeOrderEdit();
+            controllor.EmployeeOrderEditController profileController = new controllor.EmployeeOrderEditController(profileView, currentUser);
+            profileController.open();
+        }
+    }
+    
+    class MyShipmentListener implements java.awt.event.ActionListener {
+        @Override
+        public void actionPerformed(java.awt.event.ActionEvent e) {
+            close(); 
+            view.EmployeeOrderCancellation EmployeeOrder = new view.EmployeeOrderCancellation();
+            controllor.EmployeeOrderCancellationController EmployeeOrderController = new controllor.EmployeeOrderCancellationController(EmployeeOrder, currentUser);
+            EmployeeOrderController.open();
+        }
+    }
+   
 }

@@ -413,5 +413,18 @@ public class EmployeeOrderCancellation extends javax.swing.JFrame {
     // Navigators
     public void addDashboardListener(java.awt.event.ActionListener listener) { dashboard.addActionListener(listener); }
     public void addLogoutListener(java.awt.event.ActionListener listener) { logout.addActionListener(listener); }
+    public void addMyProfileListener(java.awt.event.ActionListener listener) {
 
+        MyProfile.addActionListener(listener); 
+    }
+        public void addOrdersHistoryListener(java.awt.event.ActionListener listener) {
+
+        OrdersHistory.addActionListener(listener); 
+    }
+        
+    public void addManageOrdersListener(java.awt.event.ActionListener listener) {
+
+        ManageOrders.addActionListener(listener); 
+    }
+  
 }

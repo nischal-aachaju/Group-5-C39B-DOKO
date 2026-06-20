@@ -37,7 +37,7 @@ public class EmployeeOrderEdit extends javax.swing.JFrame {
         order_history = new javax.swing.JButton();
         myprofilebutton = new javax.swing.JButton();
         Dashboardbutton = new javax.swing.JButton();
-        Manageuserbutton = new javax.swing.JButton();
+        MyShipments = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         TrackingIdtextfield = new javax.swing.JTextField();
         searchButton = new javax.swing.JButton();
@@ -116,14 +116,14 @@ public class EmployeeOrderEdit extends javax.swing.JFrame {
         jPanel3.add(Dashboardbutton);
         Dashboardbutton.setBounds(10, 90, 158, 50);
 
-        Manageuserbutton.setBackground(new java.awt.Color(33, 38, 49));
-        Manageuserbutton.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
-        Manageuserbutton.setForeground(new java.awt.Color(255, 255, 255));
-        Manageuserbutton.setText("My Shipments");
-        Manageuserbutton.setPreferredSize(new java.awt.Dimension(99, 27));
-        Manageuserbutton.addActionListener(this::ManageuserbuttonActionPerformed);
-        jPanel3.add(Manageuserbutton);
-        Manageuserbutton.setBounds(10, 150, 158, 50);
+        MyShipments.setBackground(new java.awt.Color(33, 38, 49));
+        MyShipments.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
+        MyShipments.setForeground(new java.awt.Color(255, 255, 255));
+        MyShipments.setText("My Shipments");
+        MyShipments.setPreferredSize(new java.awt.Dimension(99, 27));
+        MyShipments.addActionListener(this::MyShipmentsActionPerformed);
+        jPanel3.add(MyShipments);
+        MyShipments.setBounds(10, 150, 158, 50);
 
         getContentPane().add(jPanel3);
         jPanel3.setBounds(0, 0, 180, 600);
@@ -314,9 +314,9 @@ public class EmployeeOrderEdit extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void ManageuserbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ManageuserbuttonActionPerformed
+    private void MyShipmentsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MyShipmentsActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_ManageuserbuttonActionPerformed
+    }//GEN-LAST:event_MyShipmentsActionPerformed
 
     private void TrackingIdtextfieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TrackingIdtextfieldActionPerformed
         // TODO add your handling code here:
@@ -362,7 +362,7 @@ public class EmployeeOrderEdit extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Dashboardbutton;
     private javax.swing.JButton ManageOrderbutton;
-    private javax.swing.JButton Manageuserbutton;
+    private javax.swing.JButton MyShipments;
     private javax.swing.JLabel Orderdetaillabel1;
     private javax.swing.JPanel Topbar;
     private javax.swing.JTextField TrackingIdtextfield;
@@ -453,5 +453,18 @@ public class EmployeeOrderEdit extends javax.swing.JFrame {
     // Navigators
     public void addDashboardListener(java.awt.event.ActionListener listener) { Dashboardbutton.addActionListener(listener); }
     public void addLogoutListener(java.awt.event.ActionListener listener) { logoutbutton.addActionListener(listener); }
+ public void addMyProfileListener(java.awt.event.ActionListener listener) {
 
+        myprofilebutton.addActionListener(listener); 
+    }
+        public void addOrdersHistoryListener(java.awt.event.ActionListener listener) {
+
+        order_history.addActionListener(listener); 
+    }
+        
+    
+    public void addMyShipmentsListener(java.awt.event.ActionListener listener) {
+
+        MyShipments.addActionListener(listener); 
+    }
 }

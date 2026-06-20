@@ -362,6 +362,17 @@ public class Employee_profile extends javax.swing.JFrame {
     public void addDashboardListener(java.awt.event.ActionListener listener) {
         dashboard.addActionListener(listener); // FIXED: Now properly listens to the dashboard button!
     }
+public void addMyProfileListener(java.awt.event.ActionListener listener) { MyProfile.addActionListener(listener); }
+    public void addMyShipmentsListener(java.awt.event.ActionListener listener) { MyShipments.addActionListener(listener); }
+        
+    public void addManageOrdersListener(java.awt.event.ActionListener listener) {
+
+        ManageOrders.addActionListener(listener); 
+    }
+    public void addOrdersHistoryListener(java.awt.event.ActionListener listener) {
+
+        OrdersHistory.addActionListener(listener); 
+    }
 
     // =========================================================================
     // PROFILE DATA AND EDITING LOGIC

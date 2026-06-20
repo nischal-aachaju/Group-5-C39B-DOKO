@@ -47,20 +47,21 @@ public class ManageUser extends javax.swing.JFrame {
         name = new javax.swing.JLabel();
         role = new javax.swing.JLabel();
         profile = new javax.swing.JLabel();
-        jPanel4 = new javax.swing.JPanel();
-        saveButton = new javax.swing.JButton();
-        editButton = new javax.swing.JButton();
-        phoneNumbertextfield = new javax.swing.JTextField();
-        employeeEmailTextField = new javax.swing.JTextField();
-        employeeNameTextfield1 = new javax.swing.JTextField();
-        employeeIDtextfield = new javax.swing.JTextField();
-        employeeIDLabel = new javax.swing.JLabel();
-        employeeNameLabel = new javax.swing.JLabel();
-        employeeEmailLabel = new javax.swing.JLabel();
-        phoneNumberLabel = new javax.swing.JLabel();
-        employeeDetailsLabel = new javax.swing.JLabel();
+        edit_of_email_and_number_panel = new javax.swing.JPanel();
+        employee_ID = new javax.swing.JLabel();
+        employee_details = new javax.swing.JLabel();
+        Employee_Name = new javax.swing.JLabel();
+        Employee_Email = new javax.swing.JLabel();
+        Employee_Phone = new javax.swing.JLabel();
+        Employee_Email_value = new javax.swing.JLabel();
+        Employee_ID_value = new javax.swing.JLabel();
+        Employee_Name_value = new javax.swing.JLabel();
+        Employee_Phone_value = new javax.swing.JLabel();
+        editBtn = new javax.swing.JButton();
+        savebtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(1050, 600));
         getContentPane().setLayout(null);
 
         logoutbutton.setBackground(new java.awt.Color(33, 38, 49));
@@ -173,76 +174,60 @@ public class ManageUser extends javax.swing.JFrame {
         jPanel2.add(Topbar);
         Topbar.setBounds(180, 0, 870, 70);
 
-        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(168, 168, 168)));
-        jPanel4.setLayout(null);
+        edit_of_email_and_number_panel.setBackground(new java.awt.Color(255, 255, 255));
+        edit_of_email_and_number_panel.setPreferredSize(new java.awt.Dimension(200, 200));
+        edit_of_email_and_number_panel.setLayout(null);
 
-        saveButton.setBackground(new java.awt.Color(244, 246, 248));
-        saveButton.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
-        saveButton.setText("Save");
-        jPanel4.add(saveButton);
-        saveButton.setBounds(640, 190, 72, 32);
+        employee_ID.setText("Employee ID");
+        edit_of_email_and_number_panel.add(employee_ID);
+        employee_ID.setBounds(26, 93, 100, 32);
 
-        editButton.setBackground(new java.awt.Color(244, 246, 248));
-        editButton.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
-        editButton.setText("Edit");
-        jPanel4.add(editButton);
-        editButton.setBounds(634, 19, 72, 32);
+        employee_details.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        employee_details.setText("Employee Details");
+        edit_of_email_and_number_panel.add(employee_details);
+        employee_details.setBounds(30, 29, 160, 32);
 
-        phoneNumbertextfield.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
-        phoneNumbertextfield.setText("eg : 9876543210");
-        phoneNumbertextfield.setBorder(null);
-        jPanel4.add(phoneNumbertextfield);
-        phoneNumbertextfield.setBounds(210, 180, 280, 30);
+        Employee_Name.setText("Employee Name");
+        edit_of_email_and_number_panel.add(Employee_Name);
+        Employee_Name.setBounds(26, 131, 100, 35);
 
-        employeeEmailTextField.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
-        employeeEmailTextField.setText("eg : ram@gmail.com ");
-        employeeEmailTextField.setBorder(null);
-        employeeEmailTextField.addActionListener(this::employeeEmailTextFieldActionPerformed);
-        jPanel4.add(employeeEmailTextField);
-        employeeEmailTextField.setBounds(210, 140, 280, 25);
+        Employee_Email.setText("Employee Email");
+        edit_of_email_and_number_panel.add(Employee_Email);
+        Employee_Email.setBounds(26, 172, 100, 35);
 
-        employeeNameTextfield1.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
-        employeeNameTextfield1.setText("eg :Ram");
-        employeeNameTextfield1.setBorder(null);
-        employeeNameTextfield1.addActionListener(this::employeeNameTextfield1ActionPerformed);
-        jPanel4.add(employeeNameTextfield1);
-        employeeNameTextfield1.setBounds(210, 100, 280, 25);
+        Employee_Phone.setText("Phone Number");
+        edit_of_email_and_number_panel.add(Employee_Phone);
+        Employee_Phone.setBounds(26, 213, 90, 35);
 
-        employeeIDtextfield.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
-        employeeIDtextfield.setText("eg: #114351");
-        employeeIDtextfield.setBorder(null);
-        employeeIDtextfield.addActionListener(this::employeeIDtextfieldActionPerformed);
-        jPanel4.add(employeeIDtextfield);
-        employeeIDtextfield.setBounds(210, 60, 280, 25);
+        Employee_Email_value.setText(": ram@gmail.com");
+        edit_of_email_and_number_panel.add(Employee_Email_value);
+        Employee_Email_value.setBounds(139, 173, 270, 32);
 
-        employeeIDLabel.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
-        employeeIDLabel.setText("Employee ID:");
-        jPanel4.add(employeeIDLabel);
-        employeeIDLabel.setBounds(29, 61, 160, 25);
+        Employee_ID_value.setText(": #11111");
+        edit_of_email_and_number_panel.add(Employee_ID_value);
+        Employee_ID_value.setBounds(139, 93, 210, 32);
 
-        employeeNameLabel.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
-        employeeNameLabel.setText("Employee Name");
-        jPanel4.add(employeeNameLabel);
-        employeeNameLabel.setBounds(29, 98, 170, 25);
+        Employee_Name_value.setText(": Ram");
+        edit_of_email_and_number_panel.add(Employee_Name_value);
+        Employee_Name_value.setBounds(139, 134, 230, 32);
 
-        employeeEmailLabel.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
-        employeeEmailLabel.setText("Employee Email:");
-        jPanel4.add(employeeEmailLabel);
-        employeeEmailLabel.setBounds(29, 141, 160, 25);
+        Employee_Phone_value.setText(": 980000000000");
+        edit_of_email_and_number_panel.add(Employee_Phone_value);
+        Employee_Phone_value.setBounds(139, 213, 280, 32);
 
-        phoneNumberLabel.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
-        phoneNumberLabel.setText("Phone Number");
-        jPanel4.add(phoneNumberLabel);
-        phoneNumberLabel.setBounds(29, 186, 160, 25);
+        editBtn.setBackground(new java.awt.Color(242, 242, 242));
+        editBtn.setText("Edit");
+        edit_of_email_and_number_panel.add(editBtn);
+        editBtn.setBounds(599, 30, 72, 31);
 
-        employeeDetailsLabel.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
-        employeeDetailsLabel.setText("Employee Details:");
-        jPanel4.add(employeeDetailsLabel);
-        employeeDetailsLabel.setBounds(32, 19, 180, 25);
+        savebtn.setBackground(new java.awt.Color(242, 242, 242));
+        savebtn.setText("Save");
+        savebtn.addActionListener(this::savebtnActionPerformed);
+        edit_of_email_and_number_panel.add(savebtn);
+        savebtn.setBounds(599, 266, 72, 31);
 
-        jPanel2.add(jPanel4);
-        jPanel4.setBounds(250, 230, 750, 260);
+        jPanel2.add(edit_of_email_and_number_panel);
+        edit_of_email_and_number_panel.setBounds(250, 240, 700, 330);
 
         getContentPane().add(jPanel2);
         jPanel2.setBounds(0, 0, 1050, 600);
@@ -258,21 +243,13 @@ public class ManageUser extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_employeeIdTextFActionPerformed
 
-    private void employeeEmailTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_employeeEmailTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_employeeEmailTextFieldActionPerformed
-
-    private void employeeNameTextfield1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_employeeNameTextfield1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_employeeNameTextfield1ActionPerformed
-
     private void MyProfileButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MyProfileButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_MyProfileButtonActionPerformed
 
-    private void employeeIDtextfieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_employeeIDtextfieldActionPerformed
+    private void savebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_savebtnActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_employeeIDtextfieldActionPerformed
+    }//GEN-LAST:event_savebtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -301,95 +278,68 @@ public class ManageUser extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Dashboardbutton;
+    private javax.swing.JLabel Employee_Email;
+    private javax.swing.JLabel Employee_Email_value;
+    private javax.swing.JLabel Employee_ID_value;
+    private javax.swing.JLabel Employee_Name;
+    private javax.swing.JLabel Employee_Name_value;
+    private javax.swing.JLabel Employee_Phone;
+    private javax.swing.JLabel Employee_Phone_value;
     private javax.swing.JButton ManageOrderButton;
     private javax.swing.JButton ManageUserButton;
     private javax.swing.JButton MyProfileButton;
     private javax.swing.JButton PriceConfigurationButton;
     private javax.swing.JPanel Topbar;
     private javax.swing.JButton branchAndNetworksButton;
-    private javax.swing.JButton editButton;
-    private javax.swing.JLabel employeeDetailsLabel;
-    private javax.swing.JLabel employeeEmailLabel;
-    private javax.swing.JTextField employeeEmailTextField;
-    private javax.swing.JLabel employeeIDLabel;
-    private javax.swing.JTextField employeeIDtextfield;
+    private javax.swing.JButton editBtn;
+    private javax.swing.JPanel edit_of_email_and_number_panel;
     private javax.swing.JTextField employeeIdTextF;
-    private javax.swing.JLabel employeeNameLabel;
-    private javax.swing.JTextField employeeNameTextfield1;
+    private javax.swing.JLabel employee_ID;
+    private javax.swing.JLabel employee_details;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JButton logoutbutton;
     private javax.swing.JLabel name;
-    private javax.swing.JLabel phoneNumberLabel;
-    private javax.swing.JTextField phoneNumbertextfield;
     private javax.swing.JLabel profile;
     private javax.swing.JLabel role;
-    private javax.swing.JButton saveButton;
+    private javax.swing.JButton savebtn;
     private javax.swing.JButton searchButton;
     private javax.swing.JButton workLoadButton;
     // End of variables declaration//GEN-END:variables
 // =========================================================================
-    // TOP BAR & SEARCH INPUT
+    // GETTERS & SETTERS
     // =========================================================================
+    public String getSearchIdInput() { 
+        return employeeIdTextF.getText().trim(); 
+    }
+    
+    // Setters for the display labels
+    public void setEmployeeIdLabel(String text) { Employee_ID_value.setText(text); }
+    public void setEmployeeNameLabel(String text) { Employee_Name_value.setText(text); }
+    public void setEmployeeEmailLabel(String text) { Employee_Email_value.setText(text); }
+    public void setEmployeePhoneLabel(String text) { Employee_Phone_value.setText(text); }
+    
+    // Getters to read the current label values before saving
+    public String getCurrentDisplayedEmail() { return Employee_Email_value.getText(); }
+    public String getCurrentDisplayedPhone() { return Employee_Phone_value.getText(); }
 
-//    public void setTopBar(String userName, String userRole) {
-//        name.setText(userName);
-//        role.setText(userRole);
-//    }
-//
-//    public String getSearchInput() {
-//        return employeeIdTextF.getText().trim();
-//    }
-//
-//    // =========================================================================
-//    // DATA INJECTION & LOCKING
-//    // =========================================================================
-//
-//    public void setOrderDetails(String trackingId, String receiverName, String email, String senderAddr, String receiverAddr, String cost) {
-//        employeeIDtextfield.setText(trackingId); 
-//        employeeNameTextfield1.setText(receiverName);
-//        employeeEmailTextField.setText(email);
-//        phoneNumbertextfield.setText(senderAddr);
-//        receiveraddresstextfield1.setText(receiverAddr);
-//        total_cost_value.setText(cost); 
-//    }
-//
-//    public void setFormEditable(boolean isEditable) {
-//        // Locked fields that the employee can NEVER change here
-//        employeeIDtextfield.setEditable(false); 
-//        phoneNumbertextfield.setEditable(false);
-//        
-//        // Allowed fields
-//        employeeNameTextfield1.setEditable(isEditable);
-//        employeeEmailTextField.setEditable(isEditable);
-//        receiveraddresstextfield1.setEditable(isEditable);
-//        total_cost_value.setEditable(isEditable);
-//        
-//        // Toggle buttons
-//        saveButton.setEnabled(isEditable);
-//        editButton.setEnabled(!isEditable);
-//    }
-//
-//    // Grab updated data for the database
-//    public String getUpdatedName() { return employeeNameTextfield1.getText().trim(); }
-//    public String getUpdatedEmail() { return employeeEmailTextField.getText().trim(); }
-//    public String getUpdatedAddress() { return receiveraddresstextfield1.getText().trim(); }
-//    public String getUpdatedCost() { return total_cost_value.getText().trim(); }
-//
-//    // =========================================================================
-//    // BUTTON LISTENERS
-//    // =========================================================================
-//    
-//    public void addSearchListener(java.awt.event.ActionListener listener) { searchButton.addActionListener(listener); }
-//    public void addEditListener(java.awt.event.ActionListener listener) { editButton.addActionListener(listener); }
-//    public void addSaveListener(java.awt.event.ActionListener listener) { saveButton.addActionListener(listener); }
-//    
-//    // Navigators
-//    public void addDashboardListener(java.awt.event.ActionListener listener) { Dashboardbutton.addActionListener(listener); }
-//    public void addLogoutListener(java.awt.event.ActionListener listener) { logoutbutton.addActionListener(listener); }
+    // Top right profile labels
+    public void setUsernameLabel(String text) { name.setText(text); }
+    public void setRoleLabel(String text) { role.setText(text); }
+
+    // =========================================================================
+    // ACTION LISTENERS
+    // =========================================================================
+    public void addSearchListener(java.awt.event.ActionListener listener) { searchButton.addActionListener(listener); }
+    public void addEditListener(java.awt.event.ActionListener listener) { editBtn.addActionListener(listener); }
+    public void addSaveListener(java.awt.event.ActionListener listener) { savebtn.addActionListener(listener); }
+    
+    public void addDashboardListener(java.awt.event.ActionListener listener) { Dashboardbutton.addActionListener(listener); }
+    public void addLogoutListener(java.awt.event.ActionListener listener) { logoutbutton.addActionListener(listener); }
+    public void addWorkloadListener(java.awt.event.ActionListener listener) { workLoadButton.addActionListener(listener); }
+    
 
 }

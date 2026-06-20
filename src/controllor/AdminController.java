@@ -32,6 +32,9 @@ public class AdminController {
         this.adminView.addbranchNetwork(new branchNetworkListener());
         this.adminView.addPriceConfiguration(new PriceConfigurationListener());
         
+        this.adminView.addManageUserListener(new openManageUserListenerListener());
+        this.adminView.addworkload(new openworkloadListener());
+        
         
         
         // Note: Using your exact method name from your View class
@@ -170,6 +173,24 @@ public class AdminController {
             view.priceConfiguration priceConfig = new view.priceConfiguration();
             controllor.PriceConfigController pcc = new controllor.PriceConfigController(priceConfig, currentUser);
             pcc.open();
+        }
+    } 
+    class openworkloadListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            close();
+            view.WorkLoad wl = new view.WorkLoad();
+            controllor.AdminWorkloadController wlc = new controllor.AdminWorkloadController(wl, currentUser);
+            wlc.open();
+        }
+    }
+    class openManageUserListenerListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            close();
+            view.ManageUser uam = new view.ManageUser();
+            controllor.AdminManageUserController wlc = new controllor.AdminManageUserController(uam, currentUser);
+            wlc.open();
         }
     }
 }

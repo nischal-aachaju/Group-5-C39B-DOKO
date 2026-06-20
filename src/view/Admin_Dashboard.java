@@ -527,5 +527,7 @@ public void addManageOrdersistener(java.awt.event.ActionListener listener) {
 //    public void addPriceConfigListener(java.awt.event.ActionListener listener) { PriceConfiguration.addActionListener(listener); }
      public void addbranchNetwork(java.awt.event.ActionListener listener) { branchNetwork.addActionListener(listener); }
      public void addPriceConfiguration(java.awt.event.ActionListener listener) { PriceConfiguration.addActionListener(listener); }
+      public void addworkload(java.awt.event.ActionListener listener) {  workload.addActionListener(listener); }
  
+
 }

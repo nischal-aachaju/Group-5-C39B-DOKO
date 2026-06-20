@@ -57,10 +57,11 @@ public class WorkLoad extends javax.swing.JFrame {
         cancelledOrdersLabel = new javax.swing.JLabel();
         cancelledOrdersNumber = new javax.swing.JLabel();
         jPanel7 = new javax.swing.JPanel();
-        pendingOrdersNumber = new javax.swing.JLabel();
-        pendingOrderLabel = new javax.swing.JLabel();
+        InTransitOrderNumber = new javax.swing.JLabel();
+        InTransitOrderLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(1050, 600));
         getContentPane().setLayout(null);
 
         logoutbutton.setBackground(new java.awt.Color(33, 38, 49));
@@ -77,13 +78,13 @@ public class WorkLoad extends javax.swing.JFrame {
         jPanel3.add(jSeparator1);
         jSeparator1.setBounds(0, 531, 190, 10);
         jPanel3.add(jSeparator2);
-        jSeparator2.setBounds(0, 76, 190, 30);
+        jSeparator2.setBounds(0, 70, 200, 10);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/logo.png"))); // NOI18N
         jLabel1.setText("jLabel1");
         jLabel1.setPreferredSize(new java.awt.Dimension(99, 47));
         jPanel3.add(jLabel1);
-        jLabel1.setBounds(10, 10, 169, 64);
+        jLabel1.setBounds(10, 10, 169, 60);
 
         ManageUserButton.setBackground(new java.awt.Color(33, 38, 49));
         ManageUserButton.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
@@ -220,15 +221,15 @@ public class WorkLoad extends javax.swing.JFrame {
 
         jPanel7.setLayout(null);
 
-        pendingOrdersNumber.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        pendingOrdersNumber.setText("78");
-        jPanel7.add(pendingOrdersNumber);
-        pendingOrdersNumber.setBounds(60, 30, 60, 32);
+        InTransitOrderNumber.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        InTransitOrderNumber.setText("78");
+        jPanel7.add(InTransitOrderNumber);
+        InTransitOrderNumber.setBounds(60, 30, 60, 32);
 
-        pendingOrderLabel.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        pendingOrderLabel.setText("Pending Orders");
-        jPanel7.add(pendingOrderLabel);
-        pendingOrderLabel.setBounds(30, 10, 110, 20);
+        InTransitOrderLabel.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        InTransitOrderLabel.setText("In transit Orders");
+        jPanel7.add(InTransitOrderLabel);
+        InTransitOrderLabel.setBounds(30, 10, 110, 20);
 
         jPanel2.add(jPanel7);
         jPanel7.setBounds(540, 360, 160, 70);
@@ -278,6 +279,8 @@ public class WorkLoad extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Dashboardbutton;
+    private javax.swing.JLabel InTransitOrderLabel;
+    private javax.swing.JLabel InTransitOrderNumber;
     private javax.swing.JButton ManageOrderButton;
     private javax.swing.JButton ManageUserButton;
     private javax.swing.JButton MyProfileButton;
@@ -302,71 +305,76 @@ public class WorkLoad extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JButton logoutbutton;
     private javax.swing.JLabel name;
-    private javax.swing.JLabel pendingOrderLabel;
-    private javax.swing.JLabel pendingOrdersNumber;
     private javax.swing.JLabel profile;
     private javax.swing.JLabel role;
     private javax.swing.JButton searchButton;
     private javax.swing.JButton workLoadButton;
     // End of variables declaration//GEN-END:variables
-// =========================================================================
-    // TOP BAR & SEARCH INPUT
+
     // =========================================================================
+    // GETTERS & SETTERS FOR WORKLOAD DATA
+    // =========================================================================
+    public String getEmployeeIdInput() { 
+        return employeeIdTextF.getText().trim(); 
+    }
+    
+    public void setTotalOrderNumbers(String text) { 
+        TotalOrderNumbers.setText(text); 
+    }
+    
+    public void setInTransitOrderNumber(String text) { 
+        InTransitOrderNumber.setText(text); 
+    }
+    
+    public void setDeliveryShipmentsNumber(String text) { 
+        // Assuming this means "Delivered"
+        deliveryShipmentsNumber.setText(text); 
+    }
+    
+    public void setCancelledOrdersNumber(String text) { 
+        cancelledOrdersNumber.setText(text); 
+    }
 
-//    public void setTopBar(String userName, String userRole) {
-//        name.setText(userName);
-//        role.setText(userRole);
-//    }
-//
-//    public String getSearchInput() {
-//        return employeeIdTextF.getText().trim();
-//    }
-//
-//    // =========================================================================
-//    // DATA INJECTION & LOCKING
-//    // =========================================================================
-//
-//    public void setOrderDetails(String trackingId, String receiverName, String email, String senderAddr, String receiverAddr, String cost) {
-//        employeeIDtextfield.setText(trackingId); 
-//        employeeNameTextfield1.setText(receiverName);
-//        employeeEmailTextField.setText(email);
-//        phoneNumbertextfield.setText(senderAddr);
-//        receiveraddresstextfield1.setText(receiverAddr);
-//        total_cost_value.setText(cost); 
-//    }
-//
-//    public void setFormEditable(boolean isEditable) {
-//        // Locked fields that the employee can NEVER change here
-//        employeeIDtextfield.setEditable(false); 
-//        phoneNumbertextfield.setEditable(false);
-//        
-//        // Allowed fields
-//        employeeNameTextfield1.setEditable(isEditable);
-//        employeeEmailTextField.setEditable(isEditable);
-//        receiveraddresstextfield1.setEditable(isEditable);
-//        total_cost_value.setEditable(isEditable);
-//        
-//        // Toggle buttons
-//        saveButton.setEnabled(isEditable);
-//        editButton.setEnabled(!isEditable);
-//    }
-//
-//    // Grab updated data for the database
-//    public String getUpdatedName() { return employeeNameTextfield1.getText().trim(); }
-//    public String getUpdatedEmail() { return employeeEmailTextField.getText().trim(); }
-//    public String getUpdatedAddress() { return receiveraddresstextfield1.getText().trim(); }
-//    public String getUpdatedCost() { return total_cost_value.getText().trim(); }
-//
-//    // =========================================================================
-//    // BUTTON LISTENERS
-//    // =========================================================================
-//    
-//    public void addSearchListener(java.awt.event.ActionListener listener) { searchButton.addActionListener(listener); }
-//    public void addEditListener(java.awt.event.ActionListener listener) { editButton.addActionListener(listener); }
-//    public void addSaveListener(java.awt.event.ActionListener listener) { saveButton.addActionListener(listener); }
-//    
-//    // Navigators
-//    public void addDashboardListener(java.awt.event.ActionListener listener) { Dashboardbutton.addActionListener(listener); }
-//    public void addLogoutListener(java.awt.event.ActionListener listener) { logoutbutton.addActionListener(listener); }
+    public void setUsernameLabel(String text) { 
+        name.setText(text); 
+    }
+    
+    public void setRoleLabel(String text) { 
+        role.setText(text); 
+    }
 
+    // =========================================================================
+    // ACTION LISTENERS
+    // =========================================================================
+    public void addSearchListener(java.awt.event.ActionListener listener) { 
+        searchButton.addActionListener(listener); 
+    }
+    
+    public void addDashboardListener(java.awt.event.ActionListener listener) { 
+        Dashboardbutton.addActionListener(listener); 
+    }
+    
+    public void addManageOrderListener(java.awt.event.ActionListener listener) { 
+        ManageOrderButton.addActionListener(listener); 
+    }
+    
+    public void addManageUserListener(java.awt.event.ActionListener listener) { 
+        ManageUserButton.addActionListener(listener); 
+    }
+    
+    public void addMyProfileListener(java.awt.event.ActionListener listener) { 
+        MyProfileButton.addActionListener(listener); 
+    }
+    
+    public void addPriceConfigListener(java.awt.event.ActionListener listener) { 
+        PriceConfigurationButton.addActionListener(listener); 
+    }
+    
+    public void addBranchListener(java.awt.event.ActionListener listener) { 
+        branchAndNetworksButton.addActionListener(listener); 
+    }
+    
+    public void addLogoutListener(java.awt.event.ActionListener listener) { 
+        logoutbutton.addActionListener(listener); 
+    }
 }
